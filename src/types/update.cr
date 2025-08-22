@@ -7,18 +7,18 @@ class Hamilton::Types::Update
   include JSON::Serializable
 
   @[JSON::Field(ignore: true)]
-  property non_nil_nillable : Array(String) = [] of String
+  property non_nil_fields : Array(String) = [] of String
 
   def after_initialize
-    @non_nil_nillable = [] of String
+    @non_nil_fields = [] of String
 
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
-      @non_nil_nillable.push({{field}})
+      @non_nil_fields.push({{field}})
     end
     {% end %}
 
-    @non_nil_nillable.delete("non_nil_nillable")
+    @non_nil_fields.delete("non_nil_fields")
   end
 
   # The update's unique identifier. Update identifiers start from a certain positive number and increase sequentially.
