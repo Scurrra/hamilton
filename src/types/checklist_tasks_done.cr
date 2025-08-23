@@ -25,5 +25,5 @@ class Hamilton::Types::ChecklistTasksDone
   property marked_as_done_task_ids : Array(Int32)
 
   # Identifiers of the tasks that were marked as not done.
-  property marked_as_not_done_task_ids Array(Int32)
+  property marked_as_not_done_task_ids : Array(Int32)
 end
