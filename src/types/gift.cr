@@ -28,7 +28,7 @@ class Hamilton::Types::Gift
   property star_count : Int32
 
   # The number of Telegram Stars that must be paid to upgrade the gift to a unique one.
-  property upgrade_star_count : Int32 | Int
+  property upgrade_star_count : Int32 | Nil
 
   # The total number of the gifts of this type that can be sent; for limited gifts only.
   property total_count : Int32 | Nil
