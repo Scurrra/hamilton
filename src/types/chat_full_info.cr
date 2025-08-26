@@ -55,7 +55,7 @@ class Hamilton::Types::ChatFullInfo
   property active_usernames : Array(String) | Nil
 
   # For private chats, the date of birth of the user.
-  property birthdate : Hamilton::Types::Birthday | Nil
+  property birthdate : Hamilton::Types::Birthdate | Nil
 
   # For private chats with business accounts, the intro of the business.
   property business_intro : Hamilton::Types::BusinessIntro | Nil
