@@ -61,7 +61,7 @@ class Hamilton::Types::ExternalReplyInfo
   property voice : Hamilton::Types::Voice | Nil
 
   # True, if the message media is covered by a spoiler animation.
-  property has_media_spoiler : Bol | Nil
+  property has_media_spoiler : Bool | Nil
 
   # Message is a checklist.
   property checklist : Hamilton::Types::Checklist | Nil
