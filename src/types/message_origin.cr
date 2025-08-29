@@ -5,9 +5,11 @@ require "json"
 class Hamilton::Types::MessageOriginUser
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -33,9 +35,11 @@ end
 class Hamilton::Types::MessageOriginHiddenUser
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -61,9 +65,11 @@ end
 class Hamilton::Types::MessageOriginChannel
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -92,9 +98,11 @@ end
 class Hamilton::Types::MessageOriginUser
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?

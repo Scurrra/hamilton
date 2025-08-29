@@ -5,9 +5,11 @@ require "json"
 class Hamilton::Types::OwnedGiftRegular
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -63,9 +65,11 @@ end
 class Hamilton::Types::OwnedGiftUnique
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -112,9 +116,11 @@ alias Hamilton::Types::OwnedGift = Hamilton::Types::OwnedGiftRegular | Hamilton:
 class Hamilton::Types::OwnedGifts
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?

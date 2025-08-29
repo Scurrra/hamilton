@@ -5,9 +5,11 @@ require "json"
 class Hamilton::Types::ChatMemberOwner
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -36,9 +38,11 @@ end
 class Hamilton::Types::ChatMemberAdministrator
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -115,9 +119,11 @@ end
 class Hamilton::Types::ChatMemberMember
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -143,9 +149,11 @@ end
 class Hamilton::Types::ChatMemberRestricted
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -216,9 +224,11 @@ end
 class Hamilton::Types::ChatMemberLeft
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -241,9 +251,11 @@ end
 class Hamilton::Types::ChatMemberBanned
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?

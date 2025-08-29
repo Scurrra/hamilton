@@ -5,9 +5,11 @@ require "json"
 class Hamilton::Types::InlineQueryResultArticle
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -54,9 +56,11 @@ end
 class Hamilton::Types::InlineQueryResultPhoto
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -115,9 +119,11 @@ end
 class Hamilton::Types::InlineQueryResultGif
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -179,9 +185,11 @@ end
 class Hamilton::Types::InlineQueryResultMpeg4Gif
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -245,9 +253,11 @@ end
 class Hamilton::Types::InlineQueryResultVideo
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -312,9 +322,11 @@ end
 class Hamilton::Types::InlineQueryResultAudio
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -364,9 +376,11 @@ end
 class Hamilton::Types::InlineQueryResultVoice
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -413,9 +427,11 @@ end
 class Hamilton::Types::InlineQueryResultDocument
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -474,9 +490,11 @@ end
 class Hamilton::Types::InlineQueryResultLocation
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -535,9 +553,11 @@ end
 class Hamilton::Types::InlineQueryResultVenue
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -599,9 +619,11 @@ end
 class Hamilton::Types::InlineQueryResultContact
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -651,9 +673,11 @@ end
 class Hamilton::Types::InlineQueryResultGame
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -682,9 +706,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedPhoto
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -734,9 +760,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedGif
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -783,9 +811,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedMpeg4Gif
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -832,9 +862,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedSticker
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -866,9 +898,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedDocument
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -915,9 +949,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedVideo
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -967,9 +1003,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedVoice
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -1013,9 +1051,11 @@ end
 class Hamilton::Types::InlineQueryResultCachedAudio
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?

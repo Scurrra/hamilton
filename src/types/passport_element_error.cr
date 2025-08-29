@@ -5,9 +5,11 @@ require "json"
 class Hamilton::Types::PassportElementErrorDataField
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -39,9 +41,11 @@ end
 class Hamilton::Types::PassportElementErrorFrontSide
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -70,9 +74,11 @@ end
 class Hamilton::Types::PassportElementErrorReverseSide
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -101,9 +107,11 @@ end
 class Hamilton::Types::PassportElementErrorSelfie
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -132,9 +140,11 @@ end
 class Hamilton::Types::PassportElementErrorFile
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -163,9 +173,11 @@ end
 class Hamilton::Types::PassportElementErrorFiles
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -194,9 +206,11 @@ end
 class Hamilton::Types::PassportElementErrorTranslationFile
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -225,9 +239,11 @@ end
 class Hamilton::Types::PassportElementErrorTranslationFiles
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
@@ -256,9 +272,11 @@ end
 class Hamilton::Types::PassportElementErrorUnspecified
   include JSON::Serializable
 
+  # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
 
+  # :nodoc:
   def after_initialize
     {% for field, index in @type.instance_vars.map &.name.stringify %}
     unless @{{field.id}}.nil?
