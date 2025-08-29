@@ -64,7 +64,7 @@ class Hamilton::Types::Message
   property external_reply : Hamilton::Types::ExternalReplyInfo | Nil
 
   # For replies that quote part of the original message, the quoted part of the message.
-  property quote : Hamilton::Types::TextReply | Nil
+  property quote : Hamilton::Types::TextQuote | Nil
 
   # For replies to a story, the original story.
   property reply_to_story : Hamilton::Types::Story | Nil
@@ -235,7 +235,7 @@ class Hamilton::Types::Message
   property write_access_allowed	: Hamilton::Types::WriteAccessAllowed | Nil
 
   # Telegram Passport data.
-  property passport_data : Hamilton::Types::PassportDate | Nil
+  property passport_data : Hamilton::Types::PassportData | Nil
 
   # Service message. A user in the chat triggered another user's proximity alert while sharing Live Location.
   property proximity_alert_triggered : Hamilton::Types::ProximityAlertTriggered | Nil

@@ -19,7 +19,7 @@ class Hamilton::Types::MessageReactionUpdated
   end
 
   # The chat containing the message the user reacted to.
-  property chat : Hamilton::Type::Chat
+  property chat : Hamilton::Types::Chat
 
   # Unique identifier of the message inside the chat.
   property message_id : Int32

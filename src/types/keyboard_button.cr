@@ -4,7 +4,7 @@ require "json"
 #
 # NOTE: `request_users` and `request_chat` options will only work in Telegram versions released after 3 February, 2023. Older clients will display unsupported message.
 @[JSON::Serializable::Options(emit_nulls: true)]
-class Hamilton::Types::Update
+class Hamilton::Types::KeyboardButton
   include JSON::Serializable
 
   @[JSON::Field(ignore: true)]

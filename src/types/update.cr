@@ -64,13 +64,13 @@ class Hamilton::Types::Update
   property callback_query : Hamilton::Types::CallbackQuery | Nil
 
   # New incoming shipping query. Only for invoices with flexible price.
-  property shipping_query : Hamilton::Types::ShipingQuery | Nil
+  property shipping_query : Hamilton::Types::ShippingQuery | Nil
 
   # New incoming pre-checkout query. Contains full information about checkout.
   property pre_checkout_query : Hamilton::Types::PreCheckoutQuery | Nil
 
   # A user purchased paid media with a non-empty payload sent by the bot in a non-channel chat.
-  property purchased_paid_media : Hamilton::Types::PaidMediaPurchaised | Nil
+  property purchased_paid_media : Hamilton::Types::PaidMediaPurchased | Nil
 
   # New poll state. Bots receive only updates about manually stopped polls and polls, which are sent by the bot.
   property poll : Hamilton::Types::Poll | Nil

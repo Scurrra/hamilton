@@ -22,7 +22,7 @@ class Hamilton::Types::TextQuote
   property text : String
 
   # Special entities that appear in the quote. Currently, only bold, italic, underline, strikethrough, spoiler, and custom_emoji entities are kept in quotes.
-  property entities : Array(Hamilton::Type::MessageEntity) | Nil
+  property entities : Array(Hamilton::Types::MessageEntity) | Nil
 
   # Approximate quote position in the original message in UTF-16 code units as specified by the sender.
   property position : Int32
