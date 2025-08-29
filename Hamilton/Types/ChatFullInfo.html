@@ -1,0 +1,4168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Crystal Docs 1.16.3">
+<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_name" content="hamilton">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="hamilton">
+  <title>Hamilton::Types::ChatFullInfo - hamilton 0.1.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<input type="checkbox" id="sidebar-btn">
+<label for="sidebar-btn" id="sidebar-btn-label">
+  <svg class="open" xmlns="http://www.w3.org/2000/svg" height="2em" width="2em" viewBox="0 0 512 512"><title>Open Sidebar</title><path fill="currentColor" d="M80 96v64h352V96H80zm0 112v64h352v-64H80zm0 112v64h352v-64H80z"></path></svg>
+  <svg class="close" xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 512 512"><title>Close Sidebar</title><path fill="currentColor" d="m118.6 73.4-45.2 45.2L210.7 256 73.4 393.4l45.2 45.2L256 301.3l137.4 137.3 45.2-45.2L301.3 256l137.3-137.4-45.2-45.2L256 210.7Z"></path></svg>
+</label>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          hamilton
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.1.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="hamilton/Hamilton" data-name="hamilton">
+      <a href="../../Hamilton.html">Hamilton</a>
+      
+        <ul>
+  
+  <li class="parent open current" data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
+      <a href="../../Hamilton/Types.html">Types</a>
+      
+        <ul>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/AcceptedGiftTypes" data-name="hamilton::types::acceptedgifttypes">
+      <a href="../../Hamilton/Types/AcceptedGiftTypes.html">AcceptedGiftTypes</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/AffiliateInfo" data-name="hamilton::types::affiliateinfo">
+      <a href="../../Hamilton/Types/AffiliateInfo.html">AffiliateInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Animation" data-name="hamilton::types::animation">
+      <a href="../../Hamilton/Types/Animation.html">Animation</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Audio" data-name="hamilton::types::audio">
+      <a href="../../Hamilton/Types/Audio.html">Audio</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundFill" data-name="hamilton::types::backgroundfill">
+      <a href="../../Hamilton/Types/BackgroundFill.html">BackgroundFill</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundFillFreeformGradient" data-name="hamilton::types::backgroundfillfreeformgradient">
+      <a href="../../Hamilton/Types/BackgroundFillFreeformGradient.html">BackgroundFillFreeformGradient</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundFillGradient" data-name="hamilton::types::backgroundfillgradient">
+      <a href="../../Hamilton/Types/BackgroundFillGradient.html">BackgroundFillGradient</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundFillSolid" data-name="hamilton::types::backgroundfillsolid">
+      <a href="../../Hamilton/Types/BackgroundFillSolid.html">BackgroundFillSolid</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundType" data-name="hamilton::types::backgroundtype">
+      <a href="../../Hamilton/Types/BackgroundType.html">BackgroundType</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundTypeChatTheme" data-name="hamilton::types::backgroundtypechattheme">
+      <a href="../../Hamilton/Types/BackgroundTypeChatTheme.html">BackgroundTypeChatTheme</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundTypeFill" data-name="hamilton::types::backgroundtypefill">
+      <a href="../../Hamilton/Types/BackgroundTypeFill.html">BackgroundTypeFill</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundTypePattern" data-name="hamilton::types::backgroundtypepattern">
+      <a href="../../Hamilton/Types/BackgroundTypePattern.html">BackgroundTypePattern</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BackgroundTypeWallpaper" data-name="hamilton::types::backgroundtypewallpaper">
+      <a href="../../Hamilton/Types/BackgroundTypeWallpaper.html">BackgroundTypeWallpaper</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Birthdate" data-name="hamilton::types::birthdate">
+      <a href="../../Hamilton/Types/Birthdate.html">Birthdate</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommand" data-name="hamilton::types::botcommand">
+      <a href="../../Hamilton/Types/BotCommand.html">BotCommand</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScope" data-name="hamilton::types::botcommandscope">
+      <a href="../../Hamilton/Types/BotCommandScope.html">BotCommandScope</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeAllChatAdministrators" data-name="hamilton::types::botcommandscopeallchatadministrators">
+      <a href="../../Hamilton/Types/BotCommandScopeAllChatAdministrators.html">BotCommandScopeAllChatAdministrators</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeAllGroupChats" data-name="hamilton::types::botcommandscopeallgroupchats">
+      <a href="../../Hamilton/Types/BotCommandScopeAllGroupChats.html">BotCommandScopeAllGroupChats</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeAllPrivateChats" data-name="hamilton::types::botcommandscopeallprivatechats">
+      <a href="../../Hamilton/Types/BotCommandScopeAllPrivateChats.html">BotCommandScopeAllPrivateChats</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeChat" data-name="hamilton::types::botcommandscopechat">
+      <a href="../../Hamilton/Types/BotCommandScopeChat.html">BotCommandScopeChat</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeChatAdministrators" data-name="hamilton::types::botcommandscopechatadministrators">
+      <a href="../../Hamilton/Types/BotCommandScopeChatAdministrators.html">BotCommandScopeChatAdministrators</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeChatMember" data-name="hamilton::types::botcommandscopechatmember">
+      <a href="../../Hamilton/Types/BotCommandScopeChatMember.html">BotCommandScopeChatMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotCommandScopeDefault" data-name="hamilton::types::botcommandscopedefault">
+      <a href="../../Hamilton/Types/BotCommandScopeDefault.html">BotCommandScopeDefault</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotDescription" data-name="hamilton::types::botdescription">
+      <a href="../../Hamilton/Types/BotDescription.html">BotDescription</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotName" data-name="hamilton::types::botname">
+      <a href="../../Hamilton/Types/BotName.html">BotName</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BotShortDescription" data-name="hamilton::types::botshortdescription">
+      <a href="../../Hamilton/Types/BotShortDescription.html">BotShortDescription</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessBotRights" data-name="hamilton::types::businessbotrights">
+      <a href="../../Hamilton/Types/BusinessBotRights.html">BusinessBotRights</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessConnection" data-name="hamilton::types::businessconnection">
+      <a href="../../Hamilton/Types/BusinessConnection.html">BusinessConnection</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessIntro" data-name="hamilton::types::businessintro">
+      <a href="../../Hamilton/Types/BusinessIntro.html">BusinessIntro</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessLocation" data-name="hamilton::types::businesslocation">
+      <a href="../../Hamilton/Types/BusinessLocation.html">BusinessLocation</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessMessagesDeleted" data-name="hamilton::types::businessmessagesdeleted">
+      <a href="../../Hamilton/Types/BusinessMessagesDeleted.html">BusinessMessagesDeleted</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessOpeningHours" data-name="hamilton::types::businessopeninghours">
+      <a href="../../Hamilton/Types/BusinessOpeningHours.html">BusinessOpeningHours</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/BusinessOpeningHoursInterval" data-name="hamilton::types::businessopeninghoursinterval">
+      <a href="../../Hamilton/Types/BusinessOpeningHoursInterval.html">BusinessOpeningHoursInterval</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/CallbackGame" data-name="hamilton::types::callbackgame">
+      <a href="../../Hamilton/Types/CallbackGame.html">CallbackGame</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/CallbackQuery" data-name="hamilton::types::callbackquery">
+      <a href="../../Hamilton/Types/CallbackQuery.html">CallbackQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Chat" data-name="hamilton::types::chat">
+      <a href="../../Hamilton/Types/Chat.html">Chat</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatAdministratorRights" data-name="hamilton::types::chatadministratorrights">
+      <a href="../../Hamilton/Types/ChatAdministratorRights.html">ChatAdministratorRights</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBackground" data-name="hamilton::types::chatbackground">
+      <a href="../../Hamilton/Types/ChatBackground.html">ChatBackground</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoost" data-name="hamilton::types::chatboost">
+      <a href="../../Hamilton/Types/ChatBoost.html">ChatBoost</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostAdded" data-name="hamilton::types::chatboostadded">
+      <a href="../../Hamilton/Types/ChatBoostAdded.html">ChatBoostAdded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostRemoved" data-name="hamilton::types::chatboostremoved">
+      <a href="../../Hamilton/Types/ChatBoostRemoved.html">ChatBoostRemoved</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostSource" data-name="hamilton::types::chatboostsource">
+      <a href="../../Hamilton/Types/ChatBoostSource.html">ChatBoostSource</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostSourceGiftCode" data-name="hamilton::types::chatboostsourcegiftcode">
+      <a href="../../Hamilton/Types/ChatBoostSourceGiftCode.html">ChatBoostSourceGiftCode</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostSourceGiveaway" data-name="hamilton::types::chatboostsourcegiveaway">
+      <a href="../../Hamilton/Types/ChatBoostSourceGiveaway.html">ChatBoostSourceGiveaway</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostSourcePremium" data-name="hamilton::types::chatboostsourcepremium">
+      <a href="../../Hamilton/Types/ChatBoostSourcePremium.html">ChatBoostSourcePremium</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostUpdated" data-name="hamilton::types::chatboostupdated">
+      <a href="../../Hamilton/Types/ChatBoostUpdated.html">ChatBoostUpdated</a>
+      
+    </li>
+  
+  <li class=" current" data-id="hamilton/Hamilton/Types/ChatFullInfo" data-name="hamilton::types::chatfullinfo">
+      <a href="../../Hamilton/Types/ChatFullInfo.html">ChatFullInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatInviteLink" data-name="hamilton::types::chatinvitelink">
+      <a href="../../Hamilton/Types/ChatInviteLink.html">ChatInviteLink</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatJoinRequest" data-name="hamilton::types::chatjoinrequest">
+      <a href="../../Hamilton/Types/ChatJoinRequest.html">ChatJoinRequest</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatLocation" data-name="hamilton::types::chatlocation">
+      <a href="../../Hamilton/Types/ChatLocation.html">ChatLocation</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMember" data-name="hamilton::types::chatmember">
+      <a href="../../Hamilton/Types/ChatMember.html">ChatMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberAdministrator" data-name="hamilton::types::chatmemberadministrator">
+      <a href="../../Hamilton/Types/ChatMemberAdministrator.html">ChatMemberAdministrator</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberBanned" data-name="hamilton::types::chatmemberbanned">
+      <a href="../../Hamilton/Types/ChatMemberBanned.html">ChatMemberBanned</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberLeft" data-name="hamilton::types::chatmemberleft">
+      <a href="../../Hamilton/Types/ChatMemberLeft.html">ChatMemberLeft</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberMember" data-name="hamilton::types::chatmembermember">
+      <a href="../../Hamilton/Types/ChatMemberMember.html">ChatMemberMember</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberOwner" data-name="hamilton::types::chatmemberowner">
+      <a href="../../Hamilton/Types/ChatMemberOwner.html">ChatMemberOwner</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberRestricted" data-name="hamilton::types::chatmemberrestricted">
+      <a href="../../Hamilton/Types/ChatMemberRestricted.html">ChatMemberRestricted</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberUpdated" data-name="hamilton::types::chatmemberupdated">
+      <a href="../../Hamilton/Types/ChatMemberUpdated.html">ChatMemberUpdated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatPermissions" data-name="hamilton::types::chatpermissions">
+      <a href="../../Hamilton/Types/ChatPermissions.html">ChatPermissions</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatPhoto" data-name="hamilton::types::chatphoto">
+      <a href="../../Hamilton/Types/ChatPhoto.html">ChatPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatShared" data-name="hamilton::types::chatshared">
+      <a href="../../Hamilton/Types/ChatShared.html">ChatShared</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Checklist" data-name="hamilton::types::checklist">
+      <a href="../../Hamilton/Types/Checklist.html">Checklist</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChecklistTask" data-name="hamilton::types::checklisttask">
+      <a href="../../Hamilton/Types/ChecklistTask.html">ChecklistTask</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChecklistTasksAdded" data-name="hamilton::types::checklisttasksadded">
+      <a href="../../Hamilton/Types/ChecklistTasksAdded.html">ChecklistTasksAdded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChecklistTasksDone" data-name="hamilton::types::checklisttasksdone">
+      <a href="../../Hamilton/Types/ChecklistTasksDone.html">ChecklistTasksDone</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChosenInlineResult" data-name="hamilton::types::choseninlineresult">
+      <a href="../../Hamilton/Types/ChosenInlineResult.html">ChosenInlineResult</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Contact" data-name="hamilton::types::contact">
+      <a href="../../Hamilton/Types/Contact.html">Contact</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/CopyTextButton" data-name="hamilton::types::copytextbutton">
+      <a href="../../Hamilton/Types/CopyTextButton.html">CopyTextButton</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Dice" data-name="hamilton::types::dice">
+      <a href="../../Hamilton/Types/Dice.html">Dice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/DirectMessagePriceChanged" data-name="hamilton::types::directmessagepricechanged">
+      <a href="../../Hamilton/Types/DirectMessagePriceChanged.html">DirectMessagePriceChanged</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/DirectMessagesTopic" data-name="hamilton::types::directmessagestopic">
+      <a href="../../Hamilton/Types/DirectMessagesTopic.html">DirectMessagesTopic</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Document" data-name="hamilton::types::document">
+      <a href="../../Hamilton/Types/Document.html">Document</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/EncryptedCredentials" data-name="hamilton::types::encryptedcredentials">
+      <a href="../../Hamilton/Types/EncryptedCredentials.html">EncryptedCredentials</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/EncryptedPassportElement" data-name="hamilton::types::encryptedpassportelement">
+      <a href="../../Hamilton/Types/EncryptedPassportElement.html">EncryptedPassportElement</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ExternalReplyInfo" data-name="hamilton::types::externalreplyinfo">
+      <a href="../../Hamilton/Types/ExternalReplyInfo.html">ExternalReplyInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/File" data-name="hamilton::types::file">
+      <a href="../../Hamilton/Types/File.html">File</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ForceReply" data-name="hamilton::types::forcereply">
+      <a href="../../Hamilton/Types/ForceReply.html">ForceReply</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ForumTopic" data-name="hamilton::types::forumtopic">
+      <a href="../../Hamilton/Types/ForumTopic.html">ForumTopic</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ForumTopicClosed" data-name="hamilton::types::forumtopicclosed">
+      <a href="../../Hamilton/Types/ForumTopicClosed.html">ForumTopicClosed</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ForumTopicCreated" data-name="hamilton::types::forumtopiccreated">
+      <a href="../../Hamilton/Types/ForumTopicCreated.html">ForumTopicCreated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ForumTopicEdited" data-name="hamilton::types::forumtopicedited">
+      <a href="../../Hamilton/Types/ForumTopicEdited.html">ForumTopicEdited</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ForumTopicReopened" data-name="hamilton::types::forumtopicreopened">
+      <a href="../../Hamilton/Types/ForumTopicReopened.html">ForumTopicReopened</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Game" data-name="hamilton::types::game">
+      <a href="../../Hamilton/Types/Game.html">Game</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GameHighScore" data-name="hamilton::types::gamehighscore">
+      <a href="../../Hamilton/Types/GameHighScore.html">GameHighScore</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GeneralForumTopicHidden" data-name="hamilton::types::generalforumtopichidden">
+      <a href="../../Hamilton/Types/GeneralForumTopicHidden.html">GeneralForumTopicHidden</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GeneralForumTopicUnhidden" data-name="hamilton::types::generalforumtopicunhidden">
+      <a href="../../Hamilton/Types/GeneralForumTopicUnhidden.html">GeneralForumTopicUnhidden</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
+      <a href="../../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftInfo" data-name="hamilton::types::giftinfo">
+      <a href="../../Hamilton/Types/GiftInfo.html">GiftInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Gifts" data-name="hamilton::types::gifts">
+      <a href="../../Hamilton/Types/Gifts.html">Gifts</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Giveaway" data-name="hamilton::types::giveaway">
+      <a href="../../Hamilton/Types/Giveaway.html">Giveaway</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiveawayCompleted" data-name="hamilton::types::giveawaycompleted">
+      <a href="../../Hamilton/Types/GiveawayCompleted.html">GiveawayCompleted</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiveawayCreated" data-name="hamilton::types::giveawaycreated">
+      <a href="../../Hamilton/Types/GiveawayCreated.html">GiveawayCreated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiveawayWinners" data-name="hamilton::types::giveawaywinners">
+      <a href="../../Hamilton/Types/GiveawayWinners.html">GiveawayWinners</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InaccessibleMessage" data-name="hamilton::types::inaccessiblemessage">
+      <a href="../../Hamilton/Types/InaccessibleMessage.html">InaccessibleMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineKeyboardButton" data-name="hamilton::types::inlinekeyboardbutton">
+      <a href="../../Hamilton/Types/InlineKeyboardButton.html">InlineKeyboardButton</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineKeyboardMarkup" data-name="hamilton::types::inlinekeyboardmarkup">
+      <a href="../../Hamilton/Types/InlineKeyboardMarkup.html">InlineKeyboardMarkup</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQuery" data-name="hamilton::types::inlinequery">
+      <a href="../../Hamilton/Types/InlineQuery.html">InlineQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResult" data-name="hamilton::types::inlinequeryresult">
+      <a href="../../Hamilton/Types/InlineQueryResult.html">InlineQueryResult</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultArticle" data-name="hamilton::types::inlinequeryresultarticle">
+      <a href="../../Hamilton/Types/InlineQueryResultArticle.html">InlineQueryResultArticle</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultAudio" data-name="hamilton::types::inlinequeryresultaudio">
+      <a href="../../Hamilton/Types/InlineQueryResultAudio.html">InlineQueryResultAudio</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedAudio" data-name="hamilton::types::inlinequeryresultcachedaudio">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedAudio.html">InlineQueryResultCachedAudio</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedDocument" data-name="hamilton::types::inlinequeryresultcacheddocument">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedDocument.html">InlineQueryResultCachedDocument</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedGif" data-name="hamilton::types::inlinequeryresultcachedgif">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedGif.html">InlineQueryResultCachedGif</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedMpeg4Gif" data-name="hamilton::types::inlinequeryresultcachedmpeg4gif">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedMpeg4Gif.html">InlineQueryResultCachedMpeg4Gif</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedPhoto" data-name="hamilton::types::inlinequeryresultcachedphoto">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedPhoto.html">InlineQueryResultCachedPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedSticker" data-name="hamilton::types::inlinequeryresultcachedsticker">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedSticker.html">InlineQueryResultCachedSticker</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedVideo" data-name="hamilton::types::inlinequeryresultcachedvideo">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedVideo.html">InlineQueryResultCachedVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultCachedVoice" data-name="hamilton::types::inlinequeryresultcachedvoice">
+      <a href="../../Hamilton/Types/InlineQueryResultCachedVoice.html">InlineQueryResultCachedVoice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultContact" data-name="hamilton::types::inlinequeryresultcontact">
+      <a href="../../Hamilton/Types/InlineQueryResultContact.html">InlineQueryResultContact</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultDocument" data-name="hamilton::types::inlinequeryresultdocument">
+      <a href="../../Hamilton/Types/InlineQueryResultDocument.html">InlineQueryResultDocument</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultGame" data-name="hamilton::types::inlinequeryresultgame">
+      <a href="../../Hamilton/Types/InlineQueryResultGame.html">InlineQueryResultGame</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultGif" data-name="hamilton::types::inlinequeryresultgif">
+      <a href="../../Hamilton/Types/InlineQueryResultGif.html">InlineQueryResultGif</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultLocation" data-name="hamilton::types::inlinequeryresultlocation">
+      <a href="../../Hamilton/Types/InlineQueryResultLocation.html">InlineQueryResultLocation</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultMpeg4Gif" data-name="hamilton::types::inlinequeryresultmpeg4gif">
+      <a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html">InlineQueryResultMpeg4Gif</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultPhoto" data-name="hamilton::types::inlinequeryresultphoto">
+      <a href="../../Hamilton/Types/InlineQueryResultPhoto.html">InlineQueryResultPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultsButton" data-name="hamilton::types::inlinequeryresultsbutton">
+      <a href="../../Hamilton/Types/InlineQueryResultsButton.html">InlineQueryResultsButton</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultVenue" data-name="hamilton::types::inlinequeryresultvenue">
+      <a href="../../Hamilton/Types/InlineQueryResultVenue.html">InlineQueryResultVenue</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultVideo" data-name="hamilton::types::inlinequeryresultvideo">
+      <a href="../../Hamilton/Types/InlineQueryResultVideo.html">InlineQueryResultVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultVoice" data-name="hamilton::types::inlinequeryresultvoice">
+      <a href="../../Hamilton/Types/InlineQueryResultVoice.html">InlineQueryResultVoice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputChecklist" data-name="hamilton::types::inputchecklist">
+      <a href="../../Hamilton/Types/InputChecklist.html">InputChecklist</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputChecklistTask" data-name="hamilton::types::inputchecklisttask">
+      <a href="../../Hamilton/Types/InputChecklistTask.html">InputChecklistTask</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputContactMessageContent" data-name="hamilton::types::inputcontactmessagecontent">
+      <a href="../../Hamilton/Types/InputContactMessageContent.html">InputContactMessageContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputFile" data-name="hamilton::types::inputfile">
+      <a href="../../Hamilton/Types/InputFile.html">InputFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputInvoiceMessageContent" data-name="hamilton::types::inputinvoicemessagecontent">
+      <a href="../../Hamilton/Types/InputInvoiceMessageContent.html">InputInvoiceMessageContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputLocationMessageContent" data-name="hamilton::types::inputlocationmessagecontent">
+      <a href="../../Hamilton/Types/InputLocationMessageContent.html">InputLocationMessageContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMedia" data-name="hamilton::types::inputmedia">
+      <a href="../../Hamilton/Types/InputMedia.html">InputMedia</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaAnimation" data-name="hamilton::types::inputmediaanimation">
+      <a href="../../Hamilton/Types/InputMediaAnimation.html">InputMediaAnimation</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaAudio" data-name="hamilton::types::inputmediaaudio">
+      <a href="../../Hamilton/Types/InputMediaAudio.html">InputMediaAudio</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaDocument" data-name="hamilton::types::inputmediadocument">
+      <a href="../../Hamilton/Types/InputMediaDocument.html">InputMediaDocument</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaPhoto" data-name="hamilton::types::inputmediaphoto">
+      <a href="../../Hamilton/Types/InputMediaPhoto.html">InputMediaPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaVideo" data-name="hamilton::types::inputmediavideo">
+      <a href="../../Hamilton/Types/InputMediaVideo.html">InputMediaVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMessageContent" data-name="hamilton::types::inputmessagecontent">
+      <a href="../../Hamilton/Types/InputMessageContent.html">InputMessageContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPaidMedia" data-name="hamilton::types::inputpaidmedia">
+      <a href="../../Hamilton/Types/InputPaidMedia.html">InputPaidMedia</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPaidMediaPhoto" data-name="hamilton::types::inputpaidmediaphoto">
+      <a href="../../Hamilton/Types/InputPaidMediaPhoto.html">InputPaidMediaPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPaidMediaVideo" data-name="hamilton::types::inputpaidmediavideo">
+      <a href="../../Hamilton/Types/InputPaidMediaVideo.html">InputPaidMediaVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPollOption" data-name="hamilton::types::inputpolloption">
+      <a href="../../Hamilton/Types/InputPollOption.html">InputPollOption</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputProfilePhoto" data-name="hamilton::types::inputprofilephoto">
+      <a href="../../Hamilton/Types/InputProfilePhoto.html">InputProfilePhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputProfilePhotoAnimated" data-name="hamilton::types::inputprofilephotoanimated">
+      <a href="../../Hamilton/Types/InputProfilePhotoAnimated.html">InputProfilePhotoAnimated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputProfilePhotoStatic" data-name="hamilton::types::inputprofilephotostatic">
+      <a href="../../Hamilton/Types/InputProfilePhotoStatic.html">InputProfilePhotoStatic</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputSticker" data-name="hamilton::types::inputsticker">
+      <a href="../../Hamilton/Types/InputSticker.html">InputSticker</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputStoryContent" data-name="hamilton::types::inputstorycontent">
+      <a href="../../Hamilton/Types/InputStoryContent.html">InputStoryContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputStoryContentPhoto" data-name="hamilton::types::inputstorycontentphoto">
+      <a href="../../Hamilton/Types/InputStoryContentPhoto.html">InputStoryContentPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputStoryContentVideo" data-name="hamilton::types::inputstorycontentvideo">
+      <a href="../../Hamilton/Types/InputStoryContentVideo.html">InputStoryContentVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputTextMessageContent" data-name="hamilton::types::inputtextmessagecontent">
+      <a href="../../Hamilton/Types/InputTextMessageContent.html">InputTextMessageContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputVenueMessageContent" data-name="hamilton::types::inputvenuemessagecontent">
+      <a href="../../Hamilton/Types/InputVenueMessageContent.html">InputVenueMessageContent</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Invoice" data-name="hamilton::types::invoice">
+      <a href="../../Hamilton/Types/Invoice.html">Invoice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButton" data-name="hamilton::types::keyboardbutton">
+      <a href="../../Hamilton/Types/KeyboardButton.html">KeyboardButton</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonPollType" data-name="hamilton::types::keyboardbuttonpolltype">
+      <a href="../../Hamilton/Types/KeyboardButtonPollType.html">KeyboardButtonPollType</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestChat" data-name="hamilton::types::keyboardbuttonrequestchat">
+      <a href="../../Hamilton/Types/KeyboardButtonRequestChat.html">KeyboardButtonRequestChat</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestUsers" data-name="hamilton::types::keyboardbuttonrequestusers">
+      <a href="../../Hamilton/Types/KeyboardButtonRequestUsers.html">KeyboardButtonRequestUsers</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/LabeledPrice" data-name="hamilton::types::labeledprice">
+      <a href="../../Hamilton/Types/LabeledPrice.html">LabeledPrice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/LinkPreviewOptions" data-name="hamilton::types::linkpreviewoptions">
+      <a href="../../Hamilton/Types/LinkPreviewOptions.html">LinkPreviewOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Location" data-name="hamilton::types::location">
+      <a href="../../Hamilton/Types/Location.html">Location</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/LocationAddress" data-name="hamilton::types::locationaddress">
+      <a href="../../Hamilton/Types/LocationAddress.html">LocationAddress</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/LoginUrl" data-name="hamilton::types::loginurl">
+      <a href="../../Hamilton/Types/LoginUrl.html">LoginUrl</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MaskPosition" data-name="hamilton::types::maskposition">
+      <a href="../../Hamilton/Types/MaskPosition.html">MaskPosition</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MaybeInaccessibleMessage" data-name="hamilton::types::maybeinaccessiblemessage">
+      <a href="../../Hamilton/Types/MaybeInaccessibleMessage.html">MaybeInaccessibleMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MenuButton" data-name="hamilton::types::menubutton">
+      <a href="../../Hamilton/Types/MenuButton.html">MenuButton</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MenuButtonCommands" data-name="hamilton::types::menubuttoncommands">
+      <a href="../../Hamilton/Types/MenuButtonCommands.html">MenuButtonCommands</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MenuButtonDefault" data-name="hamilton::types::menubuttondefault">
+      <a href="../../Hamilton/Types/MenuButtonDefault.html">MenuButtonDefault</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MenuButtonWebApp" data-name="hamilton::types::menubuttonwebapp">
+      <a href="../../Hamilton/Types/MenuButtonWebApp.html">MenuButtonWebApp</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Message" data-name="hamilton::types::message">
+      <a href="../../Hamilton/Types/Message.html">Message</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageAutoDeleteTimerChanged" data-name="hamilton::types::messageautodeletetimerchanged">
+      <a href="../../Hamilton/Types/MessageAutoDeleteTimerChanged.html">MessageAutoDeleteTimerChanged</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageEntity" data-name="hamilton::types::messageentity">
+      <a href="../../Hamilton/Types/MessageEntity.html">MessageEntity</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageId" data-name="hamilton::types::messageid">
+      <a href="../../Hamilton/Types/MessageId.html">MessageId</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageOrigin" data-name="hamilton::types::messageorigin">
+      <a href="../../Hamilton/Types/MessageOrigin.html">MessageOrigin</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageOriginChannel" data-name="hamilton::types::messageoriginchannel">
+      <a href="../../Hamilton/Types/MessageOriginChannel.html">MessageOriginChannel</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageOriginHiddenUser" data-name="hamilton::types::messageoriginhiddenuser">
+      <a href="../../Hamilton/Types/MessageOriginHiddenUser.html">MessageOriginHiddenUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageOriginUser" data-name="hamilton::types::messageoriginuser">
+      <a href="../../Hamilton/Types/MessageOriginUser.html">MessageOriginUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageReactionCountUpdated" data-name="hamilton::types::messagereactioncountupdated">
+      <a href="../../Hamilton/Types/MessageReactionCountUpdated.html">MessageReactionCountUpdated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageReactionUpdated" data-name="hamilton::types::messagereactionupdated">
+      <a href="../../Hamilton/Types/MessageReactionUpdated.html">MessageReactionUpdated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/OrderInfo" data-name="hamilton::types::orderinfo">
+      <a href="../../Hamilton/Types/OrderInfo.html">OrderInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/OwnedGift" data-name="hamilton::types::ownedgift">
+      <a href="../../Hamilton/Types/OwnedGift.html">OwnedGift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/OwnedGiftRegular" data-name="hamilton::types::ownedgiftregular">
+      <a href="../../Hamilton/Types/OwnedGiftRegular.html">OwnedGiftRegular</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/OwnedGifts" data-name="hamilton::types::ownedgifts">
+      <a href="../../Hamilton/Types/OwnedGifts.html">OwnedGifts</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/OwnedGiftUnique" data-name="hamilton::types::ownedgiftunique">
+      <a href="../../Hamilton/Types/OwnedGiftUnique.html">OwnedGiftUnique</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMedia" data-name="hamilton::types::paidmedia">
+      <a href="../../Hamilton/Types/PaidMedia.html">PaidMedia</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaInfo" data-name="hamilton::types::paidmediainfo">
+      <a href="../../Hamilton/Types/PaidMediaInfo.html">PaidMediaInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaPhoto" data-name="hamilton::types::paidmediaphoto">
+      <a href="../../Hamilton/Types/PaidMediaPhoto.html">PaidMediaPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaPreview" data-name="hamilton::types::paidmediapreview">
+      <a href="../../Hamilton/Types/PaidMediaPreview.html">PaidMediaPreview</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaPurchased" data-name="hamilton::types::paidmediapurchased">
+      <a href="../../Hamilton/Types/PaidMediaPurchased.html">PaidMediaPurchased</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaVideo" data-name="hamilton::types::paidmediavideo">
+      <a href="../../Hamilton/Types/PaidMediaVideo.html">PaidMediaVideo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMessagePriceChanged" data-name="hamilton::types::paidmessagepricechanged">
+      <a href="../../Hamilton/Types/PaidMessagePriceChanged.html">PaidMessagePriceChanged</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportData" data-name="hamilton::types::passportdata">
+      <a href="../../Hamilton/Types/PassportData.html">PassportData</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementError" data-name="hamilton::types::passportelementerror">
+      <a href="../../Hamilton/Types/PassportElementError.html">PassportElementError</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorDataField" data-name="hamilton::types::passportelementerrordatafield">
+      <a href="../../Hamilton/Types/PassportElementErrorDataField.html">PassportElementErrorDataField</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorFile" data-name="hamilton::types::passportelementerrorfile">
+      <a href="../../Hamilton/Types/PassportElementErrorFile.html">PassportElementErrorFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorFiles" data-name="hamilton::types::passportelementerrorfiles">
+      <a href="../../Hamilton/Types/PassportElementErrorFiles.html">PassportElementErrorFiles</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorFrontSide" data-name="hamilton::types::passportelementerrorfrontside">
+      <a href="../../Hamilton/Types/PassportElementErrorFrontSide.html">PassportElementErrorFrontSide</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorReverseSide" data-name="hamilton::types::passportelementerrorreverseside">
+      <a href="../../Hamilton/Types/PassportElementErrorReverseSide.html">PassportElementErrorReverseSide</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorSelfie" data-name="hamilton::types::passportelementerrorselfie">
+      <a href="../../Hamilton/Types/PassportElementErrorSelfie.html">PassportElementErrorSelfie</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorTranslationFile" data-name="hamilton::types::passportelementerrortranslationfile">
+      <a href="../../Hamilton/Types/PassportElementErrorTranslationFile.html">PassportElementErrorTranslationFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorTranslationFiles" data-name="hamilton::types::passportelementerrortranslationfiles">
+      <a href="../../Hamilton/Types/PassportElementErrorTranslationFiles.html">PassportElementErrorTranslationFiles</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportElementErrorUnspecified" data-name="hamilton::types::passportelementerrorunspecified">
+      <a href="../../Hamilton/Types/PassportElementErrorUnspecified.html">PassportElementErrorUnspecified</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PassportFile" data-name="hamilton::types::passportfile">
+      <a href="../../Hamilton/Types/PassportFile.html">PassportFile</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PhotoSize" data-name="hamilton::types::photosize">
+      <a href="../../Hamilton/Types/PhotoSize.html">PhotoSize</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Poll" data-name="hamilton::types::poll">
+      <a href="../../Hamilton/Types/Poll.html">Poll</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollAnswer" data-name="hamilton::types::pollanswer">
+      <a href="../../Hamilton/Types/PollAnswer.html">PollAnswer</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOption" data-name="hamilton::types::polloption">
+      <a href="../../Hamilton/Types/PollOption.html">PollOption</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PreCheckoutQuery" data-name="hamilton::types::precheckoutquery">
+      <a href="../../Hamilton/Types/PreCheckoutQuery.html">PreCheckoutQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PreparedInlineMessage" data-name="hamilton::types::preparedinlinemessage">
+      <a href="../../Hamilton/Types/PreparedInlineMessage.html">PreparedInlineMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ProximityAlertTriggered" data-name="hamilton::types::proximityalerttriggered">
+      <a href="../../Hamilton/Types/ProximityAlertTriggered.html">ProximityAlertTriggered</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReactionCount" data-name="hamilton::types::reactioncount">
+      <a href="../../Hamilton/Types/ReactionCount.html">ReactionCount</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReactionType" data-name="hamilton::types::reactiontype">
+      <a href="../../Hamilton/Types/ReactionType.html">ReactionType</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReactionTypeCustomEmoji" data-name="hamilton::types::reactiontypecustomemoji">
+      <a href="../../Hamilton/Types/ReactionTypeCustomEmoji.html">ReactionTypeCustomEmoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReactionTypeEmoji" data-name="hamilton::types::reactiontypeemoji">
+      <a href="../../Hamilton/Types/ReactionTypeEmoji.html">ReactionTypeEmoji</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReactionTypePaid" data-name="hamilton::types::reactiontypepaid">
+      <a href="../../Hamilton/Types/ReactionTypePaid.html">ReactionTypePaid</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/RefundedPayment" data-name="hamilton::types::refundedpayment">
+      <a href="../../Hamilton/Types/RefundedPayment.html">RefundedPayment</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReplyKeyboardMarkup" data-name="hamilton::types::replykeyboardmarkup">
+      <a href="../../Hamilton/Types/ReplyKeyboardMarkup.html">ReplyKeyboardMarkup</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReplyKeyboardRemove" data-name="hamilton::types::replykeyboardremove">
+      <a href="../../Hamilton/Types/ReplyKeyboardRemove.html">ReplyKeyboardRemove</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ReplyParameters" data-name="hamilton::types::replyparameters">
+      <a href="../../Hamilton/Types/ReplyParameters.html">ReplyParameters</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ResponseParameters" data-name="hamilton::types::responseparameters">
+      <a href="../../Hamilton/Types/ResponseParameters.html">ResponseParameters</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/RevenueWithdrawalState" data-name="hamilton::types::revenuewithdrawalstate">
+      <a href="../../Hamilton/Types/RevenueWithdrawalState.html">RevenueWithdrawalState</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/RevenueWithdrawalStateFailed" data-name="hamilton::types::revenuewithdrawalstatefailed">
+      <a href="../../Hamilton/Types/RevenueWithdrawalStateFailed.html">RevenueWithdrawalStateFailed</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/RevenueWithdrawalStatePending" data-name="hamilton::types::revenuewithdrawalstatepending">
+      <a href="../../Hamilton/Types/RevenueWithdrawalStatePending.html">RevenueWithdrawalStatePending</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/RevenueWithdrawalStateSucceeded" data-name="hamilton::types::revenuewithdrawalstatesucceeded">
+      <a href="../../Hamilton/Types/RevenueWithdrawalStateSucceeded.html">RevenueWithdrawalStateSucceeded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SentWebAppMessage" data-name="hamilton::types::sentwebappmessage">
+      <a href="../../Hamilton/Types/SentWebAppMessage.html">SentWebAppMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SharedUser" data-name="hamilton::types::shareduser">
+      <a href="../../Hamilton/Types/SharedUser.html">SharedUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ShippingAddress" data-name="hamilton::types::shippingaddress">
+      <a href="../../Hamilton/Types/ShippingAddress.html">ShippingAddress</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ShippingOption" data-name="hamilton::types::shippingoption">
+      <a href="../../Hamilton/Types/ShippingOption.html">ShippingOption</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ShippingQuery" data-name="hamilton::types::shippingquery">
+      <a href="../../Hamilton/Types/ShippingQuery.html">ShippingQuery</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StarAmount" data-name="hamilton::types::staramount">
+      <a href="../../Hamilton/Types/StarAmount.html">StarAmount</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StarTransaction" data-name="hamilton::types::startransaction">
+      <a href="../../Hamilton/Types/StarTransaction.html">StarTransaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StarTransactions" data-name="hamilton::types::startransactions">
+      <a href="../../Hamilton/Types/StarTransactions.html">StarTransactions</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Sticker" data-name="hamilton::types::sticker">
+      <a href="../../Hamilton/Types/Sticker.html">Sticker</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StickerSet" data-name="hamilton::types::stickerset">
+      <a href="../../Hamilton/Types/StickerSet.html">StickerSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Story" data-name="hamilton::types::story">
+      <a href="../../Hamilton/Types/Story.html">Story</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryArea" data-name="hamilton::types::storyarea">
+      <a href="../../Hamilton/Types/StoryArea.html">StoryArea</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaPosition" data-name="hamilton::types::storyareaposition">
+      <a href="../../Hamilton/Types/StoryAreaPosition.html">StoryAreaPosition</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaType" data-name="hamilton::types::storyareatype">
+      <a href="../../Hamilton/Types/StoryAreaType.html">StoryAreaType</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaTypeLink" data-name="hamilton::types::storyareatypelink">
+      <a href="../../Hamilton/Types/StoryAreaTypeLink.html">StoryAreaTypeLink</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaTypeLocation" data-name="hamilton::types::storyareatypelocation">
+      <a href="../../Hamilton/Types/StoryAreaTypeLocation.html">StoryAreaTypeLocation</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaTypeSuggestedReaction" data-name="hamilton::types::storyareatypesuggestedreaction">
+      <a href="../../Hamilton/Types/StoryAreaTypeSuggestedReaction.html">StoryAreaTypeSuggestedReaction</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaTypeUniqueGift" data-name="hamilton::types::storyareatypeuniquegift">
+      <a href="../../Hamilton/Types/StoryAreaTypeUniqueGift.html">StoryAreaTypeUniqueGift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaTypeWeather" data-name="hamilton::types::storyareatypeweather">
+      <a href="../../Hamilton/Types/StoryAreaTypeWeather.html">StoryAreaTypeWeather</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuccessfulPayment" data-name="hamilton::types::successfulpayment">
+      <a href="../../Hamilton/Types/SuccessfulPayment.html">SuccessfulPayment</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostApprovalFailed" data-name="hamilton::types::suggestedpostapprovalfailed">
+      <a href="../../Hamilton/Types/SuggestedPostApprovalFailed.html">SuggestedPostApprovalFailed</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostApproved" data-name="hamilton::types::suggestedpostapproved">
+      <a href="../../Hamilton/Types/SuggestedPostApproved.html">SuggestedPostApproved</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostDeclined" data-name="hamilton::types::suggestedpostdeclined">
+      <a href="../../Hamilton/Types/SuggestedPostDeclined.html">SuggestedPostDeclined</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostInfo" data-name="hamilton::types::suggestedpostinfo">
+      <a href="../../Hamilton/Types/SuggestedPostInfo.html">SuggestedPostInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostPaid" data-name="hamilton::types::suggestedpostpaid">
+      <a href="../../Hamilton/Types/SuggestedPostPaid.html">SuggestedPostPaid</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostParameters" data-name="hamilton::types::suggestedpostparameters">
+      <a href="../../Hamilton/Types/SuggestedPostParameters.html">SuggestedPostParameters</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostPrice" data-name="hamilton::types::suggestedpostprice">
+      <a href="../../Hamilton/Types/SuggestedPostPrice.html">SuggestedPostPrice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostRefunded" data-name="hamilton::types::suggestedpostrefunded">
+      <a href="../../Hamilton/Types/SuggestedPostRefunded.html">SuggestedPostRefunded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/SwitchInlineQueryChosenChat" data-name="hamilton::types::switchinlinequerychosenchat">
+      <a href="../../Hamilton/Types/SwitchInlineQueryChosenChat.html">SwitchInlineQueryChosenChat</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TextQuote" data-name="hamilton::types::textquote">
+      <a href="../../Hamilton/Types/TextQuote.html">TextQuote</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartner" data-name="hamilton::types::transactionpartner">
+      <a href="../../Hamilton/Types/TransactionPartner.html">TransactionPartner</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerAffiliateProgram" data-name="hamilton::types::transactionpartneraffiliateprogram">
+      <a href="../../Hamilton/Types/TransactionPartnerAffiliateProgram.html">TransactionPartnerAffiliateProgram</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerChat" data-name="hamilton::types::transactionpartnerchat">
+      <a href="../../Hamilton/Types/TransactionPartnerChat.html">TransactionPartnerChat</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerFragment" data-name="hamilton::types::transactionpartnerfragment">
+      <a href="../../Hamilton/Types/TransactionPartnerFragment.html">TransactionPartnerFragment</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerOther" data-name="hamilton::types::transactionpartnerother">
+      <a href="../../Hamilton/Types/TransactionPartnerOther.html">TransactionPartnerOther</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerTelegramAds" data-name="hamilton::types::transactionpartnertelegramads">
+      <a href="../../Hamilton/Types/TransactionPartnerTelegramAds.html">TransactionPartnerTelegramAds</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerTelegramApi" data-name="hamilton::types::transactionpartnertelegramapi">
+      <a href="../../Hamilton/Types/TransactionPartnerTelegramApi.html">TransactionPartnerTelegramApi</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerUser" data-name="hamilton::types::transactionpartneruser">
+      <a href="../../Hamilton/Types/TransactionPartnerUser.html">TransactionPartnerUser</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGift" data-name="hamilton::types::uniquegift">
+      <a href="../../Hamilton/Types/UniqueGift.html">UniqueGift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftBackdrop" data-name="hamilton::types::uniquegiftbackdrop">
+      <a href="../../Hamilton/Types/UniqueGiftBackdrop.html">UniqueGiftBackdrop</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftBackdropColors" data-name="hamilton::types::uniquegiftbackdropcolors">
+      <a href="../../Hamilton/Types/UniqueGiftBackdropColors.html">UniqueGiftBackdropColors</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
+      <a href="../../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftModel" data-name="hamilton::types::uniquegiftmodel">
+      <a href="../../Hamilton/Types/UniqueGiftModel.html">UniqueGiftModel</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftSymbol" data-name="hamilton::types::uniquegiftsymbol">
+      <a href="../../Hamilton/Types/UniqueGiftSymbol.html">UniqueGiftSymbol</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Update" data-name="hamilton::types::update">
+      <a href="../../Hamilton/Types/Update.html">Update</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/User" data-name="hamilton::types::user">
+      <a href="../../Hamilton/Types/User.html">User</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserChatBoosts" data-name="hamilton::types::userchatboosts">
+      <a href="../../Hamilton/Types/UserChatBoosts.html">UserChatBoosts</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
+      <a href="../../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UsersShared" data-name="hamilton::types::usersshared">
+      <a href="../../Hamilton/Types/UsersShared.html">UsersShared</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Venue" data-name="hamilton::types::venue">
+      <a href="../../Hamilton/Types/Venue.html">Venue</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Video" data-name="hamilton::types::video">
+      <a href="../../Hamilton/Types/Video.html">Video</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoChatEnded" data-name="hamilton::types::videochatended">
+      <a href="../../Hamilton/Types/VideoChatEnded.html">VideoChatEnded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoChatParticipantsInvited" data-name="hamilton::types::videochatparticipantsinvited">
+      <a href="../../Hamilton/Types/VideoChatParticipantsInvited.html">VideoChatParticipantsInvited</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoChatScheduled" data-name="hamilton::types::videochatscheduled">
+      <a href="../../Hamilton/Types/VideoChatScheduled.html">VideoChatScheduled</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoChatStarted" data-name="hamilton::types::videochatstarted">
+      <a href="../../Hamilton/Types/VideoChatStarted.html">VideoChatStarted</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoNote" data-name="hamilton::types::videonote">
+      <a href="../../Hamilton/Types/VideoNote.html">VideoNote</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/Voice" data-name="hamilton::types::voice">
+      <a href="../../Hamilton/Types/Voice.html">Voice</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/WebAppData" data-name="hamilton::types::webappdata">
+      <a href="../../Hamilton/Types/WebAppData.html">WebAppData</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/WebAppInfo" data-name="hamilton::types::webappinfo">
+      <a href="../../Hamilton/Types/WebAppInfo.html">WebAppInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/WriteAccessAllowed" data-name="hamilton::types::writeaccessallowed">
+      <a href="../../Hamilton/Types/WriteAccessAllowed.html">WriteAccessAllowed</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">
+    class
+  </span> Hamilton::<wbr>Types::<wbr>ChatFullInfo
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/ChatFullInfo.html">Hamilton::Types::ChatFullInfo</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>This object contains full information about a chat.</p>
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      types/chat_full_info.cr
+    
+    <br/>
+  
+
+
+
+
+
+  
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+  </ul>
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#accent_color_id%3AInt32-instance-method" class="signature"><strong>#accent_color_id</strong> : Int32</a>
+        
+          <div class="summary"><p>Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accent_color_id%3D%28accent_color_id%3AInt32%29-instance-method" class="signature"><strong>#accent_color_id=</strong>(accent_color_id : Int32)</a>
+        
+          <div class="summary"><p>Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accepted_gift_types%3AHamilton%3A%3ATypes%3A%3AAcceptedGiftTypes-instance-method" class="signature"><strong>#accepted_gift_types</strong> : Hamilton::Types::AcceptedGiftTypes</a>
+        
+          <div class="summary"><p>Information about types of gifts that are accepted by the chat or by the corresponding user for private chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#accepted_gift_types%3D%28accepted_gift_types%3AHamilton%3A%3ATypes%3A%3AAcceptedGiftTypes%29-instance-method" class="signature"><strong>#accepted_gift_types=</strong>(accepted_gift_types : Hamilton::Types::AcceptedGiftTypes)</a>
+        
+          <div class="summary"><p>Information about types of gifts that are accepted by the chat or by the corresponding user for private chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#active_usernames%3AArray%28String%29%7CNil-instance-method" class="signature"><strong>#active_usernames</strong> : Array(String) | Nil</a>
+        
+          <div class="summary"><p>If non-empty, the list of all active chat usernames; for private chats, supergroups and channels.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#active_usernames%3D%28active_usernames%3AArray%28String%29%7CNil%29-instance-method" class="signature"><strong>#active_usernames=</strong>(active_usernames : Array(String) | Nil)</a>
+        
+          <div class="summary"><p>If non-empty, the list of all active chat usernames; for private chats, supergroups and channels.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#after_initialize-instance-method" class="signature"><strong>#after_initialize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#available_reactions%3AArray%28Hamilton%3A%3ATypes%3A%3AReactionType%29%7CNil-instance-method" class="signature"><strong>#available_reactions</strong> : Array(Hamilton::Types::ReactionType) | Nil</a>
+        
+          <div class="summary"><p>List of available reactions allowed in the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#available_reactions%3D%28available_reactions%3AArray%28Hamilton%3A%3ATypes%3A%3AReactionType%29%7CNil%29-instance-method" class="signature"><strong>#available_reactions=</strong>(available_reactions : Array(Hamilton::Types::ReactionType) | Nil)</a>
+        
+          <div class="summary"><p>List of available reactions allowed in the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#background_custom_emoji_id%3AString%7CNil-instance-method" class="signature"><strong>#background_custom_emoji_id</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#background_custom_emoji_id%3D%28background_custom_emoji_id%3AString%7CNil%29-instance-method" class="signature"><strong>#background_custom_emoji_id=</strong>(background_custom_emoji_id : String | Nil)</a>
+        
+          <div class="summary"><p>Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bio%3AString%7CNil-instance-method" class="signature"><strong>#bio</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Bio of the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#bio%3D%28bio%3AString%7CNil%29-instance-method" class="signature"><strong>#bio=</strong>(bio : String | Nil)</a>
+        
+          <div class="summary"><p>Bio of the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#birthdate%3AHamilton%3A%3ATypes%3A%3ABirthdate%7CNil-instance-method" class="signature"><strong>#birthdate</strong> : Hamilton::Types::Birthdate | Nil</a>
+        
+          <div class="summary"><p>For private chats, the date of birth of the user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#birthdate%3D%28birthdate%3AHamilton%3A%3ATypes%3A%3ABirthdate%7CNil%29-instance-method" class="signature"><strong>#birthdate=</strong>(birthdate : Hamilton::Types::Birthdate | Nil)</a>
+        
+          <div class="summary"><p>For private chats, the date of birth of the user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#business_intro%3AHamilton%3A%3ATypes%3A%3ABusinessIntro%7CNil-instance-method" class="signature"><strong>#business_intro</strong> : Hamilton::Types::BusinessIntro | Nil</a>
+        
+          <div class="summary"><p>For private chats with business accounts, the intro of the business.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#business_intro%3D%28business_intro%3AHamilton%3A%3ATypes%3A%3ABusinessIntro%7CNil%29-instance-method" class="signature"><strong>#business_intro=</strong>(business_intro : Hamilton::Types::BusinessIntro | Nil)</a>
+        
+          <div class="summary"><p>For private chats with business accounts, the intro of the business.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#business_location%3AHamilton%3A%3ATypes%3A%3ABusinessLocation%7CNil-instance-method" class="signature"><strong>#business_location</strong> : Hamilton::Types::BusinessLocation | Nil</a>
+        
+          <div class="summary"><p>For private chats with business accounts, the location of the business.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#business_location%3D%28business_location%3AHamilton%3A%3ATypes%3A%3ABusinessLocation%7CNil%29-instance-method" class="signature"><strong>#business_location=</strong>(business_location : Hamilton::Types::BusinessLocation | Nil)</a>
+        
+          <div class="summary"><p>For private chats with business accounts, the location of the business.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#business_opening_hours%3AHamilton%3A%3ATypes%3A%3ABusinessOpeningHours%7CNil-instance-method" class="signature"><strong>#business_opening_hours</strong> : Hamilton::Types::BusinessOpeningHours | Nil</a>
+        
+          <div class="summary"><p>For private chats with business accounts, the opening hours of the business.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#business_opening_hours%3D%28business_opening_hours%3AHamilton%3A%3ATypes%3A%3ABusinessOpeningHours%7CNil%29-instance-method" class="signature"><strong>#business_opening_hours=</strong>(business_opening_hours : Hamilton::Types::BusinessOpeningHours | Nil)</a>
+        
+          <div class="summary"><p>For private chats with business accounts, the opening hours of the business.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#can_send_paid_media%3ABool%7CNil-instance-method" class="signature"><strong>#can_send_paid_media</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if paid media messages can be sent or forwarded to the channel chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#can_send_paid_media%3D%28can_send_paid_media%3ABool%7CNil%29-instance-method" class="signature"><strong>#can_send_paid_media=</strong>(can_send_paid_media : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if paid media messages can be sent or forwarded to the channel chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#can_set_sticker_set%3ABool%7CNil-instance-method" class="signature"><strong>#can_set_sticker_set</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if the bot can change the group sticker set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#can_set_sticker_set%3D%28can_set_sticker_set%3ABool%7CNil%29-instance-method" class="signature"><strong>#can_set_sticker_set=</strong>(can_set_sticker_set : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if the bot can change the group sticker set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#custom_emoji_sticker_set_name%3AString%7CNil-instance-method" class="signature"><strong>#custom_emoji_sticker_set_name</strong> : String | Nil</a>
+        
+          <div class="summary"><p>For supergroups, the name of the group's custom emoji sticker set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#custom_emoji_sticker_set_name%3D%28custom_emoji_sticker_set_name%3AString%7CNil%29-instance-method" class="signature"><strong>#custom_emoji_sticker_set_name=</strong>(custom_emoji_sticker_set_name : String | Nil)</a>
+        
+          <div class="summary"><p>For supergroups, the name of the group's custom emoji sticker set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#description%3AString%7CNil-instance-method" class="signature"><strong>#description</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Description, for groups, supergroups and channel chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#description%3D%28description%3AString%7CNil%29-instance-method" class="signature"><strong>#description=</strong>(description : String | Nil)</a>
+        
+          <div class="summary"><p>Description, for groups, supergroups and channel chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emoji_status_custom_emoji_id%3AString%7CNil-instance-method" class="signature"><strong>#emoji_status_custom_emoji_id</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Custom emoji identifier of the emoji status of the chat or the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emoji_status_custom_emoji_id%3D%28emoji_status_custom_emoji_id%3AString%7CNil%29-instance-method" class="signature"><strong>#emoji_status_custom_emoji_id=</strong>(emoji_status_custom_emoji_id : String | Nil)</a>
+        
+          <div class="summary"><p>Custom emoji identifier of the emoji status of the chat or the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emoji_status_expiration_date%3AInt32%7CNil-instance-method" class="signature"><strong>#emoji_status_expiration_date</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Expiration date of the emoji status of the chat or the other party in a private chat, in Unix time, if any.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#emoji_status_expiration_date%3D%28emoji_status_expiration_date%3AInt32%7CNil%29-instance-method" class="signature"><strong>#emoji_status_expiration_date=</strong>(emoji_status_expiration_date : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Expiration date of the emoji status of the chat or the other party in a private chat, in Unix time, if any.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first_name%3AString%7CNil-instance-method" class="signature"><strong>#first_name</strong> : String | Nil</a>
+        
+          <div class="summary"><p>First name of the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#first_name%3D%28first_name%3AString%7CNil%29-instance-method" class="signature"><strong>#first_name=</strong>(first_name : String | Nil)</a>
+        
+          <div class="summary"><p>First name of the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_aggressive_anti_spam_enabled%3ABool%7CNil-instance-method" class="signature"><strong>#has_aggressive_anti_spam_enabled</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if aggressive anti-spam checks are enabled in the supergroup.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_aggressive_anti_spam_enabled%3D%28has_aggressive_anti_spam_enabled%3ABool%7CNil%29-instance-method" class="signature"><strong>#has_aggressive_anti_spam_enabled=</strong>(has_aggressive_anti_spam_enabled : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if aggressive anti-spam checks are enabled in the supergroup.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_hidden_members%3ABool%7CNil-instance-method" class="signature"><strong>#has_hidden_members</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if non-administrators can only get the list of bots and administrators in the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_hidden_members%3D%28has_hidden_members%3ABool%7CNil%29-instance-method" class="signature"><strong>#has_hidden_members=</strong>(has_hidden_members : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if non-administrators can only get the list of bots and administrators in the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_private_forwards%3ABool%7CNil-instance-method" class="signature"><strong>#has_private_forwards</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if privacy settings of the other party in the private chat allows to use tg://user?id=&lt;user_id&gt; links only in chats with the user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_private_forwards%3D%28has_private_forwards%3ABool%7CNil%29-instance-method" class="signature"><strong>#has_private_forwards=</strong>(has_private_forwards : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if privacy settings of the other party in the private chat allows to use tg://user?id=&lt;user_id&gt; links only in chats with the user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_protected_content%3ABool%7CNil-instance-method" class="signature"><strong>#has_protected_content</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if messages from the chat can't be forwarded to other chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_protected_content%3D%28has_protected_content%3ABool%7CNil%29-instance-method" class="signature"><strong>#has_protected_content=</strong>(has_protected_content : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if messages from the chat can't be forwarded to other chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_restricted_voice_and_video_messages%3ABool%7CNil-instance-method" class="signature"><strong>#has_restricted_voice_and_video_messages</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if the privacy settings of the other party restrict sending voice and video note messages in the private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_restricted_voice_and_video_messages%3D%28has_restricted_voice_and_video_messages%3ABool%7CNil%29-instance-method" class="signature"><strong>#has_restricted_voice_and_video_messages=</strong>(has_restricted_voice_and_video_messages : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if the privacy settings of the other party restrict sending voice and video note messages in the private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_visible_history%3ABool%7CNil-instance-method" class="signature"><strong>#has_visible_history</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if new chat members will have access to old messages; available only to chat administrators.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_visible_history%3D%28has_visible_history%3ABool%7CNil%29-instance-method" class="signature"><strong>#has_visible_history=</strong>(has_visible_history : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if new chat members will have access to old messages; available only to chat administrators.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3AInt64-instance-method" class="signature"><strong>#id</strong> : Int64</a>
+        
+          <div class="summary"><p>Unique identifier for this chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#id%3D%28id%3AInt64%29-instance-method" class="signature"><strong>#id=</strong>(id : Int64)</a>
+        
+          <div class="summary"><p>Unique identifier for this chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invite_link%3AString%7CNil-instance-method" class="signature"><strong>#invite_link</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Primary invite link, for groups, supergroups and channel chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#invite_link%3D%28invite_link%3AString%7CNil%29-instance-method" class="signature"><strong>#invite_link=</strong>(invite_link : String | Nil)</a>
+        
+          <div class="summary"><p>Primary invite link, for groups, supergroups and channel chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_direct_messaegs%3ABool%7CNil-instance-method" class="signature"><strong>#is_direct_messaegs</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if the chat is the direct messages chat of a channel.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_direct_messaegs%3D%28is_direct_messaegs%3ABool%7CNil%29-instance-method" class="signature"><strong>#is_direct_messaegs=</strong>(is_direct_messaegs : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if the chat is the direct messages chat of a channel.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_forum%3ABool%7CNil-instance-method" class="signature"><strong>#is_forum</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if the supergroup chat is a forum (has topics enabled).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_forum%3D%28is_forum%3ABool%7CNil%29-instance-method" class="signature"><strong>#is_forum=</strong>(is_forum : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if the supergroup chat is a forum (has topics enabled).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#join_by_request%3ABool%7CNil-instance-method" class="signature"><strong>#join_by_request</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if all users directly joining the supergroup without using an invite link need to be approved by supergroup administrators.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#join_by_request%3D%28join_by_request%3ABool%7CNil%29-instance-method" class="signature"><strong>#join_by_request=</strong>(join_by_request : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if all users directly joining the supergroup without using an invite link need to be approved by supergroup administrators.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#join_to_send_messages%3ABool%7CNil-instance-method" class="signature"><strong>#join_to_send_messages</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if users need to join the supergroup before they can send messages.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#join_to_send_messages%3D%28join_to_send_messages%3ABool%7CNil%29-instance-method" class="signature"><strong>#join_to_send_messages=</strong>(join_to_send_messages : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if users need to join the supergroup before they can send messages.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_name%3AString%7CNil-instance-method" class="signature"><strong>#last_name</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Last name of the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_name%3D%28last_name%3AString%7CNil%29-instance-method" class="signature"><strong>#last_name=</strong>(last_name : String | Nil)</a>
+        
+          <div class="summary"><p>Last name of the other party in a private chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#linked_chat_id%3AInt64%7CNil-instance-method" class="signature"><strong>#linked_chat_id</strong> : Int64 | Nil</a>
+        
+          <div class="summary"><p>Unique identifier for the linked chat, i.e.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#linked_chat_id%3D%28linked_chat_id%3AInt64%7CNil%29-instance-method" class="signature"><strong>#linked_chat_id=</strong>(linked_chat_id : Int64 | Nil)</a>
+        
+          <div class="summary"><p>Unique identifier for the linked chat, i.e.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location%3AHamilton%3A%3ATypes%3A%3AChatLocation%7CNil-instance-method" class="signature"><strong>#location</strong> : Hamilton::Types::ChatLocation | Nil</a>
+        
+          <div class="summary"><p>For supergroups, the location to which the supergroup is connected.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#location%3D%28location%3AHamilton%3A%3ATypes%3A%3AChatLocation%7CNil%29-instance-method" class="signature"><strong>#location=</strong>(location : Hamilton::Types::ChatLocation | Nil)</a>
+        
+          <div class="summary"><p>For supergroups, the location to which the supergroup is connected.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_reaction_count%3AInt32-instance-method" class="signature"><strong>#max_reaction_count</strong> : Int32</a>
+        
+          <div class="summary"><p>The maximum number of reactions that can be set on a message in the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_reaction_count%3D%28max_reaction_count%3AInt32%29-instance-method" class="signature"><strong>#max_reaction_count=</strong>(max_reaction_count : Int32)</a>
+        
+          <div class="summary"><p>The maximum number of reactions that can be set on a message in the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#message_auto_delete_time%3AInt32%7CNil-instance-method" class="signature"><strong>#message_auto_delete_time</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>The time after which all messages sent to the chat will be automatically deleted; in seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#message_auto_delete_time%3D%28message_auto_delete_time%3AInt32%7CNil%29-instance-method" class="signature"><strong>#message_auto_delete_time=</strong>(message_auto_delete_time : Int32 | Nil)</a>
+        
+          <div class="summary"><p>The time after which all messages sent to the chat will be automatically deleted; in seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_nil_fields%3AArray%28String%29-instance-method" class="signature"><strong>#non_nil_fields</strong> : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="signature"><strong>#non_nil_fields=</strong>(non_nil_fields : Array(String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method" class="signature"><strong>#parent_chat</strong> : Hamilton::Types::Chat | Nil</a>
+        
+          <div class="summary"><p>Information about the corresponding channel chat; for direct messages chats only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parent_chat%3D%28parent_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method" class="signature"><strong>#parent_chat=</strong>(parent_chat : Hamilton::Types::Chat | Nil)</a>
+        
+          <div class="summary"><p>Information about the corresponding channel chat; for direct messages chats only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#permissions%3AHamilton%3A%3ATypes%3A%3AChatPermissions%7CNil-instance-method" class="signature"><strong>#permissions</strong> : Hamilton::Types::ChatPermissions | Nil</a>
+        
+          <div class="summary"><p>Default chat member permissions, for groups and supergroups.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#permissions%3D%28permissions%3AHamilton%3A%3ATypes%3A%3AChatPermissions%7CNil%29-instance-method" class="signature"><strong>#permissions=</strong>(permissions : Hamilton::Types::ChatPermissions | Nil)</a>
+        
+          <div class="summary"><p>Default chat member permissions, for groups and supergroups.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#personal_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method" class="signature"><strong>#personal_chat</strong> : Hamilton::Types::Chat | Nil</a>
+        
+          <div class="summary"><p>For private chats, the personal channel of the user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#personal_chat%3D%28personal_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method" class="signature"><strong>#personal_chat=</strong>(personal_chat : Hamilton::Types::Chat | Nil)</a>
+        
+          <div class="summary"><p>For private chats, the personal channel of the user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#photo%3AHamilton%3A%3ATypes%3A%3AChatPhoto%7CNil-instance-method" class="signature"><strong>#photo</strong> : Hamilton::Types::ChatPhoto | Nil</a>
+        
+          <div class="summary"><p>Chat photo.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#photo%3D%28photo%3AHamilton%3A%3ATypes%3A%3AChatPhoto%7CNil%29-instance-method" class="signature"><strong>#photo=</strong>(photo : Hamilton::Types::ChatPhoto | Nil)</a>
+        
+          <div class="summary"><p>Chat photo.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pinned_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil-instance-method" class="signature"><strong>#pinned_message</strong> : Hamilton::Types::Message | Nil</a>
+        
+          <div class="summary"><p>The most recent pinned message (by sending date).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pinned_message%3D%28pinned_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil%29-instance-method" class="signature"><strong>#pinned_message=</strong>(pinned_message : Hamilton::Types::Message | Nil)</a>
+        
+          <div class="summary"><p>The most recent pinned message (by sending date).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#profile_accent_color_id%3AInt32%7CNil-instance-method" class="signature"><strong>#profile_accent_color_id</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Identifier of the accent color for the chat's profile background.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#profile_accent_color_id%3D%28profile_accent_color_id%3AInt32%7CNil%29-instance-method" class="signature"><strong>#profile_accent_color_id=</strong>(profile_accent_color_id : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Identifier of the accent color for the chat's profile background.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#profile_background_custom_emoji_id%3AString%7CNil-instance-method" class="signature"><strong>#profile_background_custom_emoji_id</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Custom emoji identifier of the emoji chosen by the chat for its profile background.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#profile_background_custom_emoji_id%3D%28profile_background_custom_emoji_id%3AString%7CNil%29-instance-method" class="signature"><strong>#profile_background_custom_emoji_id=</strong>(profile_background_custom_emoji_id : String | Nil)</a>
+        
+          <div class="summary"><p>Custom emoji identifier of the emoji chosen by the chat for its profile background.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#slow_mode_delay%3AInt32%7CNil-instance-method" class="signature"><strong>#slow_mode_delay</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#slow_mode_delay%3D%28slow_mode_delay%3AInt32%7CNil%29-instance-method" class="signature"><strong>#slow_mode_delay=</strong>(slow_mode_delay : Int32 | Nil)</a>
+        
+          <div class="summary"><p>For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sticker_set_name%3AString%7CNil-instance-method" class="signature"><strong>#sticker_set_name</strong> : String | Nil</a>
+        
+          <div class="summary"><p>For supergroups, name of the group sticker set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sticker_set_name%3D%28sticker_set_name%3AString%7CNil%29-instance-method" class="signature"><strong>#sticker_set_name=</strong>(sticker_set_name : String | Nil)</a>
+        
+          <div class="summary"><p>For supergroups, name of the group sticker set.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#title%3AString%7CNil-instance-method" class="signature"><strong>#title</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Title, for supergroups, channels and group chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#title%3D%28title%3AString%7CNil%29-instance-method" class="signature"><strong>#title=</strong>(title : String | Nil)</a>
+        
+          <div class="summary"><p>Title, for supergroups, channels and group chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type%3AString-instance-method" class="signature"><strong>#type</strong> : String</a>
+        
+          <div class="summary"><p>Type of the chat, can be either “private”, “group”, “supergroup” or “channel”.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
+        
+          <div class="summary"><p>Type of the chat, can be either “private”, “group”, “supergroup” or “channel”.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unrestrict_boost_count%3AInt32%7CNil-instance-method" class="signature"><strong>#unrestrict_boost_count</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unrestrict_boost_count%3D%28unrestrict_boost_count%3AInt32%7CNil%29-instance-method" class="signature"><strong>#unrestrict_boost_count=</strong>(unrestrict_boost_count : Int32 | Nil)</a>
+        
+          <div class="summary"><p>For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#username%3AString%7CNil-instance-method" class="signature"><strong>#username</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Username, for private chats, supergroups and channels if available.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#username%3D%28username%3AString%7CNil%29-instance-method" class="signature"><strong>#username=</strong>(username : String | Nil)</a>
+        
+          <div class="summary"><p>Username, for private chats, supergroups and channels if available.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <div class="methods-inherited">
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+  </div>
+
+  
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+  
+
+  
+
+  
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="accent_color_id:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>accent_color_id</strong> : Int32
+
+        <a class="method-permalink" href="#accent_color_id%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accent_color_id=(accent_color_id:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>accent_color_id=</strong>(accent_color_id : Int32)
+
+        <a class="method-permalink" href="#accent_color_id%3D%28accent_color_id%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Identifier of the accent color for the chat name and backgrounds of the chat photo, reply header, and link preview.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accepted_gift_types:Hamilton::Types::AcceptedGiftTypes-instance-method">
+      <div class="signature">
+        
+        def <strong>accepted_gift_types</strong> : <a href="../../Hamilton/Types/AcceptedGiftTypes.html">Hamilton::Types::AcceptedGiftTypes</a>
+
+        <a class="method-permalink" href="#accepted_gift_types%3AHamilton%3A%3ATypes%3A%3AAcceptedGiftTypes-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Information about types of gifts that are accepted by the chat or by the corresponding user for private chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="accepted_gift_types=(accepted_gift_types:Hamilton::Types::AcceptedGiftTypes)-instance-method">
+      <div class="signature">
+        
+        def <strong>accepted_gift_types=</strong>(accepted_gift_types : <a href="../../Hamilton/Types/AcceptedGiftTypes.html">Hamilton::Types::AcceptedGiftTypes</a>)
+
+        <a class="method-permalink" href="#accepted_gift_types%3D%28accepted_gift_types%3AHamilton%3A%3ATypes%3A%3AAcceptedGiftTypes%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Information about types of gifts that are accepted by the chat or by the corresponding user for private chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="active_usernames:Array(String)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>active_usernames</strong> : Array(String) | Nil
+
+        <a class="method-permalink" href="#active_usernames%3AArray%28String%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If non-empty, the list of all active chat usernames; for private chats, supergroups and channels.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="active_usernames=(active_usernames:Array(String)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>active_usernames=</strong>(active_usernames : Array(String) | Nil)
+
+        <a class="method-permalink" href="#active_usernames%3D%28active_usernames%3AArray%28String%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If non-empty, the list of all active chat usernames; for private chats, supergroups and channels.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="after_initialize-instance-method">
+      <div class="signature">
+        
+        def <strong>after_initialize</strong>
+
+        <a class="method-permalink" href="#after_initialize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="available_reactions:Array(Hamilton::Types::ReactionType)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>available_reactions</strong> : Array(<a href="../../Hamilton/Types/ReactionType.html">Hamilton::Types::ReactionType</a>) | Nil
+
+        <a class="method-permalink" href="#available_reactions%3AArray%28Hamilton%3A%3ATypes%3A%3AReactionType%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List of available reactions allowed in the chat. If omitted, then all emoji reactions are allowed.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="available_reactions=(available_reactions:Array(Hamilton::Types::ReactionType)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>available_reactions=</strong>(available_reactions : Array(<a href="../../Hamilton/Types/ReactionType.html">Hamilton::Types::ReactionType</a>) | Nil)
+
+        <a class="method-permalink" href="#available_reactions%3D%28available_reactions%3AArray%28Hamilton%3A%3ATypes%3A%3AReactionType%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List of available reactions allowed in the chat. If omitted, then all emoji reactions are allowed.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="background_custom_emoji_id:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>background_custom_emoji_id</strong> : String | Nil
+
+        <a class="method-permalink" href="#background_custom_emoji_id%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="background_custom_emoji_id=(background_custom_emoji_id:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>background_custom_emoji_id=</strong>(background_custom_emoji_id : String | Nil)
+
+        <a class="method-permalink" href="#background_custom_emoji_id%3D%28background_custom_emoji_id%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Custom emoji identifier of the emoji chosen by the chat for the reply header and link preview background.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bio:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>bio</strong> : String | Nil
+
+        <a class="method-permalink" href="#bio%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Bio of the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="bio=(bio:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>bio=</strong>(bio : String | Nil)
+
+        <a class="method-permalink" href="#bio%3D%28bio%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Bio of the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="birthdate:Hamilton::Types::Birthdate|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>birthdate</strong> : <a href="../../Hamilton/Types/Birthdate.html">Hamilton::Types::Birthdate</a> | Nil
+
+        <a class="method-permalink" href="#birthdate%3AHamilton%3A%3ATypes%3A%3ABirthdate%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats, the date of birth of the user.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="birthdate=(birthdate:Hamilton::Types::Birthdate|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>birthdate=</strong>(birthdate : <a href="../../Hamilton/Types/Birthdate.html">Hamilton::Types::Birthdate</a> | Nil)
+
+        <a class="method-permalink" href="#birthdate%3D%28birthdate%3AHamilton%3A%3ATypes%3A%3ABirthdate%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats, the date of birth of the user.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="business_intro:Hamilton::Types::BusinessIntro|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>business_intro</strong> : <a href="../../Hamilton/Types/BusinessIntro.html">Hamilton::Types::BusinessIntro</a> | Nil
+
+        <a class="method-permalink" href="#business_intro%3AHamilton%3A%3ATypes%3A%3ABusinessIntro%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats with business accounts, the intro of the business.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="business_intro=(business_intro:Hamilton::Types::BusinessIntro|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>business_intro=</strong>(business_intro : <a href="../../Hamilton/Types/BusinessIntro.html">Hamilton::Types::BusinessIntro</a> | Nil)
+
+        <a class="method-permalink" href="#business_intro%3D%28business_intro%3AHamilton%3A%3ATypes%3A%3ABusinessIntro%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats with business accounts, the intro of the business.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="business_location:Hamilton::Types::BusinessLocation|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>business_location</strong> : <a href="../../Hamilton/Types/BusinessLocation.html">Hamilton::Types::BusinessLocation</a> | Nil
+
+        <a class="method-permalink" href="#business_location%3AHamilton%3A%3ATypes%3A%3ABusinessLocation%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats with business accounts, the location of the business.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="business_location=(business_location:Hamilton::Types::BusinessLocation|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>business_location=</strong>(business_location : <a href="../../Hamilton/Types/BusinessLocation.html">Hamilton::Types::BusinessLocation</a> | Nil)
+
+        <a class="method-permalink" href="#business_location%3D%28business_location%3AHamilton%3A%3ATypes%3A%3ABusinessLocation%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats with business accounts, the location of the business.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="business_opening_hours:Hamilton::Types::BusinessOpeningHours|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>business_opening_hours</strong> : <a href="../../Hamilton/Types/BusinessOpeningHours.html">Hamilton::Types::BusinessOpeningHours</a> | Nil
+
+        <a class="method-permalink" href="#business_opening_hours%3AHamilton%3A%3ATypes%3A%3ABusinessOpeningHours%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats with business accounts, the opening hours of the business.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="business_opening_hours=(business_opening_hours:Hamilton::Types::BusinessOpeningHours|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>business_opening_hours=</strong>(business_opening_hours : <a href="../../Hamilton/Types/BusinessOpeningHours.html">Hamilton::Types::BusinessOpeningHours</a> | Nil)
+
+        <a class="method-permalink" href="#business_opening_hours%3D%28business_opening_hours%3AHamilton%3A%3ATypes%3A%3ABusinessOpeningHours%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats with business accounts, the opening hours of the business.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="can_send_paid_media:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>can_send_paid_media</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#can_send_paid_media%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if paid media messages can be sent or forwarded to the channel chat. The field is available only for channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="can_send_paid_media=(can_send_paid_media:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>can_send_paid_media=</strong>(can_send_paid_media : Bool | Nil)
+
+        <a class="method-permalink" href="#can_send_paid_media%3D%28can_send_paid_media%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if paid media messages can be sent or forwarded to the channel chat. The field is available only for channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="can_set_sticker_set:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>can_set_sticker_set</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#can_set_sticker_set%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the bot can change the group sticker set.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="can_set_sticker_set=(can_set_sticker_set:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>can_set_sticker_set=</strong>(can_set_sticker_set : Bool | Nil)
+
+        <a class="method-permalink" href="#can_set_sticker_set%3D%28can_set_sticker_set%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the bot can change the group sticker set.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="custom_emoji_sticker_set_name:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>custom_emoji_sticker_set_name</strong> : String | Nil
+
+        <a class="method-permalink" href="#custom_emoji_sticker_set_name%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the name of the group's custom emoji sticker set. Custom emoji from this set can be used by all users and bots in the group.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="custom_emoji_sticker_set_name=(custom_emoji_sticker_set_name:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>custom_emoji_sticker_set_name=</strong>(custom_emoji_sticker_set_name : String | Nil)
+
+        <a class="method-permalink" href="#custom_emoji_sticker_set_name%3D%28custom_emoji_sticker_set_name%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the name of the group's custom emoji sticker set. Custom emoji from this set can be used by all users and bots in the group.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="description:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>description</strong> : String | Nil
+
+        <a class="method-permalink" href="#description%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Description, for groups, supergroups and channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="description=(description:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>description=</strong>(description : String | Nil)
+
+        <a class="method-permalink" href="#description%3D%28description%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Description, for groups, supergroups and channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emoji_status_custom_emoji_id:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>emoji_status_custom_emoji_id</strong> : String | Nil
+
+        <a class="method-permalink" href="#emoji_status_custom_emoji_id%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Custom emoji identifier of the emoji status of the chat or the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emoji_status_custom_emoji_id=(emoji_status_custom_emoji_id:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>emoji_status_custom_emoji_id=</strong>(emoji_status_custom_emoji_id : String | Nil)
+
+        <a class="method-permalink" href="#emoji_status_custom_emoji_id%3D%28emoji_status_custom_emoji_id%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Custom emoji identifier of the emoji status of the chat or the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emoji_status_expiration_date:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>emoji_status_expiration_date</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#emoji_status_expiration_date%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Expiration date of the emoji status of the chat or the other party in a private chat, in Unix time, if any.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="emoji_status_expiration_date=(emoji_status_expiration_date:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>emoji_status_expiration_date=</strong>(emoji_status_expiration_date : Int32 | Nil)
+
+        <a class="method-permalink" href="#emoji_status_expiration_date%3D%28emoji_status_expiration_date%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Expiration date of the emoji status of the chat or the other party in a private chat, in Unix time, if any.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first_name:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>first_name</strong> : String | Nil
+
+        <a class="method-permalink" href="#first_name%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>First name of the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="first_name=(first_name:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>first_name=</strong>(first_name : String | Nil)
+
+        <a class="method-permalink" href="#first_name%3D%28first_name%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>First name of the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_aggressive_anti_spam_enabled:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>has_aggressive_anti_spam_enabled</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#has_aggressive_anti_spam_enabled%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if aggressive anti-spam checks are enabled in the supergroup. The field is only available to chat administrators.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_aggressive_anti_spam_enabled=(has_aggressive_anti_spam_enabled:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_aggressive_anti_spam_enabled=</strong>(has_aggressive_anti_spam_enabled : Bool | Nil)
+
+        <a class="method-permalink" href="#has_aggressive_anti_spam_enabled%3D%28has_aggressive_anti_spam_enabled%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if aggressive anti-spam checks are enabled in the supergroup. The field is only available to chat administrators.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_hidden_members:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>has_hidden_members</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#has_hidden_members%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if non-administrators can only get the list of bots and administrators in the chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_hidden_members=(has_hidden_members:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_hidden_members=</strong>(has_hidden_members : Bool | Nil)
+
+        <a class="method-permalink" href="#has_hidden_members%3D%28has_hidden_members%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if non-administrators can only get the list of bots and administrators in the chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_private_forwards:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>has_private_forwards</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#has_private_forwards%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if privacy settings of the other party in the private chat allows to use tg://user?id=&lt;user_id&gt; links only in chats with the user.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_private_forwards=(has_private_forwards:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_private_forwards=</strong>(has_private_forwards : Bool | Nil)
+
+        <a class="method-permalink" href="#has_private_forwards%3D%28has_private_forwards%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if privacy settings of the other party in the private chat allows to use tg://user?id=&lt;user_id&gt; links only in chats with the user.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_protected_content:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>has_protected_content</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#has_protected_content%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if messages from the chat can't be forwarded to other chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_protected_content=(has_protected_content:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_protected_content=</strong>(has_protected_content : Bool | Nil)
+
+        <a class="method-permalink" href="#has_protected_content%3D%28has_protected_content%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if messages from the chat can't be forwarded to other chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_restricted_voice_and_video_messages:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>has_restricted_voice_and_video_messages</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#has_restricted_voice_and_video_messages%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the privacy settings of the other party restrict sending voice and video note messages in the private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_restricted_voice_and_video_messages=(has_restricted_voice_and_video_messages:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_restricted_voice_and_video_messages=</strong>(has_restricted_voice_and_video_messages : Bool | Nil)
+
+        <a class="method-permalink" href="#has_restricted_voice_and_video_messages%3D%28has_restricted_voice_and_video_messages%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the privacy settings of the other party restrict sending voice and video note messages in the private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_visible_history:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>has_visible_history</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#has_visible_history%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if new chat members will have access to old messages; available only to chat administrators.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="has_visible_history=(has_visible_history:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>has_visible_history=</strong>(has_visible_history : Bool | Nil)
+
+        <a class="method-permalink" href="#has_visible_history%3D%28has_visible_history%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if new chat members will have access to old messages; available only to chat administrators.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id:Int64-instance-method">
+      <div class="signature">
+        
+        def <strong>id</strong> : Int64
+
+        <a class="method-permalink" href="#id%3AInt64-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique identifier for this chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="id=(id:Int64)-instance-method">
+      <div class="signature">
+        
+        def <strong>id=</strong>(id : Int64)
+
+        <a class="method-permalink" href="#id%3D%28id%3AInt64%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique identifier for this chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invite_link:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>invite_link</strong> : String | Nil
+
+        <a class="method-permalink" href="#invite_link%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Primary invite link, for groups, supergroups and channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="invite_link=(invite_link:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>invite_link=</strong>(invite_link : String | Nil)
+
+        <a class="method-permalink" href="#invite_link%3D%28invite_link%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Primary invite link, for groups, supergroups and channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_direct_messaegs:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>is_direct_messaegs</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#is_direct_messaegs%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the chat is the direct messages chat of a channel.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_direct_messaegs=(is_direct_messaegs:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>is_direct_messaegs=</strong>(is_direct_messaegs : Bool | Nil)
+
+        <a class="method-permalink" href="#is_direct_messaegs%3D%28is_direct_messaegs%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the chat is the direct messages chat of a channel.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_forum:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>is_forum</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#is_forum%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the supergroup chat is a forum (has topics enabled).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_forum=(is_forum:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>is_forum=</strong>(is_forum : Bool | Nil)
+
+        <a class="method-permalink" href="#is_forum%3D%28is_forum%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the supergroup chat is a forum (has topics enabled).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="join_by_request:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>join_by_request</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#join_by_request%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if all users directly joining the supergroup without using an invite link need to be approved by supergroup administrators.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="join_by_request=(join_by_request:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>join_by_request=</strong>(join_by_request : Bool | Nil)
+
+        <a class="method-permalink" href="#join_by_request%3D%28join_by_request%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if all users directly joining the supergroup without using an invite link need to be approved by supergroup administrators.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="join_to_send_messages:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>join_to_send_messages</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#join_to_send_messages%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if users need to join the supergroup before they can send messages.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="join_to_send_messages=(join_to_send_messages:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>join_to_send_messages=</strong>(join_to_send_messages : Bool | Nil)
+
+        <a class="method-permalink" href="#join_to_send_messages%3D%28join_to_send_messages%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if users need to join the supergroup before they can send messages.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_name:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>last_name</strong> : String | Nil
+
+        <a class="method-permalink" href="#last_name%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Last name of the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_name=(last_name:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_name=</strong>(last_name : String | Nil)
+
+        <a class="method-permalink" href="#last_name%3D%28last_name%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Last name of the other party in a private chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="linked_chat_id:Int64|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>linked_chat_id</strong> : Int64 | Nil
+
+        <a class="method-permalink" href="#linked_chat_id%3AInt64%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="linked_chat_id=(linked_chat_id:Int64|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>linked_chat_id=</strong>(linked_chat_id : Int64 | Nil)
+
+        <a class="method-permalink" href="#linked_chat_id%3D%28linked_chat_id%3AInt64%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique identifier for the linked chat, i.e. the discussion group identifier for a channel and vice versa; for supergroups and channel chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location:Hamilton::Types::ChatLocation|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>location</strong> : <a href="../../Hamilton/Types/ChatLocation.html">Hamilton::Types::ChatLocation</a> | Nil
+
+        <a class="method-permalink" href="#location%3AHamilton%3A%3ATypes%3A%3AChatLocation%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the location to which the supergroup is connected.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="location=(location:Hamilton::Types::ChatLocation|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>location=</strong>(location : <a href="../../Hamilton/Types/ChatLocation.html">Hamilton::Types::ChatLocation</a> | Nil)
+
+        <a class="method-permalink" href="#location%3D%28location%3AHamilton%3A%3ATypes%3A%3AChatLocation%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the location to which the supergroup is connected.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_reaction_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>max_reaction_count</strong> : Int32
+
+        <a class="method-permalink" href="#max_reaction_count%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of reactions that can be set on a message in the chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_reaction_count=(max_reaction_count:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_reaction_count=</strong>(max_reaction_count : Int32)
+
+        <a class="method-permalink" href="#max_reaction_count%3D%28max_reaction_count%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum number of reactions that can be set on a message in the chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="message_auto_delete_time:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>message_auto_delete_time</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#message_auto_delete_time%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The time after which all messages sent to the chat will be automatically deleted; in seconds.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="message_auto_delete_time=(message_auto_delete_time:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>message_auto_delete_time=</strong>(message_auto_delete_time : Int32 | Nil)
+
+        <a class="method-permalink" href="#message_auto_delete_time%3D%28message_auto_delete_time%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The time after which all messages sent to the chat will be automatically deleted; in seconds.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_nil_fields:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>non_nil_fields</strong> : Array(String)
+
+        <a class="method-permalink" href="#non_nil_fields%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_nil_fields=(non_nil_fields:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>non_nil_fields=</strong>(non_nil_fields : Array(String))
+
+        <a class="method-permalink" href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent_chat:Hamilton::Types::Chat|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>parent_chat</strong> : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil
+
+        <a class="method-permalink" href="#parent_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Information about the corresponding channel chat; for direct messages chats only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parent_chat=(parent_chat:Hamilton::Types::Chat|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>parent_chat=</strong>(parent_chat : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil)
+
+        <a class="method-permalink" href="#parent_chat%3D%28parent_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Information about the corresponding channel chat; for direct messages chats only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="permissions:Hamilton::Types::ChatPermissions|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>permissions</strong> : <a href="../../Hamilton/Types/ChatPermissions.html">Hamilton::Types::ChatPermissions</a> | Nil
+
+        <a class="method-permalink" href="#permissions%3AHamilton%3A%3ATypes%3A%3AChatPermissions%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Default chat member permissions, for groups and supergroups.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="permissions=(permissions:Hamilton::Types::ChatPermissions|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>permissions=</strong>(permissions : <a href="../../Hamilton/Types/ChatPermissions.html">Hamilton::Types::ChatPermissions</a> | Nil)
+
+        <a class="method-permalink" href="#permissions%3D%28permissions%3AHamilton%3A%3ATypes%3A%3AChatPermissions%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Default chat member permissions, for groups and supergroups.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="personal_chat:Hamilton::Types::Chat|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>personal_chat</strong> : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil
+
+        <a class="method-permalink" href="#personal_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats, the personal channel of the user.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="personal_chat=(personal_chat:Hamilton::Types::Chat|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>personal_chat=</strong>(personal_chat : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil)
+
+        <a class="method-permalink" href="#personal_chat%3D%28personal_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats, the personal channel of the user.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="photo:Hamilton::Types::ChatPhoto|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>photo</strong> : <a href="../../Hamilton/Types/ChatPhoto.html">Hamilton::Types::ChatPhoto</a> | Nil
+
+        <a class="method-permalink" href="#photo%3AHamilton%3A%3ATypes%3A%3AChatPhoto%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Chat photo.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="photo=(photo:Hamilton::Types::ChatPhoto|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>photo=</strong>(photo : <a href="../../Hamilton/Types/ChatPhoto.html">Hamilton::Types::ChatPhoto</a> | Nil)
+
+        <a class="method-permalink" href="#photo%3D%28photo%3AHamilton%3A%3ATypes%3A%3AChatPhoto%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Chat photo.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pinned_message:Hamilton::Types::Message|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>pinned_message</strong> : <a href="../../Hamilton/Types/Message.html">Hamilton::Types::Message</a> | Nil
+
+        <a class="method-permalink" href="#pinned_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The most recent pinned message (by sending date).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pinned_message=(pinned_message:Hamilton::Types::Message|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>pinned_message=</strong>(pinned_message : <a href="../../Hamilton/Types/Message.html">Hamilton::Types::Message</a> | Nil)
+
+        <a class="method-permalink" href="#pinned_message%3D%28pinned_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The most recent pinned message (by sending date).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="profile_accent_color_id:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>profile_accent_color_id</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#profile_accent_color_id%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Identifier of the accent color for the chat's profile background.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="profile_accent_color_id=(profile_accent_color_id:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>profile_accent_color_id=</strong>(profile_accent_color_id : Int32 | Nil)
+
+        <a class="method-permalink" href="#profile_accent_color_id%3D%28profile_accent_color_id%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Identifier of the accent color for the chat's profile background.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="profile_background_custom_emoji_id:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>profile_background_custom_emoji_id</strong> : String | Nil
+
+        <a class="method-permalink" href="#profile_background_custom_emoji_id%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Custom emoji identifier of the emoji chosen by the chat for its profile background.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="profile_background_custom_emoji_id=(profile_background_custom_emoji_id:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>profile_background_custom_emoji_id=</strong>(profile_background_custom_emoji_id : String | Nil)
+
+        <a class="method-permalink" href="#profile_background_custom_emoji_id%3D%28profile_background_custom_emoji_id%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Custom emoji identifier of the emoji chosen by the chat for its profile background.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="slow_mode_delay:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>slow_mode_delay</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#slow_mode_delay%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="slow_mode_delay=(slow_mode_delay:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>slow_mode_delay=</strong>(slow_mode_delay : Int32 | Nil)
+
+        <a class="method-permalink" href="#slow_mode_delay%3D%28slow_mode_delay%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sticker_set_name:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>sticker_set_name</strong> : String | Nil
+
+        <a class="method-permalink" href="#sticker_set_name%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, name of the group sticker set.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sticker_set_name=(sticker_set_name:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>sticker_set_name=</strong>(sticker_set_name : String | Nil)
+
+        <a class="method-permalink" href="#sticker_set_name%3D%28sticker_set_name%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, name of the group sticker set.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="title:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>title</strong> : String | Nil
+
+        <a class="method-permalink" href="#title%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Title, for supergroups, channels and group chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="title=(title:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>title=</strong>(title : String | Nil)
+
+        <a class="method-permalink" href="#title%3D%28title%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Title, for supergroups, channels and group chats.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type:String-instance-method">
+      <div class="signature">
+        
+        def <strong>type</strong> : String
+
+        <a class="method-permalink" href="#type%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Type of the chat, can be either “private”, “group”, “supergroup” or “channel”.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="type=(type:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>type=</strong>(type : String)
+
+        <a class="method-permalink" href="#type%3D%28type%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Type of the chat, can be either “private”, “group”, “supergroup” or “channel”.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unrestrict_boost_count:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>unrestrict_boost_count</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#unrestrict_boost_count%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unrestrict_boost_count=(unrestrict_boost_count:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>unrestrict_boost_count=</strong>(unrestrict_boost_count : Int32 | Nil)
+
+        <a class="method-permalink" href="#unrestrict_boost_count%3D%28unrestrict_boost_count%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For supergroups, the minimum number of boosts that a non-administrator user needs to add in order to ignore slow mode and chat permissions.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="username:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>username</strong> : String | Nil
+
+        <a class="method-permalink" href="#username%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Username, for private chats, supergroups and channels if available.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="username=(username:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>username=</strong>(username : String | Nil)
+
+        <a class="method-permalink" href="#username%3D%28username%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Username, for private chats, supergroups and channels if available.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+</div>
+
+</body>
+</html>
