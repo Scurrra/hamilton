@@ -19,7 +19,7 @@ class Hamilton::Types::BotCommandScopeDefault
   end
 
   # Scope type, must be "default".
-  property type : String
+  property type : String = "default"
 end
 
 # Represents the scope of bot commands, covering all private chats.
@@ -41,7 +41,7 @@ class Hamilton::Types::BotCommandScopeAllPrivateChats
   end
 
   # Scope type, must be "all_private_chats".
-  property type : String
+  property type : String = "all_private_chats"
 end
 
 # Represents the scope of bot commands, covering all group and supergroup chats.
@@ -63,7 +63,7 @@ class Hamilton::Types::BotCommandScopeAllGroupChats
   end
 
   # Scope type, must be "all_group_chats".
-  property type : String
+  property type : String = "all_group_chats"
 end
 
 # Represents the scope of bot commands, covering all group and supergroup chat administrators.
@@ -85,7 +85,7 @@ class Hamilton::Types::BotCommandScopeAllChatAdministrators
   end
 
   # Scope type, must be "all_chat_administrators".
-  property type : String
+  property type : String = "all_chat_administrators"
 end
 
 # Represents the scope of bot commands, covering a specific chat.
@@ -107,7 +107,7 @@ class Hamilton::Types::BotCommandScopeChat
   end
 
   # Scope type, must be "chat".
-  property type : String
+  property type : String = "chat"
 
   # Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren't supported.
   property chat_id : String | Int32
@@ -132,7 +132,7 @@ class Hamilton::Types::BotCommandScopeChatAdministrators
   end
 
   # Scope type, must be "chat_administrators".
-  property type : String
+  property type : String = "chat_administrators"
 
   # Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren't supported.
   property chat_id : String | Int32
@@ -157,7 +157,7 @@ class Hamilton::Types::BotCommandScopeChatMember
   end
 
   # Scope type, must be "default".
-  property type : String
+  property type : String = "default"
 
   # Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`). Channel direct messages chats and channel chats aren't supported.
   property chat_id : String | Int32
