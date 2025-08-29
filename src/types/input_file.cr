@@ -19,4 +19,8 @@ class Hamilton::Types::InputFile
 
     @non_nil_fields.delete("non_nil_fields")
   end
+
+  # File to be sent.
+  @[JSON::Field(ignore: true)]
+  property file : File : Nil
 end
