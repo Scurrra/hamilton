@@ -21,7 +21,7 @@ class Hamilton::Types::InputMediaPhoto
   end
 
   # Type of the result, must be "photo".
-  property type : String
+  property type : String = "photo"
 
   # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
   property media : String
@@ -63,7 +63,7 @@ class Hamilton::Types::InputMediaVideo
   end
 
   # Type of the result, must be "video".
-  property type : String
+  property type : String = "video"
 
   # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
   property media : String
@@ -126,7 +126,7 @@ class Hamilton::Types::InputMediaAnimation
   end
 
   # Type of the result, must be "animation".
-  property type : String
+  property type : String = "animation"
 
   # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
   property media : String
@@ -180,7 +180,7 @@ class Hamilton::Types::InputMediaAudio
   end
 
   # Type of the result, must be "audio".
-  property type : String
+  property type : String = "audio"
 
   # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
   property media : String
@@ -228,7 +228,7 @@ class Hamilton::Types::InputMediaDocument
   end
 
   # Type of the result, must be "document".
-  property type : String
+  property type : String = "document"
 
   # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
   property media : String

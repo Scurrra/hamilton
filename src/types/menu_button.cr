@@ -21,7 +21,7 @@ class Hamilton::Types::MenuButtonCommands
   end
 
   # Type of the button, must be "commands".
-  property type : String
+  property type : String = "commands"
 end
 
 # Represents a menu button, which launches a Web App.
@@ -45,7 +45,7 @@ class Hamilton::Types::MenuButtonWebApp
   end
 
   # Type of the button, must be "web_app".
-  property type : String
+  property type : String = "web_app"
 
   # Text on the button.
   property text : String
@@ -75,7 +75,7 @@ class Hamilton::Types::MenuButtonDefault
   end
 
   # Type of the button, must be "default".
-  property type : String
+  property type : String = "default"
 end
 
 # This object describes the bot's menu button in a private chat.

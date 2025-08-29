@@ -21,7 +21,7 @@ class Hamilton::Types::PassportElementErrorDataField
   end
 
   # Error source, must be "data".
-  property source : String
+  property source : String = "data"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -57,7 +57,7 @@ class Hamilton::Types::PassportElementErrorFrontSide
   end
 
   # Error source, must be "front_side".
-  property source : String
+  property source : String = "front_side"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -90,7 +90,7 @@ class Hamilton::Types::PassportElementErrorReverseSide
   end
 
   # Error source, must be "reverse_side".
-  property source : String
+  property source : String = "reverse_side"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -123,7 +123,7 @@ class Hamilton::Types::PassportElementErrorSelfie
   end
 
   # Error source, must be "selfie".
-  property source : String
+  property source : String = "selfie"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -156,7 +156,7 @@ class Hamilton::Types::PassportElementErrorFile
   end
 
   # Error source, must be "file".
-  property source : String
+  property source : String = "file"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -189,7 +189,7 @@ class Hamilton::Types::PassportElementErrorFiles
   end
 
   # Error source, must be "files".
-  property source : String
+  property source : String = "files"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -222,7 +222,7 @@ class Hamilton::Types::PassportElementErrorTranslationFile
   end
 
   # Error source, must be "translation_file".
-  property source : String
+  property source : String = "translation_file"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -255,7 +255,7 @@ class Hamilton::Types::PassportElementErrorTranslationFiles
   end
 
   # Error source, must be "translation_files".
-  property source : String
+  property source : String = "translation_files"
 
   # The section of the user's Telegram Passport which has the error, one of “personal_details”, “passport”, “driver_license”, “identity_card”, “internal_passport”, “address”.
   property type : String
@@ -288,7 +288,7 @@ class Hamilton::Types::PassportElementErrorUnspecified
   end
 
   # Error source, must be "unspecified".
-  property source : String
+  property source : String = "unspecified"
 
   # Type of element of the user's Telegram Passport which has the issue.
   property type : String

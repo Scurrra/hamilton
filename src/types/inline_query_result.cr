@@ -21,7 +21,7 @@ class Hamilton::Types::InlineQueryResultArticle
   end
 
   # Type of the result, must be "article".
-  property type : String
+  property type : String = "article"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -72,7 +72,7 @@ class Hamilton::Types::InlineQueryResultPhoto
   end
 
   # Type of the result, must be "photo".
-  property type : String
+  property type : String = "photo"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -135,7 +135,7 @@ class Hamilton::Types::InlineQueryResultGif
   end
 
   # Type of the result, must be "gif".
-  property type : String
+  property type : String = "gif"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -201,7 +201,7 @@ class Hamilton::Types::InlineQueryResultMpeg4Gif
   end
 
   # Type of the result, must be "mpeg4_gif".
-  property type : String
+  property type : String = "mpeg4_gif"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -269,7 +269,7 @@ class Hamilton::Types::InlineQueryResultVideo
   end
 
   # Type of the result, must be "video".
-  property type : String
+  property type : String = "video"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -338,7 +338,7 @@ class Hamilton::Types::InlineQueryResultAudio
   end
 
   # Type of the result, must be "audio".
-  property type : String
+  property type : String = "audio"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -392,7 +392,7 @@ class Hamilton::Types::InlineQueryResultVoice
   end
 
   # Type of the result, must be "voice".
-  property type : String
+  property type : String = "voice"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -443,7 +443,7 @@ class Hamilton::Types::InlineQueryResultDocument
   end
 
   # Type of the result, must be "document".
-  property type : String
+  property type : String = "document"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -506,7 +506,7 @@ class Hamilton::Types::InlineQueryResultLocation
   end
 
   # Type of the result, must be "location".
-  property type : String
+  property type : String = "location"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -569,7 +569,7 @@ class Hamilton::Types::InlineQueryResultVenue
   end
 
   # Type of the result, must be "venue".
-  property type : String
+  property type : String = "venue"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -635,7 +635,7 @@ class Hamilton::Types::InlineQueryResultContact
   end
 
   # Type of the result, must be "contact".
-  property type : String
+  property type : String = "contact"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -689,7 +689,7 @@ class Hamilton::Types::InlineQueryResultGame
   end
 
   # Type of the result, must be "game".
-  property type : String
+  property type : String = "game"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -722,7 +722,7 @@ class Hamilton::Types::InlineQueryResultCachedPhoto
   end
 
   # Type of the result, must be "photo".
-  property type : String
+  property type : String = "photo"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -776,7 +776,7 @@ class Hamilton::Types::InlineQueryResultCachedGif
   end
 
   # Type of the result, must be "gif".
-  property type : String
+  property type : String = "gif"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -827,7 +827,7 @@ class Hamilton::Types::InlineQueryResultCachedMpeg4Gif
   end
 
   # Type of the result, must be "mpeg4_gif".
-  property type : String
+  property type : String = "mpeg4_gif"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -878,7 +878,7 @@ class Hamilton::Types::InlineQueryResultCachedSticker
   end
 
   # Type of the result, must be "sticker".
-  property type : String
+  property type : String = "sticker"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -914,7 +914,7 @@ class Hamilton::Types::InlineQueryResultCachedDocument
   end
 
   # Type of the result, must be "document".
-  property type : String
+  property type : String = "document"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -965,7 +965,7 @@ class Hamilton::Types::InlineQueryResultCachedVideo
   end
 
   # Type of the result, must be "video".
-  property type : String
+  property type : String = "video"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -1019,7 +1019,7 @@ class Hamilton::Types::InlineQueryResultCachedVoice
   end
 
   # Type of the result, must be "voice".
-  property type : String
+  property type : String = "voice"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
@@ -1067,7 +1067,7 @@ class Hamilton::Types::InlineQueryResultCachedAudio
   end
 
   # Type of the result, must be "audio".
-  property type : String
+  property type : String = "audio"
 
   # Unique identifier for this result, 1-64 Bytes.
   property id : String
