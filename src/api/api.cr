@@ -22,11 +22,12 @@ class Hamilton::Api
     #
     {% end %}   {% if info[:params].size > 0 %} # Params:
     #
-    {% for param, pinfo in info[:params] %} # `{{param.id}} : {{pinfo[:type]}}`
-    #
-    {% for doc, index in pinfo[:docs] %} # {{doc.id}}
-    #
-    {% end %}   {% end %}   {% end %}   #
+    {% for param, pinfo in info[:params] %} # > `{{param.id}} : {{pinfo[:type]}}`
+    # >
+    {% for doc, index in pinfo[:docs] %} # > {{doc.id}}
+    # >
+    {% end %}   #
+    {% end %}   {% end %}   #
     def {{method.id}}(**params)
       
     end
