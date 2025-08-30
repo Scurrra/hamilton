@@ -23,4 +23,8 @@ class Hamilton::Types::InputFile
   # File to be sent.
   @[JSON::Field(ignore: true)]
   property file : File | Nil
+
+  # Filename.
+  @[JSON::Field(ignore: true)]
+  property filename : File | Nil
 end
