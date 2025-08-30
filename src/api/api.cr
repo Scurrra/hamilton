@@ -1,4 +1,6 @@
+require "http"
 require "http/client"
+require "json"
 
 require "./*"
 
@@ -31,7 +33,6 @@ class Hamilton::Api
     @client = HTTP::Client.new @url
   end
 
-  {% begin %}
   {% for method, info in Hamilton::Api::ENDPOINTS %}
     {% for doc, index in info[:docs] %} # {{doc.id}}
     #
@@ -44,9 +45,40 @@ class Hamilton::Api
     {% end %}   #
     {% end %}   {% end %}   #
     def {{method.id}}(**params)
-      
+      # type check and form building
+      io = IO::Memory.new
+      boundary = MIME::Multipart.generate_boundary
+      builder = HTTP::FormData::Builder.new(io, boundary)
+      {% for param, pinfo in info[:params] %}
+        unless params.has_key?({{param}})
+          raise Hamilton::Errors::MissingParam.new({{param}})
+        else
+          unless typeof(params[{{param}}]) < {{pinfo[:type]}}
+            raise Hamilton::Errors::ParamTypeMissmatch.new({{param}}, {{pinfo[:type]}})
+          end
+
+          if typeof(params[{{param}}]) == Hamilton::Types::InputFile
+            builder.file({{param}}, params[{{param}}].file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].filename))
+          else
+            builder.field({{param}}, params[{{param}}].to_json)
+          end
+        end
+      {% end %}
+      builder.finish
+
+      response = @client.post(
+        @path + {{method}},
+        headers: HTTP::Headers{"Content-Type" => "multipart/form-data; boundary=#{boundary}"},
+        body: io.to_s
+      )
+
+      if response.status.ok?
+        if body = response.body?
+          return {{info[:return_type]}}.from_json body
+        end
+      else
+        raise Hamilton::Errors::ApiEndpointError.new({{method}}, response.status)
+      end
     end
-  {% end %}
-  {% debug %}
   {% end %}
 end
