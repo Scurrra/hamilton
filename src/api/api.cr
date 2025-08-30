@@ -25,6 +25,7 @@ class Hamilton::Api
     {% for param, pinfo in info[:params] %} # {{param.id}} : {{pinfo[:type]}}
     #
     {% for doc, index in pinfo[:docs] %} # {{doc.id}}
+    #
     {% end %}   {% end %}   {% end %}   #
     def {{method.id}}(**params)
       

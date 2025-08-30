@@ -1,4 +1,5 @@
 class Hamilton::Api
+  # :nodoc:
   ENDPOINTS = {
     "getUpdates" => {
         return_type: Array(Hamilton::Types::Update),
