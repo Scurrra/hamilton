@@ -1547,6 +1547,8 @@
       <li class="entry-summary">
         <a href="#new%28token%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%29-class-method" class="signature"><strong>.new</strong>(token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>)</a>
         
+          <div class="summary"><p>API class constructor.</p></div>
+        
       </li>
     
   </ul>
@@ -1568,34 +1570,9 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#client%3AHTTP%3A%3AClient-instance-method" class="signature"><strong>#client</strong> : HTTP::Client</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#env%3ASymbol-instance-method" class="signature"><strong>#env</strong> : Symbol</a>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#getUpdates%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUpdates</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to receive incoming updates using long polling.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#path%3AString-instance-method" class="signature"><strong>#path</strong> : String</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#token%3AString-instance-method" class="signature"><strong>#token</strong> : String</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#url%3AString-instance-method" class="signature"><strong>#url</strong> : String</a>
         
       </li>
     
@@ -1651,6 +1628,17 @@
         <a class="method-permalink" href="#new%28token%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%29-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>API class constructor.</p>
+<p>Params:</p>
+<ul>
+<li><code>token</code> -- Bot unique token.</li>
+<li><code>url</code> -- Bot API URL. Default is &quot;https://api.telegram.org&quot;, pass your URL if you are using your own server.</li>
+<li><code>env</code> -- Type of the environment. <code>:test</code> is used for testing and inserts <code>test/</code> in the endpoint after bot token.</li>
+</ul>
+        </div>
+      
       <br/>
       <div>
         
@@ -1673,34 +1661,6 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="client:HTTP::Client-instance-method">
-      <div class="signature">
-        
-        def <strong>client</strong> : HTTP::Client
-
-        <a class="method-permalink" href="#client%3AHTTP%3A%3AClient-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="env:Symbol-instance-method">
-      <div class="signature">
-        
-        def <strong>env</strong> : Symbol
-
-        <a class="method-permalink" href="#env%3ASymbol-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
     <div class="entry-detail" id="getUpdates(**params)-instance-method">
       <div class="signature">
         
@@ -1715,66 +1675,24 @@
 <p><span class="flag purple">NOTE</span>  This method will not work if an outgoing webhook is set up.</p>
 <p><span class="flag purple">NOTE</span>  In order to avoid getting duplicate updates, recalculate offset after each server response.</p>
 <p>Params:</p>
-<blockquote>
 <p><code>offset : Int32 | Nil</code></p>
+<blockquote>
 <p>Identifier of the first update to be returned. Must be greater by one than the highest among the identifiers of previously received updates. By default, updates starting with the earliest unconfirmed update are returned. An update is considered confirmed as soon as <code><a href="../Hamilton/Api.html#getUpdates%28%2A%2Aparams%29-instance-method">#getUpdates</a></code> is called with an offset higher than its <code>update_id</code>. The negative offset can be specified to retrieve updates starting from -offset update from the end of the updates queue. All previous updates will be forgotten.</p>
 </blockquote>
-<blockquote>
 <p><code>limit : Int32 | Nil</code></p>
+<blockquote>
 <p>Limits the number of updates to be retrieved. Values between 1-100 are accepted. Defaults to 100.</p>
 </blockquote>
-<blockquote>
 <p><code>timeout : Int32 | Nil</code></p>
+<blockquote>
 <p>Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.</p>
 </blockquote>
-<blockquote>
 <p><code>allowed_updates : Array(String) | Nil</code></p>
+<blockquote>
 <p>A JSON-serialized list of the update types you want your bot to receive. For example, specify [&quot;message&quot;, &quot;edited_channel_post&quot;, &quot;callback_query&quot;] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except <code>chat_member</code>, <code>message_reaction</code>, and <code>message_reaction_count</code> (default). If not specified, the previous setting will be used.</p>
 <p>Please note that this parameter doesn't affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.</p>
 </blockquote>
         </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="path:String-instance-method">
-      <div class="signature">
-        
-        def <strong>path</strong> : String
-
-        <a class="method-permalink" href="#path%3AString-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="token:String-instance-method">
-      <div class="signature">
-        
-        def <strong>token</strong> : String
-
-        <a class="method-permalink" href="#token%3AString-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="url:String-instance-method">
-      <div class="signature">
-        
-        def <strong>url</strong> : String
-
-        <a class="method-permalink" href="#url%3AString-instance-method">#</a>
-      </div>
       
       <br/>
       <div>
