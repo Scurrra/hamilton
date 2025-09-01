@@ -1595,9 +1595,58 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#close%28%2A%2Aparams%29-instance-method" class="signature"><strong>#close</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to close the bot instance before moving it from one local server to another.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#deleteWebhook%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteWebhook</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to remove webhook integration if you decide to switch back to getUpdates.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getMe%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getMe</strong>(**params)</a>
+        
+          <div class="summary"><p>A simple method for testing your bot's authentication token.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#getUpdates%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUpdates</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to receive incoming updates using long polling.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getWebhookInfo%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getWebhookInfo</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to get current webhook status.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#logOut%28%2A%2Aparams%29-instance-method" class="signature"><strong>#logOut</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to log out from the cloud Bot API server before launching the bot locally.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendMessage</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send text messages.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setWebhook%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setWebhook</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to specify a URL and receive incoming updates via an outgoing webhook.</p></div>
         
       </li>
     
@@ -1686,6 +1735,68 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="close(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>close</strong>(**params)
+
+        <a class="method-permalink" href="#close%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="deleteWebhook(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>deleteWebhook</strong>(**params)
+
+        <a class="method-permalink" href="#deleteWebhook%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to remove webhook integration if you decide to switch back to getUpdates. Returns True on success.</p>
+<p>Params:</p>
+<p><code>drop_pending_updates : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to drop all pending updates</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getMe(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getMe</strong>(**params)
+
+        <a class="method-permalink" href="#getMe%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a User object.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="getUpdates(**params)-instance-method">
       <div class="signature">
         
@@ -1716,6 +1827,178 @@
 <blockquote>
 <p>A JSON-serialized list of the update types you want your bot to receive. For example, specify [&quot;message&quot;, &quot;edited_channel_post&quot;, &quot;callback_query&quot;] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except <code>chat_member</code>, <code>message_reaction</code>, and <code>message_reaction_count</code> (default). If not specified, the previous setting will be used.</p>
 <p>Please note that this parameter doesn't affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getWebhookInfo(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getWebhookInfo</strong>(**params)
+
+        <a class="method-permalink" href="#getWebhookInfo%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to get current webhook status. Requires no parameters. On success, returns a WebhookInfo object. If the bot is using getUpdates, will return an object with the url field empty.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="logOut(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>logOut</strong>(**params)
+
+        <a class="method-permalink" href="#logOut%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to log out from the cloud Bot API server before launching the bot locally. You must log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns True on success. Requires no parameters.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendMessage(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendMessage</strong>(**params)
+
+        <a class="method-permalink" href="#sendMessage%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send text messages. On success, the sent Message is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent</p>
+</blockquote>
+<p><code>chat_id : String | Int32</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>text : String</code></p>
+<blockquote>
+<p>Text of the message to be sent, 1-4096 characters after entities parsing.</p>
+</blockquote>
+<p><code>parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the message text. See formatting options for more details.</p>
+</blockquote>
+<p><code>entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in message text, which can be specified instead of <code>parse_mode</code>.</p>
+</blockquote>
+<p><code>link_preview_options : <a href="../Hamilton/Types/LinkPreviewOptions.html">Hamilton::Types::LinkPreviewOptions</a></code></p>
+<blockquote>
+<p>Link preview generation options for the message.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setWebhook(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setWebhook</strong>(**params)
+
+        <a class="method-permalink" href="#setWebhook%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized Update. In case of an unsuccessful request (a request with response HTTP status code different from <code>2XY</code>), we will repeat the request and give up after a reasonable amount of attempts. Returns True on success.</p>
+<p>If you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter secret_token. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.</p>
+<p><span class="flag purple">NOTE</span>  You will not be able to receive updates using <code><a href="../Hamilton/Api.html#getUpdates%28%2A%2Aparams%29-instance-method">#getUpdates</a></code> for as long as an outgoing webhook is set up.</p>
+<p>To use a self-signed certificate, you need to upload your public key certificate using <code>certificate</code> parameter. Please upload as <code>InputFile</code>, sending a String will not work.</p>
+<p>Ports currently supported for webhooks: 443, 80, 88, 8443.</p>
+<p>If you're having any trouble setting up webhooks, please check out this <a href="https://core.telegram.org/bots/webhooks">amazing guide to webhooks</a>.</p>
+<p>Params:</p>
+<p><code>url : String</code></p>
+<blockquote>
+<p>HTTPS URL to send updates to. Use an empty string to remove webhook integration</p>
+</blockquote>
+<p><code>certificate : <a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a> | Nil</code></p>
+<blockquote>
+<p>Upload your public key certificate so that the root certificate in use can be checked.</p>
+</blockquote>
+<p><code>ip_address : String | Nil</code></p>
+<blockquote>
+<p>The fixed IP address which will be used to send webhook requests instead of the IP address resolved through DNS</p>
+</blockquote>
+<p><code>max_connections : Int32 | Nil</code></p>
+<blockquote>
+<p>The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your bot's server, and higher values to increase your bot's throughput.</p>
+</blockquote>
+<p><code>allowed_updates : Array(String) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of the update types you want your bot to receive. For example, specify [&quot;message&quot;, &quot;edited_channel_post&quot;, &quot;callback_query&quot;] to only receive updates of these types. See <code>Update</code> for a complete list of available update types. Specify an empty list to receive all update types except chat_member, message_reaction, and message_reaction_count (default). If not specified, the previous setting will be used.</p>
+<p>Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.</p>
+</blockquote>
+<p><code>drop_pending_updates : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to drop all pending updates</p>
+</blockquote>
+<p><code>secret_token : String | Nil</code></p>
+<blockquote>
+<p>A secret token to be sent in a header “X-Telegram-Bot-Api-Secret-Token” in every webhook request, 1-256 characters. Only characters <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>_</code>, and <code>-</code> are allowed. The header is useful to ensure that the request comes from a webhook set by you.</p>
 </blockquote>
         </div>
       
