@@ -36,7 +36,7 @@ class Hamilton::Api
   {% for method, info in Hamilton::Api::ENDPOINTS %}
     {% for doc, index in info[:docs] %} # {{doc.id}}
     #
-    {% end %}   {% if info[:params].size > 0 %} # Params:
+    {% end %}   {% if info.has_key?(:params) && info[:params].size > 0 %} # Params:
     #
     {% for param, pinfo in info[:params] %} # `{{param.id}} : {{pinfo[:type]}}`
     #
@@ -45,7 +45,9 @@ class Hamilton::Api
     {% end %}   #
     {% end %}   {% end %}   #
     def {{method.id}}(**params)
+      body = ""
       # type check and form building
+      {% if info.has_key?(:params) && info[:params].size > 0 %}
       io = IO::Memory.new
       boundary = MIME::Multipart.generate_boundary
       builder = HTTP::FormData::Builder.new(io, boundary)
@@ -65,11 +67,13 @@ class Hamilton::Api
         end
       {% end %}
       builder.finish
+      body += io.to_s
+      {% end %}
 
       response = @client.post(
         @path + {{method}},
         headers: HTTP::Headers{"Content-Type" => "multipart/form-data; boundary=#{boundary}"},
-        body: io.to_s
+        body: body
       )
 
       if response.status.ok?
