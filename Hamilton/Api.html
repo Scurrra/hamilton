@@ -1602,9 +1602,37 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#copyMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#copyMessage</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to copy messages of any kind.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#copyMessages%28%2A%2Aparams%29-instance-method" class="signature"><strong>#copyMessages</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to copy messages of any kind.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#deleteWebhook%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteWebhook</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to remove webhook integration if you decide to switch back to getUpdates.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#forwardMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#forwardMessage</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to forward messages of any kind.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#forwardMessages%28%2A%2Aparams%29-instance-method" class="signature"><strong>#forwardMessages</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to forward multiple messages of any kind.</p></div>
         
       </li>
     
@@ -1754,6 +1782,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="copyMessage(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>copyMessage</strong>(**params)
+
+        <a class="method-permalink" href="#copyMessage%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field <code>correct_option_id</code> is known to the bot. The method is analogous to the method <code><a href="../Hamilton/Api.html#forwardMessage%28%2A%2Aparams%29-instance-method">#forwardMessage</a></code>, but the copied message doesn't have a link to the original message. Returns the <code>MessageId</code> of the sent message on success.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="copyMessages(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>copyMessages</strong>(**params)
+
+        <a class="method-permalink" href="#copyMessages%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field <code>correct_option_id</code> is known to the bot. The method is analogous to the method <code><a href="../Hamilton/Api.html#forwardMessages%28%2A%2Aparams%29-instance-method">#forwardMessages</a></code>, but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of <code>MessageId</code> of the sent messages is returned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="deleteWebhook(**params)-instance-method">
       <div class="signature">
         
@@ -1770,6 +1836,44 @@
 <blockquote>
 <p>Pass True to drop all pending updates</p>
 </blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="forwardMessage(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>forwardMessage</strong>(**params)
+
+        <a class="method-permalink" href="#forwardMessage%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent Message is returned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="forwardMessages(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>forwardMessages</strong>(**params)
+
+        <a class="method-permalink" href="#forwardMessages%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of <code>MessageId</code> of the sent messages is returned.</p>
         </div>
       
       <br/>
