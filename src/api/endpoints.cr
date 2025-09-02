@@ -152,7 +152,7 @@ class Hamilton::Api
     "forwardMessage" => {
       type: Hamilton::Types::Message,
       docs: [%<Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent Message is returned.>],
-      parameter: {
+      params: {
         :chat_id => {
           type: Int32 | String,
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
@@ -194,7 +194,7 @@ class Hamilton::Api
     "forwardMessages" => {
       type: Array(Hamilton::Types::MessageId),
       docs: [%<Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of `MessageId` of the sent messages is returned.>],
-      parameter: {
+      params: {
         :chat_id => {
           type: Int32 | String,
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
@@ -228,7 +228,7 @@ class Hamilton::Api
     "copyMessage" => {
       type: Hamilton::Types::MessageId,
       docs: [%<Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field `correct_option_id` is known to the bot. The method is analogous to the method `forwardMessage`, but the copied message doesn't have a link to the original message. Returns the `MessageId` of the sent message on success.>],
-      parameter: {
+      params: {
         :chat_id => {
           type: Int32 | String,
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
@@ -298,7 +298,7 @@ class Hamilton::Api
     "copyMessages" => {
       type: Array(Hamilton::Types::MessageId),
       docs: [%<Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field `correct_option_id` is known to the bot. The method is analogous to the method `forwardMessages`, but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of `MessageId` of the sent messages is returned.>],
-      parameter: {
+      params: {
         :chat_id => {
           type: Int32 | String,
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
