@@ -4,7 +4,7 @@ require "json"
 
 require "./*"
 
-# Class that is used for communication with Bot API endpoints. 
+# Class that is used for communication with Bot API endpoints.
 class Hamilton::Api
 
   # :nodoc:
@@ -29,7 +29,7 @@ class Hamilton::Api
   # - `url` -- Bot API URL. Default is "https://api.telegram.org", pass your URL if you are using your own server.
   # - `env` -- Type of the environment. `:test` is used for testing and inserts `test/` in the endpoint after bot token.
   def initialize(@token, @url = "https://api.telegram.org", @env = :prod)
-    @path = @env == :test ? "/bot#{@token}/test/" : "/bot#{@token}/" 
+    @path = @env == :test ? "/bot#{@token}/test/" : "/bot#{@token}/"
     @client = HTTP::Client.new @url
   end
 
@@ -53,7 +53,9 @@ class Hamilton::Api
       builder = HTTP::FormData::Builder.new(io, boundary)
       {% for param, pinfo in info[:params] %}
         unless params.has_key?({{param}})
-          raise Hamilton::Errors::MissingParam.new({{param}})
+          unless Nil < {{pinfo[:type]}}
+            raise Hamilton::Errors::MissingParam.new({{param}})
+          end
         else
           unless typeof(params[{{param}}]) < {{pinfo[:type]}}
             raise Hamilton::Errors::ParamTypeMissmatch.new({{param}}, {{pinfo[:type]}})
