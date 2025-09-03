@@ -62,7 +62,8 @@ class Hamilton::Api
           end
 
           if typeof(params[{{param}}]) == Hamilton::Types::InputFile
-            builder.file({{param}}, params[{{param}}].file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].filename))
+            builder.field({{param}}, "attach://#{params[{{param}}].filename}")
+            builder.file(params[{{param}}].filename, params[{{param}}].file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].filename))
           else
             builder.field({{param}}, params[{{param}}].to_json)
           end
