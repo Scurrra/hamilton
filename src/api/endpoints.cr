@@ -109,7 +109,7 @@ class Hamilton::Api
         },
         :parse_mode => {
           type: String | Nil,
-          docs: [%<Mode for parsing entities in the message text. See formatting options for more details.>]
+          docs: [%<Mode for parsing entities in the message text.>]
         },
         :entities => {
           type: Array(Hamilton::Types::MessageEntity) | Nil,
@@ -330,6 +330,338 @@ class Hamilton::Api
         :remove_caption => {
           type: Bool | Nil,
           docs: [%<Pass True to copy the messages without their captions.>]
+        }
+      }
+    },
+    "sendPhoto" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send photos. On success, the sent Message is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :photo => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Photo to send. Pass a `file_id` as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. The photo must be at most 10 MB in size. The photo's width and height must not exceed 10000 in total. Width and height ratio must be at most 20.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Photo caption (may also be used when resending photos by `file_id`), 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the photo caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :show_caption_above_media => {
+          type: Bool | Nil,
+          docs: [%<Pass True, if the caption must be shown above the message media.>]
+        },
+        :has_spoiler => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the photo needs to be covered with a spoiler animation.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendAudio" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent `Message` is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.>, %<For sending voice messages, use the sendVoice method instead.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :audio => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Audio file to send. Pass a `file_id` as String to send an audio file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an audio file from the Internet, or upload a new one using multipart/form-data.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Audio caption, 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the audio caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :duration => {
+          type: Int32 | Nil,
+          docs: [%<Duration of the audio in seconds.>]
+        },
+        :performer => {
+          type: String | Nil,
+          docs: [%<Performer.>]
+        },
+        :title => {
+          type: String | Nil,
+          docs: [%<Track name.>]
+        },
+        :thumbnail => {
+          type: Hamilton::Types::InputFile | Nil,
+          docs: [%<Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendDocument" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send general files. On success, the sent `Message` is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :document => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<File to send. Pass a `file_id` as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.>]
+        },
+        :thumbnail => {
+          type: Hamilton::Types::InputFile | Nil,
+          docs: [%<Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Document caption (may also be used when resending documents by `file_id`), 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the document caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :disable_content_type_detection => {
+          type: Bool | Nil,
+          docs: [%<Disables automatic server-side content type detection for files uploaded using multipart/form-data.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool,
+          docs: [%<Protects the contents of the message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendVideo" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send video files, Telegram clients support MPEG4 videos (other formats may be sent as `Document`). On success, the sent `Message` is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :video => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Video to send. Pass a `file_id` as String to send a video that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a video from the Internet, or upload a new video using multipart/form-data.>]
+        },
+        :duration => {
+          type: Int32 | Nil,
+          docs: [%<Duration of sent video in seconds.>]
+        },
+        :width => {
+          type: Int32 | Nil,
+          docs: [%<Video width.>]
+        },
+        :height => {
+          type: Int32 | Nil,
+          docs: [%<Video height.>]
+        },
+        :thumbnail => {
+          type: Hamilton::Types::InputFile | Nil,
+          docs: [%<Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.>]
+        },
+        :cover => {
+          type: Hamilton::Types::InputFile | String | Nil,
+          docs: [%<Cover for the video in the message. Pass a `file_id` to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a file from the Internet, or pass “attach://<file_attach_name>” to upload a new one using multipart/form-data under <file_attach_name> name.>]
+        },
+        :start_timestamp => {
+          type: Int32 | Nil,
+          docs: [%<Start timestamp for the video in the message.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Video caption (may also be used when resending videos by `file_id`), 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the video caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :show_caption_above_media => {
+          type: Bool | Nil,
+          docs: [%<Pass True, if the caption must be shown above the message media.>]
+        },
+        :has_spoiler => {
+          type: Bool | Nil,
+          docs: [%<Pass True, if the video needs to be covered with a spoiler animation.>]
+        },
+        :supports_streaming => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the uploaded video is suitable for streaming.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
         }
       }
     }
