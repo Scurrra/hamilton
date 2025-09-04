@@ -1,3 +1,7 @@
+require "./errors.cr"
+require "./types"
+require "./api"
+
 # TODO: Write documentation for `Hamilton`
 module Hamilton
   VERSION = "0.1.0"
