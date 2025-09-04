@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::StoryAreaType - hamilton 0.1.0</title>
+  <title>Hamilton::Errors::FieldTypeMissmatch - hamilton 0.1.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -67,7 +67,7 @@
       
     </li>
   
-  <li class="parent " data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
+  <li class="parent open current" data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
       <a href="../../Hamilton/Errors.html">Errors</a>
       
         <ul>
@@ -77,7 +77,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/FieldTypeMissmatch" data-name="hamilton::errors::fieldtypemissmatch">
+  <li class=" current" data-id="hamilton/Hamilton/Errors/FieldTypeMissmatch" data-name="hamilton::errors::fieldtypemissmatch">
       <a href="../../Hamilton/Errors/FieldTypeMissmatch.html">FieldTypeMissmatch</a>
       
     </li>
@@ -107,7 +107,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
+  <li class="parent " data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
       <a href="../../Hamilton/Types.html">Types</a>
       
         <ul>
@@ -1257,7 +1257,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/StoryAreaType" data-name="hamilton::types::storyareatype">
+  <li class=" " data-id="hamilton/Hamilton/Types/StoryAreaType" data-name="hamilton::types::storyareatype">
       <a href="../../Hamilton/Types/StoryAreaType.html">StoryAreaType</a>
       
     </li>
@@ -1512,11 +1512,13 @@
 <h1 class="type-name">
 
   <span class="kind">
-    alias
-  </span> Hamilton::<wbr>Types::<wbr>StoryAreaType
+    class
+  </span> Hamilton::<wbr>Errors::<wbr>FieldTypeMissmatch
 
 </h1>
 
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Errors/FieldTypeMissmatch.html">Hamilton::Errors::FieldTypeMissmatch</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1530,19 +1532,9 @@
     Overview
   </h2>
 
-  <p>Describes the type of a clickable area on a story.</p>
+  <p>Exception raised when a method parameter passed in <code>**params</code> has wrong type.</p>
 
 
-
-  <h2>
-    <a id="alias-definition" class="anchor" href="#alias-definition">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Alias Definition
-  </h2>
-  <code><a href="../../Hamilton/Types/StoryAreaTypeLink.html">Hamilton::Types::StoryAreaTypeLink</a> | <a href="../../Hamilton/Types/StoryAreaTypeLocation.html">Hamilton::Types::StoryAreaTypeLocation</a> | <a href="../../Hamilton/Types/StoryAreaTypeSuggestedReaction.html">Hamilton::Types::StoryAreaTypeSuggestedReaction</a> | <a href="../../Hamilton/Types/StoryAreaTypeUniqueGift.html">Hamilton::Types::StoryAreaTypeUniqueGift</a> | <a href="../../Hamilton/Types/StoryAreaTypeWeather.html">Hamilton::Types::StoryAreaTypeWeather</a></code>
 
 
 
@@ -1567,7 +1559,7 @@
   </h2>
   
     
-      types/story_area_type.cr
+      errors.cr
     
     <br/>
   
@@ -1577,6 +1569,23 @@
 
 
   
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28param_name%3AString%7CSymbol%2Ctype%3AClass%2Cparam_type%3AClass%29-class-method" class="signature"><strong>.new</strong>(param_name : String | Symbol, type : Class, param_type : Class)</a>
+        
+      </li>
+    
+  </ul>
+
 
   
 
@@ -1587,9 +1596,72 @@
 
   <div class="methods-inherited">
     
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
   </div>
 
   
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(param_name:String|Symbol,type:Class,param_type:Class)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(param_name : String | Symbol, type : Class, param_type : Class)
+
+        <a class="method-permalink" href="#new%28param_name%3AString%7CSymbol%2Ctype%3AClass%2Cparam_type%3AClass%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
   
 
