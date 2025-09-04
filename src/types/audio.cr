@@ -7,127 +7,74 @@ class Hamilton::Types::Audio
 
   def initialize(**params)
     {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
+    {% for var, index in @type.instance_vars %}
+    {% unless var.name.stringify == "non_nil_fields" %}
+    @{{var.name}} = params[{{var.name.stringify}}]?
     {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
     {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-        {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          pp key, params[{{value[:key]}}]?, typeof(params[{{value[:key]}}]?)
-          if param = params[{{value[:key]}}]?
-            pp key, param, typeof(param)
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            pp {{value[:type]}}
-            unless Nil < {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-            end
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
     {%debug%}
     {%end%}
-    
-    after_initialize
-  end
 
-  def initialize(**params)
-    {%begin%}
+    # {%begin%}
 
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
+    # {% properties = {} of Nil => Nil %}
+    # {% for ivar in @type.instance_vars %}
+    #   {% unless ivar.id.stringify == "non_nil_fields" %}
+    #   {%
+    #     properties[ivar.id] = {
+    #       key: ivar.id.stringify,
+    #       type: ivar.type,
+    #     }
+    #   %}
+    #   {% end %}
+    # {% end %}
     
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
+    # {% for name, value in properties %}
+    #   %var{name} = uninitialized {{value[:type]}}
+    #   %found{name} = false
+    # {% end %}
   
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
+    # params_keys, i = params.keys, 0
+    # while i < params_keys.size
+    #   key = params_keys[i]
+    #   case key.to_s
+    #   {% for name, value in properties %}
+    #   when {{value[:key]}}
+    #     if params.has_key?({{value[:key]}})
+    #       if param = params[{{value[:key]}}]?
+    #         pp typeof(param)
+    #         unless typeof(param) <= {{value[:type]}}
+    #           raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
+    #         end
 
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
+    #         # %var{name} = {{value[:type]}}.from_json param.to_json
+    #         # %var{name} = {{value[:type]}}.cast param
+    #         %var{name} = param
+    #         %found{name} = true
+    #       else
+    #         unless Nil < {{value[:type]}}
+    #           raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
+    #         end
+    #       end
+    #     end
+    #   {% end %}
+    #   else
+    #     raise Hamilton::Errors::UnknownField.new(key)
+    #   end
+    #   i += 1
+    # end
 
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
+    # {% for name, value in properties %}
+    #   if %found{name}
+    #     @{{name}} = %var{name}
+    #   {% unless Nil < value[:type] %}
+    #   else
+    #     raise Hamilton::Errors::MissingField.new({{name.stringify}})
+    #   {% end %}
+    #   end
+    # {% end %}
 
-    #{%debug%}
-    {%end%}
+    # {%end%}
     
     after_initialize
   end
