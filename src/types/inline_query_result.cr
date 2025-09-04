@@ -5,67 +5,6 @@ require "json"
 class Hamilton::Types::InlineQueryResultArticle
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -116,67 +55,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultPhoto
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -240,67 +118,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultGif
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -367,67 +184,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultMpeg4Gif
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -496,67 +252,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultVideo
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -627,67 +322,6 @@ end
 class Hamilton::Types::InlineQueryResultAudio
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -742,67 +376,6 @@ end
 class Hamilton::Types::InlineQueryResultVoice
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -853,67 +426,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultDocument
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -978,67 +490,6 @@ end
 class Hamilton::Types::InlineQueryResultLocation
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -1101,67 +552,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultVenue
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -1229,67 +619,6 @@ end
 class Hamilton::Types::InlineQueryResultContact
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -1344,67 +673,6 @@ end
 class Hamilton::Types::InlineQueryResultGame
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -1437,67 +705,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedPhoto
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -1553,67 +760,6 @@ end
 class Hamilton::Types::InlineQueryResultCachedGif
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -1664,67 +810,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedMpeg4Gif
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -1777,67 +862,6 @@ end
 class Hamilton::Types::InlineQueryResultCachedSticker
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -1873,67 +897,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedDocument
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -1985,67 +948,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedVideo
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
@@ -2101,67 +1003,6 @@ end
 class Hamilton::Types::InlineQueryResultCachedVoice
   include JSON::Serializable
 
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
-
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
   property non_nil_fields : Array(String) = [] of String
@@ -2209,67 +1050,6 @@ end
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedAudio
   include JSON::Serializable
-
-  def initialize(**params)
-    {%begin%}
-
-    {% properties = {} of Nil => Nil %}
-    {% for ivar in @type.instance_vars %}
-      {% unless ivar.id.stringify == "non_nil_fields" %}
-      {%
-        properties[ivar.id] = {
-          key: ivar.id.stringify,
-          type: ivar.type,
-        }
-      %}
-      {% end %}
-    {% end %}
-    
-    {% for name, value in properties %}
-      %var{name} = uninitialized {{value[:type]}}
-      %found{name} = false
-    {% end %}
-  
-    params_keys, i = params.keys, 0
-    while i < params_keys.size
-      key = params_keys[i]
-      case key.to_s
-      {% for name, value in properties %}
-      when {{value[:key]}}
-        if params.has_key?({{value[:key]}})
-          if param = params[{{value[:key]}}]?
-            unless typeof(param) <= {{value[:type]}}
-              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
-            end
-
-            %var{name} = param
-            %found{name} = true
-          else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
-          end
-        end
-      {% end %}
-      else
-        raise Hamilton::Errors::UnknownField.new(key)
-      end
-      i += 1
-    end
-
-    {% for name, value in properties %}
-      if %found{name}
-        @{{name}} = %var{name}
-      {% unless Nil < value[:type] %}
-      else
-        raise Hamilton::Errors::MissingField.new({{name.stringify}})
-      {% end %}
-      end
-    {% end %}
-
-    #{%debug%}
-    {%end%}
-    
-    after_initialize
-  end
 
   # List of available non-nil fields.
   @[JSON::Field(ignore: true)]
