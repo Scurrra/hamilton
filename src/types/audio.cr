@@ -29,10 +29,12 @@ class Hamilton::Types::Audio
     while i < params_keys.size
       key = params_keys[i]
       case key.to_s
-      {% for name, value in properties %}
+        {% for name, value in properties %}
       when {{value[:key]}}
         if params.has_key?({{value[:key]}})
+          pp key, params[{{value[:key]}}]?, typeof(params[{{value[:key]}}]?)
           if param = params[{{value[:key]}}]?
+            pp key, param, typeof(param)
             unless typeof(param) <= {{value[:type]}}
               raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, typeof(param))
             end
@@ -40,7 +42,10 @@ class Hamilton::Types::Audio
             %var{name} = param
             %found{name} = true
           else
-            raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
+            pp {{value[:type]}}
+            unless Nil < {{value[:type]}}
+              raise Hamilton::Errors::FieldTypeMissmatch.new(key, {{value[:type]}}, Nil)
+            end
           end
         end
       {% end %}
@@ -60,7 +65,7 @@ class Hamilton::Types::Audio
       end
     {% end %}
 
-    #{%debug%}
+    {%debug%}
     {%end%}
     
     after_initialize
