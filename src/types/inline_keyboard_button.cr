@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # This object represents one button of an inline keyboard. Exactly one of the optional fields must be used to specify type of the button.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineKeyboardButton
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Label text on the button.
   property text : String

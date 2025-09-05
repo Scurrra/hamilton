@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Represents a photo to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaPhoto
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the result, must be "photo".
   property type : String = "photo"
@@ -45,22 +31,7 @@ end
 # Represents a video to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaVideo
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the result, must be "video".
   property type : String = "video"
@@ -108,22 +79,7 @@ end
 # Represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaAnimation
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the result, must be "animation".
   property type : String = "animation"
@@ -162,22 +118,7 @@ end
 # Represents an audio file to be treated as music to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaAudio
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the result, must be "audio".
   property type : String = "audio"
@@ -210,22 +151,7 @@ end
 # Represents a general file to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaDocument
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the result, must be "document".
   property type : String = "document"

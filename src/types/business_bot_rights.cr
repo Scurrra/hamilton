@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Represents the rights of a business bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BusinessBotRights
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # True, if the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours.
   property can_reply : Bool | Nil

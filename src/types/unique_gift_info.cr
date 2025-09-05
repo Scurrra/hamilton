@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Describes a service message about a unique gift that was sent or received.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::UniqueGiftInfo
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Information about the gift.
   property gift : Hamilton::Types::UniqueGift

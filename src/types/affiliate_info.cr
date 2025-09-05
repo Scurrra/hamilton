@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Contains information about the affiliate that received a commission via this transaction.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::AffiliateInfo
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The bot or the user that received an affiliate commission if it was received by a bot or a user.
   property affiliate_user : Hamilton::Types::User | Nil

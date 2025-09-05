@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Represents an invite link for a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatInviteLink
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with “…”.
   property invite_link : String

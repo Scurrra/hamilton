@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # This object represents a custom keyboard with reply options. Not supported in channels and for messages sent on behalf of a Telegram Business account.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReplyKeyboardMarkup
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Array of button rows, each represented by an Array of KeyboardButton objects.
   property keyboard : Array(Array(Hamilton::Types::KeyboardButton))

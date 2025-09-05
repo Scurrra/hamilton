@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Describes a regular gift owned by a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OwnedGiftRegular
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the gift, always “regular”.
   property type : String
@@ -63,22 +49,7 @@ end
 # Describes a unique gift received and owned by a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OwnedGiftUnique
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the gift, always "unique".
   property type : String
@@ -114,22 +85,7 @@ alias Hamilton::Types::OwnedGift = Hamilton::Types::OwnedGiftRegular | Hamilton:
 # Contains the list of gifts received and owned by a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OwnedGifts
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The total number of gifts owned by the user or the chat.
   property total_count : Int32

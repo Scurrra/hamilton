@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Represents the content of a text message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputTextMessageContent
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Text of the message to be sent, 1-4096 characters.
   property message_text : String
@@ -36,22 +22,7 @@ end
 # Represents the content of a location message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputLocationMessageContent
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Latitude of the location in degrees.
   property latitude : Float32
@@ -75,22 +46,7 @@ end
 # Represents the content of a venue message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputVenueMessageContent
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Latitude of the venue in degrees.
   property latitude : Float32
@@ -120,22 +76,7 @@ end
 # Represents the content of a contact message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputContactMessageContent
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Contact's phone number.
   property phone_number : String
@@ -153,22 +94,7 @@ end
 # Represents the content of an invoice message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputInvoiceMessageContent
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Product name, 1-32 characters.
   property title : String

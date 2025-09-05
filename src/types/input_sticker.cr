@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # This object describes a sticker to be added to a sticker set.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputSticker
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The added sticker. Pass a `file_id` as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new file using `multipart/form-data` under `<file_attach_name>` name. Animated and video stickers can't be uploaded via HTTP URL.
   property sticker : String

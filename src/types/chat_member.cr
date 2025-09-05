@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Represents a chat member that owns the chat and has all administrator privileges.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberOwner
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The member's status in the chat, always “creator”.
   property status : String
@@ -36,22 +22,7 @@ end
 # Represents a chat member that has some additional privileges.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberAdministrator
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The member's status in the chat, always "administrator".
   property status : String
@@ -117,22 +88,7 @@ end
 # Represents a chat member that has no additional privileges or restrictions.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberMember
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The member's status in the chat, always "member".
   property status : String
@@ -147,22 +103,7 @@ end
 # Represents a chat member that is under certain restrictions in the chat. Supergroups only.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberRestricted
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The member's status in the chat, always "restricted".
   property status : String
@@ -222,22 +163,7 @@ end
 # Represents a chat member that isn't currently a member of the chat, but may join it themselves.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberLeft
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The member's status in the chat, always "left".
   property status : String
@@ -249,22 +175,7 @@ end
 # Represents a chat member that was banned in the chat and can't return to the chat or view chat messages.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberBanned
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The member's status in the chat, always "kicked".
   property status : String

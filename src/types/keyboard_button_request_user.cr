@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # This object defines the criteria used to request suitable users. Information about the selected users will be shared with the bot when the corresponding button is pressed.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::KeyboardButtonRequestUsers
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Signed 32-bit identifier of the request that will be received back in the UsersShared object. Must be unique within the message.
   property request_id : Int32

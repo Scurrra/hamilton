@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Describes a photo to post as a story.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputStoryContentPhoto
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the content, must be "photo".
   property type : String = "photo"
@@ -30,22 +16,7 @@ end
 # Describes a video to post as a story.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputStoryContentVideo
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the content, must be "video".
   property type : String = "video"

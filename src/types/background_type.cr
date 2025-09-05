@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # The background is automatically filled based on the selected colors.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypeFill
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the background, always “fill”.
   property type : String
@@ -33,22 +19,7 @@ end
 # The background is a wallpaper in the JPEG format.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypeWallpaper
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the background, always "wallpaper".
   property type : String
@@ -69,22 +40,7 @@ end
 # The background is a .PNG or .TGV (gzipped subset of SVG with MIME type “application/x-tgwallpattern”) pattern to be combined with the background fill chosen by the user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypePattern
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the background, always "pattern".
   property type : String
@@ -108,22 +64,7 @@ end
 # The background is taken directly from a built-in chat theme.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypeChatTheme
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the background, always "chat_theme".
   property type : String

@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Describes data required for decrypting and authenticating EncryptedPassportElement.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::EncryptedCredentials
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Base64-encoded encrypted JSON-serialized data with unique user's payload, data hashes and secrets required for `EncryptedPassportElement` decryption and authentication.
   property data : String

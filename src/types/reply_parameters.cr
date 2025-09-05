@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Describes reply parameters for the message that is being sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReplyParameters
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Identifier of the message that will be replied to in the current chat, or in the chat chat_id if it is specified.
   property message_id : Int32

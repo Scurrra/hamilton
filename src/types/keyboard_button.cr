@@ -1,26 +1,12 @@
 require "json"
+require "./utils.cr"
 
 # This object represents one button of the reply keyboard. At most one of the optional fields must be used to specify type of the button. For simple text buttons, String can be used instead of this object to specify the button text.
 #
 # NOTE: `request_users` and `request_chat` options will only work in Telegram versions released after 3 February, 2023. Older clients will display unsupported message.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::KeyboardButton
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Text of the button. If none of the optional fields are used, it will be sent as a message when the button is pressed.
   property text : String

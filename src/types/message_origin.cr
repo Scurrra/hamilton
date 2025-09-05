@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # The message was originally sent by a known user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginUser
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the message origin, always “user”.
   property type : String
@@ -33,22 +19,7 @@ end
 # The message was originally sent by an unknown user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginHiddenUser
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the message origin, always "hidden_user".
   property type : String
@@ -63,22 +34,7 @@ end
 # The message was originally sent on behalf of a chat to a group chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginChannel
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the message origin, always "chat".
   property type : String
@@ -96,22 +52,7 @@ end
 # The message was originally sent to a channel chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginUser
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the message origin, always "channel".
   property type : String

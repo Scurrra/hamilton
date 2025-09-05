@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # Describes a transaction with a user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerUser
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always "user".
   property type : String
@@ -54,22 +40,7 @@ end
 # Describes a transaction with a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerChat
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always “chat”.
   property type : String
@@ -84,22 +55,7 @@ end
 # Describes the affiliate program that issued the affiliate commission received via this transaction.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerAffiliateProgram
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always "affiliate_program".
   property type : String
@@ -114,22 +70,7 @@ end
 # Describes a withdrawal transaction with Fragment.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerFragment
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always "fragment".
   property type : String
@@ -141,22 +82,7 @@ end
 # Describes a withdrawal transaction to the Telegram Ads platform.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerTelegramAds
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always "telegram_ads".
   property type : String
@@ -165,22 +91,7 @@ end
 # Describes a transaction with payment for paid broadcasting.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerTelegramApi
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always "telegram_api".
   property type : String
@@ -192,22 +103,7 @@ end
 # Describes a transaction with an unknown source or recipient.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerOther
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Type of the transaction partner, always "other".
   property type : String

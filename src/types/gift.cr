@@ -1,24 +1,10 @@
 require "json"
+require "./utils.cr"
 
 # This object represents a gift that can be sent by the bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Gift
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # Unique identifier of the gift.
   property id : String
@@ -45,22 +31,7 @@ end
 # This object represent a list of gifts.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Gifts
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The list of gifts.
   property gifts : Array(Hamilton::Types::Gift)

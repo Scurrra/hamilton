@@ -1,26 +1,12 @@
 require "json"
+require "./utils.cr"
 
 # Represents a result of an inline query that was chosen by the user and sent to their chat partner.
 #
 # NOTE: It is necessary to enable inline feedback via @BotFather in order to receive these objects in updates.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChosenInlineResult
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 
   # The unique identifier for the result that was chosen.
   property result_id : String

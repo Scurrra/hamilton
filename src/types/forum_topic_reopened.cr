@@ -1,22 +1,8 @@
 require "json"
+require "./utils.cr"
 
 # This object represents a service message about a forum topic reopened in the chat. Currently holds no information.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ForumTopicReopened
-  include JSON::Serializable
-
-  # List of available non-nil fields.
-  @[JSON::Field(ignore: true)]
-  property non_nil_fields : Array(String) = [] of String
-
-  # :nodoc:
-  def after_initialize
-    {% for field, index in @type.instance_vars.map &.name.stringify %}
-    unless @{{field.id}}.nil?
-      @non_nil_fields.push({{field}})
-    end
-    {% end %}
-
-    @non_nil_fields.delete("non_nil_fields")
-  end
+  include Hamilton::Types::Common
 end
