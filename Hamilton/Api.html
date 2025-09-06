@@ -1685,9 +1685,44 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#sendAnimation%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendAnimation</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#sendAudio%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendAudio</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to send audio files, if you want Telegram clients to display them in the music player.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendChatAction%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendChatAction</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method when you need to tell the user that something is happening on the bot's side.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendChecklist%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendChecklist</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send a checklist on behalf of a connected business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendContact%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendContact</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send phone contacts.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendDice%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendDice</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send an animated emoji that will display a random value.</p></div>
         
       </li>
     
@@ -1699,9 +1734,30 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#sendLocation%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendLocation</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send point on the map.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendMediaGroup%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendMediaGroup</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send a group of photos, videos, documents or audios as an album.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#sendMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendMessage</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to send text messages.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendPaidMedia%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendPaidMedia</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send paid media.</p></div>
         
       </li>
     
@@ -1713,9 +1769,37 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#sendPoll%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendPoll</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send a native poll.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendVenue%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendVenue</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send information about a venue.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#sendVideo%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendVideo</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to send video files, Telegram clients support MPEG4 videos (other formats may be sent as <code>Document</code>).</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendVideoNote%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendVideoNote</strong>(**params)</a>
+        
+          <div class="summary"><p>As of v.4.0, Telegram clients support rounded square MPEG4 videos of up to 1 minute long.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendVoice%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendVoice</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message.</p></div>
         
       </li>
     
@@ -2190,6 +2274,112 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="sendAnimation(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendAnimation</strong>(**params)
+
+        <a class="method-permalink" href="#sendAnimation%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent <code>Message</code> is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>animation : <a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a> | String</code></p>
+<blockquote>
+<p>Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data.</p>
+<p><span class="flag purple">NOTE</span>  Hamilton sends files for you, just pass an instance of  <code><a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a></code> with file and filename fields.</p>
+</blockquote>
+<p><code>duration : Int32 | Nil</code></p>
+<blockquote>
+<p>Duration of sent animation in seconds.</p>
+</blockquote>
+<p><code>width : Int32 | Nil</code></p>
+<blockquote>
+<p>Animation width.</p>
+</blockquote>
+<p><code>height : Int32 | Nil</code></p>
+<blockquote>
+<p>Animation height.</p>
+</blockquote>
+<p><code>thumbnail : (<a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a> | String) | Nil</code></p>
+<blockquote>
+<p>Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was uploaded using multipart/form-data under &lt;file_attach_name&gt;.</p>
+<p><span class="flag purple">NOTE</span>  Hamilton sends files for you, just pass an instance of  <code><a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a></code> with file and filename fields.</p>
+</blockquote>
+<p><code>caption : String | Nil</code></p>
+<blockquote>
+<p>Animation caption (may also be used when resending animation by `file_id), 0-1024 characters after entities parsing.</p>
+</blockquote>
+<p><code>parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the animation caption.</p>
+</blockquote>
+<p><code>caption_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode.</p>
+</blockquote>
+<p><code>show_caption_above_media : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True, if the caption must be shown above the message media.</p>
+</blockquote>
+<p><code>has_spoiler : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True if the animation needs to be covered with a spoiler animation.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="sendAudio(**params)-instance-method">
       <div class="signature">
         
@@ -2259,6 +2449,243 @@
 <p><code>protect_content : Bool | Nil</code></p>
 <blockquote>
 <p>Protects the contents of the message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendChatAction(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendChatAction</strong>(**params)
+
+        <a class="method-permalink" href="#sendChatAction%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.</p>
+<p>We only recommend using this method when a response from the bot will take a noticeable amount of time to arrive.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the action will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername). Channel chats and channel direct messages chats aren't supported.</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread; for supergroups only.</p>
+</blockquote>
+<p><code>action : String</code></p>
+<blockquote>
+<p>Type of action to broadcast. Choose one, depending on what the user is about to receive: &quot;typing&quot; for text messages, &quot;upload_photo&quot; for photos, &quot;record_video&quot; or &quot;upload_video&quot; for videos, &quot;record_voice&quot; or &quot;upload_voice&quot; for voice notes, &quot;upload_document&quot; for general files, &quot;choose_sticker&quot; for stickers, &quot;find_location&quot; for location data, &quot;record_video_note&quot; or &quot;upload_video_note&quot; for video notes.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendChecklist(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendChecklist</strong>(**params)
+
+        <a class="method-permalink" href="#sendChecklist%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send a checklist on behalf of a connected business account. On success, the sent Message is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier for the target chat.</p>
+</blockquote>
+<p><code>checklist : <a href="../Hamilton/Types/InputChecklist.html">Hamilton::Types::InputChecklist</a></code></p>
+<blockquote>
+<p>A JSON-serialized object for the checklist to send.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object for description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : <a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object for an inline keyboard.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendContact(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendContact</strong>(**params)
+
+        <a class="method-permalink" href="#sendContact%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send phone contacts. On success, the sent Message is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>phone_number : String</code></p>
+<blockquote>
+<p>Contact's phone number.</p>
+</blockquote>
+<p><code>first_name : String</code></p>
+<blockquote>
+<p>Contact's first name.</p>
+</blockquote>
+<p><code>last_name : String | Nil</code></p>
+<blockquote>
+<p>Contact's last name.</p>
+</blockquote>
+<p><code>vcard : String | Nil</code></p>
+<blockquote>
+<p>Additional data about the contact in the form of a vCard, 0-2048 bytes.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendDice(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendDice</strong>(**params)
+
+        <a class="method-permalink" href="#sendDice%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send an animated emoji that will display a random value. On success, the sent Message is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>emoji : String | Nil</code></p>
+<blockquote>
+<p>Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲”.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding.</p>
 </blockquote>
 <p><code>allow_paid_broadcast : Bool | Nil</code></p>
 <blockquote>
@@ -2377,6 +2804,154 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="sendLocation(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendLocation</strong>(**params)
+
+        <a class="method-permalink" href="#sendLocation%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send point on the map. On success, the sent Message is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>latitude : Float32</code></p>
+<blockquote>
+<p>Latitude of the location.</p>
+</blockquote>
+<p><code>longitude : Float32</code></p>
+<blockquote>
+<p>Longitude of the location.</p>
+</blockquote>
+<p><code>horizontal_accuracy : Float32 | Nil</code></p>
+<blockquote>
+<p>The radius of uncertainty for the location, measured in meters; 0-1500.</p>
+</blockquote>
+<p><code>live_period : Int32 | Nil</code></p>
+<blockquote>
+<p>Period in seconds during which the location will be updated (should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.</p>
+</blockquote>
+<p><code>heading : Int32 | Nil</code></p>
+<blockquote>
+<p>For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.</p>
+</blockquote>
+<p><code>proximity_alert_radius : Int32 | Nil</code></p>
+<blockquote>
+<p>For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendMediaGroup(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendMediaGroup</strong>(**params)
+
+        <a class="method-permalink" href="#sendMediaGroup%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of <code>Message</code> objects that were sent is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat.</p>
+</blockquote>
+<p><code>media : Array(<a href="../Hamilton/Types/InputMediaAudio.html">Hamilton::Types::InputMediaAudio</a> | <a href="../Hamilton/Types/InputMediaDocument.html">Hamilton::Types::InputMediaDocument</a> | <a href="../Hamilton/Types/InputMediaPhoto.html">Hamilton::Types::InputMediaPhoto</a> | <a href="../Hamilton/Types/InputMediaVideo.html">Hamilton::Types::InputMediaVideo</a>)</code></p>
+<blockquote>
+<p>A JSON-serialized array describing messages to be sent, must include 2-10 items.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends messages silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent messages from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="sendMessage(**params)-instance-method">
       <div class="signature">
         
@@ -2457,6 +3032,94 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="sendPaidMedia(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendPaidMedia</strong>(**params)
+
+        <a class="method-permalink" href="#sendPaidMedia%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send paid media. On success, the sent <code>Message</code> is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>). If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat's balance. Otherwise, they will be credited to the bot's balance.</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>star_count : Int32</code></p>
+<blockquote>
+<p>The number of Telegram Stars that must be paid to buy access to the media; 1-10000</p>
+</blockquote>
+<p><code>media : Array(<a href="../Hamilton/Types/InputPaidMedia.html">Hamilton::Types::InputPaidMedia</a>)</code></p>
+<blockquote>
+<p>A JSON-serialized array describing the media to be sent; up to 10 items.</p>
+</blockquote>
+<p><code>payload : String | Nil</code></p>
+<blockquote>
+<p>Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes.</p>
+</blockquote>
+<p><code>caption : String | Nil</code></p>
+<blockquote>
+<p>Media caption, 0-1024 characters after entities parsing</p>
+</blockquote>
+<p><code>parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the media caption.</p>
+</blockquote>
+<p><code>caption_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
+</blockquote>
+<p><code>show_caption_above_media : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True, if the caption must be shown above the message media.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="sendPhoto(**params)-instance-method">
       <div class="signature">
         
@@ -2508,6 +3171,214 @@
 <p><code>has_spoiler : Bool | Nil</code></p>
 <blockquote>
 <p>Pass True if the photo needs to be covered with a spoiler animation.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendPoll(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendPoll</strong>(**params)
+
+        <a class="method-permalink" href="#sendPoll%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send a native poll. On success, the sent Message is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>). Polls can't be sent to channel direct messages chats.</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>question : String</code></p>
+<blockquote>
+<p>Poll question, 1-300 characters.</p>
+</blockquote>
+<p><code>question_parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the question. Currently, only custom emoji entities are allowed.</p>
+</blockquote>
+<p><code>question_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of <code>question_parse_mode</code>.</p>
+</blockquote>
+<p><code>options : Array(<a href="../Hamilton/Types/InputPollOption.html">Hamilton::Types::InputPollOption</a>)</code></p>
+<blockquote>
+<p>A JSON-serialized list of 2-12 answer options.</p>
+</blockquote>
+<p><code>is_anonymous : Bool | Nil</code></p>
+<blockquote>
+<p>True, if the poll needs to be anonymous, defaults to True.</p>
+</blockquote>
+<p><code>type : String | Nil</code></p>
+<blockquote>
+<p>Poll type, “quiz” or “regular”, defaults to “regular”.</p>
+</blockquote>
+<p><code>allows_multiple_answers : Bool | Nil</code></p>
+<blockquote>
+<p>True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False.</p>
+</blockquote>
+<p><code>correct_option_id : Int32 | Nil</code></p>
+<blockquote>
+<p>0-based identifier of the correct answer option, required for polls in quiz mode.</p>
+</blockquote>
+<p><code>explanation : String | Nil</code></p>
+<blockquote>
+<p>Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing.</p>
+</blockquote>
+<p><code>explanation_parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the explanation. See formatting options for more details.</p>
+</blockquote>
+<p><code>explanation_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of <code>explanation_parse_mode</code>.</p>
+</blockquote>
+<p><code>open_period : Int32 | Nil</code></p>
+<blockquote>
+<p>Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with <code>close_date</code>.</p>
+</blockquote>
+<p><code>close_date : Int32 | Nil</code></p>
+<blockquote>
+<p>Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can't be used together with <code>open_period</code>.</p>
+</blockquote>
+<p><code>is_closed : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True if the poll needs to be immediately closed. This can be useful for poll preview.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendVenue(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendVenue</strong>(**params)
+
+        <a class="method-permalink" href="#sendVenue%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send information about a venue. On success, the sent <code>Message</code> is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>latitude : Float32</code></p>
+<blockquote>
+<p>Latitude of the venue.</p>
+</blockquote>
+<p><code>longitude : Float32</code></p>
+<blockquote>
+<p>Longitude of the venue.</p>
+</blockquote>
+<p><code>title : String</code></p>
+<blockquote>
+<p>Name of the venue.</p>
+</blockquote>
+<p><code>address : String</code></p>
+<blockquote>
+<p>Address of the venue.</p>
+</blockquote>
+<p><code>foursquare_id : String | Nil</code></p>
+<blockquote>
+<p>Foursquare identifier of the venue.</p>
+</blockquote>
+<p><code>foursquare_type : String | Nil</code></p>
+<blockquote>
+<p>Foursquare type of the venue, if known.</p>
+</blockquote>
+<p><code>google_place_id : String | Nil</code></p>
+<blockquote>
+<p>Google Places identifier of the venue.</p>
+</blockquote>
+<p><code>google_place_type : String | Nil</code></p>
+<blockquote>
+<p>Google Places type of the venue.</p>
 </blockquote>
 <p><code>disable_notification : Bool | Nil</code></p>
 <blockquote>
@@ -2626,6 +3497,173 @@
 <p><code>supports_streaming : Bool | Nil</code></p>
 <blockquote>
 <p>Pass True if the uploaded video is suitable for streaming.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendVideoNote(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendVideoNote</strong>(**params)
+
+        <a class="method-permalink" href="#sendVideoNote%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>As of v.4.0, Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent <code>Message</code> is returned.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>video_note : <a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a> | String</code></p>
+<blockquote>
+<p>Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. More information on Sending Files ». Sending video notes by a URL is currently unsupported.</p>
+<p><span class="flag purple">NOTE</span>  Hamilton sends files for you, just pass an instance of  <code><a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a></code> with file and filename fields.</p>
+</blockquote>
+<p><code>duration : Int32 | Nil</code></p>
+<blockquote>
+<p>Duration of sent video in seconds.</p>
+</blockquote>
+<p><code>length : Int32 | Nil</code></p>
+<blockquote>
+<p>Video width and height, i.e. diameter of the video message.</p>
+</blockquote>
+<p><code>thumbnail : (<a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a> | String) | Nil</code></p>
+<blockquote>
+<p>Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://&lt;file_attach_name&gt;” if the thumbnail was uploaded using multipart/form-data under &lt;file_attach_name&gt;.</p>
+<p><span class="flag purple">NOTE</span>  Hamilton sends files for you, just pass an instance of  <code><a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a></code> with file and filename fields.</p>
+</blockquote>
+<p><code>disable_notification : Bool | Nil</code></p>
+<blockquote>
+<p>Sends the message silently. Users will receive a notification with no sound.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Protects the contents of the sent message from forwarding and saving.</p>
+</blockquote>
+<p><code>allow_paid_broadcast : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
+</blockquote>
+<p><code>message_effect_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; for private chats only.</p>
+</blockquote>
+<p><code>suggested_post_parameters : <a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
+</blockquote>
+<p><code>reply_parameters : <a href="../Hamilton/Types/ReplyParameters.html">Hamilton::Types::ReplyParameters</a> | Nil</code></p>
+<blockquote>
+<p>Description of the message to reply to.</p>
+</blockquote>
+<p><code>reply_markup : (((<a href="../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | <a href="../Hamilton/Types/ReplyKeyboardMarkup.html">Hamilton::Types::ReplyKeyboardMarkup</a>) | <a href="../Hamilton/Types/ReplyKeyboardRemove.html">Hamilton::Types::ReplyKeyboardRemove</a>) | <a href="../Hamilton/Types/ForceReply.html">Hamilton::Types::ForceReply</a>) | Nil</code></p>
+<blockquote>
+<p>Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="sendVoice(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendVoice</strong>(**params)
+
+        <a class="method-permalink" href="#sendVoice%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format (other formats may be sent as <code>Audio</code> or <code>Document</code>). On success, the sent <code>Message</code> is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String | Nil</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
+</blockquote>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>message_thread_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+</blockquote>
+<p><code>direct_messages_topic_id : Int32 | Nil</code></p>
+<blockquote>
+<p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
+</blockquote>
+<p><code>voice : <a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a> | String</code></p>
+<blockquote>
+<p>Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.</p>
+<p><span class="flag purple">NOTE</span>  Hamilton sends files for you, just pass an instance of  <code><a href="../Hamilton/Types/InputFile.html">Hamilton::Types::InputFile</a></code> with file and filename fields.</p>
+</blockquote>
+<p><code>caption : String | Nil</code></p>
+<blockquote>
+<p>Voice message caption, 0-1024 characters after entities parsing.</p>
+</blockquote>
+<p><code>parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the voice message caption.</p>
+</blockquote>
+<p><code>caption_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
+</blockquote>
+<p><code>duration : Int32 | Nil</code></p>
+<blockquote>
+<p>Duration of the voice message in seconds.</p>
 </blockquote>
 <p><code>disable_notification : Bool | Nil</code></p>
 <blockquote>
