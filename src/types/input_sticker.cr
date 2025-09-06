@@ -7,7 +7,7 @@ class Hamilton::Types::InputSticker
   include Hamilton::Types::Common
 
   # The added sticker. Pass a `file_id` as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or pass `attach://<file_attach_name>` to upload a new file using `multipart/form-data` under `<file_attach_name>` name. Animated and video stickers can't be uploaded via HTTP URL.
-  property sticker : String
+  property sticker : Hamilton::Types::InputFile | String
 
   # Format of the added sticker, must be one of “static” for a .WEBP or .PNG image, “animated” for a .TGS animation, “video” for a .WEBM video.
   property format : String

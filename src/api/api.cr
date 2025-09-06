@@ -61,7 +61,11 @@ class Hamilton::Api
             raise Hamilton::Errors::ParamTypeMissmatch.new({{param}}, {{pinfo[:type]}})
           end
 
-          if typeof(params[{{param}}]) == Hamilton::Types::InputFile
+          # TODO: Add support for InputMedia, InputPaidMedia, InputStiker, InputStoryContent
+          # + types changed to have InputFile inside
+          # - prepare them for sending
+          param_type = typeof(params[{{param}}])
+          if param_type == Hamilton::Types::InputFile
             builder.field({{param}}, "attach://#{params[{{param}}].filename}")
             builder.file(params[{{param}}].filename, params[{{param}}].file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].filename))
           else
