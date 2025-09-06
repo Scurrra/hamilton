@@ -664,6 +664,786 @@ class Hamilton::Api
           docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
         }
       }
+    },
+    "sendAnimation" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent `Message` is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :animation => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Animation to send. Pass a file_id as String to send an animation that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get an animation from the Internet, or upload a new animation using multipart/form-data.>, %<NOTE: Hamilton sends files for you, just pass an instance of  `Hamilton::Types::InputFile` with file and filename fields.>]
+        },
+        :duration => {
+          type: Int32 | Nil,
+          docs: [%<Duration of sent animation in seconds.>]
+        },
+        :width => {
+          type: Int32 | Nil,
+          docs: [%<Animation width.>]
+        },
+        :height => {
+          type: Int32 | Nil,
+          docs: [%<Animation height.>]
+        },
+        :thumbnail => {
+          type: Hamilton::Types::InputFile | String | Nil,
+          docs: [%<Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.>, %<NOTE: Hamilton sends files for you, just pass an instance of  `Hamilton::Types::InputFile` with file and filename fields.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Animation caption (may also be used when resending animation by `file_id), 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the animation caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode.>]
+        },
+        :show_caption_above_media => {
+          type: Bool | Nil,
+          docs: [%<Pass True, if the caption must be shown above the message media.>]
+        },
+        :has_spoiler => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the animation needs to be covered with a spoiler animation.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendVoice" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format (other formats may be sent as `Audio` or `Document`). On success, the sent `Message` is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :voice => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data.>, %<NOTE: Hamilton sends files for you, just pass an instance of  `Hamilton::Types::InputFile` with file and filename fields.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Voice message caption, 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode	 => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the voice message caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :duration => {
+          type: Int32 | Nil,
+          docs: [%<Duration of the voice message in seconds.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendVideoNote" => {
+      type: Hamilton::Types::Message,
+      docs: [%<As of v.4.0, Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent `Message` is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :video_note => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Video note to send. Pass a file_id as String to send a video note that exists on the Telegram servers (recommended) or upload a new video using multipart/form-data. More information on Sending Files ». Sending video notes by a URL is currently unsupported.>, %<NOTE: Hamilton sends files for you, just pass an instance of  `Hamilton::Types::InputFile` with file and filename fields.>]
+        },
+        :duration => {
+          type: Int32 | Nil,
+          docs: [%<Duration of sent video in seconds.>]
+        },
+        :length => {
+          type: Int32 | Nil,
+          docs: [%<Video width and height, i.e. diameter of the video message.>]
+        },
+        :thumbnail => {
+          type: Hamilton::Types::InputFile | String | Nil,
+          docs: [%<Thumbnail of the file sent; can be ignored if thumbnail generation for the file is supported server-side. The thumbnail should be in JPEG format and less than 200 kB in size. A thumbnail's width and height should not exceed 320. Ignored if the file is not uploaded using multipart/form-data. Thumbnails can't be reused and can be only uploaded as a new file, so you can pass “attach://<file_attach_name>” if the thumbnail was uploaded using multipart/form-data under <file_attach_name>.>, %<NOTE: Hamilton sends files for you, just pass an instance of  `Hamilton::Types::InputFile` with file and filename fields.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendPaidMedia" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send paid media. On success, the sent `Message` is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat's balance. Otherwise, they will be credited to the bot's balance.>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :star_count => {
+          type: Int32,
+          docs: [%<The number of Telegram Stars that must be paid to buy access to the media; 1-10000>]
+        },
+        :media => {
+          type: Array(Hamilton::Types::InputPaidMedia),
+          docs: [%<A JSON-serialized array describing the media to be sent; up to 10 items.>]
+        },
+        :payload => {
+          type: String | Nil,
+          docs: [%<Bot-defined paid media payload, 0-128 bytes. This will not be displayed to the user, use it for your internal processes.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Media caption, 0-1024 characters after entities parsing>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the media caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :show_caption_above_media => {
+          type: Bool | Nil,
+          docs: [%<Pass True, if the caption must be shown above the message media.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendMediaGroup" => {
+      type: Array(Hamilton::Types::Message),
+      docs: [%<Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of `Message` objects that were sent is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String |Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat.>]
+        },
+        :media => {
+          type: Array(Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo),
+          docs: [%<A JSON-serialized array describing messages to be sent, must include 2-10 items.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends messages silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent messages from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        }
+      }
+    },
+    "sendLocation" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send point on the map. On success, the sent Message is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :latitude => {
+          type: Float32,
+          docs: [%<Latitude of the location.>]
+        },
+        :longitude => {
+          type: Float32,
+          docs: [%<Longitude of the location.>]
+        },
+        :horizontal_accuracy => {
+          type: Float32 | Nil,
+          docs: [%<The radius of uncertainty for the location, measured in meters; 0-1500.>]
+        },
+        :live_period => {
+          type: Int32 | Nil,
+          docs: [%<Period in seconds during which the location will be updated (should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.>]
+        },
+        :heading => {
+          type: Int32 | Nil,
+          docs: [%<For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.>]
+        },
+        :proximity_alert_radius => {
+          type: Int32 | Nil,
+          docs: [%<For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendVenue" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send information about a venue. On success, the sent `Message` is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :latitude => {
+          type: Float32,
+          docs: [%<Latitude of the venue.>]
+        },
+        :longitude => {
+          type: Float32,
+          docs: [%<Longitude of the venue.>]
+        },
+        :title => {
+          type: String,
+          docs: [%<Name of the venue.>]
+        },
+        :address => {
+          type: String,
+          docs: [%<Address of the venue.>]
+        },
+        :foursquare_id => {
+          type: String | Nil,
+          docs: [%<Foursquare identifier of the venue.>]
+        },
+        :foursquare_type => {
+          type: String | Nil,
+          docs: [%<Foursquare type of the venue, if known.>]
+        },
+        :google_place_id => {
+          type: String | Nil,
+          docs: [%<Google Places identifier of the venue.>]
+        },
+        :google_place_type => {
+          type: String | Nil,
+          docs: [%<Google Places type of the venue.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendContact" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send phone contacts. On success, the sent Message is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :phone_number => {
+          type: String,
+          docs: [%<Contact's phone number.>]
+        },
+        :first_name => {
+          type: String,
+          docs: [%<Contact's first name.>]
+        },
+        :last_name => {
+          type: String | Nil,
+          docs: [%<Contact's last name.>]
+        },
+        :vcard => {
+          type: String | Nil,
+          docs: [%<Additional data about the contact in the form of a vCard, 0-2048 bytes.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendPoll" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send a native poll. On success, the sent Message is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Polls can't be sent to channel direct messages chats.>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :question => {
+          type: String,
+          docs: [%<Poll question, 1-300 characters.>]
+        },
+        :question_parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the question. Currently, only custom emoji entities are allowed.>]
+        },
+        :question_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of `question_parse_mode`.>]
+        },
+        :options => {
+          type: Array(Hamilton::Types::InputPollOption),
+          docs: [%<A JSON-serialized list of 2-12 answer options.>]
+        },
+        :is_anonymous => {
+          type: Bool | Nil,
+          docs: [%<True, if the poll needs to be anonymous, defaults to True.>]
+        },
+        :type => {
+          type: String | Nil,
+          docs: [%<Poll type, “quiz” or “regular”, defaults to “regular”.>]
+        },
+        :allows_multiple_answers => {
+          type: Bool | Nil,
+          docs: [%<True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False.>]
+        },
+        :correct_option_id => {
+          type: Int32 | Nil,
+          docs: [%<0-based identifier of the correct answer option, required for polls in quiz mode.>]
+        },
+        :explanation => {
+          type: String | Nil,
+          docs: [%<Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing.>]
+        },
+        :explanation_parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the explanation. See formatting options for more details.>]
+        },
+        :explanation_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of `explanation_parse_mode`.>]
+        },
+        :open_period => {
+          type: Int32 | Nil,
+          docs: [%<Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with `close_date`.>]
+        },
+        :close_date => {
+          type: Int32 | Nil,
+          docs: [%<Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can't be used together with `open_period`.>]
+        },
+        :is_closed => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the poll needs to be immediately closed. This can be useful for poll preview.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendChecklist" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send a checklist on behalf of a connected business account. On success, the sent Message is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier for the target chat.>]
+        },
+        :checklist => {
+          type: Hamilton::Types::InputChecklist,
+          docs: [%<A JSON-serialized object for the checklist to send.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<A JSON-serialized object for description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for an inline keyboard.>]
+        }
+      }
+    },
+    "sendDice" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send an animated emoji that will display a random value. On success, the sent Message is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :emoji => {
+          type: String | Nil,
+          docs: [%<Emoji on which the dice throw animation is based. Currently, must be one of “🎲”, “🎯”, “🏀”, “⚽”, “🎳”, or “🎰”. Dice can have values 1-6 for “🎲”, “🎯” and “🎳”, values 1-5 for “🏀” and “⚽”, and values 1-64 for “🎰”. Defaults to “🎲”.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "sendChatAction" => {
+      type: Bool,
+      docs: [%<Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.>, %<We only recommend using this method when a response from the bot will take a noticeable amount of time to arrive.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the action will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername). Channel chats and channel direct messages chats aren't supported.>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread; for supergroups only.>]
+        },
+        :action => {
+          type: String,
+          docs: [%<Type of action to broadcast. Choose one, depending on what the user is about to receive: "typing" for text messages, "upload_photo" for photos, "record_video" or "upload_video" for videos, "record_voice" or "upload_voice" for voice notes, "upload_document" for general files, "choose_sticker" for stickers, "find_location" for location data, "record_video_note" or "upload_video_note" for video notes.>]
+        }
+      }
     }
   }
 end
