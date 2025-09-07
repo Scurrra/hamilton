@@ -1664,6 +1664,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#convertGiftToStars%28%2A%2Aparams%29-instance-method" class="signature"><strong>#convertGiftToStars</strong>(**params)</a>
+        
+          <div class="summary"><p>Converts a given regular gift to Telegram Stars.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#copyMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#copyMessage</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to copy messages of any kind.</p></div>
@@ -1706,6 +1713,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#deleteBusinessMessages%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteBusinessMessages</strong>(**params)</a>
+        
+          <div class="summary"><p>Delete messages on behalf of a business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#deleteChatPhoto%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteChatPhoto</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to delete a chat photo.</p></div>
@@ -1730,6 +1744,13 @@
         <a href="#deleteMyCommands%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteMyCommands</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to delete the list of the bot's commands for the given scope and user language.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#deleteStory%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteStory</strong>(**params)</a>
+        
+          <div class="summary"><p>Deletes a story previously posted by the bot on behalf of a managed business account.</p></div>
         
       </li>
     
@@ -1769,6 +1790,13 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#editStory%28%2A%2Aparams%29-instance-method" class="signature"><strong>#editStory</strong>(**params)</a>
+        
+          <div class="summary"><p>Edits a story previously posted by the bot on behalf of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#exportChatInviteLink%28%2A%2Aparams%29-instance-method" class="signature"><strong>#exportChatInviteLink</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked.</p></div>
@@ -1793,6 +1821,20 @@
         <a href="#getAvailableGifts%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getAvailableGifts</strong>(**params)</a>
         
           <div class="summary"><p>Returns the list of gifts that can be sent by the bot to users and channel chats.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getBusinessAccountGifts%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getBusinessAccountGifts</strong>(**params)</a>
+        
+          <div class="summary"><p>Returns the gifts received and owned by a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getBusinessAccountStarBalance%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getBusinessAccountStarBalance</strong>(**params)</a>
+        
+          <div class="summary"><p>Returns the amount of Telegram Stars owned by a managed business account.</p></div>
         
       </li>
     
@@ -1958,9 +2000,44 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#postStory%28%2A%2Aparams%29-instance-method" class="signature"><strong>#postStory</strong>(**params)</a>
+        
+          <div class="summary"><p>Posts a story on behalf of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#promoteChatMember%28%2A%2Aparams%29-instance-method" class="signature"><strong>#promoteChatMember</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to promote or demote a user in a supergroup or a channel.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#readBusinessMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#readBusinessMessage</strong>(**params)</a>
+        
+          <div class="summary"><p>Marks incoming message as read on behalf of a business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#removeBusinessAccountProfilePhoto%28%2A%2Aparams%29-instance-method" class="signature"><strong>#removeBusinessAccountProfilePhoto</strong>(**params)</a>
+        
+          <div class="summary"><p>Removes the current profile photo of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#removeChatVerification%28%2A%2Aparams%29-instance-method" class="signature"><strong>#removeChatVerification</strong>(**params)</a>
+        
+          <div class="summary"><p>Removes verification from a chat that is currently verified on behalf of the organization represented by the bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#removeUserVerification%28%2A%2Aparams%29-instance-method" class="signature"><strong>#removeUserVerification</strong>(**params)</a>
+        
+          <div class="summary"><p>Removes verification from a user who is currently verified on behalf of the organization represented by the bot.</p></div>
         
       </li>
     
@@ -2119,6 +2196,41 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#setBusinessAccountBio%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setBusinessAccountBio</strong>(**params)</a>
+        
+          <div class="summary"><p>Changes the bio of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setBusinessAccountGiftSettings%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setBusinessAccountGiftSettings</strong>(**params)</a>
+        
+          <div class="summary"><p>Changes the privacy settings pertaining to incoming gifts in a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setBusinessAccountName%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setBusinessAccountName</strong>(**params)</a>
+        
+          <div class="summary"><p>Changes the first and last name of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setBusinessAccountProfilePhoto%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setBusinessAccountProfilePhoto</strong>(**params)</a>
+        
+          <div class="summary"><p>Changes the profile photo of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setBusinessAccountUsername%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setBusinessAccountUsername</strong>(**params)</a>
+        
+          <div class="summary"><p>Changes the username of a managed business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#setChatAdministratorCustomTitle%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setChatAdministratorCustomTitle</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to set a custom title for an administrator in a supergroup promoted by the bot.</p></div>
@@ -2224,6 +2336,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#transferBusinessAccountStars%28%2A%2Aparams%29-instance-method" class="signature"><strong>#transferBusinessAccountStars</strong>(**params)</a>
+        
+          <div class="summary"><p>Transfers Telegram Stars from the business account balance to the bot's balance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#transferGift%28%2A%2Aparams%29-instance-method" class="signature"><strong>#transferGift</strong>(**params)</a>
+        
+          <div class="summary"><p>Transfers an owned unique gift to another user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#unbanChatMember%28%2A%2Aparams%29-instance-method" class="signature"><strong>#unbanChatMember</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to unban a previously banned user in a supergroup or channel.</p></div>
@@ -2269,6 +2395,27 @@
         <a href="#unpinChatMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#unpinChatMessage</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to remove a message from the list of pinned messages in a chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#upgradeGift%28%2A%2Aparams%29-instance-method" class="signature"><strong>#upgradeGift</strong>(**params)</a>
+        
+          <div class="summary"><p>Upgrades a given regular gift to a unique gift.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#verifyChat%28%2A%2Aparams%29-instance-method" class="signature"><strong>#verifyChat</strong>(**params)</a>
+        
+          <div class="summary"><p>Verifies a chat on behalf of the organization which is represented by the bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#verifyUser%28%2A%2Aparams%29-instance-method" class="signature"><strong>#verifyUser</strong>(**params)</a>
+        
+          <div class="summary"><p>Verifies a user on behalf of the organization which is represented by the bot.</p></div>
         
       </li>
     
@@ -2562,6 +2709,34 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="convertGiftToStars(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>convertGiftToStars</strong>(**params)
+
+        <a class="method-permalink" href="#convertGiftToStars%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Converts a given regular gift to Telegram Stars. Requires the can_convert_gifts_to_stars business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>owned_gift_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the regular gift that should be converted to Telegram Stars</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="copyMessage(**params)-instance-method">
       <div class="signature">
         
@@ -2838,6 +3013,34 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="deleteBusinessMessages(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>deleteBusinessMessages</strong>(**params)
+
+        <a class="method-permalink" href="#deleteBusinessMessages%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Delete messages on behalf of a business account. Requires the &quot;can_delete_sent_messages&quot; business bot right to delete messages sent by the bot itself, or the &quot;can_delete_all_messages&quot; business bot right to delete any message. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which to delete the messages.</p>
+</blockquote>
+<p><code>message_ids : Array(Int32)</code></p>
+<blockquote>
+<p>A JSON-serialized list of 1-100 identifiers of messages to delete. All messages must be from the same chat. See deleteMessage for limitations on which messages can be deleted.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="deleteChatPhoto(**params)-instance-method">
       <div class="signature">
         
@@ -2933,6 +3136,34 @@
 <p><code>language_code : String | Nil</code></p>
 <blockquote>
 <p>A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="deleteStory(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>deleteStory</strong>(**params)
+
+        <a class="method-permalink" href="#deleteStory%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes a story previously posted by the bot on behalf of a managed business account. Requires the &quot;can_manage_stories&quot; business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>story_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the story to delete.</p>
 </blockquote>
         </div>
       
@@ -3106,6 +3337,54 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="editStory(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>editStory</strong>(**params)
+
+        <a class="method-permalink" href="#editStory%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Edits a story previously posted by the bot on behalf of a managed business account. Requires the &quot;can_manage_stories&quot; business bot right. Returns Story on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>story_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the story to edit.</p>
+</blockquote>
+<p><code>content : Hamilton::Types::StoryContent</code></p>
+<blockquote>
+<p>Content of the story.</p>
+</blockquote>
+<p><code>caption : String | Nil</code></p>
+<blockquote>
+<p>Caption of the story, 0-2048 characters after entities parsing.</p>
+</blockquote>
+<p><code>parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the story caption. See formatting options for more details.</p>
+</blockquote>
+<p><code>caption_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
+</blockquote>
+<p><code>areas : Array(<a href="../Hamilton/Types/StoryArea.html">Hamilton::Types::StoryArea</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of clickable areas to be shown on the story.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="exportChatInviteLink(**params)-instance-method">
       <div class="signature">
         
@@ -3246,6 +3525,86 @@
         <div class="doc">
           
           <p>Returns the list of gifts that can be sent by the bot to users and channel chats. Requires no parameters. Returns a <code>Gifts</code> object.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getBusinessAccountGifts(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getBusinessAccountGifts</strong>(**params)
+
+        <a class="method-permalink" href="#getBusinessAccountGifts%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the gifts received and owned by a managed business account. Requires the &quot;can_view_gifts_and_stars&quot; business bot right. Returns <code>OwnedGifts</code> on success.</p>
+<p>Params:</p>
+<p><code>business_user_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business user.</p>
+</blockquote>
+<p><code>exclude_unsaved : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that aren't saved to the account's profile page.</p>
+</blockquote>
+<p><code>exclude_saved : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that are saved to the account's profile page.</p>
+</blockquote>
+<p><code>exclude_unlimited : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased an unlimited number of times.</p>
+</blockquote>
+<p><code>exclude_limited : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased a limited number of times.</p>
+</blockquote>
+<p><code>exclude_unique : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to exclude unique gifts.</p>
+</blockquote>
+<p><code>sort_by_price : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.</p>
+</blockquote>
+<p><code>offset : String | Nil</code></p>
+<blockquote>
+<p>Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results.</p>
+</blockquote>
+<p><code>limit : Int32 | Nil</code></p>
+<blockquote>
+<p>The maximum number of gifts to be returned; 1-100. Defaults to 100.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getBusinessAccountStarBalance(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getBusinessAccountStarBalance</strong>(**params)
+
+        <a class="method-permalink" href="#getBusinessAccountStarBalance%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the amount of Telegram Stars owned by a managed business account. Requires the &quot;can_view_gifts_and_stars&quot; business bot right. Returns <code>StarAmount</code> on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
         </div>
       
       <br/>
@@ -3854,6 +4213,62 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="postStory(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>postStory</strong>(**params)
+
+        <a class="method-permalink" href="#postStory%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Posts a story on behalf of a managed business account. Requires the can_manage_stories business bot right. Returns Story on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>content : <a href="../Hamilton/Types/InputStoryContent.html">Hamilton::Types::InputStoryContent</a></code></p>
+<blockquote>
+<p>Content of the story.</p>
+</blockquote>
+<p><code>active_period : Int32</code></p>
+<blockquote>
+<p>Period after which the story is moved to the archive, in seconds; must be one of <code>6 * 3600</code>, <code>12 * 3600</code>, <code>86400</code>, or <code>2 * 86400</code>.</p>
+</blockquote>
+<p><code>caption : String | Nil</code></p>
+<blockquote>
+<p>Caption of the story, 0-2048 characters after entities parsing.</p>
+</blockquote>
+<p><code>parse_mode : String | Nil</code></p>
+<blockquote>
+<p>Mode for parsing entities in the story caption.</p>
+</blockquote>
+<p><code>caption_entities : Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
+</blockquote>
+<p><code>areas : Array(<a href="../Hamilton/Types/StoryArea.html">Hamilton::Types::StoryArea</a>) | Nil</code></p>
+<blockquote>
+<p>A JSON-serialized list of clickable areas to be shown on the story.</p>
+</blockquote>
+<p><code>post_to_chat_page : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to keep the story accessible after it expires.</p>
+</blockquote>
+<p><code>protect_content : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True if the content of the story must be protected from forwarding and screenshotting.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="promoteChatMember(**params)-instance-method">
       <div class="signature">
         
@@ -3937,6 +4352,114 @@
 <p><code>can_manage_direct_messages : Bool | Nil</code></p>
 <blockquote>
 <p>Pass True if the administrator can manage direct messages within the channel and decline suggested posts; for channels only.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="readBusinessMessage(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>readBusinessMessage</strong>(**params)
+
+        <a class="method-permalink" href="#readBusinessMessage%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Marks incoming message as read on behalf of a business account. Requires the &quot;can_read_messages&quot; business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which to read the message.</p>
+</blockquote>
+<p><code>chat_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.</p>
+</blockquote>
+<p><code>message_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the message to mark as read</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="removeBusinessAccountProfilePhoto(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>removeBusinessAccountProfilePhoto</strong>(**params)
+
+        <a class="method-permalink" href="#removeBusinessAccountProfilePhoto%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Removes the current profile photo of a managed business account. Requires the can_edit_profile_photo business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>is_public : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account's privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="removeChatVerification(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>removeChatVerification</strong>(**params)
+
+        <a class="method-permalink" href="#removeChatVerification%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Removes verification from a chat that is currently verified on behalf of the organization represented by the bot. Returns True on success.</p>
+<p>Params:</p>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="removeUserVerification(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>removeUserVerification</strong>(**params)
+
+        <a class="method-permalink" href="#removeUserVerification%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Removes verification from a user who is currently verified on behalf of the organization represented by the bot. Returns True on success.</p>
+<p>Params:</p>
+<p><code>user_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the target user.</p>
 </blockquote>
         </div>
       
@@ -5541,6 +6064,158 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="setBusinessAccountBio(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setBusinessAccountBio</strong>(**params)
+
+        <a class="method-permalink" href="#setBusinessAccountBio%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the bio of a managed business account. Requires the can_change_bio business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which to change the bio.</p>
+</blockquote>
+<p><code>bio : String | Nil</code></p>
+<blockquote>
+<p>The new value of the bio for the business account; 0-140 characters.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setBusinessAccountGiftSettings(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setBusinessAccountGiftSettings</strong>(**params)
+
+        <a class="method-permalink" href="#setBusinessAccountGiftSettings%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the privacy settings pertaining to incoming gifts in a managed business account. Requires the &quot;can_change_gift_settings&quot; business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>show_gift_button : Bool</code></p>
+<blockquote>
+<p>Pass True, if a button for sending a gift to the user or by the business account must always be shown in the input field.</p>
+</blockquote>
+<p><code>accepted_gift_types : <a href="../Hamilton/Types/AcceptedGiftTypes.html">Hamilton::Types::AcceptedGiftTypes</a></code></p>
+<blockquote>
+<p>Types of gifts accepted by the business account.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setBusinessAccountName(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setBusinessAccountName</strong>(**params)
+
+        <a class="method-permalink" href="#setBusinessAccountName%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the first and last name of a managed business account. Requires the can_change_name business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which to change the name.</p>
+</blockquote>
+<p><code>first_name : String</code></p>
+<blockquote>
+<p>The new value of the first name for the business account; 1-64 characters.</p>
+</blockquote>
+<p><code>last_name : String | Nil</code></p>
+<blockquote>
+<p>The new value of the last name for the business account; 0-64 characters.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setBusinessAccountProfilePhoto(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setBusinessAccountProfilePhoto</strong>(**params)
+
+        <a class="method-permalink" href="#setBusinessAccountProfilePhoto%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the profile photo of a managed business account. Requires the &quot;can_edit_profile_photo&quot; business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>photo : <a href="../Hamilton/Types/InputProfilePhoto.html">Hamilton::Types::InputProfilePhoto</a></code></p>
+<blockquote>
+<p>The new profile photo to set</p>
+</blockquote>
+<p><code>is_public : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setBusinessAccountUsername(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setBusinessAccountUsername</strong>(**params)
+
+        <a class="method-permalink" href="#setBusinessAccountUsername%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the username of a managed business account. Requires the can_change_username business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection on behalf of which to change the username.</p>
+</blockquote>
+<p><code>username : String | Nil</code></p>
+<blockquote>
+<p>The new value of the username for the business account; 0-32 characters.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="setChatAdministratorCustomTitle(**params)-instance-method">
       <div class="signature">
         
@@ -6011,6 +6686,70 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="transferBusinessAccountStars(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>transferBusinessAccountStars</strong>(**params)
+
+        <a class="method-permalink" href="#transferBusinessAccountStars%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Transfers Telegram Stars from the business account balance to the bot's balance. Requires the &quot;can_transfer_stars&quot; business bot right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>star_count : Int32</code></p>
+<blockquote>
+<p>Number of Telegram Stars to transfer; 1-10000.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="transferGift(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>transferGift</strong>(**params)
+
+        <a class="method-permalink" href="#transferGift%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Transfers an owned unique gift to another user. Requires the can_transfer_and_upgrade_gifts business bot right. Requires can_transfer_stars business bot right if the transfer is paid. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>owned_gift_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the regular gift that should be transferred.</p>
+</blockquote>
+<p><code>new_owner_chat_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.</p>
+</blockquote>
+<p><code>star_count : Int32 | Nil</code></p>
+<blockquote>
+<p>The amount of Telegram Stars that will be paid for the transfer from the business account balance. If positive, then the &quot;can_transfer_stars&quot; business bot right is required.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="unbanChatMember(**params)-instance-method">
       <div class="signature">
         
@@ -6194,6 +6933,98 @@
 <p><code>message_id : Int32</code></p>
 <blockquote>
 <p>Identifier of a message to unpin. Required if business_connection_id is specified. If not specified, the most recent pinned message (by sending date) will be unpinned.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="upgradeGift(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>upgradeGift</strong>(**params)
+
+        <a class="method-permalink" href="#upgradeGift%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Upgrades a given regular gift to a unique gift. Requires the &quot;can_transfer_and_upgrade_gifts&quot; business bot right. Additionally requires the &quot;can_transfer_stars&quot; business bot right if the upgrade is paid. Returns True on success.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>owned_gift_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the regular gift that should be upgraded to a unique one.</p>
+</blockquote>
+<p><code>keep_original_details : Bool | Nil</code></p>
+<blockquote>
+<p>Pass True to keep the original gift text, sender and receiver in the upgraded gift.</p>
+</blockquote>
+<p><code>star_count : Int32 | Nil</code></p>
+<blockquote>
+<p>The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If <code>gift.prepaid_upgrade_star_count</code> is greater than 0, then pass 0, otherwise, the &quot;can_transfer_stars&quot; business bot right is required and <code>gift.upgrade_star_count</code> must be passed.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="verifyChat(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>verifyChat</strong>(**params)
+
+        <a class="method-permalink" href="#verifyChat%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Verifies a chat on behalf of the organization which is represented by the bot. Returns True on success.</p>
+<p>Params:</p>
+<p><code>chat_id : Int32 | String</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>). Channel direct messages chats can't be verified.</p>
+</blockquote>
+<p><code>custom_description : String | Nil</code></p>
+<blockquote>
+<p>Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="verifyUser(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>verifyUser</strong>(**params)
+
+        <a class="method-permalink" href="#verifyUser%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Verifies a user on behalf of the organization which is represented by the bot. Returns True on success.</p>
+<p>Params:</p>
+<p><code>user_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the target user.</p>
+</blockquote>
+<p><code>custom_description : String | Nil</code></p>
+<blockquote>
+<p>Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description.</p>
 </blockquote>
         </div>
       
