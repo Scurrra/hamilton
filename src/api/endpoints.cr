@@ -2500,6 +2500,396 @@ class Hamilton::Api
           docs: [%<A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of `text_parse_mode`. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.>]
         }
       }
+    },
+    "verifyUser" => {
+      type: Bool,
+      docs: [%<Verifies a user on behalf of the organization which is represented by the bot. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the target user.>]
+        },
+        :custom_description => {
+          type: String | Nil,
+          docs: [%<Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description.>]
+        }
+      }
+    },
+    "verifyChat" => {
+      type: Bool,
+      docs: [%<Verifies a chat on behalf of the organization which is represented by the bot. Returns True on success.>],
+      params: {
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Channel direct messages chats can't be verified.>]
+        },
+        :custom_description => {
+          type: String | Nil,
+          docs: [%<Custom description for the verification; 0-70 characters. Must be empty if the organization isn't allowed to provide a custom verification description.>]
+        }
+      }
+    },
+    "removeUserVerification" => {
+      type: Bool,
+      docs: [%<Removes verification from a user who is currently verified on behalf of the organization represented by the bot. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the target user.>]
+        }
+      }
+    },
+    "removeChatVerification" => {
+      type: Bool,
+      docs: [%<Removes verification from a chat that is currently verified on behalf of the organization represented by the bot. Returns True on success.>],
+      params: {
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        }
+      }
+    },
+    "readBusinessMessage" => {
+      type: Bool,
+      docs: [%<Marks incoming message as read on behalf of a business account. Requires the "can_read_messages" business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which to read the message.>]
+        },
+        :chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.>]
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the message to mark as read>]
+        }
+      }
+    },
+    "deleteBusinessMessages" => {
+      type: Bool,
+      docs: [%<Delete messages on behalf of a business account. Requires the "can_delete_sent_messages" business bot right to delete messages sent by the bot itself, or the "can_delete_all_messages" business bot right to delete any message. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which to delete the messages.>]
+        },
+        :message_ids => {
+          type: Array(Int32),
+          docs: [%<A JSON-serialized list of 1-100 identifiers of messages to delete. All messages must be from the same chat. See deleteMessage for limitations on which messages can be deleted.>]
+        }
+      }
+    },
+    "setBusinessAccountName" => {
+      type: Bool,
+      docs: [%<Changes the first and last name of a managed business account. Requires the can_change_name business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which to change the name.>]
+        },
+        :first_name => {
+          type: String,
+          docs: [%<The new value of the first name for the business account; 1-64 characters.>]
+        },
+        :last_name => {
+          type: String | Nil,
+          docs: [%<The new value of the last name for the business account; 0-64 characters.>]
+        }
+      }
+    },
+    "setBusinessAccountUsername" => {
+      type: Bool,
+      docs: [%<Changes the username of a managed business account. Requires the can_change_username business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which to change the username.>]
+        },
+        :username => {
+          type: String | Nil,
+          docs: [%<The new value of the username for the business account; 0-32 characters.>]
+        }
+      }
+    },
+    "setBusinessAccountBio" => {
+      type: Bool,
+      docs: [%<Changes the bio of a managed business account. Requires the can_change_bio business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which to change the bio.>]
+        },
+        :bio => {
+          type: String | Nil,
+          docs: [%<The new value of the bio for the business account; 0-140 characters.>]
+        }
+      }
+    },
+    "setBusinessAccountProfilePhoto" => {
+      type: Bool,
+      docs: [%<Changes the profile photo of a managed business account. Requires the "can_edit_profile_photo" business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :photo => {
+          type: Hamilton::Types::InputProfilePhoto,
+          docs: [%<The new profile photo to set>]
+        },
+        :is_public => {
+          type: Bool | Nil,
+          docs: [%<Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo.>]
+        }
+      }
+    },
+    "removeBusinessAccountProfilePhoto" => {
+      type: Bool,
+      docs: [%<Removes the current profile photo of a managed business account. Requires the can_edit_profile_photo business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :is_public => {
+          type: Bool | Nil,
+          docs: [%<Pass True to remove the public photo, which is visible even if the main photo is hidden by the business account's privacy settings. After the main photo is removed, the previous profile photo (if present) becomes the main photo.>]
+        }
+      }
+    },
+    "setBusinessAccountGiftSettings" => {
+      type: Bool,
+      docs: [%<Changes the privacy settings pertaining to incoming gifts in a managed business account. Requires the "can_change_gift_settings" business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :show_gift_button => {
+          type: Bool,
+          docs: [%<Pass True, if a button for sending a gift to the user or by the business account must always be shown in the input field.>]
+        },
+        :accepted_gift_types => {
+          type: Hamilton::Types::AcceptedGiftTypes,
+          docs: [%<Types of gifts accepted by the business account.>]
+        }
+      }
+    },
+    "getBusinessAccountStarBalance" => {
+      type: Hamilton::Types::StarAmount,
+      docs: [%<Returns the amount of Telegram Stars owned by a managed business account. Requires the "can_view_gifts_and_stars" business bot right. Returns `StarAmount` on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        }
+      }
+    },
+    "transferBusinessAccountStars" => {
+      type: Bool,
+      docs: [%<Transfers Telegram Stars from the business account balance to the bot's balance. Requires the "can_transfer_stars" business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :star_count => {
+          type: Int32,
+          docs: [%<Number of Telegram Stars to transfer; 1-10000.>]
+        }
+      }
+    },
+    "getBusinessAccountGifts" => {
+      type: Hamilton::Types::OwnedGifts,
+      docs: [%<Returns the gifts received and owned by a managed business account. Requires the "can_view_gifts_and_stars" business bot right. Returns `OwnedGifts` on success.>],
+      params: {
+        :business_user_id => {
+          type: String,
+          docs: [%<Unique identifier of the business user.>]
+        },
+        :exclude_unsaved => {
+          type: Bool | Nil,
+          docs: [%<Pass True to exclude gifts that aren't saved to the account's profile page.>]
+        },
+        :exclude_saved => {
+          type: Bool | Nil,
+          docs: [%<Pass True to exclude gifts that are saved to the account's profile page.>]
+        },
+        :exclude_unlimited => {
+          type: Bool | Nil,
+          docs: [%<Pass True to exclude gifts that can be purchased an unlimited number of times.>]
+        },
+        :exclude_limited => {
+          type: Bool | Nil,
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times.>]
+        },
+        :exclude_unique => {
+          type: Bool | Nil,
+          docs: [%<Pass True to exclude unique gifts.>]
+        },
+        :sort_by_price => {
+          type: Bool | Nil,
+          docs: [%<Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.>]
+        },
+        :offset => {
+          type: String | Nil,
+          docs: [%<Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results.>]
+        },
+        :limit => {
+          type: Int32 | Nil,
+          docs: [%<The maximum number of gifts to be returned; 1-100. Defaults to 100.>]
+        }
+      }
+    },
+    "convertGiftToStars" => {
+      type: Bool,
+      docs: [%<Converts a given regular gift to Telegram Stars. Requires the can_convert_gifts_to_stars business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :owned_gift_id => {
+          type: String,
+          docs: [%<Unique identifier of the regular gift that should be converted to Telegram Stars>]
+        }
+      }
+    },
+    "upgradeGift" => {
+      type: Bool,
+      docs: [%<Upgrades a given regular gift to a unique gift. Requires the "can_transfer_and_upgrade_gifts" business bot right. Additionally requires the "can_transfer_stars" business bot right if the upgrade is paid. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :owned_gift_id => {
+          type: String,
+          docs: [%<Unique identifier of the regular gift that should be upgraded to a unique one.>]
+        },
+        :keep_original_details => {
+          type: Bool | Nil,
+          docs: [%<Pass True to keep the original gift text, sender and receiver in the upgraded gift.>]
+        },
+        :star_count => {
+          type: Int32 | Nil,
+          docs: [%<The amount of Telegram Stars that will be paid for the upgrade from the business account balance. If `gift.prepaid_upgrade_star_count` is greater than 0, then pass 0, otherwise, the "can_transfer_stars" business bot right is required and `gift.upgrade_star_count` must be passed.>]
+        }
+      }
+    },
+    "transferGift" => {
+      type: Bool,
+      docs: [%<Transfers an owned unique gift to another user. Requires the can_transfer_and_upgrade_gifts business bot right. Requires can_transfer_stars business bot right if the transfer is paid. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :owned_gift_id => {
+          type: String,
+          docs: [%<Unique identifier of the regular gift that should be transferred.>]
+        },
+        :new_owner_chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.>]
+        },
+        :star_count => {
+          type: Int32 | Nil,
+          docs: [%<The amount of Telegram Stars that will be paid for the transfer from the business account balance. If positive, then the "can_transfer_stars" business bot right is required.>]
+        }
+      }
+    },
+    "postStory" => {
+      type: Hamilton::Types::Story,
+      docs: [%<Posts a story on behalf of a managed business account. Requires the can_manage_stories business bot right. Returns Story on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :content => {
+          type: Hamilton::Types::InputStoryContent,
+          docs: [%<Content of the story.>]
+        },
+        :active_period => {
+          type: Int32,
+          docs: [%<Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Caption of the story, 0-2048 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the story caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :areas => {
+          type: Array(Hamilton::Types::StoryArea) | Nil,
+          docs: [%<A JSON-serialized list of clickable areas to be shown on the story.>]
+        },
+        :post_to_chat_page => {
+          type: Bool | Nil,
+          docs: [%<Pass True to keep the story accessible after it expires.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the content of the story must be protected from forwarding and screenshotting.>]
+        }
+      }
+    },
+    "editStory" => {
+      type: Hamilton::Types::Story,
+      docs: [%<Edits a story previously posted by the bot on behalf of a managed business account. Requires the "can_manage_stories" business bot right. Returns Story on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :story_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the story to edit.>]
+        },
+        :content => {
+          type: Hamilton::Types::StoryContent,
+          docs: [%<Content of the story.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<Caption of the story, 0-2048 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the story caption. See formatting options for more details.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :areas => {
+          type: Array(Hamilton::Types::StoryArea) | Nil,
+          docs: [%<A JSON-serialized list of clickable areas to be shown on the story.>]
+        }
+      }
+    },
+    "deleteStory" => {
+      type: Bool,
+      docs: [%<Deletes a story previously posted by the bot on behalf of a managed business account. Requires the "can_manage_stories" business bot right. Returns True on success.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>]
+        },
+        :story_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the story to delete.>]
+        }
+      }
     }
   }
 end
