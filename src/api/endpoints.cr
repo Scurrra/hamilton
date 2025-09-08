@@ -3218,6 +3218,802 @@ class Hamilton::Api
           docs: [%<A JSON-serialized list of 1-100 identifiers of messages to delete.>]
         }
       }
+    },
+    "sendSticker" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send static .WEBP, animated .TGS, or video .WEBM stickers. On success, the sent `Message` is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :sticker => {
+          type: Hamilton::Types::InputFile | String,
+          docs: [%<Sticker to send. Pass a `file_id` as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .WEBP sticker from the Internet, or upload a new .WEBP, .TGS, or .WEBM sticker using multipart/form-data. Video and animated stickers can't be sent via an HTTP URL.>]
+        },
+        :emoji => {
+          type: String | Nil,
+          docs: [%<Emoji associated with the sticker; only for just uploaded stickers.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil,
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>]
+        }
+      }
+    },
+    "getStickerSet" => {
+      type: Hamilton::Types::StickerSet,
+      docs: [%<Use this method to get a sticker set. On success, a `StickerSet` object is returned.>],
+      params: {
+        :name => {
+          type: String,
+          docs: [%<Name of the sticker set.>]
+        }
+      }
+    },
+    "getCustomEmojiStickers" => {
+      type: Array(Hamilton::Types::Sticker),
+      docs: [%<Use this method to get information about custom emoji stickers by their identifiers. Returns an Array of `Sticker` objects.>],
+      params: {
+        :custom_emoji_ids => {
+          type: Array(String),
+          docs: [%<A JSON-serialized list of custom emoji identifiers. At most 200 custom emoji identifiers can be specified.>]
+        }
+      }
+    },
+    "uploadStickerFile" => {
+      type: Hamilton::Types::File,
+      docs: [%<Use this method to upload a file with a sticker for later use in the `createNewStickerSet`, `addStickerToSet`, or `replaceStickerInSet` methods (the file can be used multiple times). Returns the uploaded `File` on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier of sticker file owner.>]
+        },
+        :sticker => {
+          type: Hamilton::Types::InputFile,
+          docs: [%<A file with the sticker in .WEBP, .PNG, .TGS, or .WEBM format. See [https://core.telegram.org/stickers](https://core.telegram.org/stickers) for technical requirements.>]
+        },
+        :sticker_format => {
+          type: String,
+          docs: [%<Format of the sticker, must be one of “static”, “animated”, “video”.>]
+        }
+      }
+    },
+    "createNewStickerSet" => {
+      type: Bool,
+      docs: [%<Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier of created sticker set owner.>]
+        },
+        :name => {
+          type: String,
+          docs: [%<Short name of sticker set, to be used in `t.me/addstickers/` URLs (e.g., animals). Can contain only English letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in "_by_<bot_username>". <bot_username> is case insensitive. 1-64 characters.>]
+        },
+        :title => {
+          type: String,
+          docs: [%<Sticker set title, 1-64 characters.>]
+        },
+        :stickers => {
+          type: Array(Hamilton::Types::InputSticker),
+          docs: [%<A JSON-serialized list of 1-50 initial stickers to be added to the sticker set.>]
+        },
+        :sticker_type => {
+          type: String | Nil,
+          docs: [%<Type of stickers in the set, pass “regular”, “mask”, or “custom_emoji”. By default, a regular sticker set is created.>]
+        },
+        :needs_repainting => {
+          type: Bool | Nil,
+          docs: [%<Pass True if stickers in the sticker set must be repainted to the color of text when used in messages, the accent color if used as emoji status, white on chat photos, or another appropriate color based on context; for custom emoji sticker sets only.>]
+        }
+      }
+    },
+    "addStickerToSet" => {
+      type: Bool,
+      docs: [%<Use this method to add a new sticker to a set created by the bot. Emoji sticker sets can have up to 200 stickers. Other sticker sets can have up to 120 stickers. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier of sticker set owner.>]
+        },
+        :name => {
+          type: String,
+          docs: [%<Sticker set name.>]
+        },
+        :sticker => {
+          type: Hamilton::Types::InputSticker,
+          docs: [%<A JSON-serialized object with information about the added sticker. If exactly the same sticker had already been added to the set, then the set isn't changed.>]
+        }
+      }
+    },
+    "setStickerPositionInSet" => {
+      type: Bool,
+      docs: [%<Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success.>],
+      params: {
+        :sticker => {
+          type: String,
+          docs: [%<File identifier of the sticker.>]
+        },
+        :position => {
+          type: Int32,
+          docs: [%<New sticker position in the set, zero-based.>]
+        }
+      }
+    },
+    "deleteStickerFromSet" => {
+      type: Bool,
+      docs: [%<Use this method to delete a sticker from a set created by the bot. Returns True on success.>],
+      params: {
+        :sticker => {
+          type: String,
+          docs: [%<File identifier of the sticker.>]
+        }
+      }
+    },
+    "replaceStickerInSet" => {
+      type: Bool,
+      docs: [%<Use this method to replace an existing sticker in a sticker set with a new one. The method is equivalent to calling `deleteStickerFromSet`, then `addStickerToSet`, then `setStickerPositionInSet`. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier of the sticker set owner.>]
+        },
+        :name => {
+          type: String,
+          docs: [%<Sticker set name.>]
+        },
+        :old_sticker => {
+          type: String,
+          docs: [%<File identifier of the replaced sticker.>]
+        },
+        :sticker => {
+          type: Hamilton::Types::InputSticker,
+          docs: [%<A JSON-serialized object with information about the added sticker. If exactly the same sticker had already been added to the set, then the set remains unchanged.>]
+        }
+      }
+    },
+    "setStickerEmojiList" => {
+      type: Bool,
+      docs: [%<Use this method to change the list of emoji assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns True on success.>],
+      params: {
+        :sticker => {
+          type: String,
+          docs: [%<File identifier of the sticker.>]
+        },
+        :emoji_list => {
+          type: Array(String),
+          docs: [%<A JSON-serialized list of 1-20 emoji associated with the sticker.>]
+        }
+      }
+    },
+    "setStickerKeywords" => {
+      type: Bool,
+      docs: [%<Use this method to change search keywords assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns True on success.>],
+      params: {
+        :sticker => {
+          type: String,
+          docs: [%<File identifier of the sticker.>]
+        },
+        :keywords => {
+          type: Array(String) | Nil,
+          docs: [%<A JSON-serialized list of 0-20 search keywords for the sticker with total length of up to 64 characters.>]
+        }
+      }
+    },
+    "setStickerMaskPosition" => {
+      type: Bool,
+      docs: [%<Use this method to change the mask position of a mask sticker. The sticker must belong to a sticker set that was created by the bot. Returns True on success.>],
+      params: {
+        :sticker => {
+          type: String,
+          docs: [%<File identifier of the sticker.>]
+        },
+        :mask_position => {
+          type: Hamilton::Types::MaskPosition | Nil,
+          docs: [%<A JSON-serialized object with the position where the mask should be placed on faces. Omit the parameter to remove the mask position.>]
+        }
+      }
+    },
+    "setStickerSetTitle" => {
+      type: Bool,
+      docs: [%<Use this method to set the title of a created sticker set. Returns True on success.>],
+      params: {
+        :name => {
+          type: String,
+          docs: [%<Sticker set name.>]
+        },
+        :title => {
+          type: String,
+          docs: [%<Sticker set title, 1-64 characters.>]
+        }
+      }
+    },
+    "setStickerSetThumbnail" => {
+      type: Bool,
+      docs: [%<Use this method to set the thumbnail of a regular or mask sticker set. The format of the thumbnail file must match the format of the stickers in the set. Returns True on success.>],
+      params: {
+        :name => {
+          type: String,
+          docs: [%<Sticker set name.>]
+        },
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier of the sticker set owner>]
+        },
+        :thumbnail => {
+          type: Hamilton::Types::InputFile | String | Nil,
+          docs: [%<A .WEBP or .PNG image with the thumbnail, must be up to 128 kilobytes in size and have a width and height of exactly 100px, or a .TGS animation with a thumbnail up to 32 kilobytes in size (see [https://core.telegram.org/stickers#animation-requirements](https://core.telegram.org/stickers#animation-requirements) for animated sticker technical requirements), or a .WEBM video with the thumbnail up to 32 kilobytes in size; see [https://core.telegram.org/stickers#video-requirements](https://core.telegram.org/stickers#video-requirements) for video sticker technical requirements. Pass a `file_id` as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. Animated and video sticker set thumbnails can't be uploaded via HTTP URL. If omitted, then the thumbnail is dropped and the first sticker is used as the thumbnail.>]
+        },
+        :format => {
+          type: String,
+          docs: [%<Format of the thumbnail, must be one of “static” for a .WEBP or .PNG image, “animated” for a .TGS animation, or “video” for a .WEBM video.>]
+        }
+      }
+    },
+    "setCustomEmojiStickerSetThumbnail" => {
+      type: Bool,
+      docs: [%<Use this method to set the thumbnail of a custom emoji sticker set. Returns True on success.>],
+      params: {
+        :name => {
+          type: String,
+          docs: [%<Sticker set name.>]
+        },
+        :custom_emoji_id => {
+          type: String | Nil,
+          docs: [%<Custom emoji identifier of a sticker from the sticker set; pass an empty string to drop the thumbnail and use the first sticker as the thumbnail.>]
+        }
+      }
+    },
+    "deleteStickerSet" => {
+      type: Bool,
+      docs: [%<Use this method to delete a sticker set that was created by the bot. Returns True on success.>],
+      params: {
+        :name => {
+          type: String,
+          docs: [%<Sticker set name.>]
+        }
+      }
+    },
+    "answerInlineQuery" => {
+      type: Bool,
+      docs: [%<Use this method to send answers to an inline query. On success, True is returned.>, %<No more than 50 results per query are allowed.>],
+      params: {
+        :inline_query_id => {
+          type: String,
+          docs: [%<Unique identifier for the answered query.>]
+        },
+        :results => {
+          type: Array(Hamilton::Types::InlineQueryResult),
+          docs: [%<A JSON-serialized array of results for the inline query.>]
+        },
+        :cache_time => {
+          type: Int32 | Nil,
+          docs: [%<The maximum amount of time in seconds that the result of the inline query may be cached on the server. Defaults to 300.>]
+        },
+        :is_personal => {
+          type: Bool | Nil,
+          docs: [%<Pass True if results may be cached on the server side only for the user that sent the query. By default, results may be returned to any user who sends the same query.>]
+        },
+        :next_offset => {
+          type: String | Nil,
+          docs: [%<Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don't support pagination. Offset length can't exceed 64 bytes.>]
+        },
+        :button => {
+          type: Array(Hamilton::Types::InlineQueryResultButton) | Nil,
+          docs: [%<A JSON-serialized object describing a button to be shown above inline query results.>]
+        }
+      }
+    },
+    "answerWebAppQuery" => {
+      type: Hamilton::Types::SentWebAppMessage,
+      docs: [%<Use this method to set the result of an interaction with a Web App and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a `SentWebAppMessage` object is returned.>],
+      params: {
+        :web_app_query_id => {
+          type: String,
+          docs: [%<Unique identifier for the query to be answered.>]
+        },
+        :result => {
+          type: Hamilton::Types::InlineQueryResult,
+          docs: [%<A JSON-serialized object describing the message to be sent.>]
+        }
+      }
+    },
+    "savePreparedInlineMessage" => {
+      type: Hamilton::Types::PreparedInlineMessage,
+      docs: [%<Stores a message that can be sent by a user of a Mini App. Returns a `PreparedInlineMessage` object.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the target user that can use the prepared message.>]
+        },
+        :result => {
+          type: Hamilton::Types::InlineQueryResult,
+          docs: [%<A JSON-serialized object describing the message to be sent.>]
+        },
+        :allow_user_chats => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the message can be sent to private chats with users.>]
+        },
+        :allow_bot_chats => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the message can be sent to private chats with bots.>]
+        },
+        :allow_group_chats => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the message can be sent to group and supergroup chats.>]
+        },
+        :allow_channel_chats => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the message can be sent to channel chats.>]
+        }
+      }
+    },
+    "sendInvoice" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send invoices. On success, the sent `Message` is returned.>],
+      params: {
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :direct_messages_topic_id => {
+          type: Int32 | Nil,
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
+        },
+        :title => {
+          type: String,
+          docs: [%<Product name, 1-32 characters.>]
+        },
+        :description => {
+          type: String,
+          docs: [%<Product description, 1-255 characters.>]
+        },
+        :payload => {
+          type: String,
+          docs: [%<Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.>]
+        },
+        :provider_token => {
+          type: String | Nil,
+          docs: [%<Payment provider token, obtained via `@BotFather`. Pass an empty string for payments in Telegram Stars.>]
+        },
+        :currency => {
+          type: String,
+          docs: [%<Three-letter ISO 4217 currency code, see more on currencies. Pass “XTR” for payments in Telegram Stars.>]
+        },
+        :prices => {
+          type: Array(Hamilton::Types::LabeledPrice),
+          docs: [%<Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in Telegram Stars.>]
+        },
+        :max_tip_amount => {
+          type: Int32 | Nil,
+          docs: [%<The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). See the exp parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in Telegram Stars.>]
+        },
+        :suggested_tip_amounts => {
+          type: Array(Int32) | Nil,
+          docs: [%<A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed `max_tip_amount`.>]
+        },
+        :start_parameter => {
+          type: String | Nil,
+          docs: [%<Unique deep-linking parameter. If left empty, forwarded copies of the sent message will have a Pay button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a URL button with a deep link to the bot (instead of a Pay button), with the value used as the start parameter.>]
+        },
+        :provider_data => {
+          type: String | Nil,
+          docs: [%<JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.>]
+        },
+        :photo_url => {
+          type: String | Nil,
+          docs: [%<URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.>]
+        },
+        :photo_size => {
+          type: Int32 | Nil,
+          docs: [%<Photo size in bytes.>]
+        },
+        :photo_width => {
+          type: Int32 | Nil,
+          docs: [%<Photo width.>]
+        },
+        :photo_height => {
+          type: Int32 | Nil,
+          docs: [%<Photo height.>]
+        },
+        :need_name => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's full name to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :need_phone_number => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's phone number to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :need_email => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's email address to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :need_shipping_address => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's shipping address to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :send_phone_number_to_provider => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the user's phone number should be sent to the provider. Ignored for payments in Telegram Stars.>]
+        },
+        :send_email_to_provider => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the user's email address should be sent to the provider. Ignored for payments in Telegram Stars.>]
+        },
+        :is_flexible => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the final price depends on the shipping method. Ignored for payments in Telegram Stars.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :suggested_post_parameters => {
+          type: Hamilton::Types::SuggestedPostParameters | Nil,
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for an inline keyboard. If empty, one "Pay total price" button will be shown. If not empty, the first button must be a Pay button.>]
+        }
+      }
+    },
+    "createInvoiceLink" => {
+      type: String,
+      docs: [%<Use this method to create a link for an invoice. Returns the created invoice link as String on success.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the link will be created. For payments in Telegram Stars only.>]
+        },
+        :title => {
+          type: String,
+          docs: [%<Product name, 1-32 characters.>]
+        },
+        :description => {
+          type: String,
+          docs: [%<Product description, 1-255 characters.>]
+        },
+        :payload => {
+          type: String,
+          docs: [%<Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.>]
+        },
+        :provider_token => {
+          type: String | Nil,
+          docs: [%<Payment provider token, obtained via `@BotFather`. Pass an empty string for payments in Telegram Stars.>]
+        },
+        :currency => {
+          type: String,
+          docs: [%<Three-letter ISO 4217 currency code, see more on currencies. Pass “XTR” for payments in Telegram Stars.>]
+        },
+        :prices => {
+          type: Array(Hamilton::Types::LabeledPrice),
+          docs: [%<Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in Telegram Stars.>]
+        },
+        :subscription_period => {
+          type: Int32 | Nil,
+          docs: [%<The number of seconds the subscription will be active for before the next payment. The currency must be set to “XTR” (Telegram Stars) if the parameter is used. Currently, it must always be 2592000 (30 days) if specified. Any number of subscriptions can be active for a given bot at the same time, including multiple concurrent subscriptions from the same user. Subscription price must no exceed 10000 Telegram Stars.>]
+        },
+        :max_tip_amount => {
+          type: Int32 | Nil,
+          docs: [%<The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). See the exp parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in Telegram Stars.>]
+        },
+        :suggested_tip_amounts => {
+          type: Array(Int32) | Nil,
+          docs: [%<A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed `max_tip_amount`.>]
+        },
+        :provider_data => {
+          type: String | Nil,
+          docs: [%<JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.>]
+        },
+        :photo_url => {
+          type: String | Nil,
+          docs: [%<URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service.>]
+        },
+        :photo_size => {
+          type: Int32 | Nil,
+          docs: [%<Photo size in bytes.>]
+        },
+        :photo_width => {
+          type: Int32 | Nil,
+          docs: [%<Photo width.>]
+        },
+        :photo_height => {
+          type: Int32 | Nil,
+          docs: [%<Photo height.>]
+        },
+        :need_name => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's full name to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :need_phone_number => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's phone number to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :need_email => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's email address to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :need_shipping_address => {
+          type: Bool | Nil,
+          docs: [%<Pass True if you require the user's shipping address to complete the order. Ignored for payments in Telegram Stars.>]
+        },
+        :send_phone_number_to_provider => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the user's phone number should be sent to the provider. Ignored for payments in Telegram Stars.>]
+        },
+        :send_email_to_provider => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the user's email address should be sent to the provider. Ignored for payments in Telegram Stars.>]
+        },
+        :is_flexible => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the final price depends on the shipping method. Ignored for payments in Telegram Stars.>]
+        }
+      }
+    },
+    "answerShippingQuery" => {
+      type: Bool,
+      docs: [%<If you sent an invoice requesting a shipping address and the parameter `is_flexible` was specified, the Bot API will send an `Update` with a `shipping_query` field to the bot. Use this method to reply to shipping queries. On success, True is returned.>],
+      params: {
+        :shipping_query_id => {
+          type: String,
+          docs: [%<Unique identifier for the query to be answered.>]
+        },
+        :ok => {
+          type: Bool,
+          docs: [%<Pass True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible).>]
+        },
+        :shipping_options => {
+          type: Array(Hamilton::Types::ShippingOption) | Nil,
+          docs: [%<Required if ok is True. A JSON-serialized array of available shipping options.>]
+        },
+        :error_message => {
+          type: String | Nil,
+          docs: [%<Required if ok is False. Error message in human readable form that explains why it is impossible to complete the order (e.g. “Sorry, delivery to your desired address is unavailable”). Telegram will display this message to the user.>]
+        }
+      }
+    },
+    "answerPreCheckoutQuery" => {
+      type: Bool,
+      docs: [%<Once the user has confirmed their payment and shipping details, the Bot API sends the final confirmation in the form of an `Update` with the field `pre_checkout_query`. Use this method to respond to such pre-checkout queries. On success, True is returned.>, %<NOTE: The Bot API must receive an answer within 10 seconds after the pre-checkout query was sent.>],
+      params: {
+        :pre_checkout_query_id => {
+          type: String,
+          docs: [%<Unique identifier for the query to be answered.>]
+        },
+        :ok => {
+          type: Bool,
+          docs: [%<Specify True if everything is alright (goods are available, etc.) and the bot is ready to proceed with the order. Use False if there are any problems.>]
+        },
+        :error_message => {
+          type: String | Nil,
+          docs: [%<Required if ok is False. Error message in human readable form that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our amazing black T-shirts while you were busy filling out your payment details. Please choose a different color or garment!"). Telegram will display this message to the user.>]
+        }
+      }
+    },
+    "getMyStarBalance" => {
+      type: Hamilton::Types::String,
+      docs: [%<A method to get the current Telegram Stars balance of the bot. Requires no parameters. On success, returns a `StarAmount` object.>]
+    },
+    "getStarTransactions" => {
+      type: Hamilton::Types::StarTransactions,
+      docs: [%<Returns the bot's Telegram Star transactions in chronological order. On success, returns a `StarTransactions` object.>],
+      params: {
+        :offset => {
+          type: Int32 | Nil,
+          docs: [%<Number of transactions to skip in the response.>]
+        },
+        :limit => {
+          type: Int32 | Nil,
+          docs: [%<The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100.>]
+        }
+      }
+    },
+    "refundStarPayment" => {
+      type: Bool,
+      docs: [%<Refunds a successful payment in Telegram Stars. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<Identifier of the user whose payment will be refunded.>]
+        },
+        :telegram_payment_charge_id => {
+          type: String,
+          docs: [%<Telegram payment identifier.>]
+        }
+      }
+    },
+    "editUserStarSubscription" => {
+      type: Bool,
+      docs: [%<Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns True on success.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<Identifier of the user whose subscription will be edited.>]
+        },
+        :telegram_payment_charge_id => {
+          type: String,
+          docs: [%<Telegram payment identifier for the subscription.>]
+        },
+        :is_canceled => {
+          type: Bool,
+          docs: [%<Pass True to cancel extension of the user subscription; the subscription must be active up to the end of the current subscription period. Pass False to allow the user to re-enable a subscription that was previously canceled by the bot.>]
+        }
+      }
+    },
+    "setPassportDataErrors" => {
+      type: Bool,
+      docs: [%<Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns True on success.>, %<Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier.>]
+        },
+        :errors => {
+          type: Array(Hamilton::Types::PassportElementError),
+          docs: [%<A JSON-serialized array describing the errors.>]
+        }
+      }
+    },
+    "sendGame" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to send a game. On success, the sent `Message` is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier for the target chat. Games can't be sent to channel direct messages chats and channel chats.>]
+        },
+        :message_thread_id => {
+          type: Int32 | Nil,
+          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>]
+        },
+        :game_short_name => {
+          type: String,
+          docs: [%<Short name of the game, serves as the unique identifier for the game. Set up your games via `@BotFather`.>]
+        },
+        :disable_notification => {
+          type: Bool | Nil,
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
+        },
+        :protect_content => {
+          type: Bool | Nil,
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>]
+        },
+        :allow_paid_broadcast => {
+          type: Bool | Nil,
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>]
+        },
+        :message_effect_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>]
+        },
+        :reply_parameters => {
+          type: Hamilton::Types::ReplyParameters | Nil,
+          docs: [%<Description of the message to reply to.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for an inline keyboard. If empty, one 'Play game_title' button will be shown. If not empty, the first button must launch the game.>]
+        }
+      }
+    },
+    "setGameScore" => {
+      type: Hamilton::Types::Message | Bool,
+      docs: [%<Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the `Message` is returned, otherwise True is returned. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<User identifier.>]
+        },
+        :score => {
+          type: Int32,
+          docs: [%<New score, must be non-negative.>]
+        },
+        :force => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters.>]
+        },
+        :disable_edit_message => {
+          type: Bool | Nil,
+          docs: [%<Pass True if the game message should not be automatically edited to include the current scoreboard.>]
+        },
+        :chat_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat.>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the sent message.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        }
+      }
+    },
+    "getGameHighScores" => {
+      type: Array(Hamilton::Types::GameHighScore),
+      docs: [%<Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of `GameHighScore` objects.>, %<NOTE: This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and their neighbors are not among them. Please note that this behavior is subject to change.>],
+      params: {
+        :user_id => {
+          type: Int32,
+          docs: [%<Target user id.>]
+        },
+        :chat_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat.>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the sent message.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        }
+      }
     }
   }
 end
