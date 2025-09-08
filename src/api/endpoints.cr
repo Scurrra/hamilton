@@ -1287,7 +1287,7 @@ class Hamilton::Api
         },
         :explanation_parse_mode => {
           type: String | Nil,
-          docs: [%<Mode for parsing entities in the explanation. See formatting options for more details.>]
+          docs: [%<Mode for parsing entities in the explanation.>]
         },
         :explanation_entities => {
           type: Array(Hamilton::Types::MessageEntity) | Nil,
@@ -2865,7 +2865,7 @@ class Hamilton::Api
         },
         :parse_mode => {
           type: String | Nil,
-          docs: [%<Mode for parsing entities in the story caption. See formatting options for more details.>]
+          docs: [%<Mode for parsing entities in the story caption.>]
         },
         :caption_entities => {
           type: Array(Hamilton::Types::MessageEntity) | Nil,
@@ -2888,6 +2888,334 @@ class Hamilton::Api
         :story_id => {
           type: Int32,
           docs: [%<Unique identifier of the story to delete.>]
+        }
+      }
+    },
+    "editMessageText" => {
+      type: Hamilton::Types::Message | Bool,
+      docs: [%<Use this method to edit text and game messages. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the message to edit.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        },
+        :text => {
+          type: String,
+          docs: [%<New text of the message, 1-4096 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the message text.>]
+        },
+        :entities => {
+          type: Array(Hamilton::Types::MessageEntity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in message text, which can be specified instead of `parse_mode`.>]
+        },
+        :link_preview_options => {
+          type: Hamilton::Types::LinkPreviewOptions | Nil,
+          docs: [%<Link preview generation options for the message.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for an inline keyboard.>]
+        }
+      }
+    },
+    "editMessageCaption" => {
+      type: Hamilton::Types::Message | Bool,
+      docs: [%<Use this method to edit captions of messages. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the message to edit.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        },
+        :caption => {
+          type: String | Nil,
+          docs: [%<New caption of the message, 0-1024 characters after entities parsing.>]
+        },
+        :parse_mode => {
+          type: String | Nil,
+          docs: [%<Mode for parsing entities in the message caption.>]
+        },
+        :caption_entities => {
+          type: Array(Hamilton::Entities::Entity) | Nil,
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>]
+        },
+        :show_caption_above_media => {
+          type: Bool | Nil,
+          docs: [%<Pass True, if the caption must be shown above the message media. Supported only for animation, photo and video messages.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for an inline keyboard.>]
+        }
+      }
+    },
+    "editMessageMedia" => {
+      type: Hamilton::Types::Message | Nil,
+      docs: [%<Use this method to edit animation, audio, document, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can't be uploaded; use a previously uploaded file via its file_id or specify a URL. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the message to edit.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        },
+        :media => {
+          type: Hamilton::Types::InputMedia,
+          docs: [%<A JSON-serialized object for a new media content of the message.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for a new inline keyboard.>]
+        }
+      }
+    },
+    "editMessageLiveLocation" => {
+      type: Hamilton::Types::Message | Bool,
+      docs: [%<Use this method to edit live location messages. A location can be edited until its `live_period` expires or editing is explicitly disabled by a call to `stopMessageLiveLocation`. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the message to edit.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message to edit.>]
+        },
+        :latitude => {
+          type: Float32,
+          docs: [%<Latitude of new location.>]
+        },
+        :longitude => {
+          type: Float32,
+          docs: [%<Longitude of new location.>]
+        },
+        :live_period => {
+          type: Int32 | Nil,
+          docs: [%<New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current `live_period` by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then `live_period` remains unchanged.>]
+        },
+        :horizontal_accuracy => {
+          type: Float32 | Nil,
+          docs: [%<The radius of uncertainty for the location, measured in meters; 0-1500.>]
+        },
+        :heading => {
+          type: Int32 | Nil,
+          docs: [%<Direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.>]
+        },
+        :proximity_alert_radius => {
+          type: Int32 | Nil,
+          docs: [%<The maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for a new inline keyboard.>]
+        }
+      }
+    },
+    "stopMessageLiveLocation" => {
+      type: Hamilton::Types::Message | Bool,
+      docs: [%<Use this method to stop updating a live location message before `live_period` expires. On success, if the message is not an inline message, the edited `Message` is returned, otherwise True is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the message with live location to stop.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for a new inline keyboard.>]
+        }
+      }
+    },
+    "editMessageChecklist" => {
+      type: Hamilton::Types::Message,
+      docs: [%<Use this method to edit a checklist on behalf of a connected business account. On success, the edited `Message` is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
+        },
+        :chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier for the target chat.>]
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Unique identifier for the target message.>]
+        },
+        :checklist => {
+          type: Hamilton::Types::Checklist,
+          docs: [%<A JSON-serialized object for the new checklist.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for the new inline keyboard for the message.>]
+        }
+      }
+    },
+    "editMessageReplyMarkup" => {
+      type: Hamilton::Types::Message | Bool,
+      docs: [%<Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32 | Nil,
+          docs: [%<Required if `inline_message_id` is not specified. Identifier of the message to edit.>]
+        },
+        :inline_message_id => {
+          type: String | Nil,
+          docs: [%<Required if `chat_id` and `message_id` are not specified. Identifier of the inline message.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for an inline keyboard.>]
+        }
+      }
+    },
+    "stopPoll" => {
+      type: Hamilton::Types::Poll,
+      docs: [%<Use this method to stop a poll which was sent by the bot. On success, the stopped Poll is returned.>],
+      params: {
+        :business_connection_id => {
+          type: String | Nil,
+          docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
+        },
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Identifier of the original message with the poll.>]
+        },
+        :reply_markup => {
+          type: Hamilton::Types::InlineKeyboardMarkup | Nil,
+          docs: [%<A JSON-serialized object for a new message inline keyboard.>]
+        }
+      }
+    },
+    "approveSuggestedPost" => {
+      type: Bool,
+      docs: [%<Use this method to approve a suggested post in a direct messages chat. The bot must have the "can_post_messages" administrator right in the corresponding channel chat. Returns True on success.>],
+      params: {
+        :chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier for the target direct messages chat.>]
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Identifier of a suggested post message to approve.>]
+        },
+        :send_date => {
+          type: Int32 | Nil,
+          docs: [%<Point in time (Unix timestamp) when the post is expected to be published; omit if the date has already been specified when the suggested post was created. If specified, then the date must be not more than 2678400 seconds (30 days) in the future.>]
+        }
+      }
+    },
+    "declineSuggestedPost" => {
+      type: Bool,
+      docs: [%<Use this method to decline a suggested post in a direct messages chat. The bot must have the "can_manage_direct_messages" administrator right in the corresponding channel chat. Returns True on success.>],
+      params: {
+        :chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier for the target direct messages chat.>]
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Identifier of a suggested post message to decline.>]
+        },
+        :comment => {
+          type: String | Nil,
+          docs: [%<Comment for the creator of the suggested post; 0-128 characters.>]
+        }
+      }
+    },
+    "deleteMessage" => {
+      type: Bool,
+      docs: [%<Use this method to delete a message, including service messages, with the following limitations:>, %<- A message can only be deleted if it was sent less than 48 hours ago.>, %<- Service messages about a supergroup, channel, or forum topic creation can't be deleted.>, %<- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.>, %<- Bots can delete outgoing messages in private chats, groups, and supergroups.>, %<- Bots can delete incoming messages in private chats.>, %<- Bots granted "can_post_messages" permissions can delete outgoing messages in channels.>, %<- If the bot is an administrator of a group, it can delete any message there.>, %<- If the bot has "can_delete_messages" administrator right in a supergroup or a channel, it can delete any message there.>, %<- If the bot has "can_manage_direct_messages" administrator right in a channel, it can delete any message in the corresponding direct messages chat.>, %<Returns True on success.>],
+      params: {
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Identifier of the message to delete.>]
+        }
+      }
+    },
+    "deleteMessages" => {
+      type: Bool,
+      docs: [%<Use this method to delete multiple messages simultaneously. If some of the specified messages can't be found, they are skipped. Returns True on success.>],
+      params: {
+        :chat_id => {
+          type: Int32 | String,
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
+        },
+        :message_ids => {
+          type: Array(Int32),
+          docs: [%<A JSON-serialized list of 1-100 identifiers of messages to delete.>]
         }
       }
     }
