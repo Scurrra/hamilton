@@ -3,6 +3,7 @@ require "http/client"
 require "json"
 
 require "./*"
+require "../types"
 
 # Class that is used for communication with Bot API endpoints.
 class Hamilton::Api
@@ -30,6 +31,8 @@ class Hamilton::Api
   # - `env` -- Type of the environment. `:test` is used for testing and inserts `test/` in the endpoint after bot token.
   def initialize(@token, @url = "https://api.telegram.org", @env = :prod)
     @path = @env == :test ? "/bot#{@token}/test/" : "/bot#{@token}/"
+
+    # TODO: remove client and start using oneshot calls
     @client = HTTP::Client.new @url
   end
 
