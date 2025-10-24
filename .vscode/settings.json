@@ -1,4 +1,8 @@
 {
     "ltex.language": "en-US",
-    "editor.indentSize": 2
+    "editor.detectIndentation": false,
+    "editor.indentSize": 2,
+    "[crystal]": {
+        "editor.indentSize": 2
+    }
 }
