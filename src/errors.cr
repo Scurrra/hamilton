@@ -17,6 +17,27 @@ module Hamilton::Errors
     end
   end
 
+  # Exception raised when `CmdHandler` method doesn't contain parameter it handles.
+  class MissingCmdHandlerMethodParam < Exception
+    def initialize(param_name : String | Symbol)
+      super("Parameter `#{param_name}` must be specified in CmdHandler method")
+    end
+  end
+
+  # Exception raised when `CmdHandler` method's `Handle` annotation doesn't contain any arguments.
+  class MissingCmdHandlerMethodAnnotationArg < Exception
+    def initialize(annotation_name : String | Symbol)
+      super("At least one argument must be specified in CmdHandler methods #{annotation_name} annotation")
+    end
+  end
+
+  # Exception raised when `CmdHandler` method's `Handle` annotation argument is not supported.
+  class UnspportedCmdHandlerPayloadType < Exception
+    def initialize(payload_type : String | Symbol)
+      super("#{payload_type} payload type is not supported by CmdHandler")
+    end
+  end
+
   # Exception raised when a method parameter passed in `**params` has wrong type.
   class FieldTypeMissmatch < Exception
     def initialize(param_name : String | Symbol, type : Class, param_type : Class)
