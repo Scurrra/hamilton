@@ -102,6 +102,16 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Errors/MissingCmdHandlerMethodAnnotationArg" data-name="hamilton::errors::missingcmdhandlermethodannotationarg">
+      <a href="../Hamilton/Errors/MissingCmdHandlerMethodAnnotationArg.html">MissingCmdHandlerMethodAnnotationArg</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Errors/MissingCmdHandlerMethodParam" data-name="hamilton::errors::missingcmdhandlermethodparam">
+      <a href="../Hamilton/Errors/MissingCmdHandlerMethodParam.html">MissingCmdHandlerMethodParam</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Errors/MissingField" data-name="hamilton::errors::missingfield">
       <a href="../Hamilton/Errors/MissingField.html">MissingField</a>
       
@@ -119,6 +129,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Errors/UnknownField" data-name="hamilton::errors::unknownfield">
       <a href="../Hamilton/Errors/UnknownField.html">UnknownField</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Errors/UnspportedCmdHandlerPayloadType" data-name="hamilton::errors::unspportedcmdhandlerpayloadtype">
+      <a href="../Hamilton/Errors/UnspportedCmdHandlerPayloadType.html">UnspportedCmdHandlerPayloadType</a>
       
     </li>
   
@@ -1619,17 +1634,32 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
         
       </li>
     
@@ -1672,12 +1702,17 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#is_running-instance-method" class="signature"><strong>#is_running</strong></a>
+        <a href="#is_running%3ABool-instance-method" class="signature"><strong>#is_running</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#is_running%3D%28is_running%29-instance-method" class="signature"><strong>#is_running=</strong>(is_running)</a>
+        <a href="#is_running%3D%28is_running%3ABool%29-instance-method" class="signature"><strong>#is_running=</strong>(is_running : Bool)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#listen-instance-method" class="signature"><strong>#listen</strong></a>
         
       </li>
     
@@ -1688,6 +1723,31 @@
     
       <li class="entry-summary">
         <a href="#log%3D%28log%3ALog%29-instance-method" class="signature"><strong>#log=</strong>(log : Log)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#offset%3AInt32-instance-method" class="signature"><strong>#offset</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#offset%3D%28offset%3AInt32%29-instance-method" class="signature"><strong>#offset=</strong>(offset : Int32)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timeout%3AInt32-instance-method" class="signature"><strong>#timeout</strong> : Int32</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#timeout%3D%28timeout%3AInt32%29-instance-method" class="signature"><strong>#timeout=</strong>(timeout : Int32)</a>
         
       </li>
     
@@ -1735,12 +1795,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(*,token,url=&quot;https://api.telegram.org&quot;,env=:prod,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+    <div class="entry-detail" id="new(*,offset,timeout,token:String,url:String=&quot;https://api.telegram.org&quot;,env:Symbol=:prod,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset, timeout, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
       <br/>
@@ -1749,12 +1809,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+    <div class="entry-detail" id="new(*,offset,timeout,api:Hamilton::Api,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset, timeout, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
       <br/>
@@ -1763,12 +1823,54 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler)):self-class-method">
+    <div class="entry-detail" id="new(*,offset,timeout,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,offset,timeout,api:Hamilton::Api,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, offset, timeout, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,offset,timeout,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler)):self-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,offset,timeout,api:Hamilton::Api,handlers:Indexable(Hamilton::Handler)):self-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, offset, timeout, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
+
+        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
       </div>
       
       <br/>
@@ -1849,12 +1951,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="is_running-instance-method">
+    <div class="entry-detail" id="is_running:Bool-instance-method">
       <div class="signature">
         
-        def <strong>is_running</strong>
+        def <strong>is_running</strong> : Bool
 
-        <a class="method-permalink" href="#is_running-instance-method">#</a>
+        <a class="method-permalink" href="#is_running%3ABool-instance-method">#</a>
       </div>
       
       <br/>
@@ -1863,12 +1965,26 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="is_running=(is_running)-instance-method">
+    <div class="entry-detail" id="is_running=(is_running:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>is_running=</strong>(is_running)
+        def <strong>is_running=</strong>(is_running : Bool)
 
-        <a class="method-permalink" href="#is_running%3D%28is_running%29-instance-method">#</a>
+        <a class="method-permalink" href="#is_running%3D%28is_running%3ABool%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="listen-instance-method">
+      <div class="signature">
+        
+        def <strong>listen</strong>
+
+        <a class="method-permalink" href="#listen-instance-method">#</a>
       </div>
       
       <br/>
@@ -1897,6 +2013,76 @@
         def <strong>log=</strong>(log : Log)
 
         <a class="method-permalink" href="#log%3D%28log%3ALog%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="offset:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>offset</strong> : Int32
+
+        <a class="method-permalink" href="#offset%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="offset=(offset:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>offset=</strong>(offset : Int32)
+
+        <a class="method-permalink" href="#offset%3D%28offset%3AInt32%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop-instance-method">
+      <div class="signature">
+        
+        def <strong>stop</strong>
+
+        <a class="method-permalink" href="#stop-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timeout:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>timeout</strong> : Int32
+
+        <a class="method-permalink" href="#timeout%3AInt32-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="timeout=(timeout:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>timeout=</strong>(timeout : Int32)
+
+        <a class="method-permalink" href="#timeout%3D%28timeout%3AInt32%29-instance-method">#</a>
       </div>
       
       <br/>

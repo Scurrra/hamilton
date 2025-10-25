@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::InlineQueryResultMpeg4Gif - hamilton 0.1.0</title>
+  <title>Hamilton::Errors::MissingCmdHandlerMethodAnnotationArg - hamilton 0.1.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -87,7 +87,7 @@
       
     </li>
   
-  <li class="parent " data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
+  <li class="parent open current" data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
       <a href="../../Hamilton/Errors.html">Errors</a>
       
         <ul>
@@ -102,7 +102,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/MissingCmdHandlerMethodAnnotationArg" data-name="hamilton::errors::missingcmdhandlermethodannotationarg">
+  <li class=" current" data-id="hamilton/Hamilton/Errors/MissingCmdHandlerMethodAnnotationArg" data-name="hamilton::errors::missingcmdhandlermethodannotationarg">
       <a href="../../Hamilton/Errors/MissingCmdHandlerMethodAnnotationArg.html">MissingCmdHandlerMethodAnnotationArg</a>
       
     </li>
@@ -162,7 +162,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
+  <li class="parent " data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
       <a href="../../Hamilton/Types.html">Types</a>
       
         <ul>
@@ -737,7 +737,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/InlineQueryResultMpeg4Gif" data-name="hamilton::types::inlinequeryresultmpeg4gif">
+  <li class=" " data-id="hamilton/Hamilton/Types/InlineQueryResultMpeg4Gif" data-name="hamilton::types::inlinequeryresultmpeg4gif">
       <a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html">InlineQueryResultMpeg4Gif</a>
       
     </li>
@@ -1578,12 +1578,12 @@
 
   <span class="kind">
     class
-  </span> Hamilton::<wbr>Types::<wbr>InlineQueryResultMpeg4Gif
+  </span> Hamilton::<wbr>Errors::<wbr>MissingCmdHandlerMethodAnnotationArg
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html">Hamilton::Types::InlineQueryResultMpeg4Gif</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Errors/MissingCmdHandlerMethodAnnotationArg.html">Hamilton::Errors::MissingCmdHandlerMethodAnnotationArg</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1597,27 +1597,13 @@
     Overview
   </h2>
 
-  <p>Represents a link to a video animation (H.264/MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use <code><a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html#input_message_content%3AHamilton%3A%3ATypes%3A%3AInputMessageContent%7CNil-instance-method">#input_message_content</a></code> to send a message with the specified content instead of the animation.</p>
+  <p>Exception raised when <code><a href="../../Hamilton/CmdHandler.html">CmdHandler</a></code> method's <code><a href="../../Handle.html">Handle</a></code> annotation doesn't contain any arguments.</p>
 
 
 
 
 
 
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></li>
-    
-  </ul>
 
 
 
@@ -1638,7 +1624,7 @@
   </h2>
   
     
-      types/inline_query_result.cr
+      errors.cr
     
     <br/>
   
@@ -1648,273 +1634,32 @@
 
 
   
-
-  
-
-  
-
-  
   <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+    <a id="constructors" class="anchor" href="#constructors">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Summary
+    Constructors
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#caption%3AString%7CNil-instance-method" class="signature"><strong>#caption</strong> : String | Nil</a>
-        
-          <div class="summary"><p>Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#caption%3D%28caption%3AString%7CNil%29-instance-method" class="signature"><strong>#caption=</strong>(caption : String | Nil)</a>
-        
-          <div class="summary"><p>Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#caption_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil-instance-method" class="signature"><strong>#caption_entities</strong> : Array(Hamilton::Types::MessageEntity) | Nil</a>
-        
-          <div class="summary"><p>List of special entities that appear in the caption, which can be specified instead of <code><a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html#parse_mode%3AString%7CNil-instance-method">#parse_mode</a></code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#caption_entities%3D%28caption_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil%29-instance-method" class="signature"><strong>#caption_entities=</strong>(caption_entities : Array(Hamilton::Types::MessageEntity) | Nil)</a>
-        
-          <div class="summary"><p>List of special entities that appear in the caption, which can be specified instead of <code><a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html#parse_mode%3AString%7CNil-instance-method">#parse_mode</a></code>.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
-        
-          <div class="summary"><p>Unique identifier for this result, 1-64 Bytes.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#id%3D%28id%3AString%29-instance-method" class="signature"><strong>#id=</strong>(id : String)</a>
-        
-          <div class="summary"><p>Unique identifier for this result, 1-64 Bytes.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#input_message_content%3AHamilton%3A%3ATypes%3A%3AInputMessageContent%7CNil-instance-method" class="signature"><strong>#input_message_content</strong> : Hamilton::Types::InputMessageContent | Nil</a>
-        
-          <div class="summary"><p>Content of the message to be sent instead of the video animation.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#input_message_content%3D%28input_message_content%3AHamilton%3A%3ATypes%3A%3AInputMessageContent%7CNil%29-instance-method" class="signature"><strong>#input_message_content=</strong>(input_message_content : Hamilton::Types::InputMessageContent | Nil)</a>
-        
-          <div class="summary"><p>Content of the message to be sent instead of the video animation.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_duration%3AInt32%7CNil-instance-method" class="signature"><strong>#mpeg4_duration</strong> : Int32 | Nil</a>
-        
-          <div class="summary"><p>Video duration in seconds.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_duration%3D%28mpeg4_duration%3AInt32%7CNil%29-instance-method" class="signature"><strong>#mpeg4_duration=</strong>(mpeg4_duration : Int32 | Nil)</a>
-        
-          <div class="summary"><p>Video duration in seconds.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_height%3AInt32%7CNil-instance-method" class="signature"><strong>#mpeg4_height</strong> : Int32 | Nil</a>
-        
-          <div class="summary"><p>Video height.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_height%3D%28mpeg4_height%3AInt32%7CNil%29-instance-method" class="signature"><strong>#mpeg4_height=</strong>(mpeg4_height : Int32 | Nil)</a>
-        
-          <div class="summary"><p>Video height.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_url%3AString-instance-method" class="signature"><strong>#mpeg4_url</strong> : String</a>
-        
-          <div class="summary"><p>A valid URL for the MPEG4 file.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_url%3D%28mpeg4_url%3AString%29-instance-method" class="signature"><strong>#mpeg4_url=</strong>(mpeg4_url : String)</a>
-        
-          <div class="summary"><p>A valid URL for the MPEG4 file.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_width%3AInt32%7CNil-instance-method" class="signature"><strong>#mpeg4_width</strong> : Int32 | Nil</a>
-        
-          <div class="summary"><p>Video width.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mpeg4_width%3D%28mpeg4_width%3AInt32%7CNil%29-instance-method" class="signature"><strong>#mpeg4_width=</strong>(mpeg4_width : Int32 | Nil)</a>
-        
-          <div class="summary"><p>Video width.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#parse_mode%3AString%7CNil-instance-method" class="signature"><strong>#parse_mode</strong> : String | Nil</a>
-        
-          <div class="summary"><p>Mode for parsing entities in the caption.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#parse_mode%3D%28parse_mode%3AString%7CNil%29-instance-method" class="signature"><strong>#parse_mode=</strong>(parse_mode : String | Nil)</a>
-        
-          <div class="summary"><p>Mode for parsing entities in the caption.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#reply_markup%3AHamilton%3A%3ATypes%3A%3AInlineKeyboardMarkup%7CNil-instance-method" class="signature"><strong>#reply_markup</strong> : Hamilton::Types::InlineKeyboardMarkup | Nil</a>
-        
-          <div class="summary"><p>Inline keyboard attached to the message.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#reply_markup%3D%28reply_markup%3AHamilton%3A%3ATypes%3A%3AInlineKeyboardMarkup%7CNil%29-instance-method" class="signature"><strong>#reply_markup=</strong>(reply_markup : Hamilton::Types::InlineKeyboardMarkup | Nil)</a>
-        
-          <div class="summary"><p>Inline keyboard attached to the message.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#show_caption_above_media%3ABool%7CNil-instance-method" class="signature"><strong>#show_caption_above_media</strong> : Bool | Nil</a>
-        
-          <div class="summary"><p>Pass True, if the caption must be shown above the message media.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#show_caption_above_media%3D%28show_caption_above_media%3ABool%7CNil%29-instance-method" class="signature"><strong>#show_caption_above_media=</strong>(show_caption_above_media : Bool | Nil)</a>
-        
-          <div class="summary"><p>Pass True, if the caption must be shown above the message media.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#thumbnail_mime_type%3AString%7CNil-instance-method" class="signature"><strong>#thumbnail_mime_type</strong> : String | Nil</a>
-        
-          <div class="summary"><p>MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#thumbnail_mime_type%3D%28thumbnail_mime_type%3AString%7CNil%29-instance-method" class="signature"><strong>#thumbnail_mime_type=</strong>(thumbnail_mime_type : String | Nil)</a>
-        
-          <div class="summary"><p>MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#thumbnail_url%3AString-instance-method" class="signature"><strong>#thumbnail_url</strong> : String</a>
-        
-          <div class="summary"><p>URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#thumbnail_url%3D%28thumbnail_url%3AString%29-instance-method" class="signature"><strong>#thumbnail_url=</strong>(thumbnail_url : String)</a>
-        
-          <div class="summary"><p>URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#title%3AString%7CNil-instance-method" class="signature"><strong>#title</strong> : String | Nil</a>
-        
-          <div class="summary"><p>Title for the result.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#title%3D%28title%3AString%7CNil%29-instance-method" class="signature"><strong>#title=</strong>(title : String | Nil)</a>
-        
-          <div class="summary"><p>Title for the result.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#type%3AString-instance-method" class="signature"><strong>#type</strong> : String</a>
-        
-          <div class="summary"><p>Type of the result, must be &quot;mpeg4_gif&quot;.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
-        
-          <div class="summary"><p>Type of the result, must be &quot;mpeg4_gif&quot;.</p></div>
+        <a href="#new%28annotation_name%3AString%7CSymbol%29-class-method" class="signature"><strong>.new</strong>(annotation_name : String | Symbol)</a>
         
       </li>
     
   </ul>
 
 
+  
+
+  
+
+  
+
 
   <div class="methods-inherited">
-    
-      
-
-  <h3>Instance methods inherited from module <code><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></code></h3>
-  
-  
-    <a href="../../Hamilton/Types/Common.html#non_nil_fields%3AArray%28String%29-instance-method" class="tooltip">
-      <span>non_nil_fields : Array(String)</span>
-    non_nil_fields</a>, 
-    
-  
-    <a href="../../Hamilton/Types/Common.html#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="tooltip">
-      <span>non_nil_fields=(non_nil_fields : Array(String))</span>
-    non_nil_fields=</a>
-    
-  
-
-
-      
-
-  <h3>Constructor methods inherited from module <code><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></code></h3>
-  
-  
-    <a href="../../Hamilton/Types/Common.html#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="tooltip">
-      <span>new(pull : JSON::PullParser)<br/>new(*, __pull_for_json_serializable pull : JSON::PullParser)<br/>new(**params)</span>
-    new</a>
-    
-  
-
-
-      
-
-
-      
-
-
     
       
 
@@ -1958,584 +1703,22 @@
   </div>
 
   
-
-  
-
-  
-
-  
   <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Instance Method Detail
+    Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="caption:String|Nil-instance-method">
+    <div class="entry-detail" id="new(annotation_name:String|Symbol)-class-method">
       <div class="signature">
         
-        def <strong>caption</strong> : String | Nil
+        def self.<strong>new</strong>(annotation_name : String | Symbol)
 
-        <a class="method-permalink" href="#caption%3AString%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#new%28annotation_name%3AString%7CSymbol%29-class-method">#</a>
       </div>
-      
-        <div class="doc">
-          
-          <p>Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="caption=(caption:String|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>caption=</strong>(caption : String | Nil)
-
-        <a class="method-permalink" href="#caption%3D%28caption%3AString%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Caption of the MPEG-4 file to be sent, 0-1024 characters after entities parsing.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="caption_entities:Array(Hamilton::Types::MessageEntity)|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>caption_entities</strong> : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil
-
-        <a class="method-permalink" href="#caption_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>List of special entities that appear in the caption, which can be specified instead of <code><a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html#parse_mode%3AString%7CNil-instance-method">#parse_mode</a></code>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="caption_entities=(caption_entities:Array(Hamilton::Types::MessageEntity)|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>caption_entities=</strong>(caption_entities : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)
-
-        <a class="method-permalink" href="#caption_entities%3D%28caption_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>List of special entities that appear in the caption, which can be specified instead of <code><a href="../../Hamilton/Types/InlineQueryResultMpeg4Gif.html#parse_mode%3AString%7CNil-instance-method">#parse_mode</a></code>.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="id:String-instance-method">
-      <div class="signature">
-        
-        def <strong>id</strong> : String
-
-        <a class="method-permalink" href="#id%3AString-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Unique identifier for this result, 1-64 Bytes.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="id=(id:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>id=</strong>(id : String)
-
-        <a class="method-permalink" href="#id%3D%28id%3AString%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Unique identifier for this result, 1-64 Bytes.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="input_message_content:Hamilton::Types::InputMessageContent|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>input_message_content</strong> : <a href="../../Hamilton/Types/InputMessageContent.html">Hamilton::Types::InputMessageContent</a> | Nil
-
-        <a class="method-permalink" href="#input_message_content%3AHamilton%3A%3ATypes%3A%3AInputMessageContent%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Content of the message to be sent instead of the video animation.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="input_message_content=(input_message_content:Hamilton::Types::InputMessageContent|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>input_message_content=</strong>(input_message_content : <a href="../../Hamilton/Types/InputMessageContent.html">Hamilton::Types::InputMessageContent</a> | Nil)
-
-        <a class="method-permalink" href="#input_message_content%3D%28input_message_content%3AHamilton%3A%3ATypes%3A%3AInputMessageContent%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Content of the message to be sent instead of the video animation.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_duration:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_duration</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#mpeg4_duration%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Video duration in seconds.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_duration=(mpeg4_duration:Int32|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_duration=</strong>(mpeg4_duration : Int32 | Nil)
-
-        <a class="method-permalink" href="#mpeg4_duration%3D%28mpeg4_duration%3AInt32%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Video duration in seconds.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_height:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_height</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#mpeg4_height%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Video height.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_height=(mpeg4_height:Int32|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_height=</strong>(mpeg4_height : Int32 | Nil)
-
-        <a class="method-permalink" href="#mpeg4_height%3D%28mpeg4_height%3AInt32%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Video height.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_url:String-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_url</strong> : String
-
-        <a class="method-permalink" href="#mpeg4_url%3AString-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>A valid URL for the MPEG4 file.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_url=(mpeg4_url:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_url=</strong>(mpeg4_url : String)
-
-        <a class="method-permalink" href="#mpeg4_url%3D%28mpeg4_url%3AString%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>A valid URL for the MPEG4 file.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_width:Int32|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_width</strong> : Int32 | Nil
-
-        <a class="method-permalink" href="#mpeg4_width%3AInt32%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Video width.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mpeg4_width=(mpeg4_width:Int32|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>mpeg4_width=</strong>(mpeg4_width : Int32 | Nil)
-
-        <a class="method-permalink" href="#mpeg4_width%3D%28mpeg4_width%3AInt32%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Video width.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="parse_mode:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>parse_mode</strong> : String | Nil
-
-        <a class="method-permalink" href="#parse_mode%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Mode for parsing entities in the caption. See formatting options for more details.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="parse_mode=(parse_mode:String|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>parse_mode=</strong>(parse_mode : String | Nil)
-
-        <a class="method-permalink" href="#parse_mode%3D%28parse_mode%3AString%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Mode for parsing entities in the caption. See formatting options for more details.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="reply_markup:Hamilton::Types::InlineKeyboardMarkup|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>reply_markup</strong> : <a href="../../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | Nil
-
-        <a class="method-permalink" href="#reply_markup%3AHamilton%3A%3ATypes%3A%3AInlineKeyboardMarkup%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Inline keyboard attached to the message.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="reply_markup=(reply_markup:Hamilton::Types::InlineKeyboardMarkup|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>reply_markup=</strong>(reply_markup : <a href="../../Hamilton/Types/InlineKeyboardMarkup.html">Hamilton::Types::InlineKeyboardMarkup</a> | Nil)
-
-        <a class="method-permalink" href="#reply_markup%3D%28reply_markup%3AHamilton%3A%3ATypes%3A%3AInlineKeyboardMarkup%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Inline keyboard attached to the message.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="show_caption_above_media:Bool|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>show_caption_above_media</strong> : Bool | Nil
-
-        <a class="method-permalink" href="#show_caption_above_media%3ABool%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Pass True, if the caption must be shown above the message media.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="show_caption_above_media=(show_caption_above_media:Bool|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>show_caption_above_media=</strong>(show_caption_above_media : Bool | Nil)
-
-        <a class="method-permalink" href="#show_caption_above_media%3D%28show_caption_above_media%3ABool%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Pass True, if the caption must be shown above the message media.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="thumbnail_mime_type:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>thumbnail_mime_type</strong> : String | Nil
-
-        <a class="method-permalink" href="#thumbnail_mime_type%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="thumbnail_mime_type=(thumbnail_mime_type:String|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>thumbnail_mime_type=</strong>(thumbnail_mime_type : String | Nil)
-
-        <a class="method-permalink" href="#thumbnail_mime_type%3D%28thumbnail_mime_type%3AString%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>MIME type of the thumbnail, must be one of “image/jpeg”, “image/gif”, or “video/mp4”. Defaults to “image/jpeg”.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="thumbnail_url:String-instance-method">
-      <div class="signature">
-        
-        def <strong>thumbnail_url</strong> : String
-
-        <a class="method-permalink" href="#thumbnail_url%3AString-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="thumbnail_url=(thumbnail_url:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>thumbnail_url=</strong>(thumbnail_url : String)
-
-        <a class="method-permalink" href="#thumbnail_url%3D%28thumbnail_url%3AString%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>URL of the static (JPEG or GIF) or animated (MPEG4) thumbnail for the result.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="title:String|Nil-instance-method">
-      <div class="signature">
-        
-        def <strong>title</strong> : String | Nil
-
-        <a class="method-permalink" href="#title%3AString%7CNil-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Title for the result.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="title=(title:String|Nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>title=</strong>(title : String | Nil)
-
-        <a class="method-permalink" href="#title%3D%28title%3AString%7CNil%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Title for the result.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="type:String-instance-method">
-      <div class="signature">
-        
-        def <strong>type</strong> : String
-
-        <a class="method-permalink" href="#type%3AString-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Type of the result, must be &quot;mpeg4_gif&quot;.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="type=(type:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>type=</strong>(type : String)
-
-        <a class="method-permalink" href="#type%3D%28type%3AString%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Type of the result, must be &quot;mpeg4_gif&quot;.</p>
-        </div>
       
       <br/>
       <div>
@@ -2544,6 +1727,12 @@
     </div>
   
 
+
+  
+
+  
+
+  
 
 
 </div>
