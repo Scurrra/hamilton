@@ -1,25 +1,48 @@
 require "../handler"
 require "../context"
+require "../api"
 require "log"
 require "string_scanner"
 
+# Annotation for the method in implementation of `Hamilton::CmdHandler`.
+# 
+# In `#[Handle]` there should be one of the following parameters:
+#  - `command` for handling a bot command
+#  - `text` for handling a known text massage
+#  - `callback` for handling a `callback_query` with provided content
+#  -  unnamed parameter that is one of the symbols from `Hamilton::CmdHandler::PAYLOAD_TYPES`
 annotation Handle
 end
 
+# Annotation for the method in implementation of `Hamilton::CmdHandler`.
+#
+# In `#[For]` a list of symbolic names of the methods that are predecessors of the update to be handled.
+# If no names provided the initial update is handled.
 annotation For
 end
 
+# The module for handling commands, callback queries (please, do not use them), known text messages, and some of messages payloads.
+#
+# Should be included in the class with the implementations of updates' handling functions.
 module Hamilton::CmdHandler
   include Hamilton::Handler
 
+  # Available payload types that can be handled by the `Hamilton::CmdHandler`.
   PAYLOAD_TYPES = [:animation, :audio, :document, :paid_media, :photo, :sticker, :story, :video, :video_note, :voice, :checklist, :contact, :contact, :dice, :game, :poll, :venue, :location, :invoice, :successful_payment, :refunded_payment, :users_shared, :chat_shared, :passport_data]
   
+  # Mapping between methods and mapper between update types and methods to handle them.
   property mapper : Hash(Symbol, Hash(String | Symbol, Symbol))
+
+  # Context for the current bot sessions.
   property context : Hamilton::Context
   
+  # Logger instance.
   property log : Log
 
-  def initialize
+  # API instance to be used inside the handler.
+  property api : Hamilton::Api
+
+  def initialize(@api)
     @log = Log.for("Hamilton::Bot Command Handler")
     @context = Hamilton::Context.new default_method: :root
     @mapper = {:root => Hash(String | Symbol, Symbol).new}
@@ -305,6 +328,7 @@ module Hamilton::CmdHandler
     call_next(update)
   end
 
+  # :nodoc:
   macro method_added(method)
     {% if method.annotation(Handle) %}
       {% unless method.args.map(&.name.symbolize).includes?(:context_key) %}
@@ -354,6 +378,10 @@ module Hamilton::CmdHandler
       {% end %}
 
       {% if method.annotation(For).args.size == 0 %}
+        @mapper[:root][%value] = {{method.name.symbolize}}
+      {% end %}
+
+      {% unless method.annotation(For) %}
         @mapper[:root][%value] = {{method.name.symbolize}}
       {% end %}
 

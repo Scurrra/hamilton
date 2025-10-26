@@ -1,9 +1,11 @@
 require "../handler"
 require "log"
 
+# Handler that logs each update.
 class Hamilton::LogHandler
   include Hamilton::Handler
 
+  # Logger instance.
   property log : Log
 
   def initialize(@log = Log.for("Hamilton::Bot"))

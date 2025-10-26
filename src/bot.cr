@@ -3,34 +3,54 @@ require "./handler"
 require "./types"
 require "log"
 
+# `Hamilton::Bot` implementation variant.
 class Hamilton::Bot
+  # API instance to be used inside the Bot.
   property api : Hamilton::Api
+
+  # Logger instance.
   property log : Log
+
+  # Chain of handlers.
   property handler : Hamilton::Handler | Hamilton::Handler::HandlerProc
+
+  # :nodoc:
   property is_running : Bool
+
+  # Offset of the updates, i.e. the number of the first update to be handled.
   property offset : Int32
+
+  # Timeout in seconds for long polling.
   property timeout : Int32
 
+  # Creates a bot provided `offset`, `timeout`, api instance created from `token` and `url` for `env`, and the given block as handler.
   def self.new(*, offset, timeout, token : String, url : String = "https://api.telegram.org", env : Symbol = :prod, &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: Hamilton::Api.new(token, url, new), handler: handler)
   end
 
+  # Creates a bot provided `offset`, `timeout`, `api`, and the given block as handler.
   def self.new(*, offset, timeout, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: api, handler: handler)
   end
 
+  # Creates a bot provided `offset`, `timeout`, api instance created from `token` and `url` for `env`, and a handler chain constructed from the `handlers`
+  # array and the given block.
   def self.new(*, offset, timeout, token, url = "https://api.telegram.org", env = :prod, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: Hamilton::Api.new(token, url, new), handler: Hamilton::Bot.build_middleware(handlers, handler))
   end
 
+  # Creates a bot provided `offset`, `timeout`, `api`, and a handler chain constructed from the `handlers`
+  # array and the given block.
   def self.new(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: api, handler: Hamilton::Bot.build_middleware(handlers, handler))
   end
 
+  # Creates a bot provided `offset`, `timeout`, api instance created from `token` and `url` for `env`, and the `handlers` array as handler chain.
   def self.new(*, offset, timeout, token, url = "https://api.telegram.org", env = :prod, handlers : Indexable(Hamilton::Handler)) : self
     new(offset: offset, timeout: timeout, api: Hamilton::Api.new(token, url, new), handler: Hamilton::Bot.build_middleware(handlers))
   end
 
+  # Creates a bot provided `offset`, `timeout`, `api`, and the `handlers` array as handler chain.
   def self.new(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : self
     new(offset: offset, timeout: timeout, api: api, handler: Hamilton::Bot.build_middleware(handlers))
   end
@@ -40,6 +60,7 @@ class Hamilton::Bot
     @log = Log.for("Hamilton::Bot")
   end
 
+  # Start listening for the updates with long pooling.
   def listen
     @is_running = true
     @log.info { "Bot started with offset #{@offset}" }
@@ -58,6 +79,14 @@ class Hamilton::Bot
     end
   end
 
+  # Stop listening for the updates.
+  #
+  # One of the ways to call it is:
+  # ```crysal
+  # Signal::INT.trap do
+  #   puts bot.stop
+  # end
+  # ```
   def stop
     @is_running = false
     @log.info { "Bot stopped with offset #{@offset}" }
