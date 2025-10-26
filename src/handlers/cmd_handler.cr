@@ -1,6 +1,7 @@
 require "../handler"
 require "../context"
 require "log"
+require "string_scanner"
 
 annotation Handle
 end
@@ -48,7 +49,46 @@ module Hamilton::CmdHandler
       # first check for command or known text payload from `ReplyKeyboard`
       case message_fields
       when .includes?("text")
-        #TODO: known texts and commands
+        ss = StringScanner.new(message.text)
+        
+        # trim spaces at start
+        ss.scan(/\s+/)
+
+        # check if we a command here
+        if ss.check('/')
+          # retrive the command
+          cmd = ss.scan(/\/\w+/)
+          # trim spaces at start of the argument text
+          ss.scan(/\s+/)
+
+          if method = pmm[cmd]?
+            {{method.id}}.call(argument: ss.rest, context_key: message.chat.id, update: update)
+          else
+            @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:command` [#{cmd}] payload that can not be processed" }
+          end
+        
+        # just text
+        else
+          known_texts = pmm.keys.select! {|key| typeof(key) === String && !key.starts_with?('/')}
+          text_index = 0
+          while text_index < known_texts.size
+            if ss.check(known_texts[text_index])
+              # get the method
+              method = pmm[ss.scan(known_texts[text_index])]
+              # trim spaces at start of the remaining text
+              ss.scan(/\s+/)
+              
+              {{method.id}}.call(remaining_text: ss.rest, context_key: message.chat.id, update: update)
+              break
+            else
+              text_index += 1
+            end            
+          end
+
+          if text_index == known_texts.size
+            @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:text` payload that can not be processed (and I don't know why)" }
+          end
+        end
       
       #TODO: replace following with macro generator
       when .includes?("animation")
@@ -277,8 +317,13 @@ module Hamilton::CmdHandler
       
       {% if method.annotation(Handle).named_args.has_key?(:command) %}
       %value = {{method.annotation(Handle)[:command].stringify}}
-      {% unless method.args.map(&.name.symbolize).includes?(:command) %}
-        raise MissingCmdHandlerMethodParam.new :command
+      %value = if %value.starts_with?('/')
+        %value
+      else
+        "/" + %value
+      end
+      {% unless method.args.map(&.name.symbolize).includes?(:argument) %}
+        raise MissingCmdHandlerMethodParam.new :argument
       {% end %}
       {% elsif method.annotation(Handle).named_args.has_key?(:callback) %}
       %value = {{method.annotation(Handle)[:callback].stringify}}
@@ -287,8 +332,8 @@ module Hamilton::CmdHandler
       {% end %}
       {% elsif method.annotation(Handle).named_args.has_key?(:text) %}
       %value = {{method.annotation(Handle)[:text].stringify}}
-      {% unless method.args.map(&.name.symbolize).includes?(:text) %}
-        raise MissingCmdHandlerMethodParam.new :text
+      {% unless method.args.map(&.name.symbolize).includes?(:remaining_text) %}
+        raise MissingCmdHandlerMethodParam.new :remaining_text
       {% end %}
       {% elsif method.annotation(Handle).args.size != 0 %}
       %value = {{method.annotation(Handle)[0].symbolize}}
