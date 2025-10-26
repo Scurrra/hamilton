@@ -20,9 +20,6 @@ class Hamilton::Api
   # :nodoc:
   getter path : String
 
-  # :nodoc:
-  getter client : HTTP::Client
-
   # API class constructor.
   #
   # Params:
@@ -30,10 +27,7 @@ class Hamilton::Api
   # - `url` -- Bot API URL. Default is "https://api.telegram.org", pass your URL if you are using your own server.
   # - `env` -- Type of the environment. `:test` is used for testing and inserts `test/` in the endpoint after bot token.
   def initialize(@token, @url = "https://api.telegram.org", @env = :prod)
-    @path = @env == :test ? "/bot#{@token}/test/" : "/bot#{@token}/"
-
-    # TODO: remove client and start using oneshot calls
-    @client = HTTP::Client.new @url
+    @path = @env == :test ? "#{@url}/bot#{@token}/test/" : "#{@url}/bot#{@token}/"
   end
 
   {% for method, info in Hamilton::Api::ENDPOINTS %}
@@ -272,7 +266,7 @@ class Hamilton::Api
       body += io.to_s
       {% end %}
 
-      response = @client.post(
+      response = HTTP::Client.post(
         @path + {{method}},
         headers: HTTP::Headers{"Content-Type" => "multipart/form-data; boundary=#{boundary}"},
         body: body
