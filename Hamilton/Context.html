@@ -1588,6 +1588,23 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Context is a storage for some state.</p>
+<p>As it was developed primary for <code><a href="../Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code>, <code><a href="../Hamilton/Context.html">Hamilton::Context</a></code> maps a key of type<br />
+<code>Int32 | String | Symbol</code> to a named tuple with two fields:</p>
+<ul>
+<li><code>method : Symbol | Nil</code> -- name of some method</li>
+<li><code>data: Hash(Symbol, JSON::Any) | Nil)</code> -- storage for some specific data</li>
+</ul>
+
 
 
 
@@ -1636,6 +1653,8 @@
       <li class="entry-summary">
         <a href="#new%28%2A%2Cinner%3AHash%28Int32%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3ANil%7CHash%28Symbol%2CJSON%3A%3AAny%29%29%29%3DHash%28Int32%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29.new%2Cdefault_method%3ASymbol%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, inner : Hash(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Nil | Hash(Symbol, JSON::Any))) = <span class="t">Hash</span>(<span class="t">Int32</span> <span class="o">|</span> <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>, <span class="t">NamedTuple</span>(method: <span class="t">Symbol</span> <span class="o">|</span> <span class="t">Nil</span>, data: <span class="t">Hash</span>(<span class="t">Symbol</span>, <span class="t">JSON</span><span class="t">::</span><span class="t">Any</span>) <span class="o">|</span> <span class="t">Nil</span>)).new, default_method : Symbol | Nil = <span class="n">nil</span>)</a>
         
+          <div class="summary"><p>Initializer of the context storage.</p></div>
+        
       </li>
     
   </ul>
@@ -1659,65 +1678,91 @@
       <li class="entry-summary">
         <a href="#clean%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#clean</strong>(key : Int32 | String | Symbol)</a>
         
+          <div class="summary"><p>Reset the context for the <code>key</code>, i.e.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#clean_data%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#clean_data</strong>(key : Int32 | String | Symbol)</a>
+        
+          <div class="summary"><p>Reset the data for the <code>key</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#clean_method%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#clean_method</strong>(key : Int32 | String | Symbol)</a>
         
+          <div class="summary"><p>Reset the method for the <code>key</code>.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#delete%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#delete</strong>(key : Int32 | String | Symbol)</a>
+        
+          <div class="summary"><p>Delete the <code>key</code> from the storage.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#get%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#get</strong>(key : Int32 | String | Symbol)</a>
         
+          <div class="summary"><p>Return the context for the <code>key</code>.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#get%3F%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#get?</strong>(key : Int32 | String | Symbol)</a>
+        
+          <div class="summary"><p>Return the context for the <code>key</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#get_data%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#get_data</strong>(key : Int32 | String | Symbol)</a>
         
+          <div class="summary"><p>Return the data for the <code>key</code>.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#get_data%3F%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#get_data?</strong>(key : Int32 | String | Symbol)</a>
+        
+          <div class="summary"><p>Return the data for the <code>key</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#get_method%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#get_method</strong>(key : Int32 | String | Symbol)</a>
         
+          <div class="summary"><p>Return the method for the <code>key</code>.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#get_method%3F%28key%3AInt32%7CString%7CSymbol%29-instance-method" class="signature"><strong>#get_method?</strong>(key : Int32 | String | Symbol)</a>
+        
+          <div class="summary"><p>Return the method for the <code>key</code>.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#set%28key%3AInt32%7CString%7CSymbol%2Cvalue%3ANamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29-instance-method" class="signature"><strong>#set</strong>(key : Int32 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))</a>
         
+          <div class="summary"><p>Setter for the pair <code>key, value</code>.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#set%28key%3AInt32%7CString%7CSymbol%2Cmethod%3ASymbol%29-instance-method" class="signature"><strong>#set</strong>(key : Int32 | String | Symbol, method : Symbol)</a>
         
+          <div class="summary"><p>Setter that sets only method for the key.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#set%28key%3AInt32%7CString%7CSymbol%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%29-instance-method" class="signature"><strong>#set</strong>(key : Int32 | String | Symbol, data : Hash(Symbol, JSON::Any))</a>
+        
+          <div class="summary"><p>Setter that sets only data for the key.</p></div>
         
       </li>
     
@@ -1773,6 +1818,14 @@
         <a class="method-permalink" href="#new%28%2A%2Cinner%3AHash%28Int32%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3ANil%7CHash%28Symbol%2CJSON%3A%3AAny%29%29%29%3DHash%28Int32%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29.new%2Cdefault_method%3ASymbol%7CNil%3Dnil%29-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Initializer of the context storage.</p>
+<p>Optional parameters:
+<code>default_method : Symbol | Nil</code> -- something that will be the default value for the <code>method</code> field
+<code>inner : Hash(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))</code> -- storage itself</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1803,6 +1856,11 @@
         <a class="method-permalink" href="#clean%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Reset the context for the <code>key</code>, i.e. the key will map to <code>{method: default_method, data: nil}</code> if present.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1816,6 +1874,11 @@
 
         <a class="method-permalink" href="#clean_data%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Reset the data for the <code>key</code>.</p>
+        </div>
       
       <br/>
       <div>
@@ -1831,6 +1894,11 @@
         <a class="method-permalink" href="#clean_method%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Reset the method for the <code>key</code>.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1844,6 +1912,11 @@
 
         <a class="method-permalink" href="#delete%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Delete the <code>key</code> from the storage.</p>
+        </div>
       
       <br/>
       <div>
@@ -1859,6 +1932,12 @@
         <a class="method-permalink" href="#get%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Return the context for the <code>key</code>.</p>
+<p><span class="flag purple">NOTE</span>  if there was not a context for the <code>key</code>, it will be iplicitly created with <code>{method: default_method, data: nil}</code>.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1872,6 +1951,11 @@
 
         <a class="method-permalink" href="#get%3F%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Return the context for the <code>key</code>.</p>
+        </div>
       
       <br/>
       <div>
@@ -1887,6 +1971,12 @@
         <a class="method-permalink" href="#get_data%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Return the data for the <code>key</code>.</p>
+<p><span class="flag purple">NOTE</span>  if there was not a context for the <code>key</code>, it will be iplicitly created with <code>{method: default_method, data: nil}</code>.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1900,6 +1990,11 @@
 
         <a class="method-permalink" href="#get_data%3F%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Return the data for the <code>key</code>.</p>
+        </div>
       
       <br/>
       <div>
@@ -1915,6 +2010,12 @@
         <a class="method-permalink" href="#get_method%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Return the method for the <code>key</code>.</p>
+<p><span class="flag purple">NOTE</span>  if there was not a context for the <code>key</code>, it will be iplicitly created with <code>{method: default_method, data: nil}</code>.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1928,6 +2029,11 @@
 
         <a class="method-permalink" href="#get_method%3F%28key%3AInt32%7CString%7CSymbol%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Return the method for the <code>key</code>.</p>
+        </div>
       
       <br/>
       <div>
@@ -1943,6 +2049,11 @@
         <a class="method-permalink" href="#set%28key%3AInt32%7CString%7CSymbol%2Cvalue%3ANamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Setter for the pair <code>key, value</code>.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1957,6 +2068,11 @@
         <a class="method-permalink" href="#set%28key%3AInt32%7CString%7CSymbol%2Cmethod%3ASymbol%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Setter that sets only method for the key.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1970,6 +2086,11 @@
 
         <a class="method-permalink" href="#set%28key%3AInt32%7CString%7CSymbol%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Setter that sets only data for the key.</p>
+        </div>
       
       <br/>
       <div>

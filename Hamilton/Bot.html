@@ -1588,6 +1588,17 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p><code><a href="../Hamilton/Bot.html">Hamilton::Bot</a></code> implementation variant.</p>
+
 
 
 
@@ -1636,30 +1647,42 @@
       <li class="entry-summary">
         <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
+          <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and the given block as handler.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the given block as handler.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
+          <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and a handler chain constructed from the <code>handlers</code> array and the given block.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and a handler chain constructed from the <code>handlers</code> array and the given block.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
         
+          <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and the <code>handlers</code> array as handler chain.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the <code>handlers</code> array as handler chain.</p></div>
         
       </li>
     
@@ -1684,70 +1707,84 @@
       <li class="entry-summary">
         <a href="#api%3AHamilton%3A%3AApi-instance-method" class="signature"><strong>#api</strong> : Hamilton::Api</a>
         
+          <div class="summary"><p>API instance to be used inside the Bot.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#api%3D%28api%3AHamilton%3A%3AApi%29-instance-method" class="signature"><strong>#api=</strong>(api : Hamilton::Api)</a>
+        
+          <div class="summary"><p>API instance to be used inside the Bot.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#handler%3AHamilton%3A%3AHandler%7CHamilton%3A%3AHandler%3A%3AHandlerProc-instance-method" class="signature"><strong>#handler</strong> : Hamilton::Handler | Hamilton::Handler::HandlerProc</a>
         
+          <div class="summary"><p>Chain of handlers.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#handler%3D%28handler%3AHamilton%3A%3AHandler%7CHamilton%3A%3AHandler%3A%3AHandlerProc%29-instance-method" class="signature"><strong>#handler=</strong>(handler : Hamilton::Handler | Hamilton::Handler::HandlerProc)</a>
         
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#is_running%3ABool-instance-method" class="signature"><strong>#is_running</strong> : Bool</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#is_running%3D%28is_running%3ABool%29-instance-method" class="signature"><strong>#is_running=</strong>(is_running : Bool)</a>
+          <div class="summary"><p>Chain of handlers.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#listen-instance-method" class="signature"><strong>#listen</strong></a>
         
+          <div class="summary"><p>Start listening for the updates with long pooling.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#log%3ALog-instance-method" class="signature"><strong>#log</strong> : Log</a>
+        
+          <div class="summary"><p>Logger instance.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#log%3D%28log%3ALog%29-instance-method" class="signature"><strong>#log=</strong>(log : Log)</a>
         
+          <div class="summary"><p>Logger instance.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#offset%3AInt32-instance-method" class="signature"><strong>#offset</strong> : Int32</a>
+        
+          <div class="summary"><p>Offset of the updates, i.e.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#offset%3D%28offset%3AInt32%29-instance-method" class="signature"><strong>#offset=</strong>(offset : Int32)</a>
         
+          <div class="summary"><p>Offset of the updates, i.e.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
+        
+          <div class="summary"><p>Stop listening for the updates.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#timeout%3AInt32-instance-method" class="signature"><strong>#timeout</strong> : Int32</a>
         
+          <div class="summary"><p>Timeout in seconds for long polling.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#timeout%3D%28timeout%3AInt32%29-instance-method" class="signature"><strong>#timeout=</strong>(timeout : Int32)</a>
+        
+          <div class="summary"><p>Timeout in seconds for long polling.</p></div>
         
       </li>
     
@@ -1803,6 +1840,11 @@
         <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and the given block as handler.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1816,6 +1858,11 @@
 
         <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the given block as handler.</p>
+        </div>
       
       <br/>
       <div>
@@ -1831,6 +1878,12 @@
         <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and a handler chain constructed from the <code>handlers</code>
+array and the given block.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1844,6 +1897,12 @@
 
         <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and a handler chain constructed from the <code>handlers</code>
+array and the given block.</p>
+        </div>
       
       <br/>
       <div>
@@ -1859,6 +1918,11 @@
         <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and the <code>handlers</code> array as handler chain.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1872,6 +1936,11 @@
 
         <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the <code>handlers</code> array as handler chain.</p>
+        </div>
       
       <br/>
       <div>
@@ -1903,6 +1972,11 @@
         <a class="method-permalink" href="#api%3AHamilton%3A%3AApi-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>API instance to be used inside the Bot.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1916,6 +1990,11 @@
 
         <a class="method-permalink" href="#api%3D%28api%3AHamilton%3A%3AApi%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>API instance to be used inside the Bot.</p>
+        </div>
       
       <br/>
       <div>
@@ -1931,6 +2010,11 @@
         <a class="method-permalink" href="#handler%3AHamilton%3A%3AHandler%7CHamilton%3A%3AHandler%3A%3AHandlerProc-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Chain of handlers.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1945,33 +2029,10 @@
         <a class="method-permalink" href="#handler%3D%28handler%3AHamilton%3A%3AHandler%7CHamilton%3A%3AHandler%3A%3AHandlerProc%29-instance-method">#</a>
       </div>
       
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="is_running:Bool-instance-method">
-      <div class="signature">
-        
-        def <strong>is_running</strong> : Bool
-
-        <a class="method-permalink" href="#is_running%3ABool-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="is_running=(is_running:Bool)-instance-method">
-      <div class="signature">
-        
-        def <strong>is_running=</strong>(is_running : Bool)
-
-        <a class="method-permalink" href="#is_running%3D%28is_running%3ABool%29-instance-method">#</a>
-      </div>
+        <div class="doc">
+          
+          <p>Chain of handlers.</p>
+        </div>
       
       <br/>
       <div>
@@ -1987,6 +2048,11 @@
         <a class="method-permalink" href="#listen-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Start listening for the updates with long pooling.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -2000,6 +2066,11 @@
 
         <a class="method-permalink" href="#log%3ALog-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Logger instance.</p>
+        </div>
       
       <br/>
       <div>
@@ -2015,6 +2086,11 @@
         <a class="method-permalink" href="#log%3D%28log%3ALog%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Logger instance.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -2028,6 +2104,11 @@
 
         <a class="method-permalink" href="#offset%3AInt32-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Offset of the updates, i.e. the number of the first update to be handled.</p>
+        </div>
       
       <br/>
       <div>
@@ -2043,6 +2124,11 @@
         <a class="method-permalink" href="#offset%3D%28offset%3AInt32%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Offset of the updates, i.e. the number of the first update to be handled.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -2056,6 +2142,15 @@
 
         <a class="method-permalink" href="#stop-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Stop listening for the updates.</p>
+<p>One of the ways to call it is:</p>
+<pre><code class="language-crysal">Signal::INT.trap do
+  puts bot.stop
+end</code></pre>
+        </div>
       
       <br/>
       <div>
@@ -2071,6 +2166,11 @@
         <a class="method-permalink" href="#timeout%3AInt32-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Timeout in seconds for long polling.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -2084,6 +2184,11 @@
 
         <a class="method-permalink" href="#timeout%3D%28timeout%3AInt32%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Timeout in seconds for long polling.</p>
+        </div>
       
       <br/>
       <div>

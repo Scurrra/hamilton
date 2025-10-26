@@ -1586,6 +1586,18 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>The module for handling commands, callback queries (please, do not use them), known text messages, and some of messages payloads.</p>
+<p>Should be included in the class with the implementations of updates' handling functions.</p>
+
 
 
 
@@ -1648,6 +1660,10 @@
         <strong>PAYLOAD_TYPES</strong> = <code>[<span class="n">:animation</span>, <span class="n">:audio</span>, <span class="n">:document</span>, <span class="n">:paid_media</span>, <span class="n">:photo</span>, <span class="n">:sticker</span>, <span class="n">:story</span>, <span class="n">:video</span>, <span class="n">:video_note</span>, <span class="n">:voice</span>, <span class="n">:checklist</span>, <span class="n">:contact</span>, <span class="n">:contact</span>, <span class="n">:dice</span>, <span class="n">:game</span>, <span class="n">:poll</span>, <span class="n">:venue</span>, <span class="n">:location</span>, <span class="n">:invoice</span>, <span class="n">:successful_payment</span>, <span class="n">:refunded_payment</span>, <span class="n">:users_shared</span>, <span class="n">:chat_shared</span>, <span class="n">:passport_data</span>]</code>
       </dt>
       
+      <dd class="entry-const-doc">
+        <p>Available payload types that can be handled by the <code><a href="../Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code>.</p>
+      </dd>
+      
     
   </dl>
 
@@ -1665,7 +1681,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        <a href="#new%28api%29-class-method" class="signature"><strong>.new</strong>(api)</a>
         
       </li>
     
@@ -1688,37 +1704,65 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#api%3AHamilton%3A%3AApi-instance-method" class="signature"><strong>#api</strong> : Hamilton::Api</a>
+        
+          <div class="summary"><p>API instance to be used inside the handler.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#api%3D%28api%3AHamilton%3A%3AApi%29-instance-method" class="signature"><strong>#api=</strong>(api : Hamilton::Api)</a>
+        
+          <div class="summary"><p>API instance to be used inside the handler.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#call%28update%3AHamilton%3A%3ATypes%3A%3AUpdate%29-instance-method" class="signature"><strong>#call</strong>(update : Hamilton::Types::Update)</a>
+        
+          <div class="summary"><p>Handling method that processes an update.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#context%3AHamilton%3A%3AContext-instance-method" class="signature"><strong>#context</strong> : Hamilton::Context</a>
         
+          <div class="summary"><p>Context for the current bot sessions.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#context%3D%28context%3AHamilton%3A%3AContext%29-instance-method" class="signature"><strong>#context=</strong>(context : Hamilton::Context)</a>
+        
+          <div class="summary"><p>Context for the current bot sessions.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#log%3ALog-instance-method" class="signature"><strong>#log</strong> : Log</a>
         
+          <div class="summary"><p>Logger instance.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#log%3D%28log%3ALog%29-instance-method" class="signature"><strong>#log=</strong>(log : Log)</a>
+        
+          <div class="summary"><p>Logger instance.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29-instance-method" class="signature"><strong>#mapper</strong> : Hash(Symbol, Hash(String | Symbol, Symbol))</a>
         
+          <div class="summary"><p>Mapping between methods and mapper between update types and methods to handle them.</p></div>
+        
       </li>
     
       <li class="entry-summary">
         <a href="#mapper%3D%28mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29%29-instance-method" class="signature"><strong>#mapper=</strong>(mapper : Hash(Symbol, Hash(String | Symbol, Symbol)))</a>
+        
+          <div class="summary"><p>Mapping between methods and mapper between update types and methods to handle them.</p></div>
         
       </li>
     
@@ -1777,12 +1821,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new-class-method">
+    <div class="entry-detail" id="new(api)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>
+        def self.<strong>new</strong>(api)
 
-        <a class="method-permalink" href="#new-class-method">#</a>
+        <a class="method-permalink" href="#new%28api%29-class-method">#</a>
       </div>
       
       <br/>
@@ -1807,6 +1851,44 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="api:Hamilton::Api-instance-method">
+      <div class="signature">
+        
+        def <strong>api</strong> : <a href="../Hamilton/Api.html">Hamilton::Api</a>
+
+        <a class="method-permalink" href="#api%3AHamilton%3A%3AApi-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>API instance to be used inside the handler.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="api=(api:Hamilton::Api)-instance-method">
+      <div class="signature">
+        
+        def <strong>api=</strong>(api : <a href="../Hamilton/Api.html">Hamilton::Api</a>)
+
+        <a class="method-permalink" href="#api%3D%28api%3AHamilton%3A%3AApi%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>API instance to be used inside the handler.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="call(update:Hamilton::Types::Update)-instance-method">
       <div class="signature">
         
@@ -1814,6 +1896,15 @@
 
         <a class="method-permalink" href="#call%28update%3AHamilton%3A%3ATypes%3A%3AUpdate%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from module <a href="../Hamilton/Handler.html">Hamilton::Handler</a>
+            </div>
+          
+          <p>Handling method that processes an update.</p>
+        </div>
       
       <br/>
       <div>
@@ -1829,6 +1920,11 @@
         <a class="method-permalink" href="#context%3AHamilton%3A%3AContext-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Context for the current bot sessions.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1842,6 +1938,11 @@
 
         <a class="method-permalink" href="#context%3D%28context%3AHamilton%3A%3AContext%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Context for the current bot sessions.</p>
+        </div>
       
       <br/>
       <div>
@@ -1857,6 +1958,11 @@
         <a class="method-permalink" href="#log%3ALog-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Logger instance.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1870,6 +1976,11 @@
 
         <a class="method-permalink" href="#log%3D%28log%3ALog%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Logger instance.</p>
+        </div>
       
       <br/>
       <div>
@@ -1885,6 +1996,11 @@
         <a class="method-permalink" href="#mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29-instance-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Mapping between methods and mapper between update types and methods to handle them.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -1898,6 +2014,11 @@
 
         <a class="method-permalink" href="#mapper%3D%28mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29%29-instance-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Mapping between methods and mapper between update types and methods to handle them.</p>
+        </div>
       
       <br/>
       <div>
