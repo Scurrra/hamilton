@@ -43,10 +43,10 @@ class Hamilton::Api
     {% end %}   {% end %}   #
     def {{method.id}}(**params)
       body = ""
+      boundary = MIME::Multipart.generate_boundary
       # type check and form building
       {% if info.has_key?(:params) && info[:params].size > 0 %}
       io = IO::Memory.new
-      boundary = MIME::Multipart.generate_boundary
       builder = HTTP::FormData::Builder.new(io, boundary)
       {% for param, pinfo in info[:params] %}
         unless params.has_key?({{param}})
@@ -274,7 +274,12 @@ class Hamilton::Api
 
       if response.status.ok?
         if body = response.body?
-          return {{info[:return_type]}}.from_json body
+          api_result = {{info[:return_type]}}.from_json body
+          if api_result.ok
+            return api_result.result
+          else
+            raise Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok")      
+          end
         end
       else
         raise Hamilton::Errors::ApiEndpointError.new({{method}}, response.status)

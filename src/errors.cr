@@ -61,10 +61,13 @@ module Hamilton::Errors
 
   # Exception raised when something wrong is returned.
   class ApiEndpointError < Exception
-    def initialize(endpoint : String, status : HTTP::Starus)
+    def initialize(endpoint : String, status : HTTP::Status, message m : String = "")
       message = "Endpoint `#{endpoint}` returned with status #{status.code}"
       if description = status.description
         message += " :: #{description}"
+      end
+      if m != ""
+        message += ", BUT #{m}"
       end
       super(message)
     end
