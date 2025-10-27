@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object describes a message that was deleted or is otherwise inaccessible to the bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InaccessibleMessage
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Chat the message belonged to.

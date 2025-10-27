@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes reply parameters for the message that is being sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReplyParameters
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier of the message that will be replied to in the current chat, or in the chat chat_id if it is specified.

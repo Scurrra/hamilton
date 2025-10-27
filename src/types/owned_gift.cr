@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a regular gift owned by a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OwnedGiftRegular
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the gift, always “regular”.
@@ -49,6 +50,7 @@ end
 # Describes a unique gift received and owned by a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OwnedGiftUnique
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the gift, always "unique".
@@ -85,6 +87,7 @@ alias Hamilton::Types::OwnedGift = Hamilton::Types::OwnedGiftRegular | Hamilton:
 # Contains the list of gifts received and owned by a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OwnedGifts
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The total number of gifts owned by the user or the chat.

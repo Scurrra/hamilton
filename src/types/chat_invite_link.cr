@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents an invite link for a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatInviteLink
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with “…”.

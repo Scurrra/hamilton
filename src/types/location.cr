@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a point on the map.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Location
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Latitude as defined by the sender.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about the quoted part of a message that is replied to by the given message.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TextQuote
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Text of the quoted part of a message that is replied to by the given message.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents an animated emoji that displays a random value.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Dice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Emoji on which the dice throw animation is based.

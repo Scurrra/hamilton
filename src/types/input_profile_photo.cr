@@ -4,6 +4,7 @@ require "./utils.cr"
 # A static profile photo in the .JPG format.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputProfilePhotoStatic
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the profile photo, must be "static".
@@ -16,6 +17,7 @@ end
 # An animated profile photo in the MPEG4 format.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputProfilePhotoAnimated
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the profile photo, must be "animated".

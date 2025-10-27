@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents the default scope of bot commands. Default commands are used if no commands with a narrower scope are specified for the user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeDefault
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "default".
@@ -13,6 +14,7 @@ end
 # Represents the scope of bot commands, covering all private chats.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeAllPrivateChats
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "all_private_chats".
@@ -22,6 +24,7 @@ end
 # Represents the scope of bot commands, covering all group and supergroup chats.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeAllGroupChats
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "all_group_chats".
@@ -31,6 +34,7 @@ end
 # Represents the scope of bot commands, covering all group and supergroup chat administrators.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeAllChatAdministrators
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "all_chat_administrators".
@@ -40,6 +44,7 @@ end
 # Represents the scope of bot commands, covering a specific chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeChat
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "chat".
@@ -52,6 +57,7 @@ end
 # Represents the scope of bot commands, covering all administrators of a specific group or supergroup chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeChatAdministrators
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "chat_administrators".
@@ -64,6 +70,7 @@ end
 # Represents the scope of bot commands, covering a specific member of a group or supergroup chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommandScopeChatMember
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Scope type, must be "default".

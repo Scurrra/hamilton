@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents the content of a text message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputTextMessageContent
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Text of the message to be sent, 1-4096 characters.
@@ -22,6 +23,7 @@ end
 # Represents the content of a location message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputLocationMessageContent
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Latitude of the location in degrees.
@@ -46,6 +48,7 @@ end
 # Represents the content of a venue message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputVenueMessageContent
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Latitude of the venue in degrees.
@@ -76,6 +79,7 @@ end
 # Represents the content of a contact message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputContactMessageContent
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Contact's phone number.
@@ -94,6 +98,7 @@ end
 # Represents the content of an invoice message to be sent as the result of an inline query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputInvoiceMessageContent
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Product name, 1-32 characters.

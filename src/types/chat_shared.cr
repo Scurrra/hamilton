@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about a chat that was shared with the bot using a KeyboardButtonRequestChat button.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatShared
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier of the request.

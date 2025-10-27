@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents one shipping option.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ShippingOption
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Shipping option identifier.

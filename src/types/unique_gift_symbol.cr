@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object describes the symbol shown on the pattern of a unique gift.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::UniqueGiftSymbol
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Name of the model.

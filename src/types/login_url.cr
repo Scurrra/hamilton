@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the Telegram Login Widget when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in. Telegram apps support these buttons as of version 5.7.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::LoginUrl
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in Receiving authorization data.

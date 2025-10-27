@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents a chat member that owns the chat and has all administrator privileges.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberOwner
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The member's status in the chat, always “creator”.
@@ -22,6 +23,7 @@ end
 # Represents a chat member that has some additional privileges.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberAdministrator
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The member's status in the chat, always "administrator".
@@ -88,6 +90,7 @@ end
 # Represents a chat member that has no additional privileges or restrictions.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberMember
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The member's status in the chat, always "member".
@@ -103,6 +106,7 @@ end
 # Represents a chat member that is under certain restrictions in the chat. Supergroups only.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberRestricted
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The member's status in the chat, always "restricted".
@@ -163,6 +167,7 @@ end
 # Represents a chat member that isn't currently a member of the chat, but may join it themselves.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberLeft
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The member's status in the chat, always "left".
@@ -175,6 +180,7 @@ end
 # Represents a chat member that was banned in the chat and can't return to the chat or view chat messages.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberBanned
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The member's status in the chat, always "kicked".

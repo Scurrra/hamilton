@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes an amount of Telegram Stars.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StarAmount
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Integer amount of Telegram Stars, rounded to 0; can be negative.

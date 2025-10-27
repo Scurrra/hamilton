@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents the rights of an administrator in a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatAdministratorRights
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # True, if the user's presence in the chat is hidden.

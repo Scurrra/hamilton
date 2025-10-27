@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a Telegram user or bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::User
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier for this user or bot.

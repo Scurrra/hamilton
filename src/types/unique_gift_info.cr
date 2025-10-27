@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a service message about a unique gift that was sent or received.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::UniqueGiftInfo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Information about the gift.

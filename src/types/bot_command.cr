@@ -27,6 +27,7 @@ require "./utils.cr"
 # - botCommandScopeDefault
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BotCommand
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Text of the command; 1-32 characters. Can contain only lowercase English letters, digits and underscores.

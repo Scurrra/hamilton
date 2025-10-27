@@ -6,6 +6,7 @@ require "./utils.cr"
 # NOTE: The maximum file size to download is 20 MB.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::File
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier for this file, which can be used to download or reuse the file.

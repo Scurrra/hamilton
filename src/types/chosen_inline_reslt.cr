@@ -6,6 +6,7 @@ require "./utils.cr"
 # NOTE: It is necessary to enable inline feedback via @BotFather in order to receive these objects in updates.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChosenInlineResult
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The unique identifier for the result that was chosen.

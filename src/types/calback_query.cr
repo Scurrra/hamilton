@@ -6,6 +6,7 @@ require "./utils.cr"
 # NOTE: After the user presses a callback button, Telegram clients will display a progress bar until you call `answerCallbackQuery`. It is, therefore, necessary to react by calling `answerCallbackQuery` even if no notification to the user is needed (e.g., without specifying any of the optional parameters).
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::CallbackQuery
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier for this query.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about a chat boost.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatBoost
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the boost.

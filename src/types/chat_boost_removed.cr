@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a boost removed from a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatBoostRemoved
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Chat which was boosted.

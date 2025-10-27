@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes the price of a suggested post.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::SuggestedPostPrice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins.

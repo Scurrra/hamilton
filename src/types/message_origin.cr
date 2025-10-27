@@ -4,6 +4,7 @@ require "./utils.cr"
 # The message was originally sent by a known user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginUser
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the message origin, always “user”.
@@ -19,6 +20,7 @@ end
 # The message was originally sent by an unknown user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginHiddenUser
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the message origin, always "hidden_user".
@@ -34,6 +36,7 @@ end
 # The message was originally sent on behalf of a chat to a group chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginChannel
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the message origin, always "chat".
@@ -52,6 +55,7 @@ end
 # The message was originally sent to a channel chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageOriginUser
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the message origin, always "channel".

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about a message that is being replied to, which may come from another chat or forum topic.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ExternalReplyInfo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Origin of the message replied to by the given message.

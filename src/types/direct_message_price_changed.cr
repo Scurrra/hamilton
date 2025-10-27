@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a service message about a change in the price of direct messages sent to a channel chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::DirectMessagePriceChanged
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # True, if direct messages are enabled for the channel chat; false otherwise

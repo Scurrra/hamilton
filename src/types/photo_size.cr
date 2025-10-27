@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents one size of a photo or a file / sticker thumbnail.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PhotoSize
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier for this file, which can be used to download or reuse the file.

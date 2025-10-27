@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object is received when messages are deleted from a connected business account.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BusinessMessagesDeleted
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the business connection.

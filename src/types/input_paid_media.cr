@@ -4,6 +4,7 @@ require "./utils.cr"
 # The paid media to send is a photo.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputPaidMediaPhoto
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the media, must be "photo".
@@ -16,6 +17,7 @@ end
 # The paid media to send is a video.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputPaidMediaVideo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the media, must be "video".

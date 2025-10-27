@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a file uploaded to Telegram Passport. Currently all Telegram Passport files are in JPEG format when decrypted and don't exceed 10MB.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportFile
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier for this file, which can be used to download or reuse the file.

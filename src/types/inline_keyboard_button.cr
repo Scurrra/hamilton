@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents one button of an inline keyboard. Exactly one of the optional fields must be used to specify type of the button.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineKeyboardButton
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Label text on the button.

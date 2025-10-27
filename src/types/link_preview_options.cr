@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes the options used for link preview generation.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::LinkPreviewOptions
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # True, if the link preview is disabled.

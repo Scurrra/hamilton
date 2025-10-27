@@ -1,7 +1,6 @@
 # Module that encapsulates type construction and serialization logic (initialize from `**params` and `from_json`; `to_json`).
 module Hamilton::Types::Common
-  include JSON::Serializable
-
+  
   def self.new(**params)
     instance = {{@type.name}}.allocate
     {% for var, index in @type.instance_vars %} 

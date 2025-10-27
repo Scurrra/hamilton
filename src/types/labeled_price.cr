@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a portion of the price for goods or services.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::LabeledPrice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Portion label.

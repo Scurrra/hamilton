@@ -4,6 +4,7 @@ require "./utils.cr"
 # The withdrawal is in progress.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::RevenueWithdrawalStatePending
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the state, always “pending”.
@@ -13,6 +14,7 @@ end
 # The withdrawal succeeded.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::RevenueWithdrawalStateSucceeded
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the state, always "succeeded".
@@ -28,6 +30,7 @@ end
 # The withdrawal failed and the transaction was refunded.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::RevenueWithdrawalStateFailed
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the state, always "failed".

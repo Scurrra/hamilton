@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a transaction with a user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerUser
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always "user".
@@ -40,6 +41,7 @@ end
 # Describes a transaction with a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerChat
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always “chat”.
@@ -55,6 +57,7 @@ end
 # Describes the affiliate program that issued the affiliate commission received via this transaction.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerAffiliateProgram
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always "affiliate_program".
@@ -70,6 +73,7 @@ end
 # Describes a withdrawal transaction with Fragment.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerFragment
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always "fragment".
@@ -82,6 +86,7 @@ end
 # Describes a withdrawal transaction to the Telegram Ads platform.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerTelegramAds
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always "telegram_ads".
@@ -91,6 +96,7 @@ end
 # Describes a transaction with payment for paid broadcasting.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerTelegramApi
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always "telegram_api".
@@ -103,6 +109,7 @@ end
 # Describes a transaction with an unknown source or recipient.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::TransactionPartnerOther
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the transaction partner, always "other".

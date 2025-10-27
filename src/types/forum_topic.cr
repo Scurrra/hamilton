@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a forum topic.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ForumTopic
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the forum topic.

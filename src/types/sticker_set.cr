@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a sticker set.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StickerSet
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Sticker set name.

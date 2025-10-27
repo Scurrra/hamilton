@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about a user that was shared with the bot using a KeyboardButtonRequestUsers button.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::SharedUser
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier of the shared user. The bot may not have access to the user and could be unable to use this identifier, unless the user is already known to the bot by some other means.

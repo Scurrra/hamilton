@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents an issue in one of the data fields that was provided by the user. The error is considered resolved when the field's value changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorDataField
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "data".
@@ -25,6 +26,7 @@ end
 # Represents an issue with the front side of a document. The error is considered resolved when the file with the front side of the document changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorFrontSide
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "front_side".
@@ -43,6 +45,7 @@ end
 # Represents an issue with the reverse side of a document. The error is considered resolved when the file with reverse side of the document changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorReverseSide
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "reverse_side".
@@ -61,6 +64,7 @@ end
 # Represents an issue with the selfie with a document. The error is considered resolved when the file with the selfie changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorSelfie
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "selfie".
@@ -79,6 +83,7 @@ end
 # Represents an issue with a document scan. The error is considered resolved when the file with the document scan changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorFile
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "file".
@@ -97,6 +102,7 @@ end
 # Represents an issue with a list of scans. The error is considered resolved when the list of files containing the scans changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorFiles
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "files".
@@ -115,6 +121,7 @@ end
 # Represents an issue with one of the files that constitute the translation of a document. The error is considered resolved when the file changes.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorTranslationFile
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "translation_file".
@@ -133,6 +140,7 @@ end
 # Represents an issue with the translated version of a document. The error is considered resolved when a file with the document translation change.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorTranslationFiles
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "translation_files".
@@ -151,6 +159,7 @@ end
 # Represents an issue in an unspecified place. The error is considered resolved when new data is added.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PassportElementErrorUnspecified
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Error source, must be "unspecified".

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object describes the position on faces where a mask should be placed by default.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MaskPosition
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The part of the face relative to which the mask should be placed. One of “forehead”, “eyes”, “mouth”, or “chin”.

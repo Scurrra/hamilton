@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a change of a reaction on a message performed by a user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageReactionUpdated
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The chat containing the message the user reacted to.

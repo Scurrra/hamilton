@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a message about the completion of a giveaway with public winners.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::GiveawayWinners
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The chat that created the giveaway.

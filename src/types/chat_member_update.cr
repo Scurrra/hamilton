@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents changes in the status of a chat member.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatMemberUpdated
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Chat the user belongs to.

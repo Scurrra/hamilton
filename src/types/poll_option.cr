@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about one answer option in a poll.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PollOption
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Option text, 1-100 characters.

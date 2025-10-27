@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents a menu button, which opens the bot's list of commands.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MenuButtonCommands
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the button, must be "commands".
@@ -13,6 +14,7 @@ end
 # Represents a menu button, which launches a Web App.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MenuButtonWebApp
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the button, must be "web_app".
@@ -28,6 +30,7 @@ end
 # Describes that no specific value for the menu button was set.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MenuButtonDefault
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the button, must be "default".

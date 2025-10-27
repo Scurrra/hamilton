@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about an incoming shipping query.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ShippingQuery
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique query identifier.

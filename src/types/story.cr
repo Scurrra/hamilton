@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a story.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Story
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Chat that posted the story

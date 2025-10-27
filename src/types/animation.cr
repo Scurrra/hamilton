@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents an animation file (GIF or H.264/MPEG-4 AVC video without sound).
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Animation
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier for this file, which can be used to download or reuse the file.

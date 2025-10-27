@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a gift that can be sent by the bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Gift
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the gift.
@@ -31,6 +32,7 @@ end
 # This object represent a list of gifts.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Gifts
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The list of gifts.

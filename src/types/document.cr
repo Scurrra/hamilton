@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a general file (as opposed to photos, voice messages and audio files).
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Document
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier for this file, which can be used to download or reuse the file.

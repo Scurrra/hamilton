@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents a photo to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaPhoto
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "photo".
@@ -31,6 +32,7 @@ end
 # Represents a video to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaVideo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "video".
@@ -79,6 +81,7 @@ end
 # Represents an animation file (GIF or H.264/MPEG-4 AVC video without sound) to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaAnimation
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "animation".
@@ -118,6 +121,7 @@ end
 # Represents an audio file to be treated as music to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaAudio
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "audio".
@@ -151,6 +155,7 @@ end
 # Represents a general file to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaDocument
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "document".

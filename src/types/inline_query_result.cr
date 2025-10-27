@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents a link to an article or web page.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultArticle
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "article".
@@ -40,6 +41,7 @@ end
 # Represents a link to a photo. By default, this photo will be sent by the user with optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the photo.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultPhoto
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "photo".
@@ -88,6 +90,7 @@ end
 # Represents a link to an animated GIF file. By default, this animated GIF file will be sent by the user with optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the animation.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultGif
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "gif".
@@ -139,6 +142,7 @@ end
 # Represents a link to a video animation (H.264/MPEG-4 AVC video without sound). By default, this animated MPEG-4 file will be sent by the user with optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the animation.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultMpeg4Gif
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "mpeg4_gif".
@@ -192,6 +196,7 @@ end
 # NOTE: If an InlineQueryResultVideo message contains an embedded video (e.g., YouTube), you must replace its content using `input_message_content`.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultVideo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "video".
@@ -246,6 +251,7 @@ end
 # Represents a link to an MP3 audio file. By default, this audio file will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the audio.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultAudio
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "audio".
@@ -285,6 +291,7 @@ end
 # Represents a link to a voice recording in an .OGG container encoded with OPUS. By default, this voice recording will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the the voice message.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultVoice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "voice".
@@ -321,6 +328,7 @@ end
 # Represents a link to a file. By default, this file will be sent by the user with an optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the file. Currently, only .PDF and .ZIP files can be sent using this method.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultDocument
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "document".
@@ -369,6 +377,7 @@ end
 # Represents a location on a map. By default, the location will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the location.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultLocation
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "location".
@@ -417,6 +426,7 @@ end
 # Represents a venue. By default, the venue will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the venue.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultVenue
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "venue".
@@ -468,6 +478,7 @@ end
 # Represents a contact with a phone number. By default, this contact will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the contact.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultContact
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "contact".
@@ -507,6 +518,7 @@ end
 # Represents a Game.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultGame
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "game".
@@ -525,6 +537,7 @@ end
 # Represents a link to a photo stored on the Telegram servers. By default, this photo will be sent by the user with an optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the photo.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedPhoto
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "photo".
@@ -564,6 +577,7 @@ end
 # Represents a link to an animated GIF file stored on the Telegram servers. By default, this animated GIF file will be sent by the user with an optional caption. Alternatively, you can use `input_message_content` to send a message with specified content instead of the animation.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedGif
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "gif".
@@ -600,6 +614,7 @@ end
 # Represents a link to a video animation (H.264/MPEG-4 AVC video without sound) stored on the Telegram servers. By default, this animated MPEG-4 file will be sent by the user with an optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the animation.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedMpeg4Gif
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "mpeg4_gif".
@@ -636,6 +651,7 @@ end
 # Represents a link to a sticker stored on the Telegram servers. By default, this sticker will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the sticker.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedSticker
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "sticker".
@@ -657,6 +673,7 @@ end
 # Represents a link to a file stored on the Telegram servers. By default, this file will be sent by the user with an optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the file.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedDocument
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "document".
@@ -693,6 +710,7 @@ end
 # Represents a link to a video file stored on the Telegram servers. By default, this video file will be sent by the user with an optional caption. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the video.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedVideo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "video".
@@ -732,6 +750,7 @@ end
 # Represents a link to a voice message stored on the Telegram servers. By default, this voice message will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the voice message.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedVoice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "voice".
@@ -765,6 +784,7 @@ end
 # Represents a link to an MP3 audio file stored on the Telegram servers. By default, this audio file will be sent by the user. Alternatively, you can use `input_message_content` to send a message with the specified content instead of the audio.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultCachedAudio
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the result, must be "audio".

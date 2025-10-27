@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a checklist to create.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputChecklist
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Title of the checklist; 1-255 characters after entities parsing.

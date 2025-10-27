@@ -4,6 +4,7 @@ require "./utils.cr"
 # Contains information about the affiliate that received a commission via this transaction.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::AffiliateInfo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The bot or the user that received an affiliate commission if it was received by a bot or a user.

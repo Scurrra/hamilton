@@ -4,6 +4,7 @@ require "./utils.cr"
 # Contains parameters of a post that is being suggested by the bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::SuggestedPostParameters
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Proposed price for the post. If the field is omitted, then the post is unpaid.

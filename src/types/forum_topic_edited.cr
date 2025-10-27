@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a service message about an edited forum topic.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ForumTopicEdited
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # New name of the topic, if it was edited.

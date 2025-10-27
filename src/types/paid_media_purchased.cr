@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about a paid media purchase.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PaidMediaPurchased
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # User who purchased the media.

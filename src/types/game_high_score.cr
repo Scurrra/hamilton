@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents one row of the high scores table for a game.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::GameHighScore
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Position in high score table for the game.

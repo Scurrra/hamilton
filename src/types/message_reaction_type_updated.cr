@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents reaction changes on a message with anonymous reactions.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::MessageReactionCountUpdated
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The chat containing the message.

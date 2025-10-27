@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a game. Use BotFather to create and edit games, their short names will act as unique identifiers.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Game
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Title of the game.

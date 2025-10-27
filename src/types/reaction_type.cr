@@ -4,6 +4,7 @@ require "./utils.cr"
 # The reaction is based on an emoji.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReactionTypeEmoji
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the reaction, always “emoji”.
@@ -16,6 +17,7 @@ end
 # The reaction is based on a custom emoji.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReactionTypeCustomEmoji
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the reaction, always "custom_emoji".
@@ -28,6 +30,7 @@ end
 # The reaction is paid.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReactionTypePaid
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the reaction, always "paid".

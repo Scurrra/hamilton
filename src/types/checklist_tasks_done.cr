@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a service message about checklist tasks marked as done or not done.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChecklistTasksDone
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Message containing the checklist whose tasks were marked as done or not done. Note that the Message object in this field will not contain the reply_to_message field even if it itself is a reply.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a service message about a new forum topic created in the chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ForumTopicCreated
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Name of the topic.

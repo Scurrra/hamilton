@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object describes a unique gift that was upgraded from a regular gift.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::UniqueGift
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Human-readable name of the regular gift from which this unique gift was upgraded.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object describes the colors of the backdrop of a unique gift.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::UniqueGiftBackdropColors
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The color in the center of the backdrop in RGB format.

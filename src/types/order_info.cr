@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents information about an order.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::OrderInfo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # User name.

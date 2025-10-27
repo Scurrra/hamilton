@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a photo to post as a story.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputStoryContentPhoto
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the content, must be "photo".
@@ -16,6 +17,7 @@ end
 # Describes a video to post as a story.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputStoryContentVideo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the content, must be "video".

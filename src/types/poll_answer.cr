@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents an answer of a user in a non-anonymous poll.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PollAnswer
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique poll identifier.

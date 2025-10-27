@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains information about a poll.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Poll
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique poll identifier.

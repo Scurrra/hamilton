@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a task to add to a checklist.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputChecklistTask
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the task; must be positive and unique among all task identifiers currently present in the checklist.

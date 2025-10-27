@@ -6,6 +6,7 @@ require "./utils.cr"
 # NOTE: `request_users` and `request_chat` options will only work in Telegram versions released after 3 February, 2023. Older clients will display unsupported message.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::KeyboardButton
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Text of the button. If none of the optional fields are used, it will be sent as a message when the button is pressed.

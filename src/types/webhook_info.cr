@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes the current status of a webhook.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::WebhookInfo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Webhook URL, may be empty if webhook is not set up.

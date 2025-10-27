@@ -5,6 +5,7 @@ require "./utils.cr"
 # At most one of the optional parameters can be present in any given update.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Update
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The update's unique identifier. Update identifiers start from a certain positive number and increase sequentially.

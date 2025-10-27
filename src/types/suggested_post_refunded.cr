@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a service message about a payment refund for a suggested post.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::SuggestedPostRefunded
+  include JSON::Serializable
   include Hamilton::Types::Common
   
   # Message containing the suggested post. Note that the Message object in this field will not contain the reply_to_message field even if it itself is a reply.

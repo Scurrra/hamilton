@@ -4,5 +4,6 @@ require "./utils.cr"
 # This object represents a service message about a forum topic reopened in the chat. Currently holds no information.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ForumTopicReopened
+  include JSON::Serializable
   include Hamilton::Types::Common
 end

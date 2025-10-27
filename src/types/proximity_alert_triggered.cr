@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents the content of a service message, sent whenever a user in the chat triggers a proximity alert set by another user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ProximityAlertTriggered
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # User that triggered the alert.

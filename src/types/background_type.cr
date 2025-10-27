@@ -4,6 +4,7 @@ require "./utils.cr"
 # The background is automatically filled based on the selected colors.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypeFill
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background, always “fill”.
@@ -19,6 +20,7 @@ end
 # The background is a wallpaper in the JPEG format.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypeWallpaper
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background, always "wallpaper".
@@ -40,6 +42,7 @@ end
 # The background is a .PNG or .TGV (gzipped subset of SVG with MIME type “application/x-tgwallpattern”) pattern to be combined with the background fill chosen by the user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypePattern
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background, always "pattern".
@@ -64,6 +67,7 @@ end
 # The background is taken directly from a built-in chat theme.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundTypeChatTheme
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background, always "chat_theme".

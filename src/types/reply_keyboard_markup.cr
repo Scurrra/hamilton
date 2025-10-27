@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a custom keyboard with reply options. Not supported in channels and for messages sent on behalf of a Telegram Business account.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ReplyKeyboardMarkup
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Array of button rows, each represented by an Array of KeyboardButton objects.

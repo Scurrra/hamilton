@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a shipping address.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ShippingAddress
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Two-letter ISO 3166-1 alpha-2 country code.

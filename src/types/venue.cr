@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a venue.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Venue
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Venue location. Can't be a live location.

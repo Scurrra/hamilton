@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Chat
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier for this chat.

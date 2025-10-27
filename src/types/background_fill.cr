@@ -4,6 +4,7 @@ require "./utils.cr"
 # The background is filled using the selected color.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundFillSolid
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background fill, always “solid”.
@@ -16,6 +17,7 @@ end
 # The background is a gradient fill.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundFillGradient
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background fill, always "gradient".
@@ -34,6 +36,7 @@ end
 # The background is a freeform gradient that rotates after every message in the chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BackgroundFillFreeformGradient
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the background fill, always "freeform_gradient".

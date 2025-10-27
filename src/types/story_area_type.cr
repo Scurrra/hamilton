@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a story area pointing to a location. Currently, a story can have up to 10 location areas.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryAreaTypeLocation
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the area, always “location”.
@@ -22,6 +23,7 @@ end
 # Describes a story area pointing to a suggested reaction. Currently, a story can have up to 5 suggested reaction areas.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryAreaTypeSuggestedReaction
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the area, always "suggested_reaction".
@@ -40,6 +42,7 @@ end
 # Describes a story area pointing to an HTTP or tg:// link. Currently, a story can have up to 3 link areas.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryAreaTypeLink
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the area, always "link".
@@ -52,6 +55,7 @@ end
 # Describes a story area containing weather information. Currently, a story can have up to 3 weather areas.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryAreaTypeWeather
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the area, always "weather".
@@ -70,6 +74,7 @@ end
 # Describes a story area pointing to a unique gift. Currently, a story can have at most 1 unique gift area.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryAreaTypeUniqueGift
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Type of the area, always "unique_gift".

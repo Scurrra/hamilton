@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a checklist.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Checklist
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Title of the checklist.

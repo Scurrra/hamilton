@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object defines the criteria used to request suitable users. Information about the selected users will be shared with the bot when the corresponding button is pressed.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::KeyboardButtonRequestUsers
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Signed 32-bit identifier of the request that will be received back in the UsersShared object. Must be unique within the message.

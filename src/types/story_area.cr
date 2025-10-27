@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes a clickable area on a story media.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryArea
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Position of the area.

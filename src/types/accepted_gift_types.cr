@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object describes the types of gifts that can be gifted to a user or a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::AcceptedGiftTypes
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # True, if unlimited regular gifts are accepted.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents the rights of a business bot.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BusinessBotRights
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # True, if the bot can send and edit messages in the private chats that had incoming messages in the last 24 hours.

@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents an incoming inline query. When the user sends an empty query, your bot could return some default or trending results.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQuery
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier for this query.

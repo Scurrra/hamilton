@@ -4,6 +4,7 @@ require "./utils.cr"
 # Contains information about a suggested post.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::SuggestedPostInfo
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # State of the suggested post. Currently, it can be one of “pending”, “approved”, “declined”.

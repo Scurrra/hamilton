@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes actions that a non-administrator user is allowed to take in a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatPermissions
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # True, if the user is allowed to send text messages, contacts, giveaways, giveaway winners, invoices, locations and venues.

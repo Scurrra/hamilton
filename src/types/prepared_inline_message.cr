@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes an inline message to be sent by a user of a Mini App.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PreparedInlineMessage
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the prepared message.

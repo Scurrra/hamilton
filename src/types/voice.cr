@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a voice note.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Voice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Identifier for this file, which can be used to download or reuse the file.

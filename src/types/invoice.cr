@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object contains basic information about an invoice.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Invoice
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Product name.

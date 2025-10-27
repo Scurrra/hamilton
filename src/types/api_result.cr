@@ -1,12 +1,12 @@
-require "json"
+# require "json"
 
-class ApiResult(T)
-  include JSON::Serializable
-  
-  property ok : Bool
+# class ApiResult(T)
+#   include JSON::Serializable
 
-  property result : T
+#   property ok : Bool
 
-  def initialize(@ok, @result)
-  end
-end
+#   property result : T
+
+#   def initialize(@ok, @result)
+#   end
+# end

@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes the position of a clickable area within a story.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::StoryAreaPosition
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The abscissa of the area's center, as a percentage of the media width.

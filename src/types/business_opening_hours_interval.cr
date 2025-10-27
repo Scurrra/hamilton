@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes an interval of time during which a business is open.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BusinessOpeningHoursInterval
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # The minute's sequence number in a week, starting on Monday, marking the start of the time interval during which the business is open; 0 - 7 * 24 * 60.

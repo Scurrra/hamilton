@@ -4,6 +4,7 @@ require "./utils.cr"
 # This object represents a button to be shown above inline query results. You must use exactly one of the optional fields.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InlineQueryResultsButton
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Label text on the button.

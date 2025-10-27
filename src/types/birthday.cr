@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes the birthdate of a user.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::Birthdate
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Day of the user's birth; 1-31.

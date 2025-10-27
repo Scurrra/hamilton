@@ -4,6 +4,7 @@ require "./utils.cr"
 # Represents a join request sent to a chat.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::ChatJoinRequest
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Chat to which the request was sent.

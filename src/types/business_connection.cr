@@ -4,6 +4,7 @@ require "./utils.cr"
 # Describes the connection of the bot with a business account.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::BusinessConnection
+  include JSON::Serializable
   include Hamilton::Types::Common
 
   # Unique identifier of the business connection.
