@@ -1,8 +1,18 @@
+require "json"
+
+private class ApiResult(T)
+  include JSON::Serializable
+
+  property ok : Bool
+
+  property result : T
+end
+
 class Hamilton::Api
   # :nodoc:
   ENDPOINTS = {
     "getUpdates" => {
-      return_type: Array(Hamilton::Types::Update),
+      return_type: ApiResult(Array(Hamilton::Types::Update)),
       docs: [%<Use this method to receive incoming updates using long polling. Returns an Array of Update objects.>, %<NOTE: This method will not work if an outgoing webhook is set up.>, %<NOTE: In order to avoid getting duplicate updates, recalculate offset after each server response.>],
       params: {
         :offset => {
@@ -24,7 +34,7 @@ class Hamilton::Api
       }
     },
     "setWebhook" => {
-      type: Hamilton::Types::Update,
+      return_type: ApiResult(Hamilton::Types::Update),
       docs: [%<Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized Update. In case of an unsuccessful request (a request with response HTTP status code different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns True on success.>, %<If you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter secret_token. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.>, %<NOTE: You will not be able to receive updates using `getUpdates` for as long as an outgoing webhook is set up.>, %<To use a self-signed certificate, you need to upload your public key certificate using `certificate` parameter. Please upload as `InputFile`, sending a String will not work.>, %<Ports currently supported for webhooks: 443, 80, 88, 8443.>, %<If you're having any trouble setting up webhooks, please check out this [amazing guide to webhooks](https://core.telegram.org/bots/webhooks).>],
       params: {
         :url => {
@@ -58,7 +68,7 @@ class Hamilton::Api
       }
     },
     "deleteWebhook" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to remove webhook integration if you decide to switch back to getUpdates. Returns True on success.>],
       params: {
         :drop_pending_updates => {
@@ -68,23 +78,23 @@ class Hamilton::Api
       }
     },
     "getWebhookInfo" => {
-      type: Hamilton::Types::WebhookInfo,
+      return_type: ApiResult(Hamilton::Types::WebhookInfo),
       docs: [%<Use this method to get current webhook status. Requires no parameters. On success, returns a WebhookInfo object. If the bot is using getUpdates, will return an object with the url field empty.>]
     },
     "getMe" => {
-      type: Hamilton::Types::User,
+      return_type: ApiResult(Hamilton::Types::User),
       docs: [%<A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a User object.>]
     },
     "logOut" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to log out from the cloud Bot API server before launching the bot locally. You must log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns True on success. Requires no parameters.>]
     },
     "close" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters.>]
     },
     "sendMessage" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send text messages. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -150,7 +160,7 @@ class Hamilton::Api
       }
     },
     "forwardMessage" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent Message is returned.>],
       params: {
         :chat_id => {
@@ -192,7 +202,7 @@ class Hamilton::Api
       }
     },
     "forwardMessages" => {
-      type: Array(Hamilton::Types::MessageId),
+      return_type: ApiResult(Array(Hamilton::Types::MessageId)),
       docs: [%<Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of `MessageId` of the sent messages is returned.>],
       params: {
         :chat_id => {
@@ -226,7 +236,7 @@ class Hamilton::Api
       }
     },
     "copyMessage" => {
-      type: Hamilton::Types::MessageId,
+      return_type: ApiResult(Hamilton::Types::MessageId),
       docs: [%<Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field `correct_option_id` is known to the bot. The method is analogous to the method `forwardMessage`, but the copied message doesn't have a link to the original message. Returns the `MessageId` of the sent message on success.>],
       params: {
         :chat_id => {
@@ -296,7 +306,7 @@ class Hamilton::Api
       }
     },
     "copyMessages" => {
-      type: Array(Hamilton::Types::MessageId),
+      return_type: ApiResult(Array(Hamilton::Types::MessageId)),
       docs: [%<Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field `correct_option_id` is known to the bot. The method is analogous to the method `forwardMessages`, but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of `MessageId` of the sent messages is returned.>],
       params: {
         :chat_id => {
@@ -334,7 +344,7 @@ class Hamilton::Api
       }
     },
     "sendPhoto" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send photos. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -408,7 +418,7 @@ class Hamilton::Api
       }
     },
     "sendAudio" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent `Message` is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.>, %<For sending voice messages, use the sendVoice method instead.>],
       params: {
         :business_connection_id => {
@@ -490,7 +500,7 @@ class Hamilton::Api
       }
     },
     "sendDocument" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send general files. On success, the sent `Message` is returned. Bots can currently send files of any type of up to 50 MB in size, this limit may be changed in the future.>],
       params: {
         :business_connection_id => {
@@ -564,7 +574,7 @@ class Hamilton::Api
       }
     },
     "sendVideo" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send video files, Telegram clients support MPEG4 videos (other formats may be sent as `Document`). On success, the sent `Message` is returned. Bots can currently send video files of up to 50 MB in size, this limit may be changed in the future.>],
       params: {
         :business_connection_id => {
@@ -666,7 +676,7 @@ class Hamilton::Api
       }
     },
     "sendAnimation" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send animation files (GIF or H.264/MPEG-4 AVC video without sound). On success, the sent `Message` is returned. Bots can currently send animation files of up to 50 MB in size, this limit may be changed in the future.>],
       params: {
         :business_connection_id => {
@@ -756,7 +766,7 @@ class Hamilton::Api
       }
     },
     "sendVoice" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format (other formats may be sent as `Audio` or `Document`). On success, the sent `Message` is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.>],
       params: {
         :business_connection_id => {
@@ -826,7 +836,7 @@ class Hamilton::Api
       }
     },
     "sendVideoNote" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<As of v.4.0, Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent `Message` is returned.>],
       params: {
         :business_connection_id => {
@@ -892,7 +902,7 @@ class Hamilton::Api
       }
     },
     "sendPaidMedia" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send paid media. On success, the sent `Message` is returned.>],
       params: {
         :business_connection_id => {
@@ -966,7 +976,7 @@ class Hamilton::Api
       }
     },
     "sendMediaGroup" => {
-      type: Array(Hamilton::Types::Message),
+      return_type: ApiResult(Array(Hamilton::Types::Message)),
       docs: [%<Use this method to send a group of photos, videos, documents or audios as an album. Documents and audio files can be only grouped in an album with messages of the same type. On success, an array of `Message` objects that were sent is returned.>],
       params: {
         :business_connection_id => {
@@ -1012,7 +1022,7 @@ class Hamilton::Api
       }
     },
     "sendLocation" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send point on the map. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -1086,7 +1096,7 @@ class Hamilton::Api
       }
     },
     "sendVenue" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send information about a venue. On success, the sent `Message` is returned.>],
       params: {
         :business_connection_id => {
@@ -1168,7 +1178,7 @@ class Hamilton::Api
       }
     },
     "sendContact" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send phone contacts. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -1234,7 +1244,7 @@ class Hamilton::Api
       }
     },
     "sendPoll" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send a native poll. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -1332,7 +1342,7 @@ class Hamilton::Api
       }
     },
     "sendChecklist" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send a checklist on behalf of a connected business account. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -1370,7 +1380,7 @@ class Hamilton::Api
       }
     },
     "sendDice" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send an animated emoji that will display a random value. On success, the sent Message is returned.>],
       params: {
         :business_connection_id => {
@@ -1424,7 +1434,7 @@ class Hamilton::Api
       }
     },
     "sendChatAction" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.>, %<We only recommend using this method when a response from the bot will take a noticeable amount of time to arrive.>],
       params: {
         :business_connection_id => {
@@ -1446,7 +1456,7 @@ class Hamilton::Api
       }
     },
     "setMessageReaction" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the chosen reactions on a message. Service messages of some types can't be reacted to. Automatically forwarded messages from a channel to its discussion group have the same available reactions as messages in the channel. Bots can't use paid reactions. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1468,7 +1478,7 @@ class Hamilton::Api
       }
     },
     "getUserProfilePhotos" => {
-      type: Hamilton::Types::UserProfilePhotos,
+      return_type: ApiResult(Hamilton::Types::UserProfilePhotos),
       docs: [%<Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.>],
       params: {
         :user_id => {
@@ -1486,7 +1496,7 @@ class Hamilton::Api
       }
     },
     "setUserEmojiStatus" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method `requestEmojiStatusAccess`. Returns True on success.>],
       params: {
         :user_id => {
@@ -1504,7 +1514,7 @@ class Hamilton::Api
       }
     },
     "getFile" => {
-      type: Hamilton::Types::File,
+      return_type: ApiResult(Hamilton::Types::File),
       docs: [%<Use this method to get basic information about a file and prepare it for downloading. For the moment, bots can download files of up to 20MB in size. On success, a File object is returned. The file can then be downloaded via the link https://api.telegram.org/file/bot<token>/<file_path>, where <file_path> is taken from the response. It is guaranteed that the link will be valid for at least 1 hour. When the link expires, a new one can be requested by calling `getFile` again.>, %<NOTE: This function may not preserve the original file name and MIME type. You should save the file's MIME type and name (if available) when the File object is received.>],
       params: {
         :file_id => {
@@ -1514,7 +1524,7 @@ class Hamilton::Api
       }
     },
     "banChatMember" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1536,7 +1546,7 @@ class Hamilton::Api
       }
     },
     "unbanChatMember" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to unban a previously banned user in a supergroup or channel. The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be removed from the chat. If you don't want this, use the parameter `only_if_banned`. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1554,7 +1564,7 @@ class Hamilton::Api
       }
     },
     "restrictChatMember" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass True for all permissions to lift restrictions from a user. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1580,7 +1590,7 @@ class Hamilton::Api
       }
     },
     "promoteChatMember" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass False for all boolean parameters to demote a user. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1658,7 +1668,7 @@ class Hamilton::Api
       }
     },
     "setChatAdministratorCustomTitle" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1676,7 +1686,7 @@ class Hamilton::Api
       }
     },
     "banChatSenderChat" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to ban a channel chat in a supergroup or a channel. Until the chat is unbanned, the owner of the banned chat won't be able to send messages on behalf of any of their channels. The bot must be an administrator in the supergroup or channel for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1690,7 +1700,7 @@ class Hamilton::Api
       }
     },
     "unbanChatSenderChat" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to unban a previously banned channel chat in a supergroup or channel. The bot must be an administrator for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1704,7 +1714,7 @@ class Hamilton::Api
       }
     },
     "setChatPermissions" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the `can_restrict_members` administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1722,7 +1732,7 @@ class Hamilton::Api
       }
     },
     "exportChatInviteLink" => {
-      type: String,
+      return_type: ApiResult(String),
       docs: [%<Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as String on success.>, %<NOTE: Each administrator in a chat generates their own invite links. Bots can't use invite links generated by other administrators. If you want your bot to work with invite links, it will need to generate its own link using `exportChatInviteLink` or by calling the `getChat` method. If your bot needs to generate a new primary invite link replacing its previous one, use `exportChatInviteLink` again.>],
       params: {
         :chat_id => {
@@ -1732,7 +1742,7 @@ class Hamilton::Api
       }
     },
     "createChatInviteLink" => {
-      type: Hamilton::Types::ChatInviteLink,
+      return_type: ApiResult(Hamilton::Types::ChatInviteLink),
       docs: [%<Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method `revokeChatInviteLink`. Returns the new invite link as `ChatInviteLink` object.>],
       params: {
         :chat_id => {
@@ -1758,7 +1768,7 @@ class Hamilton::Api
       }
     },
     "editChatInviteLink" => {
-      type: Hamilton::Types::ChatInviteLink,
+      return_type: ApiResult(Hamilton::Types::ChatInviteLink),
       docs: [%<Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a `ChatInviteLink` object.>],
       params: {
         :chat_id => {
@@ -1788,7 +1798,7 @@ class Hamilton::Api
       }
     },
     "createChatSubscriptionInviteLink" => {
-      type: Hamilton::Types::ChatInviteLink,
+      return_type: ApiResult(Hamilton::Types::ChatInviteLink),
       docs: [%<Use this method to create a subscription invite link for a channel chat. The bot must have the "can_invite_users" administrator rights. The link can be edited using the method `editChatSubscriptionInviteLink` or revoked using the method `revokeChatInviteLink`. Returns the new invite link as a `ChatInviteLink` object.>],
       params: {
         :chat_id => {
@@ -1810,7 +1820,7 @@ class Hamilton::Api
       }
     },
     "editChatSubscriptionInviteLink" => {
-      type: Hamilton::Types::ChatInviteLink,
+      return_type: ApiResult(Hamilton::Types::ChatInviteLink),
       docs: [%<Use this method to edit a subscription invite link created by the bot. The bot must have the "can_invite_users" administrator rights. Returns the edited invite link as a `ChatInviteLink` object.>],
       params: {
         :chat_id => {
@@ -1828,7 +1838,7 @@ class Hamilton::Api
       }
     },
     "revokeChatInviteLink" => {
-      type: Hamilton::Types::ChatInviteLink,
+      return_type: ApiResult(Hamilton::Types::ChatInviteLink),
       docs: [%<Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the revoked invite link as `ChatInviteLink` object.>],
       params: {
         :chat_id => {
@@ -1842,7 +1852,7 @@ class Hamilton::Api
       }
     },
     "approveChatJoinRequest" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the "can_invite_users" administrator right. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1856,7 +1866,7 @@ class Hamilton::Api
       }
     },
     "declineChatJoinRequest" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the "can_invite_users" administrator right. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1870,7 +1880,7 @@ class Hamilton::Api
       }
     },
     "setChatPhoto" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1884,7 +1894,7 @@ class Hamilton::Api
       }
     },
     "deleteChatPhoto" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1894,7 +1904,7 @@ class Hamilton::Api
       }
     },
     "setChatTitle" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1908,7 +1918,7 @@ class Hamilton::Api
       }
     },
     "setChatDescription" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1922,7 +1932,7 @@ class Hamilton::Api
       }
     },
     "pinChatMessage" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to add a message to the list of pinned messages in a chat. In private chats and channel direct messages chats, all non-service messages can be pinned. Conversely, the bot must be an administrator with the "can_pin_messages" right or the "can_edit_messages" right to pin messages in groups and channels respectively. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -1944,7 +1954,7 @@ class Hamilton::Api
       }
     },
     "unpinChatMessage" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to remove a message from the list of pinned messages in a chat. In private chats and channel direct messages chats, all messages can be unpinned. Conversely, the bot must be an administrator with the "can_pin_messages" right or the "can_edit_messages" right to unpin messages in groups and channels respectively. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -1962,7 +1972,7 @@ class Hamilton::Api
       }
     },
     "unpinAllChatMessages" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to clear the list of pinned messages in a chat. In private chats and channel direct messages chats, no additional rights are required to unpin all pinned messages. Conversely, the bot must be an administrator with the "can_pin_messages" right or the "can_edit_messages" right to unpin all pinned messages in groups and channels respectively. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1972,7 +1982,7 @@ class Hamilton::Api
       }
     },
     "leaveChat" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method for your bot to leave a group, supergroup or channel. Returns True on success.>],
       params: {
         :chat_id => {
@@ -1982,7 +1992,7 @@ class Hamilton::Api
       }
     },
     "getChat" => {
-      type: Hamilton::Types::ChatFullInfo,
+      return_type: ApiResult(Hamilton::Types::ChatFullInfo),
       docs: [%<Use this method to get up-to-date information about the chat. Returns a ChatFullInfo object on success.>],
       params: {
         :chat_id => {
@@ -1992,7 +2002,7 @@ class Hamilton::Api
       }
     },
     "getChatAdministrators" => {
-      type: Array(Hamilton::Types::ChatMember),
+      return_type: ApiResult(Array(Hamilton::Types::ChatMember)),
       docs: [%<Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of `ChatMember` objects.>],
       params: {
         :chat_id => {
@@ -2002,7 +2012,7 @@ class Hamilton::Api
       }
     },
     "getChatMemberCount" => {
-      type: Int32,
+      return_type: ApiResult(Int32),
       docs: [%<Use this method to get the number of members in a chat. Returns Int on success.>],
       params: {
         :chat_id => {
@@ -2012,7 +2022,7 @@ class Hamilton::Api
       }
     },
     "getChatMember" => {
-      type: Hamilton::Types::ChatMember,
+      return_type: ApiResult(Hamilton::Types::ChatMember),
       docs: [%<Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a `ChatMember` object on success.>],
       params: {
         :chat_id => {
@@ -2026,7 +2036,7 @@ class Hamilton::Api
       }
     },
     "setChatStickerSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field "can_set_sticker_set" optionally returned in `getChat` requests to check if the bot can use this method. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2040,7 +2050,7 @@ class Hamilton::Api
       }
     },
     "deleteChatStickerSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field "can_set_sticker_set" optionally returned in `getChat` requests to check if the bot can use this method. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2050,11 +2060,11 @@ class Hamilton::Api
       }
     },
     "getForumTopicIconStickers" => {
-      type: Array(Hamilton::Types::Sticker),
+      return_type: ApiResult(Array(Hamilton::Types::Sticker)),
       docs: [%<Use this method to get custom emoji stickers, which can be used as a forum topic icon by any user. Requires no parameters. Returns an Array of Sticker objects.>]
     },
     "createForumTopic" => {
-      type: Hamilton::Types::ForumTopic,
+      return_type: ApiResult(Hamilton::Types::ForumTopic),
       docs: [%<Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns information about the created topic as a `ForumTopic` object.>],
       params: {
         :chat_id => {
@@ -2076,7 +2086,7 @@ class Hamilton::Api
       }
     },
     "editForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2098,7 +2108,7 @@ class Hamilton::Api
       }
     },
     "closeForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2112,7 +2122,7 @@ class Hamilton::Api
       }
     },
     "reopenForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to reopen a closed topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2126,7 +2136,7 @@ class Hamilton::Api
       }
     },
     "deleteForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_delete_messages" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2140,7 +2150,7 @@ class Hamilton::Api
       }
     },
     "unpinAllForumTopicMessages" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the "can_pin_messages" administrator right in the supergroup. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2154,7 +2164,7 @@ class Hamilton::Api
       }
     },
     "editGeneralForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to edit the name of the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2168,7 +2178,7 @@ class Hamilton::Api
       }
     },
     "closeGeneralForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to close an open "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2178,7 +2188,7 @@ class Hamilton::Api
       }
     },
     "reopenGeneralForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to reopen a closed "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. The topic will be automatically unhidden if it was hidden. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2188,7 +2198,7 @@ class Hamilton::Api
       }
     },
     "hideGeneralForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to hide the "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. The topic will be automatically closed if it was open. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2198,7 +2208,7 @@ class Hamilton::Api
       }
     },
     "unhideGeneralForumTopic" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to unhide the "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2208,7 +2218,7 @@ class Hamilton::Api
       }
     },
     "unpinAllGeneralForumTopicMessages" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to clear the list of pinned messages in a "General" forum topic. The bot must be an administrator in the chat for this to work and must have the "can_pin_messages" administrator right in the supergroup. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2218,7 +2228,7 @@ class Hamilton::Api
       }
     },
     "answerCallbackQuery" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to send answers to callback queries sent from inline keyboards. The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, True is returned.>, %<Alternatively, the user can be redirected to the specified Game URL. For this option to work, you must first create a game for your bot via @BotFather and accept the terms. Otherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.>],
       params: {
         :callback_query_id => {
@@ -2244,7 +2254,7 @@ class Hamilton::Api
       }
     },
     "getUserChatBoosts" => {
-      type: Hamilton::Types::UserChatBoosts,
+      return_type: ApiResult(Hamilton::Types::UserChatBoosts),
       docs: [%<Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a `UserChatBoosts` object.>],
       params: {
         :chat_id => {
@@ -2258,7 +2268,7 @@ class Hamilton::Api
       }
     },
     "getBusinessConnection" => {
-      type: Hamilton::Types::BusinessConnection,
+      return_type: ApiResult(Hamilton::Types::BusinessConnection),
       docs: [%<Use this method to get information about the connection of the bot with a business account. Returns a `BusinessConnection` object on success.>],
       params: {
         :business_connection_id => {
@@ -2268,7 +2278,7 @@ class Hamilton::Api
       }
     },
     "setMyCommands" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the list of the bot's commands. Returns True on success.>],
       params: {
         :commands => {
@@ -2286,7 +2296,7 @@ class Hamilton::Api
       }
     },
     "deleteMyCommands" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete the list of the bot's commands for the given scope and user language. After deletion, higher level commands will be shown to affected users. Returns True on success.>],
       params: {
         :scope => {
@@ -2300,7 +2310,7 @@ class Hamilton::Api
       }
     },
     "getMyCommands" => {
-      type: Array(Hamilton::Types::BotCommand),
+      return_type: ApiResult(Array(Hamilton::Types::BotCommand)),
       docs: [%<Use this method to get the current list of the bot's commands for the given scope and user language. Returns an Array of BotCommand objects. If commands aren't set, an empty list is returned.>],
       params: {
         :scope => {
@@ -2314,7 +2324,7 @@ class Hamilton::Api
       }
     },
     "setMyName" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the bot's name. Returns True on success.>],
       params: {
         :name => {
@@ -2328,7 +2338,7 @@ class Hamilton::Api
       }
     },
     "getMyName" => {
-      type: Hamilton::Types::BotName,
+      return_type: ApiResult(Hamilton::Types::BotName),
       docs: [%<Use this method to get the current bot name for the given user language. Returns `BotName` on success.>],
       params: {
         :language_code => {
@@ -2338,7 +2348,7 @@ class Hamilton::Api
       }
     },
     "setMyDescription" => {
-      type: Nil,
+      return_type: ApiResult(Nil),
       docs: [%<Use this method to change the bot's description, which is shown in the chat with the bot if the chat is empty. Returns True on success.>],
       params: {
         :description => {
@@ -2352,7 +2362,7 @@ class Hamilton::Api
       }
     },
     "getMyDescription" => {
-      type: Hamilton::Types::BotDescription,
+      return_type: ApiResult(Hamilton::Types::BotDescription),
       docs: [%<Use this method to get the current bot description for the given user language. Returns `BotDescription` on success.>],
       params: {
         :language_code => {
@@ -2362,7 +2372,7 @@ class Hamilton::Api
       }
     },
     "setMyShortDescription" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the bot's short description, which is shown on the bot's profile page and is sent together with the link when users share the bot. Returns True on success.>],
       params: {
         :short_description => {
@@ -2376,7 +2386,7 @@ class Hamilton::Api
       }
     },
     "getMyShortDescription" => {
-      type: Hamilton::Types::BotShortDescription,
+      return_type: ApiResult(Hamilton::Types::BotShortDescription),
       docs: [%<Use this method to get the current bot short description for the given user language. Returns `BotShortDescription` on success.>],
       params: {
         :language_code => {
@@ -2386,7 +2396,7 @@ class Hamilton::Api
       }
     },
     "setChatMenuButton" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the bot's menu button in a private chat, or the default menu button. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2400,7 +2410,7 @@ class Hamilton::Api
       }
     },
     "getChatMenuButton" => {
-      type: Hamilton::Types::MenuButton,
+      return_type: ApiResult(Hamilton::Types::MenuButton),
       docs: [%<Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns `MenuButton` on success.>],
       params: {
         :chat_id => {
@@ -2410,7 +2420,7 @@ class Hamilton::Api
       }
     },
     "setMyDefaultAdministratorRights" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the default administrator rights requested by the bot when it's added as an administrator to groups or channels. These rights will be suggested to users, but they are free to modify the list before adding the bot. Returns True on success.>],
       params: {
         :rights => {
@@ -2424,7 +2434,7 @@ class Hamilton::Api
       }
     },
     "getMyDefaultAdministratorRights" => {
-      type: Hamilton::Types::ChatAdministratorRights,
+      return_type: ApiResult(Hamilton::Types::ChatAdministratorRights),
       docs: [%<Use this method to get the current default administrator rights of the bot. Returns `ChatAdministratorRights` on success.>],
       params: {
         :for_channels => {
@@ -2434,11 +2444,11 @@ class Hamilton::Api
       }
     },
     "getAvailableGifts" => {
-      type: Hamilton::Types::Gifts,
+      return_type: ApiResult(Hamilton::Types::Gifts),
       docs: [%<Returns the list of gifts that can be sent by the bot to users and channel chats. Requires no parameters. Returns a `Gifts` object.>]
     },
     "sendGift" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Sends a gift to the given user or channel chat. The gift can't be converted to Telegram Stars by the receiver. Returns True on success.>],
       params: {
         :user_id => {
@@ -2472,7 +2482,7 @@ class Hamilton::Api
       }
     },
     "giftPremiumSubscription" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Gifts a Telegram Premium subscription to the given user. Returns True on success.>],
       params: {
         :user_id => {
@@ -2502,7 +2512,7 @@ class Hamilton::Api
       }
     },
     "verifyUser" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Verifies a user on behalf of the organization which is represented by the bot. Returns True on success.>],
       params: {
         :user_id => {
@@ -2516,7 +2526,7 @@ class Hamilton::Api
       }
     },
     "verifyChat" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Verifies a chat on behalf of the organization which is represented by the bot. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2530,7 +2540,7 @@ class Hamilton::Api
       }
     },
     "removeUserVerification" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Removes verification from a user who is currently verified on behalf of the organization represented by the bot. Returns True on success.>],
       params: {
         :user_id => {
@@ -2540,7 +2550,7 @@ class Hamilton::Api
       }
     },
     "removeChatVerification" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Removes verification from a chat that is currently verified on behalf of the organization represented by the bot. Returns True on success.>],
       params: {
         :chat_id => {
@@ -2550,7 +2560,7 @@ class Hamilton::Api
       }
     },
     "readBusinessMessage" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Marks incoming message as read on behalf of a business account. Requires the "can_read_messages" business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2568,7 +2578,7 @@ class Hamilton::Api
       }
     },
     "deleteBusinessMessages" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Delete messages on behalf of a business account. Requires the "can_delete_sent_messages" business bot right to delete messages sent by the bot itself, or the "can_delete_all_messages" business bot right to delete any message. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2582,7 +2592,7 @@ class Hamilton::Api
       }
     },
     "setBusinessAccountName" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Changes the first and last name of a managed business account. Requires the can_change_name business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2600,7 +2610,7 @@ class Hamilton::Api
       }
     },
     "setBusinessAccountUsername" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Changes the username of a managed business account. Requires the can_change_username business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2614,7 +2624,7 @@ class Hamilton::Api
       }
     },
     "setBusinessAccountBio" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Changes the bio of a managed business account. Requires the can_change_bio business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2628,7 +2638,7 @@ class Hamilton::Api
       }
     },
     "setBusinessAccountProfilePhoto" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Changes the profile photo of a managed business account. Requires the "can_edit_profile_photo" business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2646,7 +2656,7 @@ class Hamilton::Api
       }
     },
     "removeBusinessAccountProfilePhoto" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Removes the current profile photo of a managed business account. Requires the can_edit_profile_photo business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2660,7 +2670,7 @@ class Hamilton::Api
       }
     },
     "setBusinessAccountGiftSettings" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Changes the privacy settings pertaining to incoming gifts in a managed business account. Requires the "can_change_gift_settings" business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2678,7 +2688,7 @@ class Hamilton::Api
       }
     },
     "getBusinessAccountStarBalance" => {
-      type: Hamilton::Types::StarAmount,
+      return_type: ApiResult(Hamilton::Types::StarAmount),
       docs: [%<Returns the amount of Telegram Stars owned by a managed business account. Requires the "can_view_gifts_and_stars" business bot right. Returns `StarAmount` on success.>],
       params: {
         :business_connection_id => {
@@ -2688,7 +2698,7 @@ class Hamilton::Api
       }
     },
     "transferBusinessAccountStars" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Transfers Telegram Stars from the business account balance to the bot's balance. Requires the "can_transfer_stars" business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2702,7 +2712,7 @@ class Hamilton::Api
       }
     },
     "getBusinessAccountGifts" => {
-      type: Hamilton::Types::OwnedGifts,
+      return_type: ApiResult(Hamilton::Types::OwnedGifts),
       docs: [%<Returns the gifts received and owned by a managed business account. Requires the "can_view_gifts_and_stars" business bot right. Returns `OwnedGifts` on success.>],
       params: {
         :business_user_id => {
@@ -2744,7 +2754,7 @@ class Hamilton::Api
       }
     },
     "convertGiftToStars" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Converts a given regular gift to Telegram Stars. Requires the can_convert_gifts_to_stars business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2758,7 +2768,7 @@ class Hamilton::Api
       }
     },
     "upgradeGift" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Upgrades a given regular gift to a unique gift. Requires the "can_transfer_and_upgrade_gifts" business bot right. Additionally requires the "can_transfer_stars" business bot right if the upgrade is paid. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2780,7 +2790,7 @@ class Hamilton::Api
       }
     },
     "transferGift" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Transfers an owned unique gift to another user. Requires the can_transfer_and_upgrade_gifts business bot right. Requires can_transfer_stars business bot right if the transfer is paid. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2802,7 +2812,7 @@ class Hamilton::Api
       }
     },
     "postStory" => {
-      type: Hamilton::Types::Story,
+      return_type: ApiResult(Hamilton::Types::Story),
       docs: [%<Posts a story on behalf of a managed business account. Requires the can_manage_stories business bot right. Returns Story on success.>],
       params: {
         :business_connection_id => {
@@ -2844,7 +2854,7 @@ class Hamilton::Api
       }
     },
     "editStory" => {
-      type: Hamilton::Types::Story,
+      return_type: ApiResult(Hamilton::Types::Story),
       docs: [%<Edits a story previously posted by the bot on behalf of a managed business account. Requires the "can_manage_stories" business bot right. Returns Story on success.>],
       params: {
         :business_connection_id => {
@@ -2878,7 +2888,7 @@ class Hamilton::Api
       }
     },
     "deleteStory" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Deletes a story previously posted by the bot on behalf of a managed business account. Requires the "can_manage_stories" business bot right. Returns True on success.>],
       params: {
         :business_connection_id => {
@@ -2892,7 +2902,7 @@ class Hamilton::Api
       }
     },
     "editMessageText" => {
-      type: Union(Hamilton::Types::Message | Bool),
+      return_type: ApiResult(Hamilton::Types::Message | Bool),
       docs: [%<Use this method to edit text and game messages. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
       params: {
         :business_connection_id => {
@@ -2934,7 +2944,7 @@ class Hamilton::Api
       }
     },
     "editMessageCaption" => {
-      type: Union(Hamilton::Types::Message | Bool),
+      return_type: ApiResult(Hamilton::Types::Message | Bool),
       docs: [%<Use this method to edit captions of messages. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
       params: {
         :business_connection_id => {
@@ -2976,7 +2986,7 @@ class Hamilton::Api
       }
     },
     "editMessageMedia" => {
-      type: Union(Hamilton::Types::Message | Nil),
+      return_type: ApiResult(Hamilton::Types::Message | Nil),
       docs: [%<Use this method to edit animation, audio, document, photo, or video messages, or to add media to text messages. If a message is part of a message album, then it can be edited only to an audio for audio albums, only to a document for document albums and to a photo or a video otherwise. When an inline message is edited, a new file can't be uploaded; use a previously uploaded file via its file_id or specify a URL. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
       params: {
         :business_connection_id => {
@@ -3006,7 +3016,7 @@ class Hamilton::Api
       }
     },
     "editMessageLiveLocation" => {
-      type: Union(Hamilton::Types::Message | Bool),
+      return_type: ApiResult(Hamilton::Types::Message | Bool),
       docs: [%<Use this method to edit live location messages. A location can be edited until its `live_period` expires or editing is explicitly disabled by a call to `stopMessageLiveLocation`. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned.>],
       params: {
         :business_connection_id => {
@@ -3056,7 +3066,7 @@ class Hamilton::Api
       }
     },
     "stopMessageLiveLocation" => {
-      type: Union(Hamilton::Types::Message | Bool),
+      return_type: ApiResult(Hamilton::Types::Message | Bool),
       docs: [%<Use this method to stop updating a live location message before `live_period` expires. On success, if the message is not an inline message, the edited `Message` is returned, otherwise True is returned.>],
       params: {
         :business_connection_id => {
@@ -3082,7 +3092,7 @@ class Hamilton::Api
       }
     },
     "editMessageChecklist" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to edit a checklist on behalf of a connected business account. On success, the edited `Message` is returned.>],
       params: {
         :business_connection_id => {
@@ -3108,7 +3118,7 @@ class Hamilton::Api
       }
     },
     "editMessageReplyMarkup" => {
-      type: Union(Hamilton::Types::Message | Bool),
+      return_type: ApiResult(Hamilton::Types::Message | Bool),
       docs: [%<Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline message, the edited `Message` is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.>],
       params: {
         :business_connection_id => {
@@ -3134,7 +3144,7 @@ class Hamilton::Api
       }
     },
     "stopPoll" => {
-      type: Hamilton::Types::Poll,
+      return_type: ApiResult(Hamilton::Types::Poll),
       docs: [%<Use this method to stop a poll which was sent by the bot. On success, the stopped Poll is returned.>],
       params: {
         :business_connection_id => {
@@ -3156,7 +3166,7 @@ class Hamilton::Api
       }
     },
     "approveSuggestedPost" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to approve a suggested post in a direct messages chat. The bot must have the "can_post_messages" administrator right in the corresponding channel chat. Returns True on success.>],
       params: {
         :chat_id => {
@@ -3174,7 +3184,7 @@ class Hamilton::Api
       }
     },
     "declineSuggestedPost" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to decline a suggested post in a direct messages chat. The bot must have the "can_manage_direct_messages" administrator right in the corresponding channel chat. Returns True on success.>],
       params: {
         :chat_id => {
@@ -3192,7 +3202,7 @@ class Hamilton::Api
       }
     },
     "deleteMessage" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete a message, including service messages, with the following limitations:>, %<- A message can only be deleted if it was sent less than 48 hours ago.>, %<- Service messages about a supergroup, channel, or forum topic creation can't be deleted.>, %<- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.>, %<- Bots can delete outgoing messages in private chats, groups, and supergroups.>, %<- Bots can delete incoming messages in private chats.>, %<- Bots granted "can_post_messages" permissions can delete outgoing messages in channels.>, %<- If the bot is an administrator of a group, it can delete any message there.>, %<- If the bot has "can_delete_messages" administrator right in a supergroup or a channel, it can delete any message there.>, %<- If the bot has "can_manage_direct_messages" administrator right in a channel, it can delete any message in the corresponding direct messages chat.>, %<Returns True on success.>],
       params: {
         :chat_id => {
@@ -3206,7 +3216,7 @@ class Hamilton::Api
       }
     },
     "deleteMessages" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete multiple messages simultaneously. If some of the specified messages can't be found, they are skipped. Returns True on success.>],
       params: {
         :chat_id => {
@@ -3220,7 +3230,7 @@ class Hamilton::Api
       }
     },
     "sendSticker" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send static .WEBP, animated .TGS, or video .WEBM stickers. On success, the sent `Message` is returned.>],
       params: {
         :business_connection_id => {
@@ -3278,7 +3288,7 @@ class Hamilton::Api
       }
     },
     "getStickerSet" => {
-      type: Hamilton::Types::StickerSet,
+      return_type: ApiResult(Hamilton::Types::StickerSet),
       docs: [%<Use this method to get a sticker set. On success, a `StickerSet` object is returned.>],
       params: {
         :name => {
@@ -3288,7 +3298,7 @@ class Hamilton::Api
       }
     },
     "getCustomEmojiStickers" => {
-      type: Array(Hamilton::Types::Sticker),
+      return_type: ApiResult(Array(Hamilton::Types::Sticker)),
       docs: [%<Use this method to get information about custom emoji stickers by their identifiers. Returns an Array of `Sticker` objects.>],
       params: {
         :custom_emoji_ids => {
@@ -3298,7 +3308,7 @@ class Hamilton::Api
       }
     },
     "uploadStickerFile" => {
-      type: Hamilton::Types::File,
+      return_type: ApiResult(Hamilton::Types::File),
       docs: [%<Use this method to upload a file with a sticker for later use in the `createNewStickerSet`, `addStickerToSet`, or `replaceStickerInSet` methods (the file can be used multiple times). Returns the uploaded `File` on success.>],
       params: {
         :user_id => {
@@ -3316,7 +3326,7 @@ class Hamilton::Api
       }
     },
     "createNewStickerSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. Returns True on success.>],
       params: {
         :user_id => {
@@ -3346,7 +3356,7 @@ class Hamilton::Api
       }
     },
     "addStickerToSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to add a new sticker to a set created by the bot. Emoji sticker sets can have up to 200 stickers. Other sticker sets can have up to 120 stickers. Returns True on success.>],
       params: {
         :user_id => {
@@ -3364,7 +3374,7 @@ class Hamilton::Api
       }
     },
     "setStickerPositionInSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success.>],
       params: {
         :sticker => {
@@ -3378,7 +3388,7 @@ class Hamilton::Api
       }
     },
     "deleteStickerFromSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete a sticker from a set created by the bot. Returns True on success.>],
       params: {
         :sticker => {
@@ -3388,7 +3398,7 @@ class Hamilton::Api
       }
     },
     "replaceStickerInSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to replace an existing sticker in a sticker set with a new one. The method is equivalent to calling `deleteStickerFromSet`, then `addStickerToSet`, then `setStickerPositionInSet`. Returns True on success.>],
       params: {
         :user_id => {
@@ -3410,7 +3420,7 @@ class Hamilton::Api
       }
     },
     "setStickerEmojiList" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the list of emoji assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns True on success.>],
       params: {
         :sticker => {
@@ -3424,7 +3434,7 @@ class Hamilton::Api
       }
     },
     "setStickerKeywords" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change search keywords assigned to a regular or custom emoji sticker. The sticker must belong to a sticker set created by the bot. Returns True on success.>],
       params: {
         :sticker => {
@@ -3438,7 +3448,7 @@ class Hamilton::Api
       }
     },
     "setStickerMaskPosition" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to change the mask position of a mask sticker. The sticker must belong to a sticker set that was created by the bot. Returns True on success.>],
       params: {
         :sticker => {
@@ -3452,7 +3462,7 @@ class Hamilton::Api
       }
     },
     "setStickerSetTitle" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set the title of a created sticker set. Returns True on success.>],
       params: {
         :name => {
@@ -3466,7 +3476,7 @@ class Hamilton::Api
       }
     },
     "setStickerSetThumbnail" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set the thumbnail of a regular or mask sticker set. The format of the thumbnail file must match the format of the stickers in the set. Returns True on success.>],
       params: {
         :name => {
@@ -3488,7 +3498,7 @@ class Hamilton::Api
       }
     },
     "setCustomEmojiStickerSetThumbnail" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to set the thumbnail of a custom emoji sticker set. Returns True on success.>],
       params: {
         :name => {
@@ -3502,7 +3512,7 @@ class Hamilton::Api
       }
     },
     "deleteStickerSet" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to delete a sticker set that was created by the bot. Returns True on success.>],
       params: {
         :name => {
@@ -3512,7 +3522,7 @@ class Hamilton::Api
       }
     },
     "answerInlineQuery" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Use this method to send answers to an inline query. On success, True is returned.>, %<No more than 50 results per query are allowed.>],
       params: {
         :inline_query_id => {
@@ -3542,7 +3552,7 @@ class Hamilton::Api
       }
     },
     "answerWebAppQuery" => {
-      type: Hamilton::Types::SentWebAppMessage,
+      return_type: ApiResult(Hamilton::Types::SentWebAppMessage),
       docs: [%<Use this method to set the result of an interaction with a Web App and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a `SentWebAppMessage` object is returned.>],
       params: {
         :web_app_query_id => {
@@ -3556,7 +3566,7 @@ class Hamilton::Api
       }
     },
     "savePreparedInlineMessage" => {
-      type: Hamilton::Types::PreparedInlineMessage,
+      return_type: ApiResult(Hamilton::Types::PreparedInlineMessage),
       docs: [%<Stores a message that can be sent by a user of a Mini App. Returns a `PreparedInlineMessage` object.>],
       params: {
         :user_id => {
@@ -3586,7 +3596,7 @@ class Hamilton::Api
       }
     },
     "sendInvoice" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send invoices. On success, the sent `Message` is returned.>],
       params: {
         :chat_id => {
@@ -3716,7 +3726,7 @@ class Hamilton::Api
       }
     },
     "createInvoiceLink" => {
-      type: String,
+      return_type: ApiResult(String),
       docs: [%<Use this method to create a link for an invoice. Returns the created invoice link as String on success.>],
       params: {
         :business_connection_id => {
@@ -3810,7 +3820,7 @@ class Hamilton::Api
       }
     },
     "answerShippingQuery" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<If you sent an invoice requesting a shipping address and the parameter `is_flexible` was specified, the Bot API will send an `Update` with a `shipping_query` field to the bot. Use this method to reply to shipping queries. On success, True is returned.>],
       params: {
         :shipping_query_id => {
@@ -3832,7 +3842,7 @@ class Hamilton::Api
       }
     },
     "answerPreCheckoutQuery" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Once the user has confirmed their payment and shipping details, the Bot API sends the final confirmation in the form of an `Update` with the field `pre_checkout_query`. Use this method to respond to such pre-checkout queries. On success, True is returned.>, %<NOTE: The Bot API must receive an answer within 10 seconds after the pre-checkout query was sent.>],
       params: {
         :pre_checkout_query_id => {
@@ -3850,11 +3860,11 @@ class Hamilton::Api
       }
     },
     "getMyStarBalance" => {
-      type: Hamilton::Types::String,
+      return_type: ApiResult(Hamilton::Types::StarAmount),
       docs: [%<A method to get the current Telegram Stars balance of the bot. Requires no parameters. On success, returns a `StarAmount` object.>]
     },
     "getStarTransactions" => {
-      type: Hamilton::Types::StarTransactions,
+      return_type: ApiResult(Hamilton::Types::StarTransactions),
       docs: [%<Returns the bot's Telegram Star transactions in chronological order. On success, returns a `StarTransactions` object.>],
       params: {
         :offset => {
@@ -3868,7 +3878,7 @@ class Hamilton::Api
       }
     },
     "refundStarPayment" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Refunds a successful payment in Telegram Stars. Returns True on success.>],
       params: {
         :user_id => {
@@ -3882,7 +3892,7 @@ class Hamilton::Api
       }
     },
     "editUserStarSubscription" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns True on success.>],
       params: {
         :user_id => {
@@ -3900,7 +3910,7 @@ class Hamilton::Api
       }
     },
     "setPassportDataErrors" => {
-      type: Bool,
+      return_type: ApiResult(Bool),
       docs: [%<Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns True on success.>, %<Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues.>],
       params: {
         :user_id => {
@@ -3914,7 +3924,7 @@ class Hamilton::Api
       }
     },
     "sendGame" => {
-      type: Hamilton::Types::Message,
+      return_type: ApiResult(Hamilton::Types::Message),
       docs: [%<Use this method to send a game. On success, the sent `Message` is returned.>],
       params: {
         :business_connection_id => {
@@ -3960,7 +3970,7 @@ class Hamilton::Api
       }
     },
     "setGameScore" => {
-      type: Union(Hamilton::Types::Message | Bool),
+      return_type: ApiResult(Hamilton::Types::Message | Bool),
       docs: [%<Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the `Message` is returned, otherwise True is returned. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.>],
       params: {
         :user_id => {
@@ -3994,7 +4004,7 @@ class Hamilton::Api
       }
     },
     "getGameHighScores" => {
-      type: Array(Hamilton::Types::GameHighScore),
+      return_type: ApiResult(Array(Hamilton::Types::GameHighScore)),
       docs: [%<Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of `GameHighScore` objects.>, %<NOTE: This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and their neighbors are not among them. Please note that this behavior is subject to change.>],
       params: {
         :user_id => {
