@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::SuggestedPostPrice - hamilton 0.1.0</title>
+  <title>Hamilton::Types::WebhookInfo - hamilton 0.1.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -1382,7 +1382,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/SuggestedPostPrice" data-name="hamilton::types::suggestedpostprice">
+  <li class=" " data-id="hamilton/Hamilton/Types/SuggestedPostPrice" data-name="hamilton::types::suggestedpostprice">
       <a href="../../Hamilton/Types/SuggestedPostPrice.html">SuggestedPostPrice</a>
       
     </li>
@@ -1547,7 +1547,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Types/WebhookInfo" data-name="hamilton::types::webhookinfo">
+  <li class=" current" data-id="hamilton/Hamilton/Types/WebhookInfo" data-name="hamilton::types::webhookinfo">
       <a href="../../Hamilton/Types/WebhookInfo.html">WebhookInfo</a>
       
     </li>
@@ -1583,12 +1583,12 @@
 
   <span class="kind">
     class
-  </span> Hamilton::<wbr>Types::<wbr>SuggestedPostPrice
+  </span> Hamilton::<wbr>Types::<wbr>WebhookInfo
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/SuggestedPostPrice.html">Hamilton::Types::SuggestedPostPrice</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/WebhookInfo.html">Hamilton::Types::WebhookInfo</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1602,7 +1602,7 @@
     Overview
   </h2>
 
-  <p>Describes the price of a suggested post.</p>
+  <p>Describes the current status of a webhook.</p>
 
 
 
@@ -1645,7 +1645,7 @@
   </h2>
   
     
-      types/suggested_post_price.cr
+      types/webhook_info.cr
     
     <br/>
   
@@ -1694,30 +1694,128 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#amount%3AInt32-instance-method" class="signature"><strong>#amount</strong> : Int32</a>
+        <a href="#allowed_updates%3AArray%28String%29%7CNil-instance-method" class="signature"><strong>#allowed_updates</strong> : Array(String) | Nil</a>
         
-          <div class="summary"><p>The amount of the currency that will be paid for the post in the smallest units of the currency, i.e.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#amount%3D%28amount%3AInt32%29-instance-method" class="signature"><strong>#amount=</strong>(amount : Int32)</a>
-        
-          <div class="summary"><p>The amount of the currency that will be paid for the post in the smallest units of the currency, i.e.</p></div>
+          <div class="summary"><p>A list of update types the bot is subscribed to.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#currency%3AString-instance-method" class="signature"><strong>#currency</strong> : String</a>
+        <a href="#allowed_updates%3D%28allowed_updates%3AArray%28String%29%7CNil%29-instance-method" class="signature"><strong>#allowed_updates=</strong>(allowed_updates : Array(String) | Nil)</a>
         
-          <div class="summary"><p>Currency in which the post will be paid.</p></div>
+          <div class="summary"><p>A list of update types the bot is subscribed to.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#currency%3D%28currency%3AString%29-instance-method" class="signature"><strong>#currency=</strong>(currency : String)</a>
+        <a href="#has_custom_certificate%3ABool-instance-method" class="signature"><strong>#has_custom_certificate</strong> : Bool</a>
         
-          <div class="summary"><p>Currency in which the post will be paid.</p></div>
+          <div class="summary"><p>True, if a custom certificate was provided for webhook certificate checks.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#has_custom_certificate%3D%28has_custom_certificate%3ABool%29-instance-method" class="signature"><strong>#has_custom_certificate=</strong>(has_custom_certificate : Bool)</a>
+        
+          <div class="summary"><p>True, if a custom certificate was provided for webhook certificate checks.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ip_address%3AString%7CNil-instance-method" class="signature"><strong>#ip_address</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Currently used webhook IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#ip_address%3D%28ip_address%3AString%7CNil%29-instance-method" class="signature"><strong>#ip_address=</strong>(ip_address : String | Nil)</a>
+        
+          <div class="summary"><p>Currently used webhook IP address.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_error_date%3AInt32%7CNil-instance-method" class="signature"><strong>#last_error_date</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Unix time for the most recent error that happened when trying to deliver an update via webhook.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_error_date%3D%28last_error_date%3AInt32%7CNil%29-instance-method" class="signature"><strong>#last_error_date=</strong>(last_error_date : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Unix time for the most recent error that happened when trying to deliver an update via webhook.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_error_message%3AString%7CNil-instance-method" class="signature"><strong>#last_error_message</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_error_message%3D%28last_error_message%3AString%7CNil%29-instance-method" class="signature"><strong>#last_error_message=</strong>(last_error_message : String | Nil)</a>
+        
+          <div class="summary"><p>Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_synchronization_error_date%3AInt32%7CNil-instance-method" class="signature"><strong>#last_synchronization_error_date</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_synchronization_error_date%3D%28last_synchronization_error_date%3AInt32%7CNil%29-instance-method" class="signature"><strong>#last_synchronization_error_date=</strong>(last_synchronization_error_date : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_connections%3AInt32%7CNil-instance-method" class="signature"><strong>#max_connections</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#max_connections%3D%28max_connections%3AInt32%7CNil%29-instance-method" class="signature"><strong>#max_connections=</strong>(max_connections : Int32 | Nil)</a>
+        
+          <div class="summary"><p>The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pending_update_count%3AInt32-instance-method" class="signature"><strong>#pending_update_count</strong> : Int32</a>
+        
+          <div class="summary"><p>Number of updates awaiting delivery.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#pending_update_count%3D%28pending_update_count%3AInt32%29-instance-method" class="signature"><strong>#pending_update_count=</strong>(pending_update_count : Int32)</a>
+        
+          <div class="summary"><p>Number of updates awaiting delivery.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url%3AString-instance-method" class="signature"><strong>#url</strong> : String</a>
+        
+          <div class="summary"><p>Webhook URL, may be empty if webhook is not set up.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#url%3D%28url%3AString%29-instance-method" class="signature"><strong>#url=</strong>(url : String)</a>
+        
+          <div class="summary"><p>Webhook URL, may be empty if webhook is not set up.</p></div>
         
       </li>
     
@@ -1858,17 +1956,17 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="amount:Int32-instance-method">
+    <div class="entry-detail" id="allowed_updates:Array(String)|Nil-instance-method">
       <div class="signature">
         
-        def <strong>amount</strong> : Int32
+        def <strong>allowed_updates</strong> : Array(String) | Nil
 
-        <a class="method-permalink" href="#amount%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_updates%3AArray%28String%29%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>The amount of the currency that will be paid for the post in the smallest units of the currency, i.e. Telegram Stars or nanotoncoins. Currently, price in Telegram Stars must be between 5 and 100000, and price in nanotoncoins must be between 10000000 and 10000000000000.</p>
+          <p>A list of update types the bot is subscribed to. Defaults to all update types except <code>chat_member</code>.</p>
         </div>
       
       <br/>
@@ -1877,17 +1975,17 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="amount=(amount:Int32)-instance-method">
+    <div class="entry-detail" id="allowed_updates=(allowed_updates:Array(String)|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>amount=</strong>(amount : Int32)
+        def <strong>allowed_updates=</strong>(allowed_updates : Array(String) | Nil)
 
-        <a class="method-permalink" href="#amount%3D%28amount%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#allowed_updates%3D%28allowed_updates%3AArray%28String%29%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>The amount of the currency that will be paid for the post in the smallest units of the currency, i.e. Telegram Stars or nanotoncoins. Currently, price in Telegram Stars must be between 5 and 100000, and price in nanotoncoins must be between 10000000 and 10000000000000.</p>
+          <p>A list of update types the bot is subscribed to. Defaults to all update types except <code>chat_member</code>.</p>
         </div>
       
       <br/>
@@ -1896,17 +1994,17 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="currency:String-instance-method">
+    <div class="entry-detail" id="has_custom_certificate:Bool-instance-method">
       <div class="signature">
         
-        def <strong>currency</strong> : String
+        def <strong>has_custom_certificate</strong> : Bool
 
-        <a class="method-permalink" href="#currency%3AString-instance-method">#</a>
+        <a class="method-permalink" href="#has_custom_certificate%3ABool-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins.</p>
+          <p>True, if a custom certificate was provided for webhook certificate checks.</p>
         </div>
       
       <br/>
@@ -1915,17 +2013,283 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="currency=(currency:String)-instance-method">
+    <div class="entry-detail" id="has_custom_certificate=(has_custom_certificate:Bool)-instance-method">
       <div class="signature">
         
-        def <strong>currency=</strong>(currency : String)
+        def <strong>has_custom_certificate=</strong>(has_custom_certificate : Bool)
 
-        <a class="method-permalink" href="#currency%3D%28currency%3AString%29-instance-method">#</a>
+        <a class="method-permalink" href="#has_custom_certificate%3D%28has_custom_certificate%3ABool%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>Currency in which the post will be paid. Currently, must be one of “XTR” for Telegram Stars or “TON” for toncoins.</p>
+          <p>True, if a custom certificate was provided for webhook certificate checks.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ip_address:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>ip_address</strong> : String | Nil
+
+        <a class="method-permalink" href="#ip_address%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Currently used webhook IP address.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="ip_address=(ip_address:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>ip_address=</strong>(ip_address : String | Nil)
+
+        <a class="method-permalink" href="#ip_address%3D%28ip_address%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Currently used webhook IP address.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_error_date:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>last_error_date</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#last_error_date%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unix time for the most recent error that happened when trying to deliver an update via webhook.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_error_date=(last_error_date:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_error_date=</strong>(last_error_date : Int32 | Nil)
+
+        <a class="method-permalink" href="#last_error_date%3D%28last_error_date%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unix time for the most recent error that happened when trying to deliver an update via webhook.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_error_message:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>last_error_message</strong> : String | Nil
+
+        <a class="method-permalink" href="#last_error_message%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_error_message=(last_error_message:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_error_message=</strong>(last_error_message : String | Nil)
+
+        <a class="method-permalink" href="#last_error_message%3D%28last_error_message%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Error message in human-readable format for the most recent error that happened when trying to deliver an update via webhook.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_synchronization_error_date:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>last_synchronization_error_date</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#last_synchronization_error_date%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_synchronization_error_date=(last_synchronization_error_date:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_synchronization_error_date=</strong>(last_synchronization_error_date : Int32 | Nil)
+
+        <a class="method-permalink" href="#last_synchronization_error_date%3D%28last_synchronization_error_date%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unix time of the most recent error that happened when trying to synchronize available updates with Telegram datacenters.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_connections:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>max_connections</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#max_connections%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="max_connections=(max_connections:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>max_connections=</strong>(max_connections : Int32 | Nil)
+
+        <a class="method-permalink" href="#max_connections%3D%28max_connections%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pending_update_count:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>pending_update_count</strong> : Int32
+
+        <a class="method-permalink" href="#pending_update_count%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Number of updates awaiting delivery.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="pending_update_count=(pending_update_count:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>pending_update_count=</strong>(pending_update_count : Int32)
+
+        <a class="method-permalink" href="#pending_update_count%3D%28pending_update_count%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Number of updates awaiting delivery.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url:String-instance-method">
+      <div class="signature">
+        
+        def <strong>url</strong> : String
+
+        <a class="method-permalink" href="#url%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Webhook URL, may be empty if webhook is not set up.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="url=(url:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>url=</strong>(url : String)
+
+        <a class="method-permalink" href="#url%3D%28url%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Webhook URL, may be empty if webhook is not set up.</p>
         </div>
       
       <br/>
