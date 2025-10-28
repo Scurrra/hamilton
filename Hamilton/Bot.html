@@ -1650,44 +1650,49 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
           <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and the given block as handler.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
           <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the given block as handler.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
           <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and a handler chain constructed from the <code>handlers</code> array and the given block.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : <span class="k">self</span></a>
         
           <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and a handler chain constructed from the <code>handlers</code> array and the given block.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
         
           <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, api instance created from <code>token</code> and <code>url</code> for <code>env</code>, and the <code>handlers</code> array as handler chain.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
+        <a href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method" class="signature"><strong>.new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : <span class="k">self</span></a>
         
           <div class="summary"><p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the <code>handlers</code> array as handler chain.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Coffset%3AInt32%3D0%2Ctimeout%3AInt32%3D20%2Capi%3AHamilton%3A%3AApi%2Chandler%3AHamilton%3A%3AHandler%7CHamilton%3A%3AHandler%3A%3AHandlerProc%29-class-method" class="signature"><strong>.new</strong>(*, offset : Int32 = <span class="n">0</span>, timeout : Int32 = <span class="n">20</span>, api : Hamilton::Api, handler : Hamilton::Handler | Hamilton::Handler::HandlerProc)</a>
         
       </li>
     
@@ -1837,12 +1842,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(*,offset,timeout,token:String,url:String=&quot;https://api.telegram.org&quot;,env:Symbol=:prod,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+    <div class="entry-detail" id="new(*,offset=0,timeout=20,token:String,url:String=&quot;https://api.telegram.org&quot;,env:Symbol=:prod,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, offset, timeout, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Ctoken%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1856,12 +1861,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,offset,timeout,api:Hamilton::Api,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+    <div class="entry-detail" id="new(*,offset=0,timeout=20,api:Hamilton::Api,&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, offset, timeout, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Capi%3AHamilton%3A%3AApi%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1875,12 +1880,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,offset,timeout,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+    <div class="entry-detail" id="new(*,offset=0,timeout=20,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1895,12 +1900,12 @@ array and the given block.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,offset,timeout,api:Hamilton::Api,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
+    <div class="entry-detail" id="new(*,offset=0,timeout=20,api:Hamilton::Api,handlers:Indexable(Hamilton::Handler),&amp;handler:Hamilton::Handler::HandlerProc):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, offset, timeout, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>), &handler : <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%2C%26handler%3AHamilton%3A%3AHandler%3A%3AHandlerProc%29%3Aself-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1915,12 +1920,12 @@ array and the given block.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,offset,timeout,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler)):self-class-method">
+    <div class="entry-detail" id="new(*,offset=0,timeout=20,token,url=&quot;https://api.telegram.org&quot;,env=:prod,handlers:Indexable(Hamilton::Handler)):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, offset, timeout, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, token, url = <span class="s">&quot;https://api.telegram.org&quot;</span>, env = <span class="n">:prod</span>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Ctoken%2Curl%3D%22https%3A//api.telegram.org%22%2Cenv%3D%3Aprod%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1934,18 +1939,32 @@ array and the given block.</p>
       </div>
     </div>
   
-    <div class="entry-detail" id="new(*,offset,timeout,api:Hamilton::Api,handlers:Indexable(Hamilton::Handler)):self-class-method">
+    <div class="entry-detail" id="new(*,offset=0,timeout=20,api:Hamilton::Api,handlers:Indexable(Hamilton::Handler)):self-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, offset, timeout, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
+        def self.<strong>new</strong>(*, offset = <span class="n">0</span>, timeout = <span class="n">20</span>, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handlers : Indexable(<a href="../Hamilton/Handler.html">Hamilton::Handler</a>)) : <span class="k">self</span>
 
-        <a class="method-permalink" href="#new%28%2A%2Coffset%2Ctimeout%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3D0%2Ctimeout%3D20%2Capi%3AHamilton%3A%3AApi%2Chandlers%3AIndexable%28Hamilton%3A%3AHandler%29%29%3Aself-class-method">#</a>
       </div>
       
         <div class="doc">
           
           <p>Creates a bot provided <code><a href="../Hamilton/Bot.html#offset%3AInt32-instance-method">#offset</a></code>, <code><a href="../Hamilton/Bot.html#timeout%3AInt32-instance-method">#timeout</a></code>, <code><a href="../Hamilton/Bot.html#api%3AHamilton%3A%3AApi-instance-method">#api</a></code>, and the <code>handlers</code> array as handler chain.</p>
         </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,offset:Int32=0,timeout:Int32=20,api:Hamilton::Api,handler:Hamilton::Handler|Hamilton::Handler::HandlerProc)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, offset : Int32 = <span class="n">0</span>, timeout : Int32 = <span class="n">20</span>, api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, handler : <a href="../Hamilton/Handler.html">Hamilton::Handler</a> | <a href="../Hamilton/Handler/HandlerProc.html">Hamilton::Handler::HandlerProc</a>)
+
+        <a class="method-permalink" href="#new%28%2A%2Coffset%3AInt32%3D0%2Ctimeout%3AInt32%3D20%2Capi%3AHamilton%3A%3AApi%2Chandler%3AHamilton%3A%3AHandler%7CHamilton%3A%3AHandler%3A%3AHandlerProc%29-class-method">#</a>
+      </div>
       
       <br/>
       <div>
