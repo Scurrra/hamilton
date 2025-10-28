@@ -24,38 +24,38 @@ class Hamilton::Bot
   property timeout : Int32
 
   # Creates a bot provided `offset`, `timeout`, api instance created from `token` and `url` for `env`, and the given block as handler.
-  def self.new(*, offset, timeout, token : String, url : String = "https://api.telegram.org", env : Symbol = :prod, &handler : Hamilton::Handler::HandlerProc) : self
+  def self.new(*, offset = 0, timeout = 20, token : String, url : String = "https://api.telegram.org", env : Symbol = :prod, &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: Hamilton::Api.new(token, url, new), handler: handler)
   end
 
   # Creates a bot provided `offset`, `timeout`, `api`, and the given block as handler.
-  def self.new(*, offset, timeout, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : self
+  def self.new(*, offset = 0, timeout = 20, api : Hamilton::Api, &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: api, handler: handler)
   end
 
   # Creates a bot provided `offset`, `timeout`, api instance created from `token` and `url` for `env`, and a handler chain constructed from the `handlers`
   # array and the given block.
-  def self.new(*, offset, timeout, token, url = "https://api.telegram.org", env = :prod, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : self
+  def self.new(*, offset = 0, timeout = 20, token, url = "https://api.telegram.org", env = :prod, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: Hamilton::Api.new(token, url, new), handler: Hamilton::Bot.build_middleware(handlers, handler))
   end
 
   # Creates a bot provided `offset`, `timeout`, `api`, and a handler chain constructed from the `handlers`
   # array and the given block.
-  def self.new(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : self
+  def self.new(*, offset = 0, timeout = 20, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler), &handler : Hamilton::Handler::HandlerProc) : self
     new(offset: offset, timeout: timeout, api: api, handler: Hamilton::Bot.build_middleware(handlers, handler))
   end
 
   # Creates a bot provided `offset`, `timeout`, api instance created from `token` and `url` for `env`, and the `handlers` array as handler chain.
-  def self.new(*, offset, timeout, token, url = "https://api.telegram.org", env = :prod, handlers : Indexable(Hamilton::Handler)) : self
+  def self.new(*, offset = 0, timeout = 20, token, url = "https://api.telegram.org", env = :prod, handlers : Indexable(Hamilton::Handler)) : self
     new(offset: offset, timeout: timeout, api: Hamilton::Api.new(token, url, new), handler: Hamilton::Bot.build_middleware(handlers))
   end
 
   # Creates a bot provided `offset`, `timeout`, `api`, and the `handlers` array as handler chain.
-  def self.new(*, offset, timeout, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : self
+  def self.new(*, offset = 0, timeout = 20, api : Hamilton::Api, handlers : Indexable(Hamilton::Handler)) : self
     new(offset: offset, timeout: timeout, api: api, handler: Hamilton::Bot.build_middleware(handlers))
   end
 
-  private def initialize(*, @offset = 0, @timeout = 20, @api : Hamilton::Api, @handler : Hamilton::Handler | Hamilton::Handler::HandlerProc)
+  def initialize(*, @offset = 0, @timeout = 20, @api : Hamilton::Api, @handler : Hamilton::Handler | Hamilton::Handler::HandlerProc)
     @is_running = false
     @log = Log.for("Hamilton::Bot")
   end
@@ -67,9 +67,13 @@ class Hamilton::Bot
 
     while @is_running
       begin
-        @api.getUpdates(offset = @offset, timeout = @timeout).each do |update|
-          @offset = update.update_id + 1
-          @handler.call(update)
+        updates = @api.getUpdates(offset: @offset, timeout: @timeout)
+        if updates
+          updates.each do |update|
+            @offset = update.update_id + 1
+            pp "Offset :: [#{@offset}]"
+            @handler.call(update)
+          end
         end
       rescue api_call_fail : Hamilton::Errors::ApiEndpointError
         @log.error(exception: api_call_fail)
