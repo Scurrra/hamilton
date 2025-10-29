@@ -1655,7 +1655,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28token%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%29-class-method" class="signature"><strong>.new</strong>(token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>)</a>
+        <a href="#new%28token%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2Clog_level%3ALog%3A%3ASeverity%3DLog%3A%3ASeverity%3A%3AWarn%29-class-method" class="signature"><strong>.new</strong>(token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, log_level : Log::Severity = <span class="t">Log</span><span class="t">::</span><span class="t">Severity</span><span class="t">::</span><span class="t">Warn</span>)</a>
         
           <div class="summary"><p>API class constructor.</p></div>
         
@@ -2222,6 +2222,20 @@
         <a href="#leaveChat%28%2A%2Aparams%29-instance-method" class="signature"><strong>#leaveChat</strong>(**params)</a>
         
           <div class="summary"><p>Use this method for your bot to leave a group, supergroup or channel.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log%3ALog-instance-method" class="signature"><strong>#log</strong> : Log</a>
+        
+          <div class="summary"><p>Logger instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#log%3D%28log%3ALog%29-instance-method" class="signature"><strong>#log=</strong>(log : Log)</a>
+        
+          <div class="summary"><p>Logger instance.</p></div>
         
       </li>
     
@@ -2829,12 +2843,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(token:String,url:String=&quot;https://api.telegram.org&quot;,env:Symbol=:prod)-class-method">
+    <div class="entry-detail" id="new(token:String,url:String=&quot;https://api.telegram.org&quot;,env:Symbol=:prod,log_level:Log::Severity=Log::Severity::Warn)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>)
+        def self.<strong>new</strong>(token : String, url : String = <span class="s">&quot;https://api.telegram.org&quot;</span>, env : Symbol = <span class="n">:prod</span>, log_level : Log::Severity = <span class="t">Log</span><span class="t">::</span><span class="t">Severity</span><span class="t">::</span><span class="t">Warn</span>)
 
-        <a class="method-permalink" href="#new%28token%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28token%3AString%2Curl%3AString%3D%22https%3A//api.telegram.org%22%2Cenv%3ASymbol%3D%3Aprod%2Clog_level%3ALog%3A%3ASeverity%3DLog%3A%3ASeverity%3A%3AWarn%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -5504,6 +5518,44 @@
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>). Channel direct messages chats aren't supported; leave the corresponding channel instead.</p>
 </blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log:Log-instance-method">
+      <div class="signature">
+        
+        def <strong>log</strong> : Log
+
+        <a class="method-permalink" href="#log%3ALog-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Logger instance.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="log=(log:Log)-instance-method">
+      <div class="signature">
+        
+        def <strong>log=</strong>(log : Log)
+
+        <a class="method-permalink" href="#log%3D%28log%3ALog%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Logger instance.</p>
         </div>
       
       <br/>
