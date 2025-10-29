@@ -47,7 +47,6 @@ class Hamilton::Api
     {% end %}   {% end %}   #
     def {{method.id}}(**params)
       # compiler complained for missing fields in NamedTuple, so...
-      params = params.to_h
       @log.info { "Method [#{{{method}}}] :: [#{params}]" }
 
 
@@ -64,109 +63,109 @@ class Hamilton::Api
       io = IO::Memory.new
       builder = HTTP::FormData::Builder.new(io, boundary)
       {% for param, pinfo in info[:params] %}
-        unless params.has_key?({{param}})
-          unless Nil < {{pinfo[:type].resolve}}
-            raise Hamilton::Errors::MissingParam.new({{param}})
-          end
-        else
-          unless typeof(params[{{param}}]) <= {{pinfo[:type].resolve}}
-            raise Hamilton::Errors::ParamTypeMissmatch.new({{param}}, {{pinfo[:type]}}, typeof(params[{{param}}]))
+        if parameter = params[{{param}}]?
+          # unless typeof(parameter) <= {{pinfo[:type].resolve}}
+          #   raise Hamilton::Errors::ParamTypeMissmatch.new({{param}}, {{pinfo[:type]}}, typeof(parameter))
+          # end
+
+          unless typeof(parameter) <= {{pinfo[:type].resolve}}
+            raise Hamilton::Errors::ParamTypeMissmatch.new({{param}}, {{pinfo[:type]}}, typeof(parameter))
           end
 
           {% if Hamilton::Types::InputFile <= pinfo[:type].resolve %}
-          case params[{{param}}]
+          case parameter
           when Hamilton::Types::InputFile
-            builder.field({{param.id.stringify}}, "attach://#{params[{{param}}].filename}")
-            builder.file(params[{{param}}].filename, params[{{param}}].file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].filename))
+            builder.field({{param.id.stringify}}, "attach://#{parameter.filename}")
+            builder.file(parameter.filename, parameter.file, HTTP::FormData::FileMetadata.new(filename: parameter.filename))
             # has_files = true
           else
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           end
           {% elsif Hamilton::Types::InputMedia == pinfo[:type].resolve %}
-          case params[{{param}}]
+          case parameter
           in Hamilton::Types::InputMediaPhoto
             # media itself
-            if typeof(params[{{param}}].media).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].media.filename, params[{{param}}].media.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].media.filename))
-              params[{{param}}].media = "attach://#{params[{{param}}].media.filename}"
+            if typeof(parameter.media).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.media.filename, parameter.media.file, HTTP::FormData::FileMetadata.new(filename: parameter.media.filename))
+              parameter.media = "attach://#{parameter.media.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           in Hamilton::Types::InputMediaVideo
             # media itself
-            if typeof(params[{{param}}].media).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].media.filename, params[{{param}}].media.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].media.filename))
-              params[{{param}}].media = "attach://#{params[{{param}}].media.filename}"
+            if typeof(parameter.media).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.media.filename, parameter.media.file, HTTP::FormData::FileMetadata.new(filename: parameter.media.filename))
+              parameter.media = "attach://#{parameter.media.filename}"
               # has_files = true
             end
 
             # thumbnail
-            if typeof(params[{{param}}].thumbnail).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].thumbnail.filename, params[{{param}}].thumbnail.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].thumbnail.filename))
-              params[{{param}}].thumbnail = "attach://#{params[{{param}}].thumbnail.filename}"
+            if typeof(parameter.thumbnail).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.thumbnail.filename, parameter.thumbnail.file, HTTP::FormData::FileMetadata.new(filename: parameter.thumbnail.filename))
+              parameter.thumbnail = "attach://#{parameter.thumbnail.filename}"
               # has_files = true
             end
 
             # cover
-            if typeof(params[{{param}}].cover).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].cover.filename, params[{{param}}].cover.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].cover.filename))
-              params[{{param}}].cover = "attach://#{params[{{param}}].cover.filename}"
+            if typeof(parameter.cover).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.cover.filename, parameter.cover.file, HTTP::FormData::FileMetadata.new(filename: parameter.cover.filename))
+              parameter.cover = "attach://#{parameter.cover.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           in Hamilton::Types::InputMediaAnimation
             # media itself
-            if typeof(params[{{param}}].media).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].media.filename, params[{{param}}].media.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].media.filename))
-              params[{{param}}].media = "attach://#{params[{{param}}].media.filename}"
+            if typeof(parameter.media).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.media.filename, parameter.media.file, HTTP::FormData::FileMetadata.new(filename: parameter.media.filename))
+              parameter.media = "attach://#{parameter.media.filename}"
               # has_files = true
             end
 
             # thumbnail
-            if typeof(params[{{param}}].thumbnail).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].thumbnail.filename, params[{{param}}].thumbnail.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].thumbnail.filename))
-              params[{{param}}].thumbnail = "attach://#{params[{{param}}].thumbnail.filename}"
+            if typeof(parameter.thumbnail).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.thumbnail.filename, parameter.thumbnail.file, HTTP::FormData::FileMetadata.new(filename: parameter.thumbnail.filename))
+              parameter.thumbnail = "attach://#{parameter.thumbnail.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           in Hamilton::Types::InputMediaAudio
             # media itself
-            if typeof(params[{{param}}].media).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].media.filename, params[{{param}}].media.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].media.filename))
-              params[{{param}}].media = "attach://#{params[{{param}}].media.filename}"
+            if typeof(parameter.media).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.media.filename, parameter.media.file, HTTP::FormData::FileMetadata.new(filename: parameter.media.filename))
+              parameter.media = "attach://#{parameter.media.filename}"
               # has_files = true
             end
 
             # thumbnail
-            if typeof(params[{{param}}].thumbnail).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].thumbnail.filename, params[{{param}}].thumbnail.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].thumbnail.filename))
-              params[{{param}}].thumbnail = "attach://#{params[{{param}}].thumbnail.filename}"
+            if typeof(parameter.thumbnail).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.thumbnail.filename, parameter.thumbnail.file, HTTP::FormData::FileMetadata.new(filename: parameter.thumbnail.filename))
+              parameter.thumbnail = "attach://#{parameter.thumbnail.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           in Hamilton::Types::InputMediaDocument
             # media itself
-            if typeof(params[{{param}}].media).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].media.filename, params[{{param}}].media.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].media.filename))
-              params[{{param}}].media = "attach://#{params[{{param}}].media.filename}"
+            if typeof(parameter.media).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.media.filename, parameter.media.file, HTTP::FormData::FileMetadata.new(filename: parameter.media.filename))
+              parameter.media = "attach://#{parameter.media.filename}"
               # has_files = true
             end
 
             # thumbnail
-            if typeof(params[{{param}}].thumbnail).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].thumbnail.filename, params[{{param}}].thumbnail.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].thumbnail.filename))
-              params[{{param}}].thumbnail = "attach://#{params[{{param}}].thumbnail.filename}"
+            if typeof(parameter.thumbnail).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.thumbnail.filename, parameter.thumbnail.file, HTTP::FormData::FileMetadata.new(filename: parameter.thumbnail.filename))
+              parameter.thumbnail = "attach://#{parameter.thumbnail.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           end
           {% elsif Array(Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo) == pinfo[:type].resolve %}
-          params[{{param}}].each do |media|
+          parameter.each do |media|
             case media
             in Hamilton::Types::InputMediaAudio
               # media itself
@@ -226,9 +225,9 @@ class Hamilton::Api
               end
             end
           end
-          builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+          builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           {% elsif Array(Hamilton::Types::InputPaidMedia) == pinfo[:type].resolve %}
-          params[{{param}}].each do |paid_media|
+          parameter.each do |paid_media|
             case paid_media
             in Hamilton::Types::InputPaidMediaPhoto
               # media itself
@@ -260,48 +259,52 @@ class Hamilton::Api
               end
             end
           end
-          builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+          builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           {% elsif Hamilton::Types::InputSticker == pinfo[:type].resolve %}
-          if typeof(params[{{param}}].sticker).is_a? Hamilton::Types::InputFile
-            builder.file(params[{{param}}].sticker.filename, params[{{param}}].sticker.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].sticker.filename))
-            params[{{param}}].sticker = "attach://#{params[{{param}}].sticker.filename}"
+          if typeof(parameter.sticker).is_a? Hamilton::Types::InputFile
+            builder.file(parameter.sticker.filename, parameter.sticker.file, HTTP::FormData::FileMetadata.new(filename: parameter.sticker.filename))
+            parameter.sticker = "attach://#{parameter.sticker.filename}"
             # has_files = true
           end
-          builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+          builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           {% elsif Array(Hamilton::Types::InputSticker) == pinfo[:type].resolve %}
-          params[{{param}}].each do |stiker|
+          parameter.each do |stiker|
             if typeof(stiker.sticker).is_a? Hamilton::Types::InputFile
               builder.file(stiker.sticker.filename, stiker.sticker.file, HTTP::FormData::FileMetadata.new(filename: stiker.sticker.filename))
               stiker.sticker = "attach://#{stiker.sticker.filename}"
               # has_files = true
             end
           end
-          builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+          builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           {% elsif Hamilton::Types::InputStoryContent == pinfo[:type].resolve %}
-          case params[{{param}}]
+          case parameter
           in Hamilton::Types::InputStoryContentPhoto
             # media itself
-            if typeof(params[{{param}}].photo).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].photo.filename, params[{{param}}].photo.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].photo.filename))
-              params[{{param}}].photo = "attach://#{params[{{param}}].photo.filename}"
+            if typeof(parameter.photo).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.photo.filename, parameter.photo.file, HTTP::FormData::FileMetadata.new(filename: parameter.photo.filename))
+              parameter.photo = "attach://#{parameter.photo.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           in Hamilton::Types::InputStoryContentVideo
             # media itself
-            if typeof(params[{{param}}].video).is_a? Hamilton::Types::InputFile
-              builder.file(params[{{param}}].video.filename, params[{{param}}].video.file, HTTP::FormData::FileMetadata.new(filename: params[{{param}}].video.filename))
-              params[{{param}}].video = "attach://#{params[{{param}}].video.filename}"
+            if typeof(parameter.video).is_a? Hamilton::Types::InputFile
+              builder.file(parameter.video.filename, parameter.video.file, HTTP::FormData::FileMetadata.new(filename: parameter.video.filename))
+              parameter.video = "attach://#{parameter.video.filename}"
               # has_files = true
             end
 
-            builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           end
           {% else %}
-          builder.field({{param.id.stringify}}, params[{{param}}].to_json, field_headers)
+          builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           {% end %}
 
+        else
+          unless Nil < {{pinfo[:type].resolve}}
+            raise Hamilton::Errors::MissingParam.new({{param}})
+          end
         end
       {% end %}
       builder.finish
