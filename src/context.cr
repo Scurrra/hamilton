@@ -3,12 +3,12 @@ require "json"
 # Context is a storage for some state.
 #
 # As it was developed primary for `Hamilton::CmdHandler`, `Hamilton::Context` maps a key of type  
-# `Int32 | String | Symbol` to a named tuple with two fields:
+# `Int64 | String | Symbol` to a named tuple with two fields:
 #  - `method : Symbol | Nil` -- name of some method
 #  - `data: Hash(Symbol, JSON::Any) | Nil)` -- storage for some specific data
 class Hamilton::Context
   private property default_method : Symbol | Nil
-  private property inner : Hash(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))
+  private property inner : Hash(Int64 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))
 
   # Initializer of the context storage.
   #
@@ -16,19 +16,19 @@ class Hamilton::Context
   # `default_method : Symbol | Nil` -- something that will be the default value for the `method` field
   # `inner : Hash(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))` -- storage itself
   def initialize(*,
-      @inner = Hash(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)).new,
+      @inner = Hash(Int64 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)).new,
       @default_method = nil
     )
   end
 
   # Setter for the pair `key, value`.
-  def set(key : Int32 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))
+  def set(key : Int64 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))
     @inner[key] = value
     return @inner[key]
   end
 
   # Setter that sets only method for the key.
-  def set(key : Int32 | String | Symbol, method : Symbol)
+  def set(key : Int64 | String | Symbol, method : Symbol)
     data = if inner = @inner[key]?
       inner[:data]
     else
@@ -40,7 +40,7 @@ class Hamilton::Context
   end
 
   # Setter that sets only data for the key.
-  def set(key : Int32 | String | Symbol, data : Hash(Symbol, JSON::Any))
+  def set(key : Int64 | String | Symbol, data : Hash(Symbol, JSON::Any))
     method = if inner = @inner[key]?
       inner[:method]
     else
@@ -52,7 +52,7 @@ class Hamilton::Context
   end
 
   # Reset the context for the `key`, i.e. the key will map to `{method: default_method, data: nil}` if present.
-  def clean(key : Int32 | String | Symbol)
+  def clean(key : Int64 | String | Symbol)
     if @inner.has_key?(key)
       @inner[key] = {method: @default_method, data: nil}
       return @inner[key]
@@ -61,7 +61,7 @@ class Hamilton::Context
   end
 
   # Reset the data for the `key`.
-  def clean_data(key : Int32 | String | Symbol)
+  def clean_data(key : Int64 | String | Symbol)
     if inner = @inner[key]?
       @inner[key] = {method: inner[:method], data: nil}
       return @inner[key]
@@ -70,7 +70,7 @@ class Hamilton::Context
   end
 
   # Reset the method for the `key`.
-  def clean_method(key : Int32 | String | Symbol)
+  def clean_method(key : Int64 | String | Symbol)
     if inner = @inner[key]?
       @inner[key] = {method: @default_method, data: inner[:data]}
       return @inner[key]
@@ -79,14 +79,14 @@ class Hamilton::Context
   end
 
   # Delete the `key` from the storage.
-  def delete(key : Int32 | String | Symbol)
+  def delete(key : Int64 | String | Symbol)
     @inner.delete(key)
   end
 
   # Return the context for the `key`.
   #
   # NOTE: if there was not a context for the `key`, it will be iplicitly created with `{method: default_method, data: nil}`.
-  def get(key : Int32 | String | Symbol)
+  def get(key : Int64 | String | Symbol)
     unless @inner.has_key?(key)
       @inner[key] = {method: @default_method, data: nil}
     end
@@ -96,7 +96,7 @@ class Hamilton::Context
   # Return the method for the `key`.
   #
   # NOTE: if there was not a context for the `key`, it will be iplicitly created with `{method: default_method, data: nil}`.
-  def get_method(key : Int32 | String | Symbol)
+  def get_method(key : Int64 | String | Symbol)
     unless @inner.has_key?(key)
       @inner[key] = {method: @default_method, data: nil}
     end
@@ -106,7 +106,7 @@ class Hamilton::Context
   # Return the data for the `key`.
   #
   # NOTE: if there was not a context for the `key`, it will be iplicitly created with `{method: default_method, data: nil}`.
-  def get_data(key : Int32 | String | Symbol)
+  def get_data(key : Int64 | String | Symbol)
     unless @inner.has_key?(key)
       @inner[key] = {method: @default_method, data: nil}
     end
@@ -114,12 +114,12 @@ class Hamilton::Context
   end
 
   # Return the context for the `key`.
-  def get?(key : Int32 | String | Symbol)
+  def get?(key : Int64 | String | Symbol)
     return @inner[key]?
   end
 
   # Return the method for the `key`.
-  def get_method?(key : Int32 | String | Symbol)
+  def get_method?(key : Int64 | String | Symbol)
     if inner = @inner[key]?
       return inner[:method]
     end
@@ -127,7 +127,7 @@ class Hamilton::Context
   end
 
   # Return the data for the `key`.
-  def get_data?(key : Int32 | String | Symbol)
+  def get_data?(key : Int64 | String | Symbol)
     if inner = @inner[key]?
       return inner[:data]
     end
