@@ -40,7 +40,7 @@ class Hamilton::Context
   end
 
   # Setter that sets only data for the key.
-  def set(key : Int64 | String | Symbol, data : Hash(Symbol, JSON::Any))
+  def set(key : Int64 | String | Symbol, data : Hash(Symbol, JSON::Any) | Nil)
     method = if inner = @inner[key]?
       inner[:method]
     else
