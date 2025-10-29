@@ -57,6 +57,11 @@
   <div class="types-list">
     <ul>
   
+  <li class=" " data-id="hamilton/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/For" data-name="for">
       <a href="../For.html">For</a>
       
@@ -132,8 +137,8 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/UnspportedCmdHandlerPayloadType" data-name="hamilton::errors::unspportedcmdhandlerpayloadtype">
-      <a href="../Hamilton/Errors/UnspportedCmdHandlerPayloadType.html">UnspportedCmdHandlerPayloadType</a>
+  <li class=" " data-id="hamilton/Hamilton/Errors/UnsupportedCmdHandlerPayloadType" data-name="hamilton::errors::unsupportedcmdhandlerpayloadtype">
+      <a href="../Hamilton/Errors/UnsupportedCmdHandlerPayloadType.html">UnsupportedCmdHandlerPayloadType</a>
       
     </li>
   
@@ -1572,6 +1577,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Handler" data-name="handler">
+      <a href="../Handler.html">Handler</a>
+      
+    </li>
+  
 </ul>
 
   </div>
@@ -1651,29 +1661,6 @@
 
 
 
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="PAYLOAD_TYPES">
-        <strong>PAYLOAD_TYPES</strong> = <code>[<span class="n">:animation</span>, <span class="n">:audio</span>, <span class="n">:document</span>, <span class="n">:paid_media</span>, <span class="n">:photo</span>, <span class="n">:sticker</span>, <span class="n">:story</span>, <span class="n">:video</span>, <span class="n">:video_note</span>, <span class="n">:voice</span>, <span class="n">:checklist</span>, <span class="n">:contact</span>, <span class="n">:contact</span>, <span class="n">:dice</span>, <span class="n">:game</span>, <span class="n">:poll</span>, <span class="n">:venue</span>, <span class="n">:location</span>, <span class="n">:invoice</span>, <span class="n">:successful_payment</span>, <span class="n">:refunded_payment</span>, <span class="n">:users_shared</span>, <span class="n">:chat_shared</span>, <span class="n">:passport_data</span>]</code>
-      </dt>
-      
-      <dd class="entry-const-doc">
-        <p>Available payload types that can be handled by the <code><a href="../Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code>.</p>
-      </dd>
-      
-    
-  </dl>
-
 
 
   
@@ -1688,7 +1675,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28api%3AHamilton%3A%3AApi%2Clog_level%3ALog%3A%3ASeverity%3DLog%3A%3ASeverity%3A%3ADebug%29-class-method" class="signature"><strong>.new</strong>(api : Hamilton::Api, log_level : Log::Severity = <span class="t">Log</span><span class="t">::</span><span class="t">Severity</span><span class="t">::</span><span class="t">Debug</span>)</a>
+        <a href="#new%28log_level%3ALog%3A%3ASeverity%3DLog%3A%3ASeverity%3A%3ADebug%29-class-method" class="signature"><strong>.new</strong>(log_level : Log::Severity = <span class="t">Log</span><span class="t">::</span><span class="t">Severity</span><span class="t">::</span><span class="t">Debug</span>)</a>
         
       </li>
     
@@ -1696,68 +1683,6 @@
 
 
   
-  <h2>
-    <a id="class-method-summary" class="anchor" href="#class-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29-class-method" class="signature"><strong>.caller</strong> : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#caller%3D%28caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29%29-class-method" class="signature"><strong>.caller=</strong>(caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))))</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#context%3AHamilton%3A%3AContext-class-method" class="signature"><strong>.context</strong> : Hamilton::Context</a>
-        
-          <div class="summary"><h1><a id="context-for-the-current-bot-sessions." class="anchor" href="#context-for-the-current-bot-sessions.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Context for the current bot sessions.</h1></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#context%3D%28context%3AHamilton%3A%3AContext%29-class-method" class="signature"><strong>.context=</strong>(context : Hamilton::Context)</a>
-        
-          <div class="summary"><h1><a id="context-for-the-current-bot-sessions." class="anchor" href="#context-for-the-current-bot-sessions.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Context for the current bot sessions.</h1></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29-class-method" class="signature"><strong>.mapper</strong> : Hash(Symbol, Hash(String | Symbol, Symbol))</a>
-        
-          <div class="summary"><h1><a id="mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them." class="anchor" href="#mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Mapping between methods and mapper between update types and methods to handle them.</h1></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#mapper%3D%28mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29%29-class-method" class="signature"><strong>.mapper=</strong>(mapper : Hash(Symbol, Hash(String | Symbol, Symbol)))</a>
-        
-          <div class="summary"><h1><a id="mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them." class="anchor" href="#mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Mapping between methods and mapper between update types and methods to handle them.</h1></div>
-        
-      </li>
-    
-  </ul>
-
 
   
 
@@ -1773,23 +1698,33 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#api%3AHamilton%3A%3AApi-instance-method" class="signature"><strong>#api</strong> : Hamilton::Api</a>
-        
-          <div class="summary"><p>API instance to be used inside the handler.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#api%3D%28api%3AHamilton%3A%3AApi%29-instance-method" class="signature"><strong>#api=</strong>(api : Hamilton::Api)</a>
-        
-          <div class="summary"><p>API instance to be used inside the handler.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#call%28update%3AHamilton%3A%3ATypes%3A%3AUpdate%29-instance-method" class="signature"><strong>#call</strong>(update : Hamilton::Types::Update)</a>
         
           <div class="summary"><p>Handling method that processes an update.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29-instance-method" class="signature"><strong>#caller</strong> : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#caller%3D%28caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29%29-instance-method" class="signature"><strong>#caller=</strong>(caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context%3AHamilton%3A%3AContext-instance-method" class="signature"><strong>#context</strong> : Hamilton::Context</a>
+        
+          <div class="summary"><p>Context for the current bot sessions.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#context%3D%28context%3AHamilton%3A%3AContext%29-instance-method" class="signature"><strong>#context=</strong>(context : Hamilton::Context)</a>
+        
+          <div class="summary"><p>Context for the current bot sessions.</p></div>
         
       </li>
     
@@ -1804,6 +1739,20 @@
         <a href="#log%3D%28log%3ALog%29-instance-method" class="signature"><strong>#log=</strong>(log : Log)</a>
         
           <div class="summary"><p>Logger instance.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29-instance-method" class="signature"><strong>#mapper</strong> : Hash(Symbol, Hash(String | Symbol, Symbol))</a>
+        
+          <div class="summary"><p>Mapping between methods and mapper between update types and methods to handle them.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mapper%3D%28mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29%29-instance-method" class="signature"><strong>#mapper=</strong>(mapper : Hash(Symbol, Hash(String | Symbol, Symbol)))</a>
+        
+          <div class="summary"><p>Mapping between methods and mapper between update types and methods to handle them.</p></div>
         
       </li>
     
@@ -1888,12 +1837,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(api:Hamilton::Api,log_level:Log::Severity=Log::Severity::Debug)-class-method">
+    <div class="entry-detail" id="new(log_level:Log::Severity=Log::Severity::Debug)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(api : <a href="../Hamilton/Api.html">Hamilton::Api</a>, log_level : Log::Severity = <span class="t">Log</span><span class="t">::</span><span class="t">Severity</span><span class="t">::</span><span class="t">Debug</span>)
+        def self.<strong>new</strong>(log_level : Log::Severity = <span class="t">Log</span><span class="t">::</span><span class="t">Severity</span><span class="t">::</span><span class="t">Debug</span>)
 
-        <a class="method-permalink" href="#new%28api%3AHamilton%3A%3AApi%2Clog_level%3ALog%3A%3ASeverity%3DLog%3A%3ASeverity%3A%3ADebug%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28log_level%3ALog%3A%3ASeverity%3DLog%3A%3ASeverity%3A%3ADebug%29-class-method">#</a>
       </div>
       
       <br/>
@@ -1905,132 +1854,6 @@
 
 
   
-  <h2>
-    <a id="class-method-detail" class="anchor" href="#class-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Class Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="caller:Hash(Symbol,Proc(Hamilton::Types::Update,Hash(Symbol,JSON::Any)|Nil,NamedTuple(method:Symbol|Nil,data:Hash(Symbol,JSON::Any)|Nil)))-class-method">
-      <div class="signature">
-        
-        def self.<strong>caller</strong> : Hash(Symbol, Proc(<a href="../Hamilton/Types/Update.html">Hamilton::Types::Update</a>, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))
-
-        <a class="method-permalink" href="#caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="caller=(caller:Hash(Symbol,Proc(Hamilton::Types::Update,Hash(Symbol,JSON::Any)|Nil,NamedTuple(method:Symbol|Nil,data:Hash(Symbol,JSON::Any)|Nil))))-class-method">
-      <div class="signature">
-        
-        def self.<strong>caller=</strong>(caller : Hash(Symbol, Proc(<a href="../Hamilton/Types/Update.html">Hamilton::Types::Update</a>, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))))
-
-        <a class="method-permalink" href="#caller%3D%28caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="context:Hamilton::Context-class-method">
-      <div class="signature">
-        
-        def self.<strong>context</strong> : <a href="../Hamilton/Context.html">Hamilton::Context</a>
-
-        <a class="method-permalink" href="#context%3AHamilton%3A%3AContext-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <h1><a id="context-for-the-current-bot-sessions." class="anchor" href="#context-for-the-current-bot-sessions.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Context for the current bot sessions.</h1>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="context=(context:Hamilton::Context)-class-method">
-      <div class="signature">
-        
-        def self.<strong>context=</strong>(context : <a href="../Hamilton/Context.html">Hamilton::Context</a>)
-
-        <a class="method-permalink" href="#context%3D%28context%3AHamilton%3A%3AContext%29-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <h1><a id="context-for-the-current-bot-sessions." class="anchor" href="#context-for-the-current-bot-sessions.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Context for the current bot sessions.</h1>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mapper:Hash(Symbol,Hash(String|Symbol,Symbol))-class-method">
-      <div class="signature">
-        
-        def self.<strong>mapper</strong> : Hash(Symbol, Hash(String | Symbol, Symbol))
-
-        <a class="method-permalink" href="#mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <h1><a id="mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them." class="anchor" href="#mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Mapping between methods and mapper between update types and methods to handle them.</h1>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="mapper=(mapper:Hash(Symbol,Hash(String|Symbol,Symbol)))-class-method">
-      <div class="signature">
-        
-        def self.<strong>mapper=</strong>(mapper : Hash(Symbol, Hash(String | Symbol, Symbol)))
-
-        <a class="method-permalink" href="#mapper%3D%28mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29%29-class-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <h1><a id="mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them." class="anchor" href="#mapping-between-methods-and-mapper-between-update-types-and-methods-to-handle-them.">  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>Mapping between methods and mapper between update types and methods to handle them.</h1>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-
 
   
 
@@ -2043,44 +1866,6 @@
 </a>
     Instance Method Detail
   </h2>
-  
-    <div class="entry-detail" id="api:Hamilton::Api-instance-method">
-      <div class="signature">
-        
-        def <strong>api</strong> : <a href="../Hamilton/Api.html">Hamilton::Api</a>
-
-        <a class="method-permalink" href="#api%3AHamilton%3A%3AApi-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>API instance to be used inside the handler.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="api=(api:Hamilton::Api)-instance-method">
-      <div class="signature">
-        
-        def <strong>api=</strong>(api : <a href="../Hamilton/Api.html">Hamilton::Api</a>)
-
-        <a class="method-permalink" href="#api%3D%28api%3AHamilton%3A%3AApi%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>API instance to be used inside the handler.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
   
     <div class="entry-detail" id="call(update:Hamilton::Types::Update)-instance-method">
       <div class="signature">
@@ -2097,6 +1882,72 @@
             </div>
           
           <p>Handling method that processes an update.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="caller:Hash(Symbol,Proc(Hamilton::Types::Update,Hash(Symbol,JSON::Any)|Nil,NamedTuple(method:Symbol|Nil,data:Hash(Symbol,JSON::Any)|Nil)))-instance-method">
+      <div class="signature">
+        
+        def <strong>caller</strong> : Hash(Symbol, Proc(<a href="../Hamilton/Types/Update.html">Hamilton::Types::Update</a>, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))
+
+        <a class="method-permalink" href="#caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="caller=(caller:Hash(Symbol,Proc(Hamilton::Types::Update,Hash(Symbol,JSON::Any)|Nil,NamedTuple(method:Symbol|Nil,data:Hash(Symbol,JSON::Any)|Nil))))-instance-method">
+      <div class="signature">
+        
+        def <strong>caller=</strong>(caller : Hash(Symbol, Proc(<a href="../Hamilton/Types/Update.html">Hamilton::Types::Update</a>, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))))
+
+        <a class="method-permalink" href="#caller%3D%28caller%3AHash%28Symbol%2CProc%28Hamilton%3A%3ATypes%3A%3AUpdate%2CHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29%29%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context:Hamilton::Context-instance-method">
+      <div class="signature">
+        
+        def <strong>context</strong> : <a href="../Hamilton/Context.html">Hamilton::Context</a>
+
+        <a class="method-permalink" href="#context%3AHamilton%3A%3AContext-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Context for the current bot sessions.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="context=(context:Hamilton::Context)-instance-method">
+      <div class="signature">
+        
+        def <strong>context=</strong>(context : <a href="../Hamilton/Context.html">Hamilton::Context</a>)
+
+        <a class="method-permalink" href="#context%3D%28context%3AHamilton%3A%3AContext%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Context for the current bot sessions.</p>
         </div>
       
       <br/>
@@ -2135,6 +1986,44 @@
         <div class="doc">
           
           <p>Logger instance.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mapper:Hash(Symbol,Hash(String|Symbol,Symbol))-instance-method">
+      <div class="signature">
+        
+        def <strong>mapper</strong> : Hash(Symbol, Hash(String | Symbol, Symbol))
+
+        <a class="method-permalink" href="#mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Mapping between methods and mapper between update types and methods to handle them.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mapper=(mapper:Hash(Symbol,Hash(String|Symbol,Symbol)))-instance-method">
+      <div class="signature">
+        
+        def <strong>mapper=</strong>(mapper : Hash(Symbol, Hash(String | Symbol, Symbol)))
+
+        <a class="method-permalink" href="#mapper%3D%28mapper%3AHash%28Symbol%2CHash%28String%7CSymbol%2CSymbol%29%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Mapping between methods and mapper between update types and methods to handle them.</p>
         </div>
       
       <br/>

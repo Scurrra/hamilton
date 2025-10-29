@@ -57,6 +57,11 @@
   <div class="types-list">
     <ul>
   
+  <li class=" " data-id="hamilton/toplevel" data-name="top level namespace">
+      <a href="../toplevel.html">Top Level Namespace</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/For" data-name="for">
       <a href="../For.html">For</a>
       
@@ -132,8 +137,8 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/UnspportedCmdHandlerPayloadType" data-name="hamilton::errors::unspportedcmdhandlerpayloadtype">
-      <a href="../Hamilton/Errors/UnspportedCmdHandlerPayloadType.html">UnspportedCmdHandlerPayloadType</a>
+  <li class=" " data-id="hamilton/Hamilton/Errors/UnsupportedCmdHandlerPayloadType" data-name="hamilton::errors::unsupportedcmdhandlerpayloadtype">
+      <a href="../Hamilton/Errors/UnsupportedCmdHandlerPayloadType.html">UnsupportedCmdHandlerPayloadType</a>
       
     </li>
   
@@ -1569,6 +1574,11 @@
   
   <li class=" " data-id="hamilton/Handle" data-name="handle">
       <a href="../Handle.html">Handle</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Handler" data-name="handler">
+      <a href="../Handler.html">Handler</a>
       
     </li>
   
@@ -7049,7 +7059,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent</p>
 </blockquote>
-<p><code>chat_id : Union(String | Int32)</code></p>
+<p><code>chat_id : Union(String | Int64)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -7073,7 +7083,7 @@
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in message text, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
-<p><code>link_preview_options : <a href="../Hamilton/Types/LinkPreviewOptions.html">Hamilton::Types::LinkPreviewOptions</a></code></p>
+<p><code>link_preview_options : Union(<a href="../Hamilton/Types/LinkPreviewOptions.html">Hamilton::Types::LinkPreviewOptions</a> | Nil)</code></p>
 <blockquote>
 <p>Link preview generation options for the message.</p>
 </blockquote>

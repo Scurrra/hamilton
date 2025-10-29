@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::VideoChatStarted - hamilton 0.1.0</title>
+  <title>Hamilton::Errors::UnsupportedCmdHandlerPayloadType - hamilton 0.1.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -92,7 +92,7 @@
       
     </li>
   
-  <li class="parent " data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
+  <li class="parent open current" data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
       <a href="../../Hamilton/Errors.html">Errors</a>
       
         <ul>
@@ -137,7 +137,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/UnsupportedCmdHandlerPayloadType" data-name="hamilton::errors::unsupportedcmdhandlerpayloadtype">
+  <li class=" current" data-id="hamilton/Hamilton/Errors/UnsupportedCmdHandlerPayloadType" data-name="hamilton::errors::unsupportedcmdhandlerpayloadtype">
       <a href="../../Hamilton/Errors/UnsupportedCmdHandlerPayloadType.html">UnsupportedCmdHandlerPayloadType</a>
       
     </li>
@@ -167,7 +167,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
+  <li class="parent " data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
       <a href="../../Hamilton/Types.html">Types</a>
       
         <ul>
@@ -1527,7 +1527,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/VideoChatStarted" data-name="hamilton::types::videochatstarted">
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoChatStarted" data-name="hamilton::types::videochatstarted">
       <a href="../../Hamilton/Types/VideoChatStarted.html">VideoChatStarted</a>
       
     </li>
@@ -1593,12 +1593,12 @@
 
   <span class="kind">
     class
-  </span> Hamilton::<wbr>Types::<wbr>VideoChatStarted
+  </span> Hamilton::<wbr>Errors::<wbr>UnsupportedCmdHandlerPayloadType
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/VideoChatStarted.html">Hamilton::Types::VideoChatStarted</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Errors/UnsupportedCmdHandlerPayloadType.html">Hamilton::Errors::UnsupportedCmdHandlerPayloadType</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1612,29 +1612,13 @@
     Overview
   </h2>
 
-  <p>This object represents a service message about a video chat started in the chat. Currently holds no information.</p>
+  <p>Exception raised when <code><a href="../../Hamilton/CmdHandler.html">CmdHandler</a></code> method's <code><a href="../../Handle.html">Handle</a></code> annotation argument is not supported.</p>
 
 
 
 
 
 
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></li>
-    
-      <li class="other-type">JSON::Serializable</li>
-    
-  </ul>
 
 
 
@@ -1655,7 +1639,7 @@
   </h2>
   
     
-      types/video_chat_started.cr
+      errors.cr
     
     <br/>
   
@@ -1676,12 +1660,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
+        <a href="#new%28payload_type%3AString%7CSymbol%29-class-method" class="signature"><strong>.new</strong>(payload_type : String | Symbol)</a>
         
       </li>
     
@@ -1696,42 +1675,6 @@
 
 
   <div class="methods-inherited">
-    
-      
-
-  <h3>Instance methods inherited from module <code><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></code></h3>
-  
-  
-    <a href="../../Hamilton/Types/Common.html#non_nil_fields%3AArray%28String%29-instance-method" class="tooltip">
-      <span>non_nil_fields : Array(String)</span>
-    non_nil_fields</a>, 
-    
-  
-    <a href="../../Hamilton/Types/Common.html#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="tooltip">
-      <span>non_nil_fields=(non_nil_fields : Array(String))</span>
-    non_nil_fields=</a>
-    
-  
-
-
-      
-
-  <h3>Constructor methods inherited from module <code><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></code></h3>
-  
-  
-    <a href="../../Hamilton/Types/Common.html#new%28%2A%2Aparams%29-class-method" class="tooltip">
-      <span>new(**params)</span>
-    new</a>
-    
-  
-
-
-      
-
-
-      
-
-
     
       
 
@@ -1784,26 +1727,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(payload_type:String|Symbol)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(pull : JSON::PullParser)
+        def self.<strong>new</strong>(payload_type : String | Symbol)
 
-        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(*,__pull_for_json_serializablepull:JSON::PullParser)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)
-
-        <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28payload_type%3AString%7CSymbol%29-class-method">#</a>
       </div>
       
       <br/>
