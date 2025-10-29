@@ -685,25 +685,28 @@ macro method_added(method)
         raise Hamilton::Errors::MissingCmdHandlerMethodParam.new %value
       {% end %}
 
+      {% for arg in method.args %}
+        {% if arg.name.symbolize == method.annotation(Handle)[0] %}        
+
       %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
         
-        result = {{method.name.id}}({{method.annotation(Handle)[0].id}}: message.{{method.annotation(Handle)[0].id}}, update: update, context: context)
+        result = {{method.name.id}}({{arg.name.id}}: message.{{arg.name.id}}.as({{arg.restriction}}), update: update, context: context)
         if result
           context = result          
         end
         {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
+        {% end %}
+      {% end %}
+
       # no args
       {% else %}
         raise Hamilton::Errors::MissingCmdHandlerMethodAnnotationArg.new "Handle"
       {% end %}
-
-
-      
 
       {% if method.annotation(For) %}
         {% for method_ in method.annotation(For).args %}
