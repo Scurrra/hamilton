@@ -8,7 +8,8 @@ class Hamilton::LogHandler
   # Logger instance.
   property log : Log
 
-  def initialize(@log = Log.for("Hamilton::Bot"))
+  def initialize(source : String = "Hamilton::Bot", level : Log::Severity = Log::Severity::Info)
+    @log = Log.for(source, level)
   end
 
   def call(update : Hamilton::Types::Update)

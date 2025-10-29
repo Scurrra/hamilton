@@ -20,14 +20,18 @@ class Hamilton::Api
   # :nodoc:
   getter path : String
 
+  # Logger instance.
+  property log : Log
+
   # API class constructor.
   #
   # Params:
   # - `token` -- Bot unique token.
   # - `url` -- Bot API URL. Default is "https://api.telegram.org", pass your URL if you are using your own server.
   # - `env` -- Type of the environment. `:test` is used for testing and inserts `test/` in the endpoint after bot token.
-  def initialize(@token, @url = "https://api.telegram.org", @env = :prod)
+  def initialize(@token, @url = "https://api.telegram.org", @env = :prod, log_level : Log::Severity = Log::Severity::Warn)
     @path = @env == :test ? "#{@url}/bot#{@token}/test/" : "#{@url}/bot#{@token}/"
+    @log = Log.for("Hamilton::API", log_level)
   end
 
   {% for method, info in Hamilton::Api::ENDPOINTS %}
@@ -44,6 +48,8 @@ class Hamilton::Api
     def {{method.id}}(**params)
       # compiler complained for missing fields in NamedTuple, so...
       params = params.to_h
+      @log.info { "Method [#{{{method}}}] :: [#{params}]" }
+
 
       # default `Content-Type` header for fields in `Content-Type: multipart/form-data`
       field_headers = HTTP::Headers{"Content-Type" => "application/json"}
@@ -302,6 +308,8 @@ class Hamilton::Api
       body += io.to_s
       {% end %}
 
+      @log.debug { "Request body :: [#{body}]" }
+
       response = HTTP::Client.post(
         @path + {{method}},
         headers: HTTP::Headers{"Content-Type" => "multipart/form-data; boundary=#{boundary}"},
@@ -325,14 +333,15 @@ class Hamilton::Api
       if response.status.ok?
         if body = response.body?
           api_result = {{info[:return_type]}}.from_json body
+          @log.debug { "Response body :: [#{api_result.to_json}]" }
           if api_result.ok
             return api_result.result
           else
-            raise Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok")      
+            @log.warn(exception: Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok"))
           end
         end
       else
-        raise Hamilton::Errors::ApiEndpointError.new({{method}}, response.status)
+        @log.warn(exception: Hamilton::Errors::ApiEndpointError.new({{method}}, response.status))
       end
     end
 

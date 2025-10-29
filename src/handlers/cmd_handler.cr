@@ -42,8 +42,8 @@ module Hamilton::CmdHandler
   # API instance to be used inside the handler.
   property api : Hamilton::Api
 
-  def initialize(@api)
-    @log = Log.for("Hamilton::Bot Command Handler")
+  def initialize(@api, log_level : Log::Severity = Log::Severity::Info)
+    @log = Log.for("Hamilton::Bot Command Handler", log_level)
     @context = Hamilton::Context.new default_method: :root
     @mapper = {:root => Hash(String | Symbol, Symbol).new}
   end
