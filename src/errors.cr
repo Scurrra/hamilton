@@ -32,7 +32,7 @@ module Hamilton::Errors
   end
 
   # Exception raised when `CmdHandler` method's `Handle` annotation argument is not supported.
-  class UnspportedCmdHandlerPayloadType < Exception
+  class UnsupportedCmdHandlerPayloadType < Exception
     def initialize(payload_type : String | Symbol)
       super("#{payload_type} payload type is not supported by CmdHandler")
     end
