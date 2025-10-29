@@ -96,7 +96,8 @@ class Hamilton::Bot
     @log.info { "Bot stopped with offset #{@offset}" }
   end
 
-  private def self.build_middleware(handlers : Indexable(Hamilton::Handler), last_handler : (Hamilton::Types::Update ->)? = nil) : Hamilton::Handler
+  # :nodoc:
+  def self.build_middleware(handlers : Indexable(Hamilton::Handler), last_handler : (Hamilton::Types::Update ->)? = nil) : Hamilton::Handler
     raise ArgumentError.new "You must specify at least one Hamilton Handler." if handlers.empty?
     0.upto(handlers.size - 2) { |i| handlers[i].next = handlers[i + 1] }
     handlers.last.next = last_handler if last_handler
