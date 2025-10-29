@@ -4,22 +4,8 @@ require "../api"
 require "log"
 require "string_scanner"
 
-# Annotation for the method in implementation of `Hamilton::CmdHandler`.
-# 
-# In `#[Handle]` there should be one of the following parameters:
-#  - `command` for handling a bot command
-#  - `text` for handling a known text massage
-#  - `callback` for handling a `callback_query` with provided content
-#  -  unnamed parameter that is one of the symbols from `Hamilton::CmdHandler::PAYLOAD_TYPES`
-annotation Handle
-end
-
-# Annotation for the method in implementation of `Hamilton::CmdHandler`.
-#
-# In `#[For]` a list of symbolic names of the methods that are predecessors of the update to be handled.
-# If no names provided the initial update is handled.
-annotation For
-end
+# Available payload types that can be handled by the `Hamilton::CmdHandler`.
+PAYLOAD_TYPES = [:animation, :audio, :document, :paid_media, :photo, :sticker, :story, :video, :video_note, :voice, :checklist, :contact, :contact, :dice, :game, :poll, :venue, :location, :invoice, :successful_payment, :refunded_payment, :users_shared, :chat_shared, :passport_data]
 
 # The module for handling commands, callback queries (please, do not use them), known text messages, and some of messages payloads.
 #
@@ -27,25 +13,23 @@ end
 class Hamilton::CmdHandler
   include Hamilton::Handler
 
-  # Available payload types that can be handled by the `Hamilton::CmdHandler`.
-  PAYLOAD_TYPES = [:animation, :audio, :document, :paid_media, :photo, :sticker, :story, :video, :video_note, :voice, :checklist, :contact, :contact, :dice, :game, :poll, :venue, :location, :invoice, :successful_payment, :refunded_payment, :users_shared, :chat_shared, :passport_data]
-  
-  # # Mapping between methods and mapper between update types and methods to handle them.
-  class_property mapper : Hash(Symbol, Hash(String | Symbol, Symbol))
+  # Mapping between methods and mapper between update types and methods to handle them.
+  property mapper : Hash(Symbol, Hash(String | Symbol, Symbol))
 
-  class_property caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))
+  property caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))
 
-  # # Context for the current bot sessions.
-  class_property context : Hamilton::Context
-  
+  # Context for the current bot sessions.
+  property context : Hamilton::Context
+
   # Logger instance.
   property log : Log
 
-  # API instance to be used inside the handler.
-  property api : Hamilton::Api
-
-  def initialize(@api, log_level : Log::Severity = Log::Severity::Debug)
+  def initialize(log_level : Log::Severity = Log::Severity::Debug)
     @log = Log.for("Hamilton::Bot Command Handler", log_level)
+
+    @context = Hamilton::Context.new default_method: :root
+    @mapper = {:root => Hash(String | Symbol, Symbol).new}
+    @caller = Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))).new
   end
 
   def call(update : Hamilton::Types::Update)
@@ -61,7 +45,7 @@ class Hamilton::CmdHandler
       message ||= update.business_message
       message = message.as(Hamilton::Types::Message)
 
-      # as we have message we definitely have non-nil context 
+      # as we have message we definitely have non-nil context
       # for empty context it will be created when calling `get_method` with `{method: :root, data: nil}` value
       ctxt_method = @context.get_method(message.chat.id)
 
@@ -69,7 +53,7 @@ class Hamilton::CmdHandler
       # should not be nil
       pmm = @mapper[ctxt_method]
       @log.debug { "PMM :: [#{pmm}]" }
-      
+
       # non-nil fields
       message_fields = message.non_nil_fields
 
@@ -77,7 +61,7 @@ class Hamilton::CmdHandler
       case message_fields
       when .includes?("text")
         ss = StringScanner.new(message.text.as(String))
-        
+
         # trim spaces at start
         ss.scan(/\s*/)
 
@@ -86,20 +70,27 @@ class Hamilton::CmdHandler
           # retrive the command
           cmd = ss.scan(/\/\w+/)
 
-          @log.debug {"CMD :: [#{cmd}] :: [#{pmm[cmd]}]"}
-          
+          @log.debug { "CMD :: [#{cmd}] :: [#{pmm[cmd]}]" }
+
           if method = pmm[cmd]?
-            @@context.set(
-              message.chat.id,
-              @@caller[method].call(update, @@context.get_data(message.chat.id))
-            )
+            new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+            if @mapper[method].size != 0
+              @context.set(
+                message.chat.id,
+                new_context
+              )
+            else
+              @context.clean(message.chat.id)
+              @context.set(message.chat.id, new_context[:data])
+            end
           else
             @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:command` [#{cmd}] payload that can not be processed" }
           end
-        
-        # just text
+
+          # just text
         else
-          known_texts = pmm.keys.select! {|key| typeof(key) === String && !key.as(String).starts_with?('/')}
+          known_texts = pmm.keys.select! { |key| !key.as(String).starts_with?('/') && !key.as(String).starts_with?(':') }
+          @log.debug { "Known texts :: [#{known_texts}]" }
           text_index = 0
           while text_index < known_texts.size
             if ss.check(known_texts[text_index].as(String))
@@ -107,20 +98,29 @@ class Hamilton::CmdHandler
               method = pmm[ss.scan(known_texts[text_index].as(String))]
               # trim spaces at start of the remaining text
               ss.scan(/\s+/)
-              
-              # {{method.id}}.call(remaining_text: ss.rest, context_key: message.chat.id, update: update)
+
+              new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+              if @mapper[method].size != 0
+                @context.set(
+                  message.chat.id,
+                  new_context
+                )
+              else
+                @context.clean(message.chat.id)
+                @context.set(message.chat.id, new_context[:data])
+              end
               break
             else
               text_index += 1
-            end            
+            end
           end
 
           if text_index == known_texts.size
             @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:text` payload that can not be processed (and I don't know why)" }
           end
         end
-      
-      #TODO: replace following with macro generator
+
+        # TODO: replace following with macro generator
       when .includes?("animation")
         if method = pmm[:animation]?
           # {{method.id}}.call(animation: message.animation, context_key: message.chat.id, update: update)
@@ -153,7 +153,16 @@ class Hamilton::CmdHandler
         end
       when .includes?("sticker")
         if method = pmm[:sticker]?
-          # {{method.id}}.call(sticker: message.sticker, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:sticker` payload that can not be processed" }
         end
@@ -262,26 +271,34 @@ class Hamilton::CmdHandler
       else
         @log.info { "Update #{update.update_id} is of type `message`/`business_message` and contains payload that can not be processed by Command Handler" }
       end
-
     elsif update_types[0] == "callback_query"
       @log.warn { "Hamilton's developer doesn't recommend to use `InlineKeybord`s" }
-      
+
       callback_query = update.callback_query.as(Hamilton::Types::CallbackQuery)
       update_data = callback_query.data
       update_data ||= callback_query.game_short_name
-      if data = update_data 
+      if data = update_data
         # there are three options how to identify chat or user who sent this
-        
+
         # 1. `chat_instance` --- "Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent."
         # This is the only type where `chat_instance` is used, but it always presents here.
         if chat_instance = callback_query.chat_instance
-          # one more erason to not use this shit: "Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data." 
-          # as `chat_instance` is never null, the `get_method?` method is used to not get `:root` 
+          # one more erason to not use this shit: "Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data."
+          # as `chat_instance` is never null, the `get_method?` method is used to not get `:root`
           # P.S. I didn't understand what `chat_instance` is so here is some workaround to not fuck up
           if ctxt_method = @context.get_method?(chat_instance)
             if @mapper.has_key?(ctxt_method)
               if method = @mapper[ctxt_method][data]?
-                # {{method.id}}.call(callback: data, context_key: chat_instance, update: update)
+                new_context = @caller[method].call(update, @context.get_data(chat_instance))
+                if @mapper[method].size != 0
+                  @context.set(
+                    chat_instance,
+                    new_context
+                  )
+                else
+                  @context.clean(chat_instance)
+                  @context.set(chat_instance, new_context[:data])
+                end
                 return call_next(update)
               else
                 @log.warn { "Update #{update.update_id} is of type `callback_query` and doesn't have a handler for the provided payload when handled with `chat_instance`" }
@@ -289,7 +306,7 @@ class Hamilton::CmdHandler
             end
           end
         end
-        
+
         # 2. usual and most normal option: detect chat the original message (that one with `inline_keyboard`) was sent
         # `callback_query` may have `message` field from which we may try to extract the chat's id
         if message = callback_query.message
@@ -300,7 +317,16 @@ class Hamilton::CmdHandler
           if ctxt_method = @context.get_method?(chat_id)
             if @mapper.has_key?(ctxt_method)
               if method = @mapper[ctxt_method][data]?
-                # {{method.id}}.call(callback: data, context_key: chat_id, update: update)
+                new_context = @caller[method].call(update, @context.get_data(chat_id))
+                if @mapper[method].size != 0
+                  @context.set(
+                    chat_id,
+                    new_context
+                  )
+                else
+                  @context.clean(chat_id)
+                  @context.set(chat_id, new_context[:data])
+                end
                 return call_next(update)
               else
                 @log.warn { "Update #{update.update_id} is of type `callback_query` and doesn't have a handler for the provided payload when handled with `message.chat.id`" }
@@ -318,14 +344,22 @@ class Hamilton::CmdHandler
           ctxt_method = @context.get_method?(user_id) || :root
           if @mapper.has_key?(ctxt_method)
             if method = @mapper[ctxt_method][data]?
-              # {{method.id}}.call(callback: data, context_key: user_id, update: update)
+              new_context = @caller[method].call(update, @context.get_data(user_id))
+              if @mapper[method].size != 0
+                @context.set(
+                  user_id,
+                  new_context
+                )
+              else
+                @context.clean(user_id)
+                @context.set(user_id, new_context[:data])
+              end
               return call_next(update)
             else
               @log.warn { "Update #{update.update_id} is of type `callback_query` and doesn't have a handler for the provided payload when handled with `from.id` (sender's/user id)" }
             end
           end
         end
-      
       else
         @log.warn { "Update #{update.update_id} is of type `callback_query` and doesn't contain any payload. If the update won't be procesed user may hang (see the note for `Hamilton::Types::CallbackQuery`)" }
       end
@@ -335,87 +369,140 @@ class Hamilton::CmdHandler
 
     call_next(update)
   end
+end
 
-  @@context = Hamilton::Context.new default_method: :root
-  @@mapper = {:root => Hash(String | Symbol, Symbol).new}
-  @@caller = Hash(
-    Symbol, 
-    Proc(
-      Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, 
-      NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)
-    )
-  ).new
+annotation Handler
+end
 
-  # :nodoc:
-  macro method_added(method)
-    pp {{method.annotation(Handle)}}
+# Annotation for the method in implementation of `Hamilton::CmdHandler`.
+#
+# In `#[Handle]` there should be one of the following parameters:
+#  - `command` for handling a bot command
+#  - `text` for handling a known text massage
+#  - `callback` for handling a `callback_query` with provided content
+#  -  unnamed parameter that is one of the symbols from `Hamilton::CmdHandler::PAYLOAD_TYPES`
+annotation Handle
+end
+
+# Annotation for the method in implementation of `Hamilton::CmdHandler`.
+#
+# In `#[For]` a list of symbolic names of the methods that are predecessors of the update to be handled.
+# If no names provided the initial update is handled.
+annotation For
+end
+
+# :nodoc:
+macro method_added(method)
+  {% if method.annotation(Handler) %}
+    {% unless method.annotation(Handler)[0] %}
+      raise Hamilton::Errors::MissingCmdHandlerMethodAnnotationArg.new "Handler"
+    {% end %}
+    %handler = {{ method.annotation(Handler)[0] }}
+  
     {% if method.annotation(Handle) %}
       
       {% unless method.args.map(&.name.symbolize).includes?(:context) %}
-        raise MissingCmdHandlerMethodParam.new :context
+        raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :context
       {% end %}
 
       
       {% unless method.args.map(&.name.symbolize).includes?(:update) %}
-        raise MissingCmdHandlerMethodParam.new :update
+        raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :update
       {% end %}
       
       
       # commands
       {% if method.annotation(Handle).named_args.has_key?(:command) %}
       
-      %value = {{method.annotation(Handle)[:command].stringify}}
+      %value = {{method.annotation(Handle)[:command]}}
       %value = if %value.starts_with?('/')
         %value
       else
         "/" + %value
       end
       {% unless method.args.map(&.name.symbolize).includes?(:argument) %}
-        raise MissingCmdHandlerMethodParam.new :argument
+        raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :argument
       {% end %}
 
-      @@caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
-        ss = StringScanner.new(update.message.as(Hamilton::Types::Message).text.as(String))
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+        message = update.message
+        message ||= update.business_message
+        message = message.as(Hamilton::Types::Message)
+        ss = StringScanner.new(message.text.as(String))
         ss.scan(/\s*\/\w+\s+/)
         
-        result = {{method.id}}(argument: ss.rest, update: update, context: context)
+        result = {{method.name.id}}(argument: ss.rest, update: update, context: context)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}, data: context}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # callbacks
       {% elsif method.annotation(Handle).named_args.has_key?(:callback) %}
-      %value = {{method.annotation(Handle)[:callback].stringify}}
+      %value = {{method.annotation(Handle)[:callback]}}
       {% unless method.args.map(&.name.symbolize).includes?(:callback) %}
-        raise MissingCmdHandlerMethodParam.new :callback
+        raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :callback
       {% end %}
 
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+        result = {{method.name.id}}(update: update, context: context)
+        if result
+          context = result          
+        end
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
+      }
 
       # known text 
       {% elsif method.annotation(Handle).named_args.has_key?(:text) %}
-      %value = {{method.annotation(Handle)[:text].stringify}}
+      %value = {{method.annotation(Handle)[:text]}}
       {% unless method.args.map(&.name.symbolize).includes?(:remaining_text) %}
-        raise MissingCmdHandlerMethodParam.new :remaining_text
+        raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :remaining_text
       {% end %}
 
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+        message = update.message
+        message ||= update.business_message
+        message = message.as(Hamilton::Types::Message)
+        ss = StringScanner.new(message.text.as(String))
+        ss.scan(/\s*/)
+        ss.scan(%value)
+        ss.scan(/\s+/)
+        
+        result = {{method.name.id}}(remaining_text: ss.rest, update: update, context: context)
+        if result
+          context = result          
+        end
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
+      }
 
       # other types
       {% elsif method.annotation(Handle).args.size != 0 %}
-      %value = {{method.annotation(Handle)[0].symbolize}}
+      %value = {{method.annotation(Handle)[0]}}
 
-      {% unless PAYLOAD_TYPES.includes?(method.annotation(Handle)[0].symbolize) %}
-        raise UnspportedCmdHandlerPayloadType.new %value
+      {% unless PAYLOAD_TYPES.includes?(method.annotation(Handle)[0]) %}
+        raise Hamilton::Errors::UnsupportedCmdHandlerPayloadType.new %value
       {% end %}
 
-      {% unless method.args.map(&.name.symbolize).includes?(method.annotation(Handle)[0].symbolize) %}
-        raise MissingCmdHandlerMethodParam.new %value
-      {% end %}
+      # {% unless method.args.map(&.name.symbolize).includes?(method.annotation(Handle)[0].symbolize) %}
+      #   raise Hamilton::Errors::MissingCmdHandlerMethodParam.new %value
+      # {% end %}
+
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+        message = update.message
+        message ||= update.business_message
+        message = message.as(Hamilton::Types::Message)
+        
+        result = {{method.name.id}}({{method.annotation(Handle)[0].id}}: message.{{method.annotation(Handle)[0].id}}, update: update, context: context)
+        if result
+          context = result          
+        end
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
+      }
 
       # no args
       {% else %}
-        raise MissingCmdHandlerMethodAnnotationArg.new "Handle"
+        raise Hamilton::Errors::MissingCmdHandlerMethodAnnotationArg.new "Handle"
       {% end %}
 
 
@@ -423,18 +510,17 @@ class Hamilton::CmdHandler
 
       {% if method.annotation(For) %}
         {% for method_ in method.annotation(For).args %}
-        @mapper[{{method_.symbolize}}][%value] = {{method.name.symbolize}}
+        %handler.mapper[{{method_.symbolize}}][%value] = {{method.name.symbolize}}
         {% end %}
       {% else %}
-        @mapper[:root][%value] = {{method.name.symbolize}}
+        %handler.mapper[:root][%value] = {{method.name.symbolize}}
       {% end %}
 
       {% unless method.annotation(For) %}
-        @mapper[:root][%value] = {{method.name.symbolize}}
+        %handler.mapper[:root][%value] = {{method.name.symbolize}}
       {% end %}
 
-      @mapper[{{method.name.symbolize}}] = Hash(String | Symbol, Symbol).new
+      %handler.mapper[{{method.name.symbolize}}] = Hash(String | Symbol, Symbol).new
     {% end %}
-  end
-
+  {% end %}  
 end
