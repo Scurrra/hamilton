@@ -24,7 +24,7 @@ class Hamilton::CmdHandler
   # Logger instance.
   property log : Log
 
-  def initialize(log_level : Log::Severity = Log::Severity::Debug)
+  def initialize(log_level : Log::Severity = Log::Severity::Info)
     @log = Log.for("Hamilton::Bot Command Handler", log_level)
 
     @context = Hamilton::Context.new default_method: :root
@@ -89,7 +89,7 @@ class Hamilton::CmdHandler
 
           # just text
         else
-          known_texts = pmm.keys.select! { |key| !key.as(String).starts_with?('/') && !key.as(String).starts_with?(':') }
+          known_texts = pmm.keys.select! { |key| key.is_a?(String) &&!key.as(String).starts_with?('/') }
           @log.debug { "Known texts :: [#{known_texts}]" }
           text_index = 0
           while text_index < known_texts.size
@@ -120,34 +120,78 @@ class Hamilton::CmdHandler
           end
         end
 
-        # TODO: replace following with macro generator
       when .includes?("animation")
         if method = pmm[:animation]?
-          # {{method.id}}.call(animation: message.animation, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:animation` payload that can not be processed" }
         end
       when .includes?("audio")
         if method = pmm[:audio]?
-          # {{method.id}}.call(audio: message.audio, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:audio` payload that can not be processed" }
         end
       when .includes?("document")
         if method = pmm[:document]?
-          # {{method.id}}.call(document: message.document, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:document` payload that can not be processed" }
         end
       when .includes?("paid_media")
         if method = pmm[:paid_media]?
-          # {{method.id}}.call(paid_media: message.paid_media, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:paid_media` payload that can not be processed" }
         end
       when .includes?("photo")
         if method = pmm[:photo]?
-          # {{method.id}}.call(photo: message.photo, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:photo` payload that can not be processed" }
         end
@@ -168,103 +212,256 @@ class Hamilton::CmdHandler
         end
       when .includes?("story")
         if method = pmm[:story]?
-          # {{method.id}}.call(story: message.story, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:story` payload that can not be processed" }
         end
       when .includes?("video")
         if method = pmm[:video]?
-          # {{method.id}}.call(video: message.video, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:video` payload that can not be processed" }
         end
       when .includes?("video_note")
         if method = pmm[:video_note]?
-          # {{method.id}}.call(video_note: message.video_note, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:video_note` payload that can not be processed" }
         end
       when .includes?("voice")
         if method = pmm[:voice]?
-          # {{method.id}}.call(voice: message.voice, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:voice` payload that can not be processed" }
         end
       when .includes?("checklist")
         if method = pmm[:checklist]?
-          # {{method.id}}.call(checklist: message.checklist, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:checklist` payload that can not be processed" }
         end
       when .includes?("contact")
         if method = pmm[:contact]?
-          # {{method.id}}.call(contact: message.contact, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:contact` payload that can not be processed" }
         end
       when .includes?("dice")
         if method = pmm[:dice]?
-          # {{method.id}}.call(dice: message.dice, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:dice` payload that can not be processed" }
         end
       when .includes?("game")
         if method = pmm[:game]?
-          # {{method.id}}.call(game: message.game, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:game` payload that can not be processed" }
         end
       when .includes?("poll")
         if method = pmm[:poll]?
-          # {{method.id}}.call(poll: message.poll, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:poll` payload that can not be processed" }
         end
       when .includes?("venue")
         if method = pmm[:venue]?
-          # {{method.id}}.call(venue: message.venue, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:venue` payload that can not be processed" }
         end
       when .includes?("location")
         if method = pmm[:location]?
-          # {{method.id}}.call(location: message.location, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:location` payload that can not be processed" }
         end
       when .includes?("invoice")
         if method = pmm[:invoice]?
-          # {{method.id}}.call(invoice: message.invoice, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:invoice` payload that can not be processed" }
         end
       when .includes?("successful_payment")
         if method = pmm[:successful_payment]?
-          # {{method.id}}.call(successful_payment: message.successful_payment, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:successful_payment` payload that can not be processed" }
         end
       when .includes?("refunded_payment")
         if method = pmm[:refunded_payment]?
-          # {{method.id}}.call(refunded_payment: message.refunded_payment, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:refunded_payment` payload that can not be processed" }
         end
       when .includes?("users_shared")
         if method = pmm[:users_shared]?
-          # {{method.id}}.call(users_shared: message.users_shared, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:users_shared` payload that can not be processed" }
         end
       when .includes?("chat_shared")
         if method = pmm[:chat_shared]?
-          # {{method.id}}.call(chat_shared: message.chat_shared, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:chat_shared` payload that can not be processed" }
         end
       when .includes?("passport_data")
         if method = pmm[:passport_data]?
-          # {{method.id}}.call(passport_data: message.passport_data, context_key: message.chat.id, update: update)
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id))
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end
         else
           @log.warn { "Update #{update.update_id} is of type `message`/`business_message` and contains `:passport_data` payload that can not be processed" }
         end
@@ -484,9 +681,9 @@ macro method_added(method)
         raise Hamilton::Errors::UnsupportedCmdHandlerPayloadType.new %value
       {% end %}
 
-      # {% unless method.args.map(&.name.symbolize).includes?(method.annotation(Handle)[0].symbolize) %}
-      #   raise Hamilton::Errors::MissingCmdHandlerMethodParam.new %value
-      # {% end %}
+      {% unless method.args.map(&.name.symbolize).includes?(method.annotation(Handle)[0]) %}
+        raise Hamilton::Errors::MissingCmdHandlerMethodParam.new %value
+      {% end %}
 
       %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
         message = update.message
