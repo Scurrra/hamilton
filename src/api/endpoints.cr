@@ -102,7 +102,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent>]
         },
         :chat_id => {
-          type: Union(String | Int32),
+          type: Union(String | Int64),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -126,7 +126,7 @@ class Hamilton::Api
           docs: [%<A JSON-serialized list of special entities that appear in message text, which can be specified instead of `parse_mode`.>]
         },
         :link_preview_options => {
-          type: Hamilton::Types::LinkPreviewOptions,
+          type: Union(Hamilton::Types::LinkPreviewOptions | Nil),
           docs: [%<Link preview generation options for the message.>]
         },
         :disable_notification => {
