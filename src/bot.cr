@@ -71,7 +71,6 @@ class Hamilton::Bot
         if updates
           updates.each do |update|
             @offset = update.update_id + 1
-            pp "Offset :: [#{@offset}]"
             @handler.call(update)
           end
         end
