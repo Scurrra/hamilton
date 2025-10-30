@@ -245,6 +245,9 @@ class Hamilton::CmdHandler
   end
 end
 
+# Annotation for the method in implementation of `Hamilton::CmdHandler`.
+#
+# In `#[Handler]` an instance of `Hamilton::CmdHandler` should be provided.
 annotation Handler
 end
 
@@ -271,6 +274,7 @@ macro method_added(method)
     {% unless method.annotation(Handler)[0] %}
       raise Hamilton::Errors::MissingCmdHandlerMethodAnnotationArg.new "Handler"
     {% end %}
+
     %handler = {{ method.annotation(Handler)[0] }}
   
     {% if method.annotation(Handle) %}
