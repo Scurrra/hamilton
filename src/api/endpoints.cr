@@ -164,7 +164,7 @@ class Hamilton::Api
       docs: [%<Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent Message is returned.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -176,7 +176,7 @@ class Hamilton::Api
           docs: [%<Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat.>]
         },
         :from_chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`).>]
         },
         :video_start_timestamp => {
@@ -206,7 +206,7 @@ class Hamilton::Api
       docs: [%<Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of `MessageId` of the sent messages is returned.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -218,7 +218,7 @@ class Hamilton::Api
           docs: [%<Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat.>]
         },
         :from_chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`).>]
         },
         :message_ids => {
@@ -240,7 +240,7 @@ class Hamilton::Api
       docs: [%<Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field `correct_option_id` is known to the bot. The method is analogous to the method `forwardMessage`, but the copied message doesn't have a link to the original message. Returns the `MessageId` of the sent message on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -252,7 +252,7 @@ class Hamilton::Api
           docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>]
         },
         :from_chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the chat where the original message was sent (or channel username in the format `@channelusername`).>]
         },
         :message_id => {
@@ -310,7 +310,7 @@ class Hamilton::Api
       docs: [%<Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field `correct_option_id` is known to the bot. The method is analogous to the method `forwardMessages`, but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of `MessageId` of the sent messages is returned.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -322,7 +322,7 @@ class Hamilton::Api
           docs: [%<Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat.>]
         },
         :from_chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the chat where the original messages were sent (or channel username in the format `@channelusername`).>]
         },
         :message_ids => {
@@ -352,7 +352,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -426,7 +426,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -508,7 +508,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -582,7 +582,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -684,7 +684,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -774,7 +774,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -844,7 +844,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -910,7 +910,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat's balance. Otherwise, they will be credited to the bot's balance.>]
         },
         :message_thread_id => {
@@ -984,7 +984,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -1030,7 +1030,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -1104,7 +1104,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -1186,7 +1186,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -1252,7 +1252,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Polls can't be sent to channel direct messages chats.>]
         },
         :message_thread_id => {
@@ -1350,7 +1350,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target chat.>]
         },
         :checklist => {
@@ -1388,7 +1388,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -1442,7 +1442,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the action will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername). Channel chats and channel direct messages chats aren't supported.>]
         },
         :message_thread_id => {
@@ -1460,7 +1460,7 @@ class Hamilton::Api
       docs: [%<Use this method to change the chosen reactions on a message. Service messages of some types can't be reacted to. Automatically forwarded messages from a channel to its discussion group have the same available reactions as messages in the channel. Bots can't use paid reactions. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -1482,7 +1482,7 @@ class Hamilton::Api
       docs: [%<Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :offset => {
@@ -1500,7 +1500,7 @@ class Hamilton::Api
       docs: [%<Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method `requestEmojiStatusAccess`. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :emoji_status_custom_emoji_id => {
@@ -1528,11 +1528,11 @@ class Hamilton::Api
       docs: [%<Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :until_date => {
@@ -1550,11 +1550,11 @@ class Hamilton::Api
       docs: [%<Use this method to unban a previously banned user in a supergroup or channel. The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be removed from the chat. If you don't want this, use the parameter `only_if_banned`. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target group or username of the target supergroup or channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :only_if_banned => {
@@ -1568,11 +1568,11 @@ class Hamilton::Api
       docs: [%<Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass True for all permissions to lift restrictions from a user. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :permissions => {
@@ -1594,11 +1594,11 @@ class Hamilton::Api
       docs: [%<Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass False for all boolean parameters to demote a user. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :is_anonymous => {
@@ -1672,11 +1672,11 @@ class Hamilton::Api
       docs: [%<Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :custom_title => {
@@ -1690,11 +1690,11 @@ class Hamilton::Api
       docs: [%<Use this method to ban a channel chat in a supergroup or a channel. Until the chat is unbanned, the owner of the banned chat won't be able to send messages on behalf of any of their channels. The bot must be an administrator in the supergroup or channel for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :sender_chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target sender chat.>]
         }
       }
@@ -1704,11 +1704,11 @@ class Hamilton::Api
       docs: [%<Use this method to unban a previously banned channel chat in a supergroup or channel. The bot must be an administrator for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :sender_chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target sender chat.>]
         }
       }
@@ -1718,7 +1718,7 @@ class Hamilton::Api
       docs: [%<Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the `can_restrict_members` administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`).>]
         },
         :permissions => {
@@ -1736,7 +1736,7 @@ class Hamilton::Api
       docs: [%<Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as String on success.>, %<NOTE: Each administrator in a chat generates their own invite links. Bots can't use invite links generated by other administrators. If you want your bot to work with invite links, it will need to generate its own link using `exportChatInviteLink` or by calling the `getChat` method. If your bot needs to generate a new primary invite link replacing its previous one, use `exportChatInviteLink` again.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`).>]
         }
       }
@@ -1746,7 +1746,7 @@ class Hamilton::Api
       docs: [%<Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method `revokeChatInviteLink`. Returns the new invite link as `ChatInviteLink` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :name => {
@@ -1772,7 +1772,7 @@ class Hamilton::Api
       docs: [%<Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a `ChatInviteLink` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :invite_link => {
@@ -1802,7 +1802,7 @@ class Hamilton::Api
       docs: [%<Use this method to create a subscription invite link for a channel chat. The bot must have the "can_invite_users" administrator rights. The link can be edited using the method `editChatSubscriptionInviteLink` or revoked using the method `revokeChatInviteLink`. Returns the new invite link as a `ChatInviteLink` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :name => {
@@ -1824,7 +1824,7 @@ class Hamilton::Api
       docs: [%<Use this method to edit a subscription invite link created by the bot. The bot must have the "can_invite_users" administrator rights. Returns the edited invite link as a `ChatInviteLink` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :invite_link => {
@@ -1842,7 +1842,7 @@ class Hamilton::Api
       docs: [%<Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the revoked invite link as `ChatInviteLink` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :invite_link => {
@@ -1856,11 +1856,11 @@ class Hamilton::Api
       docs: [%<Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the "can_invite_users" administrator right. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         }
       }
@@ -1870,11 +1870,11 @@ class Hamilton::Api
       docs: [%<Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the "can_invite_users" administrator right. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         }
       }
@@ -1884,7 +1884,7 @@ class Hamilton::Api
       docs: [%<Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :photo => {
@@ -1898,7 +1898,7 @@ class Hamilton::Api
       docs: [%<Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         }
       }
@@ -1908,7 +1908,7 @@ class Hamilton::Api
       docs: [%<Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :title => {
@@ -1922,7 +1922,7 @@ class Hamilton::Api
       docs: [%<Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :description => {
@@ -1940,7 +1940,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be pinned.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -1962,7 +1962,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be unpinned.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -1976,7 +1976,7 @@ class Hamilton::Api
       docs: [%<Use this method to clear the list of pinned messages in a chat. In private chats and channel direct messages chats, no additional rights are required to unpin all pinned messages. Conversely, the bot must be an administrator with the "can_pin_messages" right or the "can_edit_messages" right to unpin all pinned messages in groups and channels respectively. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         }
       }
@@ -1986,7 +1986,7 @@ class Hamilton::Api
       docs: [%<Use this method for your bot to leave a group, supergroup or channel. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`). Channel direct messages chats aren't supported; leave the corresponding channel instead.>]
         }
       }
@@ -1996,7 +1996,7 @@ class Hamilton::Api
       docs: [%<Use this method to get up-to-date information about the chat. Returns a ChatFullInfo object on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>]
         }
       }
@@ -2006,7 +2006,7 @@ class Hamilton::Api
       docs: [%<Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of `ChatMember` objects.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>]
         }
       }
@@ -2016,7 +2016,7 @@ class Hamilton::Api
       docs: [%<Use this method to get the number of members in a chat. Returns Int on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>]
         }
       }
@@ -2026,11 +2026,11 @@ class Hamilton::Api
       docs: [%<Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a `ChatMember` object on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         }
       }
@@ -2040,7 +2040,7 @@ class Hamilton::Api
       docs: [%<Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field "can_set_sticker_set" optionally returned in `getChat` requests to check if the bot can use this method. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>]
         },
         :sticker_set_name => {
@@ -2054,7 +2054,7 @@ class Hamilton::Api
       docs: [%<Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field "can_set_sticker_set" optionally returned in `getChat` requests to check if the bot can use this method. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>]
         }
       }
@@ -2068,7 +2068,7 @@ class Hamilton::Api
       docs: [%<Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns information about the created topic as a `ForumTopic` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :name => {
@@ -2090,7 +2090,7 @@ class Hamilton::Api
       docs: [%<Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -2112,7 +2112,7 @@ class Hamilton::Api
       docs: [%<Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -2126,7 +2126,7 @@ class Hamilton::Api
       docs: [%<Use this method to reopen a closed topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -2140,7 +2140,7 @@ class Hamilton::Api
       docs: [%<Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_delete_messages" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -2154,7 +2154,7 @@ class Hamilton::Api
       docs: [%<Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the "can_pin_messages" administrator right in the supergroup. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -2168,7 +2168,7 @@ class Hamilton::Api
       docs: [%<Use this method to edit the name of the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         },
         :name => {
@@ -2182,7 +2182,7 @@ class Hamilton::Api
       docs: [%<Use this method to close an open "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         }
       }
@@ -2192,7 +2192,7 @@ class Hamilton::Api
       docs: [%<Use this method to reopen a closed "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. The topic will be automatically unhidden if it was hidden. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         }
       }
@@ -2202,7 +2202,7 @@ class Hamilton::Api
       docs: [%<Use this method to hide the "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. The topic will be automatically closed if it was open. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         }
       }
@@ -2212,7 +2212,7 @@ class Hamilton::Api
       docs: [%<Use this method to unhide the "General" topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         }
       }
@@ -2222,7 +2222,7 @@ class Hamilton::Api
       docs: [%<Use this method to clear the list of pinned messages in a "General" forum topic. The bot must be an administrator in the chat for this to work and must have the "can_pin_messages" administrator right in the supergroup. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@channelusername`).>]
         }
       }
@@ -2258,11 +2258,11 @@ class Hamilton::Api
       docs: [%<Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a `UserChatBoosts` object.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the chat or username of the channel (in the format `@channelusername`).>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         }
       }
@@ -2400,7 +2400,7 @@ class Hamilton::Api
       docs: [%<Use this method to change the bot's menu button in a private chat, or the default menu button. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target private chat. If not specified, default bot's menu button will be changed.>]
         },
         :menu_button => {
@@ -2414,7 +2414,7 @@ class Hamilton::Api
       docs: [%<Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns `MenuButton` on success.>],
       params: {
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target private chat. If not specified, default bot's menu button will be returned.>]
         }
       }
@@ -2452,11 +2452,11 @@ class Hamilton::Api
       docs: [%<Sends a gift to the given user or channel chat. The gift can't be converted to Telegram Stars by the receiver. Returns True on success.>],
       params: {
         :user_id => {
-          type: Union(Int32 | Nil),
+          type: Union(Int64 | Nil),
           docs: [%<Required if `chat_id` is not specified. Unique identifier of the target user who will receive the gift.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `user_id` is not specified. Unique identifier for the chat or username of the channel (in the format `@channelusername`) that will receive the gift.>]
         },
         :gift_id => {
@@ -2486,7 +2486,7 @@ class Hamilton::Api
       docs: [%<Gifts a Telegram Premium subscription to the given user. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user who will receive a Telegram Premium subscription.>]
         },
         :month_count => {
@@ -2516,7 +2516,7 @@ class Hamilton::Api
       docs: [%<Verifies a user on behalf of the organization which is represented by the bot. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         },
         :custom_description => {
@@ -2530,7 +2530,7 @@ class Hamilton::Api
       docs: [%<Verifies a chat on behalf of the organization which is represented by the bot. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`). Channel direct messages chats can't be verified.>]
         },
         :custom_description => {
@@ -2544,7 +2544,7 @@ class Hamilton::Api
       docs: [%<Removes verification from a user who is currently verified on behalf of the organization represented by the bot. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user.>]
         }
       }
@@ -2554,7 +2554,7 @@ class Hamilton::Api
       docs: [%<Removes verification from a chat that is currently verified on behalf of the organization represented by the bot. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         }
       }
@@ -2568,7 +2568,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which to read the message.>]
         },
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.>]
         },
         :message_id => {
@@ -2802,7 +2802,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the regular gift that should be transferred.>]
         },
         :new_owner_chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.>]
         },
         :star_count => {
@@ -2910,7 +2910,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -2952,7 +2952,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -2994,7 +2994,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -3024,7 +3024,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -3074,7 +3074,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -3100,7 +3100,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target chat.>]
         },
         :message_id => {
@@ -3126,7 +3126,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String | Nil),
+          type: Union(Int64 | String | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -3152,7 +3152,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message to be edited was sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -3170,7 +3170,7 @@ class Hamilton::Api
       docs: [%<Use this method to approve a suggested post in a direct messages chat. The bot must have the "can_post_messages" administrator right in the corresponding channel chat. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target direct messages chat.>]
         },
         :message_id => {
@@ -3188,7 +3188,7 @@ class Hamilton::Api
       docs: [%<Use this method to decline a suggested post in a direct messages chat. The bot must have the "can_manage_direct_messages" administrator right in the corresponding channel chat. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target direct messages chat.>]
         },
         :message_id => {
@@ -3206,7 +3206,7 @@ class Hamilton::Api
       docs: [%<Use this method to delete a message, including service messages, with the following limitations:>, %<- A message can only be deleted if it was sent less than 48 hours ago.>, %<- Service messages about a supergroup, channel, or forum topic creation can't be deleted.>, %<- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.>, %<- Bots can delete outgoing messages in private chats, groups, and supergroups.>, %<- Bots can delete incoming messages in private chats.>, %<- Bots granted "can_post_messages" permissions can delete outgoing messages in channels.>, %<- If the bot is an administrator of a group, it can delete any message there.>, %<- If the bot has "can_delete_messages" administrator right in a supergroup or a channel, it can delete any message there.>, %<- If the bot has "can_manage_direct_messages" administrator right in a channel, it can delete any message in the corresponding direct messages chat.>, %<Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_id => {
@@ -3220,7 +3220,7 @@ class Hamilton::Api
       docs: [%<Use this method to delete multiple messages simultaneously. If some of the specified messages can't be found, they are skipped. Returns True on success.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_ids => {
@@ -3238,7 +3238,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`)>]
         },
         :message_thread_id => {
@@ -3312,7 +3312,7 @@ class Hamilton::Api
       docs: [%<Use this method to upload a file with a sticker for later use in the `createNewStickerSet`, `addStickerToSet`, or `replaceStickerInSet` methods (the file can be used multiple times). Returns the uploaded `File` on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier of sticker file owner.>]
         },
         :sticker => {
@@ -3330,7 +3330,7 @@ class Hamilton::Api
       docs: [%<Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier of created sticker set owner.>]
         },
         :name => {
@@ -3360,7 +3360,7 @@ class Hamilton::Api
       docs: [%<Use this method to add a new sticker to a set created by the bot. Emoji sticker sets can have up to 200 stickers. Other sticker sets can have up to 120 stickers. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier of sticker set owner.>]
         },
         :name => {
@@ -3402,7 +3402,7 @@ class Hamilton::Api
       docs: [%<Use this method to replace an existing sticker in a sticker set with a new one. The method is equivalent to calling `deleteStickerFromSet`, then `addStickerToSet`, then `setStickerPositionInSet`. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier of the sticker set owner.>]
         },
         :name => {
@@ -3484,7 +3484,7 @@ class Hamilton::Api
           docs: [%<Sticker set name.>]
         },
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier of the sticker set owner>]
         },
         :thumbnail => {
@@ -3570,7 +3570,7 @@ class Hamilton::Api
       docs: [%<Stores a message that can be sent by a user of a Mini App. Returns a `PreparedInlineMessage` object.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier of the target user that can use the prepared message.>]
         },
         :result => {
@@ -3600,7 +3600,7 @@ class Hamilton::Api
       docs: [%<Use this method to send invoices. On success, the sent `Message` is returned.>],
       params: {
         :chat_id => {
-          type: Union(Int32 | String),
+          type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>]
         },
         :message_thread_id => {
@@ -3882,7 +3882,7 @@ class Hamilton::Api
       docs: [%<Refunds a successful payment in Telegram Stars. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Identifier of the user whose payment will be refunded.>]
         },
         :telegram_payment_charge_id => {
@@ -3896,7 +3896,7 @@ class Hamilton::Api
       docs: [%<Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns True on success.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Identifier of the user whose subscription will be edited.>]
         },
         :telegram_payment_charge_id => {
@@ -3914,7 +3914,7 @@ class Hamilton::Api
       docs: [%<Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns True on success.>, %<Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier.>]
         },
         :errors => {
@@ -3932,7 +3932,7 @@ class Hamilton::Api
           docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>]
         },
         :chat_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Unique identifier for the target chat. Games can't be sent to channel direct messages chats and channel chats.>]
         },
         :message_thread_id => {
@@ -3974,7 +3974,7 @@ class Hamilton::Api
       docs: [%<Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the `Message` is returned, otherwise True is returned. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<User identifier.>]
         },
         :score => {
@@ -3990,7 +3990,7 @@ class Hamilton::Api
           docs: [%<Pass True if the game message should not be automatically edited to include the current scoreboard.>]
         },
         :chat_id => {
-          type: Union(Int32 | Nil),
+          type: Union(Int64 | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat.>]
         },
         :message_id => {
@@ -4008,11 +4008,11 @@ class Hamilton::Api
       docs: [%<Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of `GameHighScore` objects.>, %<NOTE: This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and their neighbors are not among them. Please note that this behavior is subject to change.>],
       params: {
         :user_id => {
-          type: Int32,
+          type: Int64,
           docs: [%<Target user id.>]
         },
         :chat_id => {
-          type: Union(Int32 | Nil),
+          type: Union(Int64 | Nil),
           docs: [%<Required if `inline_message_id` is not specified. Unique identifier for the target chat.>]
         },
         :message_id => {
