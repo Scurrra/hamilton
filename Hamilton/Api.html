@@ -2906,7 +2906,7 @@
           
           <p>Use this method to add a new sticker to a set created by the bot. Emoji sticker sets can have up to 200 stickers. Other sticker sets can have up to 120 stickers. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier of sticker set owner.</p>
 </blockquote>
@@ -3122,11 +3122,11 @@
           
           <p>Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the &quot;can_invite_users&quot; administrator right. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -3150,7 +3150,7 @@
           
           <p>Use this method to approve a suggested post in a direct messages chat. The bot must have the &quot;can_post_messages&quot; administrator right in the corresponding channel chat. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target direct messages chat.</p>
 </blockquote>
@@ -3182,11 +3182,11 @@
           
           <p>Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target group or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -3218,11 +3218,11 @@
           
           <p>Use this method to ban a channel chat in a supergroup or a channel. Until the chat is unbanned, the owner of the banned chat won't be able to send messages on behalf of any of their channels. The bot must be an administrator in the supergroup or channel for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>sender_chat_id : Int32</code></p>
+<p><code>sender_chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target sender chat.</p>
 </blockquote>
@@ -3265,7 +3265,7 @@
           
           <p>Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights, unless it is the creator of the topic. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3293,7 +3293,7 @@
           
           <p>Use this method to close an open &quot;General&quot; topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3345,7 +3345,7 @@
           
           <p>Use this method to copy messages of any kind. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field <code>correct_option_id</code> is known to the bot. The method is analogous to the method <code><a href="../Hamilton/Api.html#forwardMessage%28%2A%2Aparams%29-instance-method">#forwardMessage</a></code>, but the copied message doesn't have a link to the original message. Returns the <code>MessageId</code> of the sent message on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3357,7 +3357,7 @@
 <blockquote>
 <p>Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.</p>
 </blockquote>
-<p><code>from_chat_id : Union(Int32 | String)</code></p>
+<p><code>from_chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the chat where the original message was sent (or channel username in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3429,7 +3429,7 @@
           
           <p>Use this method to copy messages of any kind. If some of the specified messages can't be found or copied, they are skipped. Service messages, paid media messages, giveaway messages, giveaway winners messages, and invoice messages can't be copied. A quiz poll can be copied only if the value of the field <code>correct_option_id</code> is known to the bot. The method is analogous to the method <code><a href="../Hamilton/Api.html#forwardMessages%28%2A%2Aparams%29-instance-method">#forwardMessages</a></code>, but the copied messages don't have a link to the original message. Album grouping is kept for copied messages. On success, an array of <code>MessageId</code> of the sent messages is returned.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3441,7 +3441,7 @@
 <blockquote>
 <p>Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat.</p>
 </blockquote>
-<p><code>from_chat_id : Union(Int32 | String)</code></p>
+<p><code>from_chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the chat where the original messages were sent (or channel username in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3481,7 +3481,7 @@
           
           <p>Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method <code><a href="../Hamilton/Api.html#revokeChatInviteLink%28%2A%2Aparams%29-instance-method">#revokeChatInviteLink</a></code>. Returns the new invite link as <code>ChatInviteLink</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3521,7 +3521,7 @@
           
           <p>Use this method to create a subscription invite link for a channel chat. The bot must have the &quot;can_invite_users&quot; administrator rights. The link can be edited using the method <code><a href="../Hamilton/Api.html#editChatSubscriptionInviteLink%28%2A%2Aparams%29-instance-method">#editChatSubscriptionInviteLink</a></code> or revoked using the method <code><a href="../Hamilton/Api.html#revokeChatInviteLink%28%2A%2Aparams%29-instance-method">#revokeChatInviteLink</a></code>. Returns the new invite link as a <code>ChatInviteLink</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3557,7 +3557,7 @@
           
           <p>Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. Returns information about the created topic as a <code>ForumTopic</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3701,7 +3701,7 @@
           
           <p>Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier of created sticker set owner.</p>
 </blockquote>
@@ -3745,11 +3745,11 @@
           
           <p>Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the &quot;can_invite_users&quot; administrator right. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -3773,7 +3773,7 @@
           
           <p>Use this method to decline a suggested post in a direct messages chat. The bot must have the &quot;can_manage_direct_messages&quot; administrator right in the corresponding channel chat. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target direct messages chat.</p>
 </blockquote>
@@ -3833,7 +3833,7 @@
           
           <p>Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3857,7 +3857,7 @@
           
           <p>Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field &quot;can_set_sticker_set&quot; optionally returned in <code><a href="../Hamilton/Api.html#getChat%28%2A%2Aparams%29-instance-method">#getChat</a></code> requests to check if the bot can use this method. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3881,7 +3881,7 @@
           
           <p>Use this method to delete a forum topic along with all its messages in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_delete_messages&quot; administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3939,7 +3939,7 @@
 </ul>
 <p>Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -3967,7 +3967,7 @@
           
           <p>Use this method to delete multiple messages simultaneously. If some of the specified messages can't be found, they are skipped. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4123,7 +4123,7 @@
           
           <p>Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a <code>ChatInviteLink</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4167,7 +4167,7 @@
           
           <p>Use this method to edit a subscription invite link created by the bot. The bot must have the &quot;can_invite_users&quot; administrator rights. Returns the edited invite link as a <code>ChatInviteLink</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4199,7 +4199,7 @@
           
           <p>Use this method to edit name and icon of a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights, unless it is the creator of the topic. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4235,7 +4235,7 @@
           
           <p>Use this method to edit the name of the 'General' topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4267,7 +4267,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4323,7 +4323,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target chat.</p>
 </blockquote>
@@ -4363,7 +4363,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4427,7 +4427,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4471,7 +4471,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4511,7 +4511,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4611,7 +4611,7 @@
           
           <p>Allows the bot to cancel or re-enable extension of a subscription paid in Telegram Stars. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Identifier of the user whose subscription will be edited.</p>
 </blockquote>
@@ -4644,7 +4644,7 @@
           <p>Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as String on success.</p>
 <p><span class="flag purple">NOTE</span>  Each administrator in a chat generates their own invite links. Bots can't use invite links generated by other administrators. If you want your bot to work with invite links, it will need to generate its own link using <code><a href="../Hamilton/Api.html#exportChatInviteLink%28%2A%2Aparams%29-instance-method">#exportChatInviteLink</a></code> or by calling the <code><a href="../Hamilton/Api.html#getChat%28%2A%2Aparams%29-instance-method">#getChat</a></code> method. If your bot needs to generate a new primary invite link replacing its previous one, use <code><a href="../Hamilton/Api.html#exportChatInviteLink%28%2A%2Aparams%29-instance-method">#exportChatInviteLink</a></code> again.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@supergroupusername</code>).</p>
 </blockquote>
@@ -4668,7 +4668,7 @@
           
           <p>Use this method to forward messages of any kind. Service messages and messages with protected content can't be forwarded. On success, the sent Message is returned.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4680,7 +4680,7 @@
 <blockquote>
 <p>Identifier of the direct messages topic to which the message will be forwarded; required if the message is forwarded to a direct messages chat.</p>
 </blockquote>
-<p><code>from_chat_id : Union(Int32 | String)</code></p>
+<p><code>from_chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the chat where the original message was sent (or channel username in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4724,7 +4724,7 @@
           
           <p>Use this method to forward multiple messages of any kind. If some of the specified messages can't be found or forwarded, they are skipped. Service messages and messages with protected content can't be forwarded. Album grouping is kept for forwarded messages. On success, an array of <code>MessageId</code> of the sent messages is returned.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4736,7 +4736,7 @@
 <blockquote>
 <p>Identifier of the direct messages topic to which the messages will be forwarded; required if the messages are forwarded to a direct messages chat.</p>
 </blockquote>
-<p><code>from_chat_id : Union(Int32 | String)</code></p>
+<p><code>from_chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the chat where the original messages were sent (or channel username in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4895,7 +4895,7 @@
           
           <p>Use this method to get up-to-date information about the chat. Returns a ChatFullInfo object on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4919,7 +4919,7 @@
           
           <p>Use this method to get a list of administrators in a chat, which aren't bots. Returns an Array of <code>ChatMember</code> objects.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4943,11 +4943,11 @@
           
           <p>Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a <code>ChatMember</code> object on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -4971,7 +4971,7 @@
           
           <p>Use this method to get the number of members in a chat. Returns Int on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -4995,7 +4995,7 @@
           
           <p>Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns <code>MenuButton</code> on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target private chat. If not specified, default bot's menu button will be returned.</p>
 </blockquote>
@@ -5088,11 +5088,11 @@
           <p>Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of <code>GameHighScore</code> objects.</p>
 <p><span class="flag purple">NOTE</span>  This method will currently return scores for the target user, plus two of their closest neighbors on each side. Will also return the top three users if the user and their neighbors are not among them. Please note that this behavior is subject to change.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Target user id.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat.</p>
 </blockquote>
@@ -5377,11 +5377,11 @@
           
           <p>Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a <code>UserChatBoosts</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the chat or username of the channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -5405,7 +5405,7 @@
           
           <p>Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -5456,7 +5456,7 @@
           
           <p>Gifts a Telegram Premium subscription to the given user. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user who will receive a Telegram Premium subscription.</p>
 </blockquote>
@@ -5500,7 +5500,7 @@
           
           <p>Use this method to hide the &quot;General&quot; topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. The topic will be automatically closed if it was open. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -5524,7 +5524,7 @@
           
           <p>Use this method for your bot to leave a group, supergroup or channel. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>). Channel direct messages chats aren't supported; leave the corresponding channel instead.</p>
 </blockquote>
@@ -5609,7 +5609,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be pinned.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -5697,11 +5697,11 @@
           
           <p>Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass False for all boolean parameters to demote a user. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -5793,7 +5793,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which to read the message.</p>
 </blockquote>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the chat in which the message was received. The chat must have been active in the last 24 hours.</p>
 </blockquote>
@@ -5821,7 +5821,7 @@
           
           <p>Refunds a successful payment in Telegram Stars. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Identifier of the user whose payment will be refunded.</p>
 </blockquote>
@@ -5877,7 +5877,7 @@
           
           <p>Removes verification from a chat that is currently verified on behalf of the organization represented by the bot. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -5901,7 +5901,7 @@
           
           <p>Removes verification from a user who is currently verified on behalf of the organization represented by the bot. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -5925,7 +5925,7 @@
           
           <p>Use this method to reopen a closed topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights, unless it is the creator of the topic. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -5953,7 +5953,7 @@
           
           <p>Use this method to reopen a closed &quot;General&quot; topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. The topic will be automatically unhidden if it was hidden. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -5977,7 +5977,7 @@
           
           <p>Use this method to replace an existing sticker in a sticker set with a new one. The method is equivalent to calling <code><a href="../Hamilton/Api.html#deleteStickerFromSet%28%2A%2Aparams%29-instance-method">#deleteStickerFromSet</a></code>, then <code><a href="../Hamilton/Api.html#addStickerToSet%28%2A%2Aparams%29-instance-method">#addStickerToSet</a></code>, then <code><a href="../Hamilton/Api.html#setStickerPositionInSet%28%2A%2Aparams%29-instance-method">#setStickerPositionInSet</a></code>. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier of the sticker set owner.</p>
 </blockquote>
@@ -6013,11 +6013,11 @@
           
           <p>Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass True for all permissions to lift restrictions from a user. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@supergroupusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -6053,7 +6053,7 @@
           
           <p>Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the revoked invite link as <code>ChatInviteLink</code> object.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6081,7 +6081,7 @@
           
           <p>Stores a message that can be sent by a user of a Mini App. Returns a <code>PreparedInlineMessage</code> object.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user that can use the prepared message.</p>
 </blockquote>
@@ -6129,7 +6129,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6236,7 +6236,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6334,7 +6334,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the action will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername). Channel chats and channel direct messages chats aren't supported.</p>
 </blockquote>
@@ -6370,7 +6370,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target chat.</p>
 </blockquote>
@@ -6422,7 +6422,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6502,7 +6502,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6570,7 +6570,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6659,7 +6659,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target chat. Games can't be sent to channel direct messages chats and channel chats.</p>
 </blockquote>
@@ -6715,11 +6715,11 @@
           
           <p>Sends a gift to the given user or channel chat. The gift can't be converted to Telegram Stars by the receiver. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Union(Int32 | Nil)</code></p>
+<p><code>user_id : Union(Int64 | Nil)</code></p>
 <blockquote>
 <p>Required if <code>chat_id</code> is not specified. Unique identifier of the target user who will receive the gift.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>user_id</code> is not specified. Unique identifier for the chat or username of the channel (in the format <code>@channelusername</code>) that will receive the gift.</p>
 </blockquote>
@@ -6763,7 +6763,7 @@
           
           <p>Use this method to send invoices. On success, the sent <code>Message</code> is returned.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6911,7 +6911,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -6999,7 +6999,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -7139,7 +7139,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>). If the chat is a channel, all Telegram Star proceeds from this media will be credited to the chat's balance. Otherwise, they will be credited to the bot's balance.</p>
 </blockquote>
@@ -7227,7 +7227,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -7315,7 +7315,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>). Polls can't be sent to channel direct messages chats.</p>
 </blockquote>
@@ -7427,7 +7427,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>)</p>
 </blockquote>
@@ -7499,7 +7499,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -7595,7 +7595,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -7713,7 +7713,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -7795,7 +7795,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8028,11 +8028,11 @@
           
           <p>Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@supergroupusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -8060,7 +8060,7 @@
           
           <p>Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8088,7 +8088,7 @@
           
           <p>Use this method to change the bot's menu button in a private chat, or the default menu button. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Int32</code></p>
+<p><code>chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier for the target private chat. If not specified, default bot's menu button will be changed.</p>
 </blockquote>
@@ -8116,7 +8116,7 @@
           
           <p>Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the <code>can_restrict_members</code> administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@supergroupusername</code>).</p>
 </blockquote>
@@ -8148,7 +8148,7 @@
           
           <p>Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8176,7 +8176,7 @@
           
           <p>Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field &quot;can_set_sticker_set&quot; optionally returned in <code><a href="../Hamilton/Api.html#getChat%28%2A%2Aparams%29-instance-method">#getChat</a></code> requests to check if the bot can use this method. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8204,7 +8204,7 @@
           
           <p>Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8260,7 +8260,7 @@
           
           <p>Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the <code>Message</code> is returned, otherwise True is returned. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier.</p>
 </blockquote>
@@ -8276,7 +8276,7 @@
 <blockquote>
 <p>Pass True if the game message should not be automatically edited to include the current scoreboard.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat.</p>
 </blockquote>
@@ -8308,7 +8308,7 @@
           
           <p>Use this method to change the chosen reactions on a message. Service messages of some types can't be reacted to. Automatically forwarded messages from a channel to its discussion group have the same available reactions as messages in the channel. Bots can't use paid reactions. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8489,7 +8489,7 @@
           <p>Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns True on success.</p>
 <p>Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier.</p>
 </blockquote>
@@ -8633,7 +8633,7 @@
 <blockquote>
 <p>Sticker set name.</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier of the sticker set owner</p>
 </blockquote>
@@ -8693,7 +8693,7 @@
           
           <p>Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method <code>requestEmojiStatusAccess</code>. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -8783,7 +8783,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String | Nil)</code></p>
+<p><code>chat_id : Union(Int64 | String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>inline_message_id</code> is not specified. Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8823,7 +8823,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message to be edited was sent.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -8891,7 +8891,7 @@
 <blockquote>
 <p>Unique identifier of the regular gift that should be transferred.</p>
 </blockquote>
-<p><code>new_owner_chat_id : Int32</code></p>
+<p><code>new_owner_chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the chat which will own the gift. The chat must be active in the last 24 hours.</p>
 </blockquote>
@@ -8919,11 +8919,11 @@
           
           <p>Use this method to unban a previously banned user in a supergroup or channel. The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be removed from the chat. If you don't want this, use the parameter <code>only_if_banned</code>. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target group or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
@@ -8951,11 +8951,11 @@
           
           <p>Use this method to unban a previously banned channel chat in a supergroup or channel. The bot must be an administrator for this to work and must have the appropriate administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>sender_chat_id : Int32</code></p>
+<p><code>sender_chat_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target sender chat.</p>
 </blockquote>
@@ -8979,7 +8979,7 @@
           
           <p>Use this method to unhide the &quot;General&quot; topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -9003,7 +9003,7 @@
           
           <p>Use this method to clear the list of pinned messages in a chat. In private chats and channel direct messages chats, no additional rights are required to unpin all pinned messages. Conversely, the bot must be an administrator with the &quot;can_pin_messages&quot; right or the &quot;can_edit_messages&quot; right to unpin all pinned messages in groups and channels respectively. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -9027,7 +9027,7 @@
           
           <p>Use this method to clear the list of pinned messages in a forum topic. The bot must be an administrator in the chat for this to work and must have the &quot;can_pin_messages&quot; administrator right in the supergroup. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -9055,7 +9055,7 @@
           
           <p>Use this method to clear the list of pinned messages in a &quot;General&quot; forum topic. The bot must be an administrator in the chat for this to work and must have the &quot;can_pin_messages&quot; administrator right in the supergroup. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -9083,7 +9083,7 @@
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which the message will be unpinned.</p>
 </blockquote>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
@@ -9147,7 +9147,7 @@
           
           <p>Use this method to upload a file with a sticker for later use in the <code><a href="../Hamilton/Api.html#createNewStickerSet%28%2A%2Aparams%29-instance-method">#createNewStickerSet</a></code>, <code><a href="../Hamilton/Api.html#addStickerToSet%28%2A%2Aparams%29-instance-method">#addStickerToSet</a></code>, or <code><a href="../Hamilton/Api.html#replaceStickerInSet%28%2A%2Aparams%29-instance-method">#replaceStickerInSet</a></code> methods (the file can be used multiple times). Returns the uploaded <code>File</code> on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>User identifier of sticker file owner.</p>
 </blockquote>
@@ -9179,7 +9179,7 @@
           
           <p>Verifies a chat on behalf of the organization which is represented by the bot. Returns True on success.</p>
 <p>Params:</p>
-<p><code>chat_id : Union(Int32 | String)</code></p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>). Channel direct messages chats can't be verified.</p>
 </blockquote>
@@ -9207,7 +9207,7 @@
           
           <p>Verifies a user on behalf of the organization which is represented by the bot. Returns True on success.</p>
 <p>Params:</p>
-<p><code>user_id : Int32</code></p>
+<p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
 </blockquote>
