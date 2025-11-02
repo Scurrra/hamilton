@@ -79,7 +79,7 @@ class Hamilton::Api
             builder.file(parameter.filename, parameter.file, HTTP::FormData::FileMetadata.new(filename: parameter.filename))
             # has_files = true
           else
-            builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
+            builder.field({{param.id.stringify}}, parameter.to_s, field_headers)
           end
           {% elsif Hamilton::Types::InputMedia == pinfo[:type].resolve %}
           case parameter
@@ -298,7 +298,11 @@ class Hamilton::Api
             builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           end
           {% else %}
-          builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
+            {% if pinfo[:type].resolve <= Hamilton::Types::Common %}
+              builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
+            {% else %}
+              builder.field({{param.id.stringify}}, parameter.to_s, field_headers)
+            {% end %}
           {% end %}
 
         else
