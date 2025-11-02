@@ -20,11 +20,10 @@ Crystal wrapper for Telegram Bot API.
 require "hamilton"
 ```
 
-TODO: Write usage instructions here
+Usage guide can be found [here](https://scurrra.github.io/blog/hamilton-guide/).
 
-## Development
-
-TODO: Write development instructions here
+## Possible issues:
+ - Sending files were not tested yet, so it may fail.
 
 ## Contributing
 
