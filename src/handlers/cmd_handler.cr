@@ -311,7 +311,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
       }
 
       # callbacks
@@ -326,7 +326,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
       }
 
       # known text 
@@ -349,7 +349,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
       }
 
       # other types
