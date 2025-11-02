@@ -33,8 +33,6 @@ class Hamilton::CmdHandler
   end
 
   def call(update : Hamilton::Types::Update)
-    @log.debug { "@mapper :: [#{@mapper}]" }
-
     update_types = update.non_nil_fields
     update_types.delete("update_id")
     if update_types.size == 0
@@ -52,7 +50,7 @@ class Hamilton::CmdHandler
       # possible messages mapper for the last method from the chat's context
       # should not be nil
       pmm = @mapper[ctxt_method]
-      @log.debug { "PMM :: [#{pmm}]" }
+      @log.debug { "Possible messages mapping :: [#{pmm}]" }
 
       # non-nil fields
       message_fields = message.non_nil_fields
@@ -72,7 +70,7 @@ class Hamilton::CmdHandler
           # retrive the command
           cmd = ss.scan(/\/\w+/)
 
-          @log.debug { "CMD :: [#{cmd}] :: [#{pmm[cmd]}]" }
+          @log.debug { "Comand :: [#{cmd}] :: [#{pmm[cmd]}]" }
 
           if method = pmm[cmd]?
             new_context = @caller[method].call(update, @context.get_data(message.chat.id))
