@@ -391,7 +391,7 @@ macro method_added(method)
 
       {% if method.annotation(For) %}
         {% for method_ in method.annotation(For).args %}
-        %handler.mapper[{{method_.symbolize}}][%value] = {{method.name.symbolize}}
+        %handler.mapper[{{method_.id.symbolize}}][%value] = {{method.name.symbolize}}
         {% end %}
       {% else %}
         %handler.mapper[:root][%value] = {{method.name.symbolize}}
