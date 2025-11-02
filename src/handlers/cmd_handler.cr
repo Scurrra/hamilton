@@ -372,7 +372,11 @@ macro method_added(method)
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
         
+        {% if arg.restriction %}
         result = {{method.name.id}}({{arg.name.id}}: message.{{arg.name.id}}.as({{arg.restriction}}), update: update, context: context)
+        {% else %}
+        result = {{method.name.id}}({{arg.name.id}}: message.{{arg.name.id}}, update: update, context: context)
+        {% end %}
         if result
           context = result          
         end
