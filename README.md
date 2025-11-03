@@ -18,6 +18,38 @@ Crystal wrapper for Telegram Bot API.
 
 ```crystal
 require "hamilton"
+
+API = Hamilton::Api.new(token: "<YOUR-API-TOKEN>")
+
+handler = Hamilton::CmdHandler.new
+
+@[Handler(handler)]
+@[Handle(command: "/start")]
+def handle_start_command(argument, context, update)
+  # logic here
+  return nil
+end
+
+@[Handler(handler)]
+@[Handle(command: "help")]
+def handle_help_command(argument, context, update)
+  # logic here
+  return nil
+end
+
+bot = Hamilton::Bot.new(
+  api: API,
+  handlers: [
+    Hamilton::LogHandler.new, 
+    handler
+  ]
+)
+
+Signal::INT.trap do
+  bot.stop
+end
+
+bot.listen
 ```
 
 Usage guide can be found [here](https://scurrra.github.io/blog/hamilton-guide/).
