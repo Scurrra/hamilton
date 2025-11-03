@@ -6,6 +6,8 @@ private class ApiResult(T)
   property ok : Bool
 
   property result : T
+
+  property description : Union(String | Nil)
 end
 
 class Hamilton::Api

@@ -344,7 +344,13 @@ class Hamilton::Api
           if api_result.ok
             return api_result.result
           else
-            @log.warn(exception: Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok"))
+            if api_result.description
+              @log.warn(exception: Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok")) {
+                "Description :: [#{api_result.description}]"
+              }
+            else
+              @log.warn(exception: Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok"))
+            end
           end
         end
       else
