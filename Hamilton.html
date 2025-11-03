@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_version" content="0.1.1">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton - hamilton 0.1.0</title>
+  <title>Hamilton - hamilton 0.1.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.1.0
+        0.1.1
       </span>
     </div>
   </div>
@@ -1601,6 +1601,33 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Telegram Bot API wrapper for Crystal.</p>
+<p>Library provides following mudules and classes:</p>
+<ul>
+<li><code><a href="Hamilton/Types.html">Hamilton::Types</a></code> --- module that provides types (structures) used in the API;</li>
+<li><code><a href="Hamilton/Api.html">Hamilton::Api</a></code> --- class that provides all the API methods with typecheck for arguments;</li>
+<li><code><a href="Hamilton/Bot.html">Hamilton::Bot</a></code> --- class that implements update handling with long pooling by chain of provided instances of <code><a href="Hamilton/Handler.html">Hamilton::Handler</a></code>;</li>
+<li><code><a href="Hamilton/Handler.html">Hamilton::Handler</a></code> --- module to give classes handler functionalities;</li>
+<li><code><a href="Hamilton/LogHandler.html">Hamilton::LogHandler</a></code> --- handler for logging incoming updates and time consumed by the handlers next in chain;</li>
+<li><code><a href="Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code> --- handler for most common types of updates;</li>
+<li><code><a href="Hamilton/Context.html">Hamilton::Context</a></code> --- primitive for storing previous methods that handled last updates in the user flow and some contextual data.</li>
+</ul>
+<p><code><a href="Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code> uses following annotations, that are used without <code><a href="Hamilton.html">Hamilton</a>::</code> prefix:</p>
+<ul>
+<li><code>@[<a href="Hamilton/Handler.html">Handler</a>(...)]</code> to specify which instance of <code><a href="Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code> the method belongs to;</li>
+<li><code>@[<a href="Handle.html">Handle</a>(...)]</code> to specify which type of updates the method can handle;</li>
+<li><code>@[<a href="For.html">For</a>(...)]</code> to specify a list of possible methods that handled previous updates in the user flow.</li>
+</ul>
+
 
 
 
@@ -1651,7 +1678,7 @@
   <dl>
     
       <dt class="entry-const" id="VERSION">
-        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.1&quot;</span></code>
       </dt>
       
     

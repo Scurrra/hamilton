@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.1.0">
+<meta name="crystal_docs.project_version" content="0.1.1">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>hamilton 0.1.0</title>
+  <title>hamilton 0.1.1</title>
   <script type="text/javascript">
   CrystalDocs.base_path = "";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.1.0
+        0.1.1
       </span>
     </div>
   </div>
@@ -1615,7 +1615,39 @@
     <use href="#octicon-link"/>
   </svg>
 </a>Usage</h2>
-<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;hamilton&quot;</span></code></pre>
+<pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;hamilton&quot;</span>
+
+<span class="t">API</span> <span class="o">=</span> <span class="t">Hamilton</span><span class="t">::</span><span class="t">Api</span>.new(token: <span class="s">&quot;&lt;YOUR-API-TOKEN&gt;&quot;</span>)
+
+handler <span class="o">=</span> <span class="t">Hamilton</span><span class="t">::</span><span class="t">CmdHandler</span>.new
+
+@[<span class="t">Handler</span>(handler)]
+@[<span class="t">Handle</span>(command: <span class="s">&quot;/start&quot;</span>)]
+<span class="k">def</span> <span class="m">handle_start_command</span>(argument, context, update)
+  <span class="c"># logic here</span>
+  <span class="k">return</span> <span class="n">nil</span>
+<span class="k">end</span>
+
+@[<span class="t">Handler</span>(handler)]
+@[<span class="t">Handle</span>(command: <span class="s">&quot;help&quot;</span>)]
+<span class="k">def</span> <span class="m">handle_help_command</span>(argument, context, update)
+  <span class="c"># logic here</span>
+  <span class="k">return</span> <span class="n">nil</span>
+<span class="k">end</span>
+
+bot <span class="o">=</span> <span class="t">Hamilton</span><span class="t">::</span><span class="t">Bot</span>.new(
+  api: <span class="t">API</span>,
+  handlers: [
+    <span class="t">Hamilton</span><span class="t">::</span><span class="t">LogHandler</span>.new, 
+    handler
+  ]
+)
+
+<span class="t">Signal</span><span class="t">::</span><span class="t">INT</span>.trap <span class="k">do</span>
+  bot.stop
+<span class="k">end</span>
+
+bot.listen</code></pre>
 <p>Usage guide can be found <a href="https://scurrra.github.io/blog/hamilton-guide/">here</a>.</p>
 <h2><a id="possible-issues" class="anchor" href="#possible-issues">
   <svg class="octicon-link" aria-hidden="true">
