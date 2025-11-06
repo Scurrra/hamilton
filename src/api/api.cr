@@ -342,7 +342,9 @@ class Hamilton::Api
           api_result = {{info[:return_type]}}.from_json body
           @log.debug { "Response body :: [#{api_result.to_json}]" }
           if api_result.ok
-            return api_result.result
+            if result = api_result.result
+              return result
+            end
           else
             if api_result.description
               @log.warn(exception: Hamilton::Errors::ApiEndpointError.new({{method}}, response.status, "inside body status is not ok")) {

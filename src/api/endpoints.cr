@@ -5,7 +5,7 @@ private class ApiResult(T)
 
   property ok : Bool
 
-  property result : T
+  property result : Union(T | Nil)
 
   property description : Union(String | Nil)
 end
