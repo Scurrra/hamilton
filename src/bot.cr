@@ -71,7 +71,16 @@ class Hamilton::Bot
         if updates
           updates.each do |update|
             @offset = update.update_id + 1
+
+            {% if flag?(:async) %}
+            # if code is compiled with :async on, handler is spawning on a separate fiber
+            # inside `CmdHandler` implicit `/signal` command is created to provide an interface 
+            # for passing signals to running handlers on older updates and ignoring incoming ones
+            spawn @handler.call(update)
+            {% else %}
+            # cannot be spawned on a separate fiber as there can possibly occure errors while handling updates of the same user
             @handler.call(update)
+            {% end %}
           end
         end
       rescue api_call_fail : Hamilton::Errors::ApiEndpointError

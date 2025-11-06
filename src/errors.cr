@@ -38,6 +38,13 @@ module Hamilton::Errors
     end
   end
 
+  # Exception raised when `CmdHandler` method's tries to handle unsupported command.
+  class UnsupportedCmdHandlerCommand < Exception
+    def initialize(cmd : String = "/signal", reason : String = " with `:async` flag on")
+      super("`#{cmd}` command is not allowed in CmdHandler#{reason}")
+    end
+  end
+
   # Exception raised when a method parameter passed in `**params` has wrong type.
   class FieldTypeMissmatch < Exception
     def initialize(param_name : String | Symbol, type : Class, param_type : Class)
