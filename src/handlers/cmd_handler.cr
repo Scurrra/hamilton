@@ -96,7 +96,7 @@ class Hamilton::CmdHandler
           # retrive the command
           cmd = ss.scan(/\/\w+/)
 
-          @log.debug { "Comand :: [#{cmd}] :: [#{pmm[cmd]}]" }
+          @log.debug { "Comand :: [#{cmd}] :: [#{pmm[cmd]?}]" }
 
           if method = pmm[cmd]?
 
@@ -358,7 +358,7 @@ class Hamilton::CmdHandler
           # retrive the command
           cmd = ss.scan(/\/\w+/)
 
-          @log.debug { "Comand :: [#{cmd}] :: [#{pmm[cmd]}]" }
+          @log.debug { "Comand :: [#{cmd}] :: [#{pmm[cmd]?}]" }
 
           if method = pmm[cmd]?
             new_context = @caller[method].call(update, @context.get_data(message.chat.id))
