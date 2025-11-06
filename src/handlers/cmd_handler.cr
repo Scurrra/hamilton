@@ -76,8 +76,6 @@ class Hamilton::CmdHandler
 
           if @channels.has_key?(message.chat.id)
             @channels[message.chat.id].send signal
-            @channels[message.chat.id].close
-            @channels.delete(message.chat.id)
           else
             @log.info { "Update #{update.update_id} is of type `signal` and has no effect as no running fibers found" }
           end
@@ -102,23 +100,19 @@ class Hamilton::CmdHandler
 
           if method = pmm[cmd]?
 
-            channel = Channel(Signal).new
-            @channels[message.chat.id] = channel.dup
+            @channels[message.chat.id] = Channel(Signal).new
 
-            spawn do
-              new_context = @caller[method].call(update, @context.get_data(message.chat.id), channel)
-              if @mapper[method].size != 0
-                @context.set(
-                  message.chat.id,
-                  new_context
-                )
-              else
-                @context.clean(message.chat.id)
-                @context.set(message.chat.id, new_context[:data])
-              end  
-            end
+            new_context = @caller[method].call(update, @context.get_data(message.chat.id), @channels[message.chat.id])
+            if @mapper[method].size != 0
+              @context.set(
+                message.chat.id,
+                new_context
+              )
+            else
+              @context.clean(message.chat.id)
+              @context.set(message.chat.id, new_context[:data])
+            end  
             
-            channel.close
             @channels[message.chat.id].close
             @channels.delete(message.chat.id)
 
@@ -138,23 +132,19 @@ class Hamilton::CmdHandler
               # trim spaces at start of the remaining text
               ss.scan(/\s+/)
 
-              channel = Channel(Signal).new
-              @channels[message.chat.id] = channel.dup
+              @channels[message.chat.id] = Channel(Signal).new
 
-              spawn do
-                new_context = @caller[method].call(update, @context.get_data(message.chat.id), channel)
-                if @mapper[method].size != 0
-                  @context.set(
-                    message.chat.id,
-                    new_context
-                  )
-                else
-                  @context.clean(message.chat.id)
-                  @context.set(message.chat.id, new_context[:data])
-                end  
-              end
+              new_context = @caller[method].call(update, @context.get_data(message.chat.id), @channels[message.chat.id])
+              if @mapper[method].size != 0
+                @context.set(
+                  message.chat.id,
+                  new_context
+                )
+              else
+                @context.clean(message.chat.id)
+                @context.set(message.chat.id, new_context[:data])
+              end  
               
-              channel.close
               @channels[message.chat.id].close
               @channels.delete(message.chat.id)
 
@@ -174,23 +164,19 @@ class Hamilton::CmdHandler
       when .includes?({{payload_type}}.to_s)
         if method = pmm[{{payload_type}}]?
 
-          channel = Channel(Signal).new
-          @channels[message.chat.id] = channel.dup
+          @channels[message.chat.id] = Channel(Signal).new
 
-          spawn do
-            new_context = @caller[method].call(update, @context.get_data(message.chat.id), channel)
-            if @mapper[method].size != 0
-              @context.set(
-                message.chat.id,
-                new_context
-              )
-            else
-              @context.clean(message.chat.id)
-              @context.set(message.chat.id, new_context[:data])
-            end            
-          end
+          new_context = @caller[method].call(update, @context.get_data(message.chat.id), @channels[message.chat.id])
+          if @mapper[method].size != 0
+            @context.set(
+              message.chat.id,
+              new_context
+            )
+          else
+            @context.clean(message.chat.id)
+            @context.set(message.chat.id, new_context[:data])
+          end            
           
-          channel.close
           @channels[message.chat.id].close
           @channels.delete(message.chat.id)
         
@@ -222,23 +208,19 @@ class Hamilton::CmdHandler
             if @mapper.has_key?(ctxt_method)
               if method = @mapper[ctxt_method][data]?
 
-                channel = Channel(Signal).new
-                @channels[chat_instance] = channel.dup
+                @channels[chat_instance] = Channel(Signal).new
 
-                spawn do
-                  new_context = @caller[method].call(update, @context.get_data(chat_instance), channel)
-                  if @mapper[method].size != 0
-                    @context.set(
-                      chat_instance,
-                      new_context
-                      )
-                  else
-                    @context.clean(chat_instance)
-                    @context.set(chat_instance, new_context[:data])
-                  end
+                new_context = @caller[method].call(update, @context.get_data(chat_instance), @channels[chat_instance])
+                if @mapper[method].size != 0
+                  @context.set(
+                    chat_instance,
+                    new_context
+                    )
+                else
+                  @context.clean(chat_instance)
+                  @context.set(chat_instance, new_context[:data])
                 end
                 
-                channel.close
                 @channels[chat_instance].close
                 @channels.delete(chat_instance)
 
@@ -260,23 +242,19 @@ class Hamilton::CmdHandler
             if @mapper.has_key?(ctxt_method)
               if method = @mapper[ctxt_method][data]?
                 
-                channel = Channel(Signal).new
-                @channels[original_message.chat.id] = channel.dup
+                @channels[original_message.chat.id] = Channel(Signal).new
 
-                spawn do
-                  new_context = @caller[method].call(update, @context.get_data(original_message.chat.id), channel)
-                  if @mapper[method].size != 0
-                    @context.set(
-                      original_message.chat.id,
-                      new_context
-                    )
-                  else
-                    @context.clean(original_message.chat.id)
-                    @context.set(original_message.chat.id, new_context[:data])
-                  end
+                new_context = @caller[method].call(update, @context.get_data(original_message.chat.id), @channels[original_message.chat.id])
+                if @mapper[method].size != 0
+                  @context.set(
+                    original_message.chat.id,
+                    new_context
+                  )
+                else
+                  @context.clean(original_message.chat.id)
+                  @context.set(original_message.chat.id, new_context[:data])
                 end
                 
-                channel.close
                 @channels[original_message.chat.id].close
                 @channels.delete(original_message.chat.id)
                 
@@ -298,23 +276,19 @@ class Hamilton::CmdHandler
           if @mapper.has_key?(ctxt_method)
             if method = @mapper[ctxt_method][data]?
               
-              channel = Channel(Signal).new
-              @channels[user_id] = channel.dup
+              @channels[user_id] = Channel(Signal).new
 
-              spawn do
-                new_context = @caller[method].call(update, @context.get_data(user_id), channel)
-                if @mapper[method].size != 0
-                  @context.set(
-                    user_id,
-                    new_context
-                  )
-                else
-                  @context.clean(user_id)
-                  @context.set(user_id, new_context[:data])
-                end
+              new_context = @caller[method].call(update, @context.get_data(user_id), @channels[user_id])
+              if @mapper[method].size != 0
+                @context.set(
+                  user_id,
+                  new_context
+                )
+              else
+                @context.clean(user_id)
+                @context.set(user_id, new_context[:data])
               end
               
-              channel.close
               @channels[user_id].close
               @channels.delete(user_id)
               

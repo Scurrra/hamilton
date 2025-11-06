@@ -71,7 +71,7 @@ class Hamilton::Bot
         if updates
           updates.each do |update|
             @offset = update.update_id + 1
-            @handler.call(update)
+            spawn @handler.call(update)
           end
         end
       rescue api_call_fail : Hamilton::Errors::ApiEndpointError
