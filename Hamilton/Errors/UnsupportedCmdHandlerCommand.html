@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::MessageAutoDeleteTimerChanged - hamilton 0.1.2</title>
+  <title>Hamilton::Errors::UnsupportedCmdHandlerCommand - hamilton 0.1.2</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -92,7 +92,7 @@
       
     </li>
   
-  <li class="parent " data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
+  <li class="parent open current" data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
       <a href="../../Hamilton/Errors.html">Errors</a>
       
         <ul>
@@ -137,7 +137,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/UnsupportedCmdHandlerCommand" data-name="hamilton::errors::unsupportedcmdhandlercommand">
+  <li class=" current" data-id="hamilton/Hamilton/Errors/UnsupportedCmdHandlerCommand" data-name="hamilton::errors::unsupportedcmdhandlercommand">
       <a href="../../Hamilton/Errors/UnsupportedCmdHandlerCommand.html">UnsupportedCmdHandlerCommand</a>
       
     </li>
@@ -172,7 +172,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
+  <li class="parent " data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
       <a href="../../Hamilton/Types.html">Types</a>
       
         <ul>
@@ -992,7 +992,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/MessageAutoDeleteTimerChanged" data-name="hamilton::types::messageautodeletetimerchanged">
+  <li class=" " data-id="hamilton/Hamilton/Types/MessageAutoDeleteTimerChanged" data-name="hamilton::types::messageautodeletetimerchanged">
       <a href="../../Hamilton/Types/MessageAutoDeleteTimerChanged.html">MessageAutoDeleteTimerChanged</a>
       
     </li>
@@ -1598,12 +1598,12 @@
 
   <span class="kind">
     class
-  </span> Hamilton::<wbr>Types::<wbr>MessageAutoDeleteTimerChanged
+  </span> Hamilton::<wbr>Errors::<wbr>UnsupportedCmdHandlerCommand
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/MessageAutoDeleteTimerChanged.html">Hamilton::Types::MessageAutoDeleteTimerChanged</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Errors/UnsupportedCmdHandlerCommand.html">Hamilton::Errors::UnsupportedCmdHandlerCommand</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1617,29 +1617,13 @@
     Overview
   </h2>
 
-  <p>This object represents a service message about a change in auto-delete timer settings.</p>
+  <p>Exception raised when <code><a href="../../Hamilton/CmdHandler.html">CmdHandler</a></code> method's tries to handle unsupported command.</p>
 
 
 
 
 
 
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></li>
-    
-      <li class="other-type">JSON::Serializable</li>
-    
-  </ul>
 
 
 
@@ -1660,7 +1644,7 @@
   </h2>
   
     
-      types/message_auto_delete_timer_changed.cr
+      errors.cr
     
     <br/>
   
@@ -1681,12 +1665,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
+        <a href="#new%28cmd%3AString%3D%22/signal%22%2Creason%3AString%3D%22with%60%3Aasync%60flagon%22%29-class-method" class="signature"><strong>.new</strong>(cmd : String = <span class="s">&quot;/signal&quot;</span>, reason : String = <span class="s">&quot; with `:async` flag on&quot;</span>)</a>
         
       </li>
     
@@ -1698,71 +1677,9 @@
   
 
   
-  <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#message_auto_delete_time%3AInt32-instance-method" class="signature"><strong>#message_auto_delete_time</strong> : Int32</a>
-        
-          <div class="summary"><p>New auto-delete time for messages in the chat; in seconds.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#message_auto_delete_time%3D%28message_auto_delete_time%3AInt32%29-instance-method" class="signature"><strong>#message_auto_delete_time=</strong>(message_auto_delete_time : Int32)</a>
-        
-          <div class="summary"><p>New auto-delete time for messages in the chat; in seconds.</p></div>
-        
-      </li>
-    
-  </ul>
-
 
 
   <div class="methods-inherited">
-    
-      
-
-  <h3>Instance methods inherited from module <code><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></code></h3>
-  
-  
-    <a href="../../Hamilton/Types/Common.html#non_nil_fields%3AArray%28String%29-instance-method" class="tooltip">
-      <span>non_nil_fields : Array(String)</span>
-    non_nil_fields</a>, 
-    
-  
-    <a href="../../Hamilton/Types/Common.html#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="tooltip">
-      <span>non_nil_fields=(non_nil_fields : Array(String))</span>
-    non_nil_fields=</a>
-    
-  
-
-
-      
-
-  <h3>Constructor methods inherited from module <code><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></code></h3>
-  
-  
-    <a href="../../Hamilton/Types/Common.html#new%28%2A%2Aparams%29-class-method" class="tooltip">
-      <span>new(**params)</span>
-    new</a>
-    
-  
-
-
-      
-
-
-      
-
-
     
       
 
@@ -1815,26 +1732,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(cmd:String=&quot;/signal&quot;,reason:String=&quot;with`:async`flagon&quot;)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(pull : JSON::PullParser)
+        def self.<strong>new</strong>(cmd : String = <span class="s">&quot;/signal&quot;</span>, reason : String = <span class="s">&quot; with `:async` flag on&quot;</span>)
 
-        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(*,__pull_for_json_serializablepull:JSON::PullParser)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)
-
-        <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28cmd%3AString%3D%22/signal%22%2Creason%3AString%3D%22with%60%3Aasync%60flagon%22%29-class-method">#</a>
       </div>
       
       <br/>
@@ -1850,54 +1753,6 @@
   
 
   
-  <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="message_auto_delete_time:Int32-instance-method">
-      <div class="signature">
-        
-        def <strong>message_auto_delete_time</strong> : Int32
-
-        <a class="method-permalink" href="#message_auto_delete_time%3AInt32-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>New auto-delete time for messages in the chat; in seconds.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="message_auto_delete_time=(message_auto_delete_time:Int32)-instance-method">
-      <div class="signature">
-        
-        def <strong>message_auto_delete_time=</strong>(message_auto_delete_time : Int32)
-
-        <a class="method-permalink" href="#message_auto_delete_time%3D%28message_auto_delete_time%3AInt32%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>New auto-delete time for messages in the chat; in seconds.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-
 
 
 </div>
