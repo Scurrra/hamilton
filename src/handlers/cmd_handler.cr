@@ -72,10 +72,13 @@ class Hamilton::CmdHandler
         # check if the message is of type `signal`
         if ss.check("/signal")
           ss.scan(/\/\w+\s+/)
-          signal = Signal.parse ss.rest
 
           if @channels.has_key?(message.chat.id)
-            @channels[message.chat.id].send signal
+            if signal = Signal.parse? ss.rest
+              @channels[message.chat.id].send signal
+            else
+              @log.info { "Update #{update.update_id} is of type `signal`, but does not have meaningful argument" }  
+            end
           else
             @log.info { "Update #{update.update_id} is of type `signal` and has no effect as no running fibers found" }
           end
