@@ -83,7 +83,6 @@ class Hamilton::CmdHandler
           return call_next(update)
         end
 
-
         # check for existance of a channel
         if @channels.has_key?(message.chat.id)
           @channels[message.chat.id].send Signal::TSTP
@@ -162,6 +161,13 @@ class Hamilton::CmdHandler
       # ... and then for other available message payload types
       {% for payload_type in PAYLOAD_TYPES %}
       when .includes?({{payload_type}}.to_s)
+        # check for existance of a channel
+        if @channels.has_key?(message.chat.id)
+          @channels[message.chat.id].send Signal::TSTP
+          @log.warn { "Update #{update.update_id} tried to run while there is an another process. #{Signal::TSTP} was sent to the current process" }
+          return call_next(update)
+        end
+
         if method = pmm[{{payload_type}}]?
 
           @channels[message.chat.id] = Channel(Signal).new
@@ -201,7 +207,15 @@ class Hamilton::CmdHandler
         # 1. `chat_instance` --- "Global identifier, uniquely corresponding to the chat to which the message with the callback button was sent."
         # This is the only type where `chat_instance` is used, but it always presents here.
         if chat_instance = callback_query.chat_instance
-          # one more erason to not use this shit: "Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data."
+          
+          # check for existance of a channel
+          if @channels.has_key?(chat_instance)
+            @channels[chat_instance].send Signal::TSTP
+            @log.warn { "Update #{update.update_id} tried to run while there is an another process. #{Signal::TSTP} was sent to the current process" }
+            return call_next(update)
+          end
+
+          # one more reason to not use this shit: "Data associated with the callback button. Be aware that the message originated the query can contain no callback buttons with this data."
           # as `chat_instance` is never null, the `get_method?` method is used to not get `:root`
           # P.S. I didn't understand what `chat_instance` is so here is some workaround to not fuck up
           if ctxt_method = @context.get_method?(chat_instance)
@@ -235,6 +249,14 @@ class Hamilton::CmdHandler
         # 2. usual and most normal option: detect chat the original message (that one with `inline_keyboard`) was sent
         # `callback_query` may have `message` field from which we may try to extract the chat's id
         if original_message = callback_query.message
+          
+          # check for existance of a channel
+          if @channels.has_key?(original_message.chat.id)
+            @channels[original_message.chat.id].send Signal::TSTP
+            @log.warn { "Update #{update.update_id} tried to run while there is an another process. #{Signal::TSTP} was sent to the current process" }
+            return call_next(update)
+          end
+
           # message is of type `Hamilton::Types::MaybeInaccessibleMessage` and anyways contains chat info
           # let's assume that `callback_query` can not be sent in the chat with empty context
           # i.e. to `:root`
@@ -269,6 +291,14 @@ class Hamilton::CmdHandler
         # 3. for some reason let's check sender's id
         # `callback_query` contains `from` field from which sender's id may be obtained
         if user_id = callback_query.from.id
+          
+          # check for existance of a channel
+          if @channels.has_key?(user_id)
+            @channels[user_id].send Signal::TSTP
+            @log.warn { "Update #{update.update_id} tried to run while there is an another process. #{Signal::TSTP} was sent to the current process" }
+            return call_next(update)
+          end
+
           # if the only way to handle `callback_query` is with user id, there is probably no known context
           # in this case ctxt_method = ctxt[:method] will be ":root" and data will be empty
           # `get_method?` is called to not create new context in case of error
