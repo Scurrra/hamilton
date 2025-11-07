@@ -1,6 +1,6 @@
 # hamilton
 
-Crystal wrapper for Telegram Bot API.
+Crystal wrapper for Telegram Bot API with *optional* async execution.
 
 ## Installation
 
@@ -52,7 +52,7 @@ end
 bot.listen
 ```
 
-Usage guide can be found [here](https://scurrra.github.io/blog/hamilton-guide/).
+Usage guide with detailed explanation and example of the async bot can be found [here](https://scurrra.github.io/blog/hamilton-guide/).
 
 ## Possible issues:
  - Sending files were not tested yet, so it may fail.
