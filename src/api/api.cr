@@ -298,7 +298,7 @@ class Hamilton::Api
             builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           end
           {% else %}
-            {% if pinfo[:type].resolve <= Hamilton::Types::Common %}
+            {% if pinfo[:type].resolve.union_types.find {|t| t <= Array || t <= Hamilton::Types::Common} %}
               builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
             {% else %}
               builder.field({{param.id.stringify}}, parameter.to_s, field_headers)
