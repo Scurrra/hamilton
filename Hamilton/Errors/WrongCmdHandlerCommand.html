@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::TransactionPartnerOther - hamilton 0.2.1</title>
+  <title>Hamilton::Errors::WrongCmdHandlerCommand - hamilton 0.2.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -92,7 +92,7 @@
       
     </li>
   
-  <li class="parent " data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
+  <li class="parent open current" data-id="hamilton/Hamilton/Errors" data-name="hamilton::errors">
       <a href="../../Hamilton/Errors.html">Errors</a>
       
         <ul>
@@ -147,7 +147,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Errors/WrongCmdHandlerCommand" data-name="hamilton::errors::wrongcmdhandlercommand">
+  <li class=" current" data-id="hamilton/Hamilton/Errors/WrongCmdHandlerCommand" data-name="hamilton::errors::wrongcmdhandlercommand">
       <a href="../../Hamilton/Errors/WrongCmdHandlerCommand.html">WrongCmdHandlerCommand</a>
       
     </li>
@@ -177,7 +177,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
+  <li class="parent " data-id="hamilton/Hamilton/Types" data-name="hamilton::types">
       <a href="../../Hamilton/Types.html">Types</a>
       
         <ul>
@@ -1437,7 +1437,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/TransactionPartnerOther" data-name="hamilton::types::transactionpartnerother">
+  <li class=" " data-id="hamilton/Hamilton/Types/TransactionPartnerOther" data-name="hamilton::types::transactionpartnerother">
       <a href="../../Hamilton/Types/TransactionPartnerOther.html">TransactionPartnerOther</a>
       
     </li>
@@ -1603,12 +1603,12 @@
 
   <span class="kind">
     class
-  </span> Hamilton::<wbr>Types::<wbr>TransactionPartnerOther
+  </span> Hamilton::<wbr>Errors::<wbr>WrongCmdHandlerCommand
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/TransactionPartnerOther.html">Hamilton::Types::TransactionPartnerOther</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Errors/WrongCmdHandlerCommand.html">Hamilton::Errors::WrongCmdHandlerCommand</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1622,29 +1622,13 @@
     Overview
   </h2>
 
-  <p>Describes a transaction with an unknown source or recipient.</p>
+  <p>Exception raised when <code><a href="../../Hamilton/CmdHandler.html">CmdHandler</a></code> method tries to handle wrong command.</p>
 
 
 
 
 
 
-
-  <h2>
-    <a id="included-modules" class="anchor" href="#included-modules">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Included Modules
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></li>
-    
-      <li class="other-type">JSON::Serializable</li>
-    
-  </ul>
 
 
 
@@ -1665,7 +1649,7 @@
   </h2>
   
     
-      types/transaction_partner.cr
+      errors.cr
     
     <br/>
   
@@ -1686,22 +1670,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28params%29-class-method" class="signature"><strong>.new</strong>(params)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#new%28%2A%2Aparams%29-class-method" class="signature"><strong>.new</strong>(**params)</a>
+        <a href="#new%28method%3AString%7CSymbol%2Ccmd%3AString%29-class-method" class="signature"><strong>.new</strong>(method : String | Symbol, cmd : String)</a>
         
       </li>
     
@@ -1713,62 +1682,9 @@
   
 
   
-  <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#non_nil_fields%3AArray%28String%29-instance-method" class="signature"><strong>#non_nil_fields</strong> : Array(String)</a>
-        
-          <div class="summary"><p>List of available non-nil fields.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="signature"><strong>#non_nil_fields=</strong>(non_nil_fields : Array(String))</a>
-        
-          <div class="summary"><p>List of available non-nil fields.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#type%3AString-instance-method" class="signature"><strong>#type</strong> : String</a>
-        
-          <div class="summary"><p>Type of the transaction partner, always &quot;other&quot;.</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
-        
-          <div class="summary"><p>Type of the transaction partner, always &quot;other&quot;.</p></div>
-        
-      </li>
-    
-  </ul>
-
 
 
   <div class="methods-inherited">
-    
-      
-
-
-      
-
-
-      
-
-
-      
-
-
     
       
 
@@ -1821,54 +1737,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+    <div class="entry-detail" id="new(method:String|Symbol,cmd:String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(pull : JSON::PullParser)
+        def self.<strong>new</strong>(method : String | Symbol, cmd : String)
 
-        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(params)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(params)
-
-        <a class="method-permalink" href="#new%28params%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(*,__pull_for_json_serializablepull:JSON::PullParser)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)
-
-        <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="new(**params)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(**params)
-
-        <a class="method-permalink" href="#new%28%2A%2Aparams%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28method%3AString%7CSymbol%2Ccmd%3AString%29-class-method">#</a>
       </div>
       
       <br/>
@@ -1884,92 +1758,6 @@
   
 
   
-  <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="non_nil_fields:Array(String)-instance-method">
-      <div class="signature">
-        
-        def <strong>non_nil_fields</strong> : Array(String)
-
-        <a class="method-permalink" href="#non_nil_fields%3AArray%28String%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>List of available non-nil fields.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="non_nil_fields=(non_nil_fields:Array(String))-instance-method">
-      <div class="signature">
-        
-        def <strong>non_nil_fields=</strong>(non_nil_fields : Array(String))
-
-        <a class="method-permalink" href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>List of available non-nil fields.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="type:String-instance-method">
-      <div class="signature">
-        
-        def <strong>type</strong> : String
-
-        <a class="method-permalink" href="#type%3AString-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Type of the transaction partner, always &quot;other&quot;.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="type=(type:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>type=</strong>(type : String)
-
-        <a class="method-permalink" href="#type%3D%28type%3AString%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Type of the transaction partner, always &quot;other&quot;.</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-
 
 
 </div>
