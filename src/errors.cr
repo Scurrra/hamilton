@@ -45,6 +45,13 @@ module Hamilton::Errors
     end
   end
 
+  # Exception raised when `CmdHandler` method tries to handle wrong command.
+  class WrongCmdHandlerCommand < Exception
+    def initialize(method : String | Symbol, cmd : String)
+      super("The method `#{method}` is not suited for the command `#{cmd}`")
+    end
+  end
+
   # Exception raised when a method parameter passed in `**params` has wrong type.
   class FieldTypeMissmatch < Exception
     def initialize(param_name : String | Symbol, type : Class, param_type : Class)

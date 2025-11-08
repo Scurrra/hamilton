@@ -641,7 +641,12 @@ macro method_added(method)
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
         ss = StringScanner.new(message.text.as(String))
-        ss.scan(/\s*\/\w+\s+/)
+        ss.scan(/\s*/)
+        unless ss.check(%value)
+          raise Hamilton::Errors::WrongCmdHandlerCommand.new {{method.name.symbolize}}, ss.scan(/\/\w+/).as(String)
+        end
+        ss.scan(%value)
+        ss.scan(/\s*/)
         
         result = {{method.name.id}}(argument: ss.rest, update: update, context: context, signal: signal)
         if result
@@ -782,7 +787,12 @@ macro method_added(method)
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
         ss = StringScanner.new(message.text.as(String))
-        ss.scan(/\s*\/\w+\s+/)
+        ss.scan(/\s*/)
+        unless ss.check(%value)
+          raise Hamilton::Errors::WrongCmdHandlerCommand.new {{method.name.symbolize}}, ss.scan(/\/\w+/).as(String)
+        end
+        ss.scan(%value)
+        ss.scan(/\s*/)
         
         result = {{method.name.id}}(argument: ss.rest, update: update, context: context)
         if result
