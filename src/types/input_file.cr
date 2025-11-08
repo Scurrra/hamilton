@@ -9,9 +9,9 @@ class Hamilton::Types::InputFile
 
   # File to be sent.
   @[JSON::Field(ignore: true)]
-  property file : File
+  property file : Crystal::System::File
 
   # Filename.
   @[JSON::Field(ignore: true)]
-  property filename : File
+  property filename : String
 end

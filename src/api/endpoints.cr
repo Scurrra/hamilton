@@ -550,7 +550,7 @@ class Hamilton::Api
           docs: [%<Sends the message silently. Users will receive a notification with no sound.>]
         },
         :protect_content => {
-          type: Bool,
+          type: Union(Bool | Nil),
           docs: [%<Protects the contents of the message from forwarding and saving.>]
         },
         :allow_paid_broadcast => {
