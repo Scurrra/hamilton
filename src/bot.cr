@@ -83,6 +83,7 @@ class Hamilton::Bot
               @handler.call(update)
             {% end %}  
             rescue api_call_fail : Hamilton::Errors::ApiEndpointError
+              # this error is compile time, but you may use it too
               @log.error(exception: api_call_fail)
             rescue api_method_error : Hamilton::Errors::MissingParam | Hamilton::Errors::ParamTypeMissmatch
               @log.error(exception: api_method_error) { "Error when calling a `Hamilton::Api` method" }
@@ -97,6 +98,7 @@ class Hamilton::Bot
       # as there can be multiple updates and error during processing one cancels all the upcoming ones
       # processing of each update has it's own error catching blocks 
       rescue api_call_fail : Hamilton::Errors::ApiEndpointError
+        # this error is compile time, but you may use it too
         @log.error(exception: api_call_fail)
       rescue api_method_error : Hamilton::Errors::MissingParam | Hamilton::Errors::ParamTypeMissmatch
         @log.error(exception: api_method_error) { "Error when calling a `Hamilton::Api` method" }

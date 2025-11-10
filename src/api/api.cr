@@ -6,6 +6,10 @@ require "./*"
 require "../types"
 
 # Class that is used for communication with Bot API endpoints.
+#
+# NOTE: none of the API methods raises exceptions. Instead, exceptions are logged as `WARN - Hamilton::API`.
+# This is done for simplicity: the developer sees the exception in logs, and in the same time doesn't need to 
+# handle it when calling. That is why the return type is `T | Nil`, that is much easier to catch (if var, .try, or something else).
 class Hamilton::Api
 
   # :nodoc:
