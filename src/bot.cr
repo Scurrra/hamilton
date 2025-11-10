@@ -72,21 +72,38 @@ class Hamilton::Bot
           updates.each do |update|
             @offset = update.update_id + 1
 
+            begin
             {% if flag?(:async) %}
-            # if code is compiled with :async on, handler is spawning on a separate fiber
-            # inside `CmdHandler` implicit `/signal` command is created to provide an interface 
-            # for passing signals to running handlers on older updates and ignoring incoming ones
-            spawn @handler.call(update)
+              # if code is compiled with :async on, handler is spawning on a separate fiber
+              # inside `CmdHandler` implicit `/signal` command is created to provide an interface 
+              # for passing signals to running handlers on older updates and ignoring incoming ones
+              spawn @handler.call(update)
             {% else %}
-            # cannot be spawned on a separate fiber as there can possibly occure errors while handling updates of the same user
-            @handler.call(update)
-            {% end %}
+              # cannot be spawned on a separate fiber as there can possibly occure errors while handling updates of the same user
+              @handler.call(update)
+            {% end %}  
+            rescue api_call_fail : Hamilton::Errors::ApiEndpointError
+              @log.error(exception: api_call_fail)
+            rescue api_method_error : Hamilton::Errors::MissingParam | Hamilton::Errors::ParamTypeMissmatch
+              @log.error(exception: api_method_error) { "Error when calling a `Hamilton::Api` method" }
+            rescue exception
+              # catch some unknown errors to hide stacktrace for developer's privacy purpose
+              @log.error(exception: exception) { "Unknown, probably runtime, exception." }
+            end
           end
         end
+      
+      # these catch only errors in `.getUpdates`
+      # as there can be multiple updates and error during processing one cancels all the upcoming ones
+      # processing of each update has it's own error catching blocks 
       rescue api_call_fail : Hamilton::Errors::ApiEndpointError
         @log.error(exception: api_call_fail)
       rescue api_method_error : Hamilton::Errors::MissingParam | Hamilton::Errors::ParamTypeMissmatch
         @log.error(exception: api_method_error) { "Error when calling a `Hamilton::Api` method" }
+      rescue exception
+        # catch some unknown errors to hide stacktrace for developer's privacy purpose
+        @log.error(exception: exception) { "Unknown, probably runtime, exception." }
+      end
       end
     end
   end
