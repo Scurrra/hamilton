@@ -106,7 +106,6 @@ class Hamilton::Bot
         # catch some unknown errors to hide stacktrace for developer's privacy purpose
         @log.error(exception: exception) { "Unknown, probably runtime, exception." }
       end
-      end
     end
   end
 
