@@ -62,6 +62,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Array" data-name="array(t)">
+      <a href="../Array.html">Array</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/For" data-name="for">
       <a href="../For.html">For</a>
       
@@ -71,6 +76,21 @@
       <a href="../Hamilton.html">Hamilton</a>
       
         <ul>
+  
+  <li class="parent " data-id="hamilton/Hamilton/Any" data-name="hamilton::any">
+      <a href="../Hamilton/Any.html">Any</a>
+      
+        <ul>
+  
+  <li class=" " data-id="hamilton/Hamilton/Any/Type" data-name="hamilton::any::type">
+      <a href="../Hamilton/Any/Type.html">Type</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
   
   <li class=" " data-id="hamilton/Hamilton/Api" data-name="hamilton::api">
       <a href="../Hamilton/Api.html">Api</a>
@@ -174,6 +194,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/LogHandler" data-name="hamilton::loghandler">
       <a href="../Hamilton/LogHandler.html">LogHandler</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Storage" data-name="hamilton::storage">
+      <a href="../Hamilton/Storage.html">Storage</a>
       
     </li>
   
@@ -1592,6 +1617,26 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hash" data-name="hash(k, v)">
+      <a href="../Hash.html">Hash</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Object" data-name="object">
+      <a href="../Object.html">Object</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Reference" data-name="reference">
+      <a href="../Reference.html">Reference</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Value" data-name="value">
+      <a href="../Value.html">Value</a>
+      
+    </li>
+  
 </ul>
 
   </div>
@@ -1608,7 +1653,7 @@
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hamilton/Context.html">Hamilton::Context</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hamilton/Context.html">Hamilton::Context</a></li><li class="superclass"><a href="../Reference.html">Reference</a></li><li class="superclass"><a href="../Object.html">Object</a></li></ul>
 
 
 
@@ -1623,11 +1668,11 @@
   </h2>
 
   <p>Context is a storage for some state.</p>
-<p>As it was developed primary for <code><a href="../Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code>, <code><a href="../Hamilton/Context.html">Hamilton::Context</a></code> maps a key of type<br />
+<p>As it was developed primary for <code><a href="../Hamilton/CmdHandler.html">Hamilton::CmdHandler</a></code>, <code><a href="../Hamilton/Context.html">Hamilton::Context</a></code> maps a key of type
 <code>Int64 | String | Symbol</code> to a named tuple with two fields:</p>
 <ul>
 <li><code>method : Symbol | Nil</code> -- name of some method</li>
-<li><code>data: Hash(Symbol, JSON::Any) | Nil)</code> -- storage for some specific data</li>
+<li><code>data: <a href="../Hamilton/Storage.html">Hamilton::Storage</a>)</code> -- storage for some specific data</li>
 </ul>
 
 
@@ -1676,7 +1721,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new%28%2A%2Cinner%3AHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3ANil%7CHash%28Symbol%2CJSON%3A%3AAny%29%29%29%3DHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29.new%2Cdefault_method%3ASymbol%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, inner : Hash(Int64 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Nil | Hash(Symbol, JSON::Any))) = <span class="t">Hash</span>(<span class="t">Int64</span> <span class="o">|</span> <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>, <span class="t">NamedTuple</span>(method: <span class="t">Symbol</span> <span class="o">|</span> <span class="t">Nil</span>, data: <span class="t">Hash</span>(<span class="t">Symbol</span>, <span class="t">JSON</span><span class="t">::</span><span class="t">Any</span>) <span class="o">|</span> <span class="t">Nil</span>)).new, default_method : Symbol | Nil = <span class="n">nil</span>)</a>
+        <a href="#new%28%2A%2Cinner%3AHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHamilton%3A%3AStorage%29%29%3DHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHamilton%3A%3AStorage%29%29.new%2Cdefault_method%3ASymbol%7CNil%3Dnil%29-class-method" class="signature"><strong>.new</strong>(*, inner : Hash(Int64 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hamilton::Storage)) = <span class="t">Hash</span>(<span class="t">Int64</span> <span class="o">|</span> <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>, <span class="t">NamedTuple</span>(method: <span class="t">Symbol</span> <span class="o">|</span> <span class="t">Nil</span>, data: <span class="t">Hamilton</span><span class="t">::</span><span class="t">Storage</span>)).new, default_method : Symbol | Nil = <span class="n">nil</span>)</a>
         
           <div class="summary"><p>Initializer of the context storage.</p></div>
         
@@ -1771,7 +1816,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#set%28key%3AInt64%7CString%7CSymbol%2Cvalue%3ANamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29-instance-method" class="signature"><strong>#set</strong>(key : Int64 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))</a>
+        <a href="#set%28key%3AInt64%7CString%7CSymbol%2Cvalue%3ANamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHamilton%3A%3AStorage%29%29-instance-method" class="signature"><strong>#set</strong>(key : Int64 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: Hamilton::Storage))</a>
         
           <div class="summary"><p>Setter for the pair <code>key, value</code>.</p></div>
         
@@ -1785,7 +1830,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#set%28key%3AInt64%7CString%7CSymbol%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29-instance-method" class="signature"><strong>#set</strong>(key : Int64 | String | Symbol, data : Hash(Symbol, JSON::Any) | Nil)</a>
+        <a href="#set%28key%3AInt64%7CString%7CSymbol%2Cdata%3AHamilton%3A%3AStorage%29-instance-method" class="signature"><strong>#set</strong>(key : Int64 | String | Symbol, data : Hamilton::Storage)</a>
         
           <div class="summary"><p>Setter that sets only data for the key.</p></div>
         
@@ -1799,6 +1844,15 @@
     
       
 
+  <h3>Instance methods inherited from class <code><a href="../Reference.html">Reference</a></code></h3>
+  
+  
+    <a href="../Reference.html#%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
+      <span>==(other : Hamilton::Any)</span>
+    ==</a>
+    
+  
+
 
       
 
@@ -1811,6 +1865,15 @@
 
     
       
+
+  <h3>Instance methods inherited from class <code><a href="../Object.html">Object</a></code></h3>
+  
+  
+    <a href="../Object.html#%3D%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
+      <span>===(other : Hamilton::Any)</span>
+    ===</a>
+    
+  
 
 
       
@@ -1835,12 +1898,12 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(*,inner:Hash(Int64|String|Symbol,NamedTuple(method:Symbol|Nil,data:Nil|Hash(Symbol,JSON::Any)))=Hash(Int64|String|Symbol,NamedTuple(method:Symbol|Nil,data:Hash(Symbol,JSON::Any)|Nil)).new,default_method:Symbol|Nil=nil)-class-method">
+    <div class="entry-detail" id="new(*,inner:Hash(Int64|String|Symbol,NamedTuple(method:Symbol|Nil,data:Hamilton::Storage))=Hash(Int64|String|Symbol,NamedTuple(method:Symbol|Nil,data:Hamilton::Storage)).new,default_method:Symbol|Nil=nil)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(*, inner : Hash(Int64 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Nil | Hash(Symbol, JSON::Any))) = <span class="t">Hash</span>(<span class="t">Int64</span> <span class="o">|</span> <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>, <span class="t">NamedTuple</span>(method: <span class="t">Symbol</span> <span class="o">|</span> <span class="t">Nil</span>, data: <span class="t">Hash</span>(<span class="t">Symbol</span>, <span class="t">JSON</span><span class="t">::</span><span class="t">Any</span>) <span class="o">|</span> <span class="t">Nil</span>)).new, default_method : Symbol | Nil = <span class="n">nil</span>)
+        def self.<strong>new</strong>(*, inner : <a href="../Hash.html">Hash</a>(Int64 | String | Symbol, NamedTuple(method: Symbol | Nil, data: <a href="../Hamilton/Storage.html">Hamilton::Storage</a>)) = <span class="t">Hash</span>(<span class="t">Int64</span> <span class="o">|</span> <span class="t">String</span> <span class="o">|</span> <span class="t">Symbol</span>, <span class="t">NamedTuple</span>(method: <span class="t">Symbol</span> <span class="o">|</span> <span class="t">Nil</span>, data: <span class="t">Hamilton</span><span class="t">::</span><span class="t">Storage</span>)).new, default_method : Symbol | Nil = <span class="n">nil</span>)
 
-        <a class="method-permalink" href="#new%28%2A%2Cinner%3AHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3ANil%7CHash%28Symbol%2CJSON%3A%3AAny%29%29%29%3DHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29.new%2Cdefault_method%3ASymbol%7CNil%3Dnil%29-class-method">#</a>
+        <a class="method-permalink" href="#new%28%2A%2Cinner%3AHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHamilton%3A%3AStorage%29%29%3DHash%28Int64%7CString%7CSymbol%2CNamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHamilton%3A%3AStorage%29%29.new%2Cdefault_method%3ASymbol%7CNil%3Dnil%29-class-method">#</a>
       </div>
       
         <div class="doc">
@@ -1848,7 +1911,7 @@
           <p>Initializer of the context storage.</p>
 <p>Optional parameters:
 <code>default_method : Symbol | Nil</code> -- something that will be the default value for the <code>method</code> field
-<code>inner : Hash(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))</code> -- storage itself</p>
+<code>inner : <a href="../Hash.html">Hash</a>(Int32 | String | Symbol, NamedTuple(method: Symbol | Nil, data: <a href="../Hamilton/Storage.html">Hamilton::Storage</a>))</code> -- storage itself</p>
         </div>
       
       <br/>
@@ -2066,12 +2129,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="set(key:Int64|String|Symbol,value:NamedTuple(method:Symbol|Nil,data:Hash(Symbol,JSON::Any)|Nil))-instance-method">
+    <div class="entry-detail" id="set(key:Int64|String|Symbol,value:NamedTuple(method:Symbol|Nil,data:Hamilton::Storage))-instance-method">
       <div class="signature">
         
-        def <strong>set</strong>(key : Int64 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))
+        def <strong>set</strong>(key : Int64 | String | Symbol, value : NamedTuple(method: Symbol | Nil, data: <a href="../Hamilton/Storage.html">Hamilton::Storage</a>))
 
-        <a class="method-permalink" href="#set%28key%3AInt64%7CString%7CSymbol%2Cvalue%3ANamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#set%28key%3AInt64%7CString%7CSymbol%2Cvalue%3ANamedTuple%28method%3ASymbol%7CNil%2Cdata%3AHamilton%3A%3AStorage%29%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2104,12 +2167,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="set(key:Int64|String|Symbol,data:Hash(Symbol,JSON::Any)|Nil)-instance-method">
+    <div class="entry-detail" id="set(key:Int64|String|Symbol,data:Hamilton::Storage)-instance-method">
       <div class="signature">
         
-        def <strong>set</strong>(key : Int64 | String | Symbol, data : Hash(Symbol, JSON::Any) | Nil)
+        def <strong>set</strong>(key : Int64 | String | Symbol, data : <a href="../Hamilton/Storage.html">Hamilton::Storage</a>)
 
-        <a class="method-permalink" href="#set%28key%3AInt64%7CString%7CSymbol%2Cdata%3AHash%28Symbol%2CJSON%3A%3AAny%29%7CNil%29-instance-method">#</a>
+        <a class="method-permalink" href="#set%28key%3AInt64%7CString%7CSymbol%2Cdata%3AHamilton%3A%3AStorage%29-instance-method">#</a>
       </div>
       
         <div class="doc">
