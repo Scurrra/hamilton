@@ -330,30 +330,35 @@ struct Hamilton::Any
   end
 end
 
+# :nodoc:
 class Object
   def ===(other : Hamilton::Any)
     self === other.raw
   end
 end
 
+# :nodoc:
 struct Value
   def ==(other : Hamilton::Any)
     self == other.raw
   end
 end
 
+# :nodoc:
 class Reference
   def ==(other : Hamilton::Any)
     self == other.raw
   end
 end
 
+# :nodoc:
 class Array
   def ==(other : Hamilton::Any)
     self == other.raw
   end
 end
 
+# :nodoc:
 class Hash
   def ==(other : Hamilton::Any)
     self == other.raw
