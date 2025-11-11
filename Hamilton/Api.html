@@ -62,11 +62,6 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Array" data-name="array(t)">
-      <a href="../Array.html">Array</a>
-      
-    </li>
-  
   <li class=" " data-id="hamilton/For" data-name="for">
       <a href="../For.html">For</a>
       
@@ -1617,26 +1612,6 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hash" data-name="hash(k, v)">
-      <a href="../Hash.html">Hash</a>
-      
-    </li>
-  
-  <li class=" " data-id="hamilton/Object" data-name="object">
-      <a href="../Object.html">Object</a>
-      
-    </li>
-  
-  <li class=" " data-id="hamilton/Reference" data-name="reference">
-      <a href="../Reference.html">Reference</a>
-      
-    </li>
-  
-  <li class=" " data-id="hamilton/Value" data-name="value">
-      <a href="../Value.html">Value</a>
-      
-    </li>
-  
 </ul>
 
   </div>
@@ -1653,7 +1628,7 @@
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hamilton/Api.html">Hamilton::Api</a></li><li class="superclass"><a href="../Reference.html">Reference</a></li><li class="superclass"><a href="../Object.html">Object</a></li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Hamilton/Api.html">Hamilton::Api</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -2875,7 +2850,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
     
       
 
-  <h3>Instance methods inherited from class <code><a href="../Reference.html">Reference</a></code></h3>
+  <h3>Instance methods inherited from class <code>Reference</code></h3>
   
   
     <a href="../Reference.html#%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
@@ -2897,7 +2872,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
     
       
 
-  <h3>Instance methods inherited from class <code><a href="../Object.html">Object</a></code></h3>
+  <h3>Instance methods inherited from class <code>Object</code></h3>
   
   
     <a href="../Object.html#%3D%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
@@ -3061,7 +3036,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Unique identifier for the answered query.</p>
 </blockquote>
-<p><code>results : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/InlineQueryResult.html">Hamilton::Types::InlineQueryResult</a>)</code></p>
+<p><code>results : Array(<a href="../Hamilton/Types/InlineQueryResult.html">Hamilton::Types::InlineQueryResult</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized array of results for the inline query.</p>
 </blockquote>
@@ -3077,7 +3052,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Pass the offset that a client should send in the next query with the same text to receive more results. Pass an empty string if there are no more results or if you don't support pagination. Offset length can't exceed 64 bytes.</p>
 </blockquote>
-<p><code>button : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/InlineQueryResultsButton.html">Hamilton::Types::InlineQueryResultsButton</a>) | Nil)</code></p>
+<p><code>button : Union(Array(<a href="../Hamilton/Types/InlineQueryResultsButton.html">Hamilton::Types::InlineQueryResultsButton</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized object describing a button to be shown above inline query results.</p>
 </blockquote>
@@ -3142,7 +3117,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Pass True if delivery to the specified address is possible and False if there are any problems (for example, if delivery to the specified address is not possible).</p>
 </blockquote>
-<p><code>shipping_options : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/ShippingOption.html">Hamilton::Types::ShippingOption</a>) | Nil)</code></p>
+<p><code>shipping_options : Union(Array(<a href="../Hamilton/Types/ShippingOption.html">Hamilton::Types::ShippingOption</a>) | Nil)</code></p>
 <blockquote>
 <p>Required if ok is True. A JSON-serialized array of available shipping options.</p>
 </blockquote>
@@ -3453,7 +3428,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the new caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the new caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -3521,7 +3496,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Unique identifier for the chat where the original messages were sent (or channel username in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>message_ids : <a href="../Array.html">Array</a>(Int32)</code></p>
+<p><code>message_ids : Array(Int32)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 1-100 identifiers of messages in the chat <code>from_chat_id</code> to copy. The identifiers must be specified in a strictly increasing order.</p>
 </blockquote>
@@ -3693,7 +3668,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Three-letter ISO 4217 currency code, see more on currencies. Pass “XTR” for payments in Telegram Stars.</p>
 </blockquote>
-<p><code>prices : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/LabeledPrice.html">Hamilton::Types::LabeledPrice</a>)</code></p>
+<p><code>prices : Array(<a href="../Hamilton/Types/LabeledPrice.html">Hamilton::Types::LabeledPrice</a>)</code></p>
 <blockquote>
 <p>Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in Telegram Stars.</p>
 </blockquote>
@@ -3705,7 +3680,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). See the exp parameter in <a href="https://core.telegram.org/bots/payments/currencies.json">currencies.json</a>, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in Telegram Stars.</p>
 </blockquote>
-<p><code>suggested_tip_amounts : Union(<a href="../Array.html">Array</a>(Int32) | Nil)</code></p>
+<p><code>suggested_tip_amounts : Union(Array(Int32) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed <code>max_tip_amount</code>.</p>
 </blockquote>
@@ -3789,7 +3764,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Sticker set title, 1-64 characters.</p>
 </blockquote>
-<p><code>stickers : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/InputSticker.html">Hamilton::Types::InputSticker</a>)</code></p>
+<p><code>stickers : Array(<a href="../Hamilton/Types/InputSticker.html">Hamilton::Types::InputSticker</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 1-50 initial stickers to be added to the sticker set.</p>
 </blockquote>
@@ -3885,7 +3860,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Unique identifier of the business connection on behalf of which to delete the messages.</p>
 </blockquote>
-<p><code>message_ids : <a href="../Array.html">Array</a>(Int32)</code></p>
+<p><code>message_ids : Array(Int32)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 1-100 identifiers of messages to delete. All messages must be from the same chat. See deleteMessage for limitations on which messages can be deleted.</p>
 </blockquote>
@@ -4047,7 +4022,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>message_ids : <a href="../Array.html">Array</a>(Int32)</code></p>
+<p><code>message_ids : Array(Int32)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 1-100 identifiers of messages to delete.</p>
 </blockquote>
@@ -4363,7 +4338,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the message caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -4607,7 +4582,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the message text.</p>
 </blockquote>
-<p><code>entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in message text, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -4659,11 +4634,11 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the story caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
-<p><code>areas : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/StoryArea.html">Hamilton::Types::StoryArea</a>) | Nil)</code></p>
+<p><code>areas : Union(Array(<a href="../Hamilton/Types/StoryArea.html">Hamilton::Types::StoryArea</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of clickable areas to be shown on the story.</p>
 </blockquote>
@@ -4816,7 +4791,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Unique identifier for the chat where the original messages were sent (or channel username in the format <code>@channelusername</code>).</p>
 </blockquote>
-<p><code>message_ids : <a href="../Array.html">Array</a>(Int32)</code></p>
+<p><code>message_ids : Array(Int32)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 1-100 identifiers of messages in the chat <code>from_chat_id</code> to forward. The identifiers must be specified in a strictly increasing order.</p>
 </blockquote>
@@ -5095,7 +5070,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
           
           <p>Use this method to get information about custom emoji stickers by their identifiers. Returns an Array of <code>Sticker</code> objects.</p>
 <p>Params:</p>
-<p><code>custom_emoji_ids : <a href="../Array.html">Array</a>(String)</code></p>
+<p><code>custom_emoji_ids : Array(String)</code></p>
 <blockquote>
 <p>A JSON-serialized list of custom emoji identifiers. At most 200 custom emoji identifiers can be specified.</p>
 </blockquote>
@@ -5428,7 +5403,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Timeout in seconds for long polling. Defaults to 0, i.e. usual short polling. Should be positive, short polling should be used for testing purposes only.</p>
 </blockquote>
-<p><code>allowed_updates : Union(<a href="../Array.html">Array</a>(String) | Nil)</code></p>
+<p><code>allowed_updates : Union(Array(String) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of the update types you want your bot to receive. For example, specify [&quot;message&quot;, &quot;edited_channel_post&quot;, &quot;callback_query&quot;] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except <code>chat_member</code>, <code>message_reaction</code>, and <code>message_reaction_count</code> (default). If not specified, the previous setting will be used.</p>
 <p>Please note that this parameter doesn't affect updates created before the call to getUpdates, so unwanted updates may be received for a short period of time.</p>
@@ -5552,7 +5527,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.</p>
 </blockquote>
-<p><code>text_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>text_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of <code>text_parse_mode</code>. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.</p>
 </blockquote>
@@ -5737,11 +5712,11 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the story caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
-<p><code>areas : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/StoryArea.html">Hamilton::Types::StoryArea</a>) | Nil)</code></p>
+<p><code>areas : Union(Array(<a href="../Hamilton/Types/StoryArea.html">Hamilton::Types::StoryArea</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of clickable areas to be shown on the story.</p>
 </blockquote>
@@ -6247,7 +6222,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the animation caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode.</p>
 </blockquote>
@@ -6336,7 +6311,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the audio caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -6675,7 +6650,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the document caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -6815,7 +6790,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.</p>
 </blockquote>
-<p><code>text_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>text_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of <code>text_parse_mode</code>. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.</p>
 </blockquote>
@@ -6871,7 +6846,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Three-letter ISO 4217 currency code, see more on currencies. Pass “XTR” for payments in Telegram Stars.</p>
 </blockquote>
-<p><code>prices : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/LabeledPrice.html">Hamilton::Types::LabeledPrice</a>)</code></p>
+<p><code>prices : Array(<a href="../Hamilton/Types/LabeledPrice.html">Hamilton::Types::LabeledPrice</a>)</code></p>
 <blockquote>
 <p>Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in Telegram Stars.</p>
 </blockquote>
@@ -6879,7 +6854,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). See the exp parameter in <a href="https://core.telegram.org/bots/payments/currencies.json">currencies.json</a>, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in Telegram Stars.</p>
 </blockquote>
-<p><code>suggested_tip_amounts : Union(<a href="../Array.html">Array</a>(Int32) | Nil)</code></p>
+<p><code>suggested_tip_amounts : Union(Array(Int32) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed <code>max_tip_amount</code>.</p>
 </blockquote>
@@ -7087,7 +7062,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat.</p>
 </blockquote>
-<p><code>media : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/InputMediaAudio.html">Hamilton::Types::InputMediaAudio</a> | <a href="../Hamilton/Types/InputMediaDocument.html">Hamilton::Types::InputMediaDocument</a> | <a href="../Hamilton/Types/InputMediaPhoto.html">Hamilton::Types::InputMediaPhoto</a> | <a href="../Hamilton/Types/InputMediaVideo.html">Hamilton::Types::InputMediaVideo</a>)</code></p>
+<p><code>media : Array(<a href="../Hamilton/Types/InputMediaAudio.html">Hamilton::Types::InputMediaAudio</a> | <a href="../Hamilton/Types/InputMediaDocument.html">Hamilton::Types::InputMediaDocument</a> | <a href="../Hamilton/Types/InputMediaPhoto.html">Hamilton::Types::InputMediaPhoto</a> | <a href="../Hamilton/Types/InputMediaVideo.html">Hamilton::Types::InputMediaVideo</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized array describing messages to be sent, must include 2-10 items.</p>
 </blockquote>
@@ -7155,7 +7130,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the message text.</p>
 </blockquote>
-<p><code>entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in message text, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -7231,7 +7206,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>The number of Telegram Stars that must be paid to buy access to the media; 1-10000</p>
 </blockquote>
-<p><code>media : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/InputPaidMedia.html">Hamilton::Types::InputPaidMedia</a>)</code></p>
+<p><code>media : Array(<a href="../Hamilton/Types/InputPaidMedia.html">Hamilton::Types::InputPaidMedia</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized array describing the media to be sent; up to 10 items.</p>
 </blockquote>
@@ -7247,7 +7222,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the media caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -7327,7 +7302,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the photo caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -7407,11 +7382,11 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the question. Currently, only custom emoji entities are allowed.</p>
 </blockquote>
-<p><code>question_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>question_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of <code>question_parse_mode</code>.</p>
 </blockquote>
-<p><code>options : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/InputPollOption.html">Hamilton::Types::InputPollOption</a>)</code></p>
+<p><code>options : Array(<a href="../Hamilton/Types/InputPollOption.html">Hamilton::Types::InputPollOption</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 2-12 answer options.</p>
 </blockquote>
@@ -7439,7 +7414,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the explanation.</p>
 </blockquote>
-<p><code>explanation_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>explanation_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of <code>explanation_parse_mode</code>.</p>
 </blockquote>
@@ -7721,7 +7696,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the video caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -7896,7 +7871,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Mode for parsing entities in the voice message caption.</p>
 </blockquote>
-<p><code>caption_entities : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<p><code>caption_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of special entities that appear in the caption, which can be specified instead of <code>parse_mode</code>.</p>
 </blockquote>
@@ -8392,7 +8367,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Identifier of the target message. If the message belongs to a media group, the reaction is set to the first non-deleted message in the group instead.</p>
 </blockquote>
-<p><code>reaction : Union(<a href="../Array.html">Array</a>(<a href="../Hamilton/Types/ReactionType.html">Hamilton::Types::ReactionType</a>) | Nil)</code></p>
+<p><code>reaction : Union(Array(<a href="../Hamilton/Types/ReactionType.html">Hamilton::Types::ReactionType</a>) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of reaction types to set on the message. Currently, as non-premium users, bots can set up to one reaction per message. A custom emoji reaction can be used if it is either already present on the message or explicitly allowed by chat administrators. Paid reactions can't be used by bots.</p>
 </blockquote>
@@ -8420,7 +8395,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
           
           <p>Use this method to change the list of the bot's commands. Returns True on success.</p>
 <p>Params:</p>
-<p><code>commands : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/BotCommand.html">Hamilton::Types::BotCommand</a>)</code></p>
+<p><code>commands : Array(<a href="../Hamilton/Types/BotCommand.html">Hamilton::Types::BotCommand</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized list of bot commands to be set as the list of the bot's commands. At most 100 commands can be specified.</p>
 </blockquote>
@@ -8569,7 +8544,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>User identifier.</p>
 </blockquote>
-<p><code>errors : <a href="../Array.html">Array</a>(<a href="../Hamilton/Types/PassportElementError.html">Hamilton::Types::PassportElementError</a>)</code></p>
+<p><code>errors : Array(<a href="../Hamilton/Types/PassportElementError.html">Hamilton::Types::PassportElementError</a>)</code></p>
 <blockquote>
 <p>A JSON-serialized array describing the errors.</p>
 </blockquote>
@@ -8597,7 +8572,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>File identifier of the sticker.</p>
 </blockquote>
-<p><code>emoji_list : <a href="../Array.html">Array</a>(String)</code></p>
+<p><code>emoji_list : Array(String)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 1-20 emoji associated with the sticker.</p>
 </blockquote>
@@ -8625,7 +8600,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>File identifier of the sticker.</p>
 </blockquote>
-<p><code>keywords : Union(<a href="../Array.html">Array</a>(String) | Nil)</code></p>
+<p><code>keywords : Union(Array(String) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of 0-20 search keywords for the sticker with total length of up to 64 characters.</p>
 </blockquote>
@@ -8822,7 +8797,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>The maximum allowed number of simultaneous HTTPS connections to the webhook for update delivery, 1-100. Defaults to 40. Use lower values to limit the load on your bot's server, and higher values to increase your bot's throughput.</p>
 </blockquote>
-<p><code>allowed_updates : Union(<a href="../Array.html">Array</a>(String) | Nil)</code></p>
+<p><code>allowed_updates : Union(Array(String) | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized list of the update types you want your bot to receive. For example, specify [&quot;message&quot;, &quot;edited_channel_post&quot;, &quot;callback_query&quot;] to only receive updates of these types. See <code>Update</code> for a complete list of available update types. Specify an empty list to receive all update types except chat_member, message_reaction, and message_reaction_count (default). If not specified, the previous setting will be used.</p>
 <p>Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time.</p>
