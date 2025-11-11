@@ -10,6 +10,11 @@ class Hamilton::Storage
     @raw = Hash(Symbol, Hamilton::Any).new
   end
 
+  # Check if there is a key in the storage. 
+  def has_key?(key : Symbol)
+    return @raw.has_key?(key)
+  end
+
   # Get value for the `key`. If key does not exist, raises a `KeyError` exception.
   def [](key : Symbol)
     if @raw.has_key?(key)
