@@ -14,6 +14,8 @@ require "./handlers/*"
 #  - `Hamilton::Handler` --- module to give classes handler functionalities;
 #  - `Hamilton::LogHandler` --- handler for logging incoming updates and time consumed by the handlers next in chain;
 #  - `Hamilton::CmdHandler` --- handler for most common types of updates;
+#  - `Hamilton::Any` --- a mutable version of `JSON::Any`;
+#  - `Hamilton::Storage` --- a wrapper for easier usage of `Hash(Symbol, Hamilton::Any)`; 
 #  - `Hamilton::Context` --- primitive for storing previous methods that handled last updates in the user flow and some contextual data.
 #
 # `Hamilton::CmdHandler` uses following annotations, that are used without `Hamilton::` prefix:

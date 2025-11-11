@@ -1,4 +1,5 @@
 require "../handler"
+require "../storage"
 require "../context"
 require "../api"
 require "log"
@@ -24,7 +25,7 @@ class Hamilton::CmdHandler
 
   {% if flag?(:async) %}  
   
-  property caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, Channel(Signal), NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))
+  property caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hamilton::Storage, Channel(Signal), NamedTuple(method: Symbol | Nil, data: Hamilton::Storage)))
   property channels : Hash(Int64 | String | Symbol, Channel(Signal))  
   
   def initialize(log_level : Log::Severity = Log::Severity::Info)
@@ -32,7 +33,7 @@ class Hamilton::CmdHandler
 
     @context = Hamilton::Context.new default_method: :root
     @mapper = {:root => Hash(String | Symbol, Symbol).new}
-    @caller = Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, Channel(Signal), NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))).new
+    @caller = Hash(Symbol, Proc(Hamilton::Types::Update, Hamilton::Storage, Channel(Signal), NamedTuple(method: Symbol | Nil, data: Hamilton::Storage))).new
     @channels = Hash(Int64 | String | Symbol, Channel(Signal)).new
   end
 
@@ -343,14 +344,14 @@ class Hamilton::CmdHandler
 
   {% else %}
 
-  property caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil)))
+  property caller : Hash(Symbol, Proc(Hamilton::Types::Update, Hamilton::Storage, NamedTuple(method: Symbol | Nil, data: Hamilton::Storage)))
 
   def initialize(log_level : Log::Severity = Log::Severity::Info)
     @log = Log.for("Hamilton::Bot Command Handler", log_level)
 
     @context = Hamilton::Context.new default_method: :root
     @mapper = {:root => Hash(String | Symbol, Symbol).new}
-    @caller = Hash(Symbol, Proc(Hamilton::Types::Update, Hash(Symbol, JSON::Any) | Nil, NamedTuple(method: Symbol | Nil, data: Hash(Symbol, JSON::Any) | Nil))).new
+    @caller = Hash(Symbol, Proc(Hamilton::Types::Update, Hamilton::Storage, NamedTuple(method: Symbol | Nil, data: Hamilton::Storage))).new
   end
   
   def call(update : Hamilton::Types::Update)
@@ -636,7 +637,7 @@ macro method_added(method)
         raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :argument
       {% end %}
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil, signal : Channel(Signal)){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage, signal : Channel(Signal)){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
@@ -652,7 +653,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # callbacks
@@ -667,7 +668,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # known text 
@@ -677,7 +678,7 @@ macro method_added(method)
         raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :remaining_text
       {% end %}
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil, signal : Channel(Signal)){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage, signal : Channel(Signal)){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
@@ -690,7 +691,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # other types
@@ -708,7 +709,7 @@ macro method_added(method)
       {% for arg in method.args %}
         {% if arg.name.symbolize == method.annotation(Handle)[0] %}        
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil, signal : Channel(Signal)){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage, signal : Channel(Signal)){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
@@ -721,7 +722,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
         {% end %}
@@ -782,7 +783,7 @@ macro method_added(method)
         raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :argument
       {% end %}
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
@@ -798,7 +799,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # callbacks
@@ -808,12 +809,12 @@ macro method_added(method)
         raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :callback
       {% end %}
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage){
         result = {{method.name.id}}(update: update, context: context)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # known text 
@@ -823,7 +824,7 @@ macro method_added(method)
         raise Hamilton::Errors::MissingCmdHandlerMethodParam.new :remaining_text
       {% end %}
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
@@ -836,7 +837,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
       # other types
@@ -854,7 +855,7 @@ macro method_added(method)
       {% for arg in method.args %}
         {% if arg.name.symbolize == method.annotation(Handle)[0] %}        
 
-      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hash(Symbol, JSON::Any) | Nil){
+      %handler.caller[{{method.name.symbolize}}] = ->(update : Hamilton::Types::Update, context : Hamilton::Storage){
         message = update.message
         message ||= update.business_message
         message = message.as(Hamilton::Types::Message)
@@ -867,7 +868,7 @@ macro method_added(method)
         if result
           context = result          
         end
-        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context.as(Hash(Symbol, JSON::Any) | Nil)}
+        {method: {{method.name.symbolize}}.as(Symbol | Nil), data: context}
       }
 
         {% end %}
