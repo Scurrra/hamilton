@@ -23,5 +23,5 @@ require "./handlers/*"
 #  - `@[Handle(...)]` to specify which type of updates the method can handle;
 #  - `@[For(...)]` to specify a list of possible methods that handled previous updates in the user flow.
 module Hamilton
-  VERSION = "0.3.0"
+  VERSION = "0.3.1"
 end
