@@ -1737,9 +1737,105 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#clear%3Aself-instance-method" class="signature"><strong>#clear</strong> : <span class="k">self</span></a>
+        
+          <div class="summary"><p>Empties the storage and returns it.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete%28key%3ASymbol%29-instance-method" class="signature"><strong>#delete</strong>(key : Symbol)</a>
+        
+          <div class="summary"><p>Deletes the key-value pair and returns the value, otherwise returns <code>nil</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#delete%28key%3ASymbol%2C%26%3ASymbol-%3E%29-instance-method" class="signature"><strong>#delete</strong>(key : Symbol, & : Symbol -> )</a>
+        
+          <div class="summary"><p>Deletes the key-value pair and returns the value, else yields key with given block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#each%28%26block%3ATuple%28Symbol%2CHamilton%3A%3AAny%29-%3E%29%3ANil-instance-method" class="signature"><strong>#each</strong>(&block : Tuple(Symbol, Hamilton::Any) -> ) : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#empty%3F-instance-method" class="signature"><strong>#empty?</strong></a>
+        
+          <div class="summary"><p>Returns <code>true</code> when hash contains no key-value pairs.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fetch%28key%3ASymbol%2Cdefault%29-instance-method" class="signature"><strong>#fetch</strong>(key : Symbol, default)</a>
+        
+          <div class="summary"><p>Returns the value for the <code>key</code>, or when not found the value given by <code>default</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fetch%28key%3ASymbol%2C%26%29-instance-method" class="signature"><strong>#fetch</strong>(key : Symbol, &)</a>
+        
+          <div class="summary"><p>Returns the value for the <code>key</code>, or when not found the value returned by the given block invoked with <code>key</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#has_key%3F%28key%3ASymbol%29-instance-method" class="signature"><strong>#has_key?</strong>(key : Symbol)</a>
         
           <div class="summary"><p>Check if there is a key in the storage.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#keys-instance-method" class="signature"><strong>#keys</strong></a>
+        
+          <div class="summary"><p>Get all keys in the storage.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put%28key%3ASymbol%2Cvalue%2C%26%29-instance-method" class="signature"><strong>#put</strong>(key : Symbol, value, &)</a>
+        
+          <div class="summary"><p>Tries to set <code>value</code> to a <code>key</code>.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put_if_absent%28key%3ASymbol%2Cvalue%29-instance-method" class="signature"><strong>#put_if_absent</strong>(key : Symbol, value)</a>
+        
+          <div class="summary"><p>Tries to set <code>value</code> to a <code>key</code> if it's absent yet.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#put_if_absent%28key%3ASymbol%2C%26%3ASymbol-%3E%29-instance-method" class="signature"><strong>#put_if_absent</strong>(key : Symbol, & : Symbol -> )</a>
+        
+          <div class="summary"><p>Tries to set the result of the given block to a <code>key</code> if it's absent yet.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#size-instance-method" class="signature"><strong>#size</strong></a>
+        
+          <div class="summary"><p>Get size of the storage.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_a-instance-method" class="signature"><strong>#to_a</strong></a>
+        
+          <div class="summary"><p>Returns an <code>Array</code> of <code>Tuple(Symbol, <a href="../Hamilton/Any.html">Hamilton::Any</a>)</code> with keys and values belonging to this Storage.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#values-instance-method" class="signature"><strong>#values</strong></a>
+        
+          <div class="summary"><p>Get all values in the storage.</p></div>
         
       </li>
     
@@ -1897,6 +1993,136 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="clear:self-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong> : <span class="k">self</span>
+
+        <a class="method-permalink" href="#clear%3Aself-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Empties the storage and returns it.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete(key:Symbol)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>(key : Symbol)
+
+        <a class="method-permalink" href="#delete%28key%3ASymbol%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes the key-value pair and returns the value, otherwise returns <code>nil</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="delete(key:Symbol,&amp;:Symbol-&gt;)-instance-method">
+      <div class="signature">
+        
+        def <strong>delete</strong>(key : Symbol, & : Symbol -> )
+
+        <a class="method-permalink" href="#delete%28key%3ASymbol%2C%26%3ASymbol-%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Deletes the key-value pair and returns the value, else yields key with given block.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="each(&amp;block:Tuple(Symbol,Hamilton::Any)-&gt;):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>each</strong>(&block : Tuple(Symbol, <a href="../Hamilton/Any.html">Hamilton::Any</a>) -> ) : Nil
+
+        <a class="method-permalink" href="#each%28%26block%3ATuple%28Symbol%2CHamilton%3A%3AAny%29-%3E%29%3ANil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="empty?-instance-method">
+      <div class="signature">
+        
+        def <strong>empty?</strong>
+
+        <a class="method-permalink" href="#empty%3F-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns <code>true</code> when hash contains no key-value pairs.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fetch(key:Symbol,default)-instance-method">
+      <div class="signature">
+        
+        def <strong>fetch</strong>(key : Symbol, default)
+
+        <a class="method-permalink" href="#fetch%28key%3ASymbol%2Cdefault%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the value for the <code>key</code>, or when not found the value given by <code>default</code>.
+Raises an <code>ArgumentError</code> if something goes wrong (wrong type of <code>default</code>).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fetch(key:Symbol,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>fetch</strong>(key : Symbol, &)
+
+        <a class="method-permalink" href="#fetch%28key%3ASymbol%2C%26%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the value for the <code>key</code>, or when not found the value returned by the given block invoked with <code>key</code>.
+Raises an <code>ArgumentError</code> if something goes wrong (wrong type of block's result).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="has_key?(key:Symbol)-instance-method">
       <div class="signature">
         
@@ -1908,6 +2134,146 @@
         <div class="doc">
           
           <p>Check if there is a key in the storage.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="keys-instance-method">
+      <div class="signature">
+        
+        def <strong>keys</strong>
+
+        <a class="method-permalink" href="#keys-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get all keys in the storage.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put(key:Symbol,value,&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>put</strong>(key : Symbol, value, &)
+
+        <a class="method-permalink" href="#put%28key%3ASymbol%2Cvalue%2C%26%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tries to set <code>value</code> to a <code>key</code>. Raises an <code>ArgumentError</code> if something goes wrong (wrong type of <code>value</code>).</p>
+<p>If a value already exists for <code>key</code>, that (old) value is returned.
+Otherwise the given block is invoked with <code>key</code> and its value is returned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put_if_absent(key:Symbol,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>put_if_absent</strong>(key : Symbol, value)
+
+        <a class="method-permalink" href="#put_if_absent%28key%3ASymbol%2Cvalue%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tries to set <code>value</code> to a <code>key</code> if it's absent yet. Raises an <code>ArgumentError</code> if something goes wrong (wrong type of <code>value</code>).</p>
+<p>If a value already exists for <code>key</code>, that (old) value is returned.
+Otherwise <code>value</code> is returned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="put_if_absent(key:Symbol,&amp;:Symbol-&gt;)-instance-method">
+      <div class="signature">
+        
+        def <strong>put_if_absent</strong>(key : Symbol, & : Symbol -> )
+
+        <a class="method-permalink" href="#put_if_absent%28key%3ASymbol%2C%26%3ASymbol-%3E%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Tries to set the result of the given block to a <code>key</code> if it's absent yet.
+Raises an <code>ArgumentError</code> if something goes wrong (wrong type of block's result).</p>
+<p>If a value already exists for <code>key</code>, that (old) value is returned.
+Otherwise the given block is invoked with <code>key</code> and its value is returned.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="size-instance-method">
+      <div class="signature">
+        
+        def <strong>size</strong>
+
+        <a class="method-permalink" href="#size-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get size of the storage.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_a-instance-method">
+      <div class="signature">
+        
+        def <strong>to_a</strong>
+
+        <a class="method-permalink" href="#to_a-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns an <code>Array</code> of <code>Tuple(Symbol, <a href="../Hamilton/Any.html">Hamilton::Any</a>)</code> with keys and values belonging to this Storage.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="values-instance-method">
+      <div class="signature">
+        
+        def <strong>values</strong>
+
+        <a class="method-permalink" href="#values-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get all values in the storage.</p>
         </div>
       
       <br/>
