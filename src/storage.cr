@@ -1,7 +1,7 @@
 require "./any"
 
-# Storage class for `Hamilton::Context`. Basically, it's a hidden `Hash(Symbol, Hamilton::Any)` with overridden
-# `[]`, `[]?`, and `[]=` to not need to explicitly convert some type to `Hamilton::Any`.
+# Storage class for `Hamilton::Context`. Basically, it's a hidden `Hash(Symbol, Hamilton::Any)`
+# with some methods being overridden (same behavior as in `Hash`) without the need for explicit convertion `value`s to `Hamilton::Any`.
 class Hamilton::Storage
   private property raw : Hash(Symbol, Hamilton::Any)
 
@@ -10,7 +10,7 @@ class Hamilton::Storage
     @raw = Hash(Symbol, Hamilton::Any).new
   end
 
-  # Check if there is a key in the storage. 
+  # Check if there is a key in the storage.
   def has_key?(key : Symbol)
     return @raw.has_key?(key)
   end
@@ -58,7 +58,7 @@ class Hamilton::Storage
   end
 
   # Tries to set `value` to a `key`. Raises an `ArgumentError` if something goes wrong (wrong type of `value`).
-  # 
+  #
   # If a value already exists for `key`, that (old) value is returned.
   # Otherwise the given block is invoked with `key` and its value is returned.
   def put(key : Symbol, value, &)
@@ -72,7 +72,7 @@ class Hamilton::Storage
   end
 
   # Tries to set `value` to a `key` if it's absent yet. Raises an `ArgumentError` if something goes wrong (wrong type of `value`).
-  # 
+  #
   # If a value already exists for `key`, that (old) value is returned.
   # Otherwise `value` is returned.
   def put_if_absent(key : Symbol, value)
@@ -84,9 +84,9 @@ class Hamilton::Storage
     @raw[key]
   end
 
-  # Tries to set the result of the given block to a `key` if it's absent yet. 
+  # Tries to set the result of the given block to a `key` if it's absent yet.
   # Raises an `ArgumentError` if something goes wrong (wrong type of block's result).
-  # 
+  #
   # If a value already exists for `key`, that (old) value is returned.
   # Otherwise the given block is invoked with `key` and its value is returned.
   def put_if_absent(key : Symbol, & : Symbol ->)
@@ -109,7 +109,7 @@ class Hamilton::Storage
     @raw.size == 0
   end
 
-  # Get all keys in the storage. 
+  # Get all keys in the storage.
   def keys
     @raw.keys
   end
@@ -145,7 +145,7 @@ class Hamilton::Storage
 
   # Returns an `Array` of `Tuple(Symbol, Hamilton::Any)` with keys and values belonging to this Storage.
   def to_a
-    @raw.to_a    
+    @raw.to_a
   end
 
   # :nodoc:
