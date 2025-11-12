@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.0">
+<meta name="crystal_docs.project_version" content="0.3.1">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Storage - hamilton 0.3.0</title>
+  <title>Hamilton::Storage - hamilton 0.3.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.0
+        0.3.1
       </span>
     </div>
   </div>
@@ -1642,8 +1642,8 @@
     Overview
   </h2>
 
-  <p>Storage class for <code><a href="../Hamilton/Context.html">Hamilton::Context</a></code>. Basically, it's a hidden <code>Hash(Symbol, <a href="../Hamilton/Any.html">Hamilton::Any</a>)</code> with overridden
-<code><a href="../Hamilton/Storage.html#%5B%5D%28key%3ASymbol%29-instance-method">#[]</a></code>, <code><a href="../Hamilton/Storage.html#%5B%5D%3F%28key%3ASymbol%29-instance-method">#[]?</a></code>, and <code><a href="../Hamilton/Storage.html#%5B%5D%3D%28key%3ASymbol%2Cvalue%29-instance-method">#[]=</a></code> to not need to explicitly convert some type to <code><a href="../Hamilton/Any.html">Hamilton::Any</a></code>.</p>
+  <p>Storage class for <code><a href="../Hamilton/Context.html">Hamilton::Context</a></code>. Basically, it's a hidden <code>Hash(Symbol, <a href="../Hamilton/Any.html">Hamilton::Any</a>)</code>
+with some methods being overridden (same behavior as in <code>Hash</code>) without the need for explicit convertion <code>value</code>s to <code><a href="../Hamilton/Any.html">Hamilton::Any</a></code>.</p>
 
 
 
