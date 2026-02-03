@@ -13,7 +13,7 @@ class Hamilton::LogHandler
   end
 
   def call(update : Hamilton::Types::Update)
-    start = Time.monotonic
+    start = Time.instant
     status, error = :ok, nil
 
     begin
@@ -22,12 +22,12 @@ class Hamilton::LogHandler
       status = :bad
       error = ex
     ensure
-      elapsed = Time.monotonic - start
+      elapsed = Time.instant - start
       elapsed_text = elapsed_text(elapsed)
 
       update_types = update.non_nil_fields
       update_types.delete("update_id")
-    
+
       if status == :ok
         @log.info { "#{update.update_id} - #{update_types[0]} (#{elapsed_text})" }
       else
