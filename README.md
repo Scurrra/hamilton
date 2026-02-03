@@ -54,9 +54,6 @@ bot.listen
 
 Usage guide with detailed explanation and example of the async bot can be found [here](https://scurrra.github.io/blog/hamilton-guide/).
 
-## Possible issues:
- - Sending files were not tested yet, so it may fail.
-
 ## Contributing
 
 1. Fork it (<https://github.com/Scurrra/hamilton/fork>)
