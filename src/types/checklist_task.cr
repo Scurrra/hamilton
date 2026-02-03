@@ -14,11 +14,14 @@ class Hamilton::Types::ChecklistTask
   property text : String
 
   # Special entities that appear in the task text.
-  property text_entities : Array(Hamilton::Types::MessageEntity)
+  property text_entities : Array(Hamilton::Types::MessageEntity) | Nil
 
   # User that completed the task; omitted if the task wasn't completed.
-  property completed_by_user : Hamilton::Types::User
+  property completed_by_user : Hamilton::Types::User | Nil
+
+  # Chat that completed the task; omitted if the task wasn't completed by a chat.
+  property completed_by_chat : Hamilton::Types::Chat | Nil
 
   # Point in time (Unix timestamp) when the task was completed; 0 if the task wasn't completed.
-  property completion_date : Int32
+  property completion_date : Int32 | Nil
 end

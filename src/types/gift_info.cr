@@ -19,15 +19,21 @@ class Hamilton::Types::GiftInfo
   # Number of Telegram Stars that were prepaid by the sender for the ability to upgrade the gift.
   property prepaid_upgrade_star_count : Int32 | Nil
 
+  # True, if the gift's upgrade was purchased after the gift was sent.
+  property is_upgrade_separate : Bool | Nil
+
   # True, if the gift can be upgraded to a unique gift.
   property can_be_upgraded : Bool | Nil
 
   # Text of the message that was added to the gift.
   property text : String | Nil
-  
+
   # Special entities that appear in the text.
   property entities : Array(Hamilton::Types::MessageEntity) | Nil
 
   # True, if the sender and gift text are shown only to the gift receiver; otherwise, everyone will be able to see them.
   property is_private : Bool | Nil
+
+  # Unique number reserved for this gift when upgraded. See the number field in `Hamilton::Types::UniqueGift`.
+  property unique_gift_number : Int32 | Nil
 end

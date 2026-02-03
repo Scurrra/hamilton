@@ -45,6 +45,12 @@ class Hamilton::Types::OwnedGiftRegular
 
   # Number of Telegram Stars that were paid by the sender for the ability to upgrade the gift.
   property prepaid_upgrade_star_count : Int32 | Nil
+
+  # True, if the gift's upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only.
+  property is_upgrade_separate : Bool | Nil
+
+  # Unique number reserved for this gift when upgraded. See the number field in `Hamilton::Types::UniqueGift`.
+  property unique_gift_number : Int32 | Nil
 end
 
 # Describes a unique gift received and owned by a user or a chat.

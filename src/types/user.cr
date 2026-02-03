@@ -45,4 +45,7 @@ class Hamilton::Types::User
 
   # True, if the bot has a main Web App. Returned only in getMe.
   property has_main_web_app : Bool | Nil
+
+  # True, if the bot has forum topic mode enabled in private chats. Returned only in `getMe`.
+  property has_topics_enabled : Bool | Nil
 end

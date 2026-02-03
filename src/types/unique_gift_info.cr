@@ -10,11 +10,14 @@ class Hamilton::Types::UniqueGiftInfo
   # Information about the gift.
   property gift : Hamilton::Types::UniqueGift
 
-  # Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users.
+  # Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users, “gifted_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers.
   property origin : String
 
-  # For gifts bought from other users, the price paid for the gift.
-  property last_resale_star_count : Int32 | Nil
+  # For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.
+  property last_resale_currency : String | Nil
+
+  # For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins.
+  property last_resale_amount : Int32 | Nil
 
   # Unique identifier of the received gift for the bot; only present for gifts received on behalf of business accounts.
   property owned_gift_id : String | Nil

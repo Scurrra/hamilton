@@ -109,7 +109,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -171,7 +171,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -193,6 +193,10 @@ class Hamilton::Api
           type: Union(Bool | Nil),
           docs: [%<Protects the contents of the forwarded message from forwarding and saving.>],
         },
+        :message_effect_id => {
+          type: Union(String | Nil),
+          docs: [%<Unique identifier of the message effect to be added to the message; only available when forwarding to private chats.>],
+        },
         :suggested_post_parameters => {
           type: Union(Hamilton::Types::SuggestedPostParameters | Nil),
           docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only.>],
@@ -213,7 +217,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -247,7 +251,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -293,6 +297,10 @@ class Hamilton::Api
           type: Union(Bool | Nil),
           docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>],
         },
+        :message_effect_id => {
+          type: Union(String | Nil),
+          docs: [%<Unique identifier of the message effect to be added to the message; only available when copying to private chats.>],
+        },
         :suggested_post_parameters => {
           type: Union(Hamilton::Types::SuggestedPostParameters | Nil),
           docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>],
@@ -317,7 +325,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -359,7 +367,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -433,7 +441,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -515,7 +523,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -589,7 +597,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -691,7 +699,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -781,7 +789,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -851,7 +859,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -917,7 +925,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -991,7 +999,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -1037,7 +1045,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -1111,7 +1119,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -1193,7 +1201,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -1259,7 +1267,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :question => {
           type: String,
@@ -1395,7 +1403,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -1435,6 +1443,36 @@ class Hamilton::Api
         },
       },
     },
+    "sendMessageDraft" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled.>],
+      params:      {
+        :chat_id => {
+          type: Int64,
+          docs: [%<Unique identifier for the target private chat.>],
+        },
+        :message_thread_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Unique identifier for the target message thread.>],
+        },
+        :draft_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated.>],
+        },
+        :text => {
+          type: String,
+          docs: [%<Text of the message to be sent, 1-4096 characters after entities parsing.>],
+        },
+        :parse_mode => {
+          type: Union(String | Nil),
+          docs: [%<Mode for parsing entities in the message text.>],
+        },
+        :entities => {
+          type: Union(Array(Hamilton::Types::MessageEntity) | Nil),
+          docs: [%<A JSON-serialized list of special entities that appear in message text, which can be specified instead of `parse_mode`.>],
+        },
+      },
+    },
     "sendChatAction" => {
       return_type: ApiResult(Bool),
       docs:        [%<Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.>, %<We only recommend using this method when a response from the bot will take a noticeable amount of time to arrive.>],
@@ -1449,7 +1487,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread; for supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :action => {
           type: String,
@@ -2733,9 +2771,109 @@ class Hamilton::Api
           type: Union(Bool | Nil),
           docs: [%<Pass True to exclude gifts that can be purchased an unlimited number of times.>],
         },
-        :exclude_limited => {
+        :exclude_limited_upgradable => {
           type: Union(Bool | Nil),
-          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times.>],
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique.>],
+        },
+        :exclude_limited_non_upgradable => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique.>],
+        },
+        :exclude_unique => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude unique gifts.>],
+        },
+        :exclude_from_blockchain => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram.>],
+        },
+        :sort_by_price => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.>],
+        },
+        :offset => {
+          type: Union(String | Nil),
+          docs: [%<Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results.>],
+        },
+        :limit => {
+          type: Union(Int32 | Nil),
+          docs: [%<The maximum number of gifts to be returned; 1-100. Defaults to 100.>],
+        },
+      },
+    },
+    "getUserGifts" => {
+      return_type: ApiResult(Hamilton::Types::OwnedGifts),
+      docs:       [%<Returns the gifts owned and hosted by a user.>],
+      params:     {
+        :user_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the user.>],
+        },
+        :exclude_unlimited => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased an unlimited number of times.>],
+        },
+        :exclude_limited_upgradable => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique.>],
+        },
+        :exclude_limited_non_upgradable => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique.>],
+        },
+        :exclude_from_blockchain => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram.>],
+        },
+        :exclude_unique => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude unique gifts.>],
+        },
+        :sort_by_price => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.>],
+        },
+        :offset => {
+          type: Union(String | Nil),
+          docs: [%<Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results.>],
+        },
+        :limit => {
+          type: Union(Int32 | Nil),
+          docs: [%<The maximum number of gifts to be returned; 1-100. Defaults to 100.>],
+        },
+      },
+    },
+    "getChatGifts" => {
+      return_type: ApiResult(Hamilton::Types::OwnedGifts),
+      docs:       [%<Returns the gifts owned and hosted by a user.>],
+      params:     {
+        :chat_id => {
+          type: Union(Int32 | String),
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>],
+        },
+        :exclude_unsaved => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that aren't saved to the chat's profile page. Always True, unless the bot has the `can_post_messages` administrator right in the channel.>],
+        },
+        :exclude_saved => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that are saved to the chat's profile page. Always False, unless the bot has the `can_post_messages` administrator right in the channel.>],
+        },
+        :exclude_unlimited => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased an unlimited number of times.>],
+        },
+        :exclude_limited_upgradable => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique.>],
+        },
+        :exclude_limited_non_upgradable => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique.>],
+        },
+        :exclude_from_blockchain => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram.>],
         },
         :exclude_unique => {
           type: Union(Bool | Nil),
@@ -2851,6 +2989,36 @@ class Hamilton::Api
         },
         :protect_content => {
           type: Union(Bool | Nil),
+          docs: [%<Pass True if the content of the story must be protected from forwarding and screenshotting.>],
+        },
+      },
+    },
+    "repostStory" => {
+      return_type: ApiResult(Hamilton::Types::Story),
+      docs:        [%<Reposts a story on behalf of a business account from another business account. Both business accounts must be managed by the same bot, and the story on the source account must have been posted (or reposted) by the bot. Requires the `can_manage_stories` business bot right for both business accounts.>],
+      params:      {
+        :business_connection_id => {
+          type: String,
+          docs: [%<Unique identifier of the business connection.>],
+        },
+        :from_chat_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the chat which posted the story that should be reposted.>],
+        },
+        :from_story_id => {
+          type: Int32,
+          docs: [%<Unique identifier of the story that should be reposted.>],
+        },
+        :active_period => {
+          type: Int32,
+          docs: [%<Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`.>],
+        },
+        :post_to_chat_page => {
+          type: Bool,
+          docs: [%<Pass True to keep the story accessible after it expires.>],
+        },
+        :protect_content => {
+          type: String,
           docs: [%<Pass True if the content of the story must be protected from forwarding and screenshotting.>],
         },
       },
@@ -3245,7 +3413,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -3607,7 +3775,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :direct_messages_topic_id => {
           type: Union(Int32 | Nil),
@@ -3939,7 +4107,7 @@ class Hamilton::Api
         },
         :message_thread_id => {
           type: Union(Int32 | Nil),
-          docs: [%<Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.>],
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
         },
         :game_short_name => {
           type: String,

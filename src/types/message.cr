@@ -10,7 +10,7 @@ class Hamilton::Types::Message
   # Unique message identifier inside this chat. In specific instances (e.g., message containing a video sent to a big chat), the server might automatically schedule a message instead of sending it immediately. In such cases, this field will be 0 and the relevant message will be unusable until it is actually sent.
   property message_id : Int32
 
-  # Unique identifier of a message thread to which the message belongs; for supergroups only.
+  # Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only.
   property message_thread_id : Int32 | Nil
 
   # Information about the direct messages chat topic that contains the message.
@@ -40,6 +40,9 @@ class Hamilton::Types::Message
   # Information about the original message for forwarded messages.
   property forward_origin : Hamilton::Types::MessageOrigin | Nil
 
+  # True, if the message is sent to a topic in a forum supergroup or a private chat with the bot.
+  property is_topic_message : Bool | Nil
+
   # True, if the message is sent to a forum topic.
   property is_topic_message : Bool | Nil
 
@@ -60,10 +63,10 @@ class Hamilton::Types::Message
 
   # Identifier of the specific checklist task that is being replied to.
   property reply_to_checklist_task_id : Int32 | Nil
-  
+
   # Bot through which the message was sent.
   property via_bot : Hamilton::Types::User | Nil
-  
+
   # Date the message was last edited in Unix time.
   property edit_date : Int32 | Nil
 
@@ -219,6 +222,9 @@ class Hamilton::Types::Message
 
   # Service message: a unique gift was sent or received.
   property unique_gift : Hamilton::Types::UniqueGiftInfo | Nil
+
+  # Service message: upgrade of a gift was purchased after the gift was sent.
+  property gift_upgrade_sent : Hamilton::Types::GiftInfo | Nil
 
   # Service message: the user allowed the bot to write messages after adding it to the attachment or side menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method requestWriteAccess.
   property write_access_allowed	: Hamilton::Types::WriteAccessAllowed | Nil

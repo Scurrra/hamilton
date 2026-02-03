@@ -15,4 +15,7 @@ class Hamilton::Types::ForumTopicCreated
 
   # Unique identifier of the custom emoji shown as the topic icon.
   property icon_custom_emoji_id : String | Nil
+
+  # True, if the name of the topic wasn't specified explicitly by its creator and likely needs to be changed by the bot.
+  property is_name_implicit : Bool | Nil
 end

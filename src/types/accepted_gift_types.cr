@@ -18,4 +18,7 @@ class Hamilton::Types::AcceptedGiftTypes
 
   # True, if a Telegram Premium subscription is accepted.
   property premium_subscription : Bool
+
+  # True, if transfers of unique gifts from channels are accepted.
+  property gifts_from_channels : Bool
 end

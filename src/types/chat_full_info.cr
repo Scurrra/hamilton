@@ -147,4 +147,13 @@ class Hamilton::Types::ChatFullInfo
 
   # For supergroups, the location to which the supergroup is connected.
   property location : Hamilton::Types::ChatLocation | Nil
+
+  # For private chats, the rating of the user if any.
+  property rating : Hamilton::Types::UserRating | Nil
+
+  # The color scheme based on a unique gift that must be used for the chat's name, message replies and link previews.
+  property unique_gift_colors : Hamilton::Types::UniqueGiftColors | Nil
+
+  # The number of Telegram Stars a general user have to pay to send a message to the chat.
+  property paid_message_star_count : Int32 | Nil
 end
