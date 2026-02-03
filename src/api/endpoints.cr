@@ -3014,11 +3014,11 @@ class Hamilton::Api
           docs: [%<Period after which the story is moved to the archive, in seconds; must be one of `6 * 3600`, `12 * 3600`, `86400`, or `2 * 86400`.>],
         },
         :post_to_chat_page => {
-          type: Bool,
+          type: Union(Bool | Nil),
           docs: [%<Pass True to keep the story accessible after it expires.>],
         },
         :protect_content => {
-          type: String,
+          type: Union(String | Nil),
           docs: [%<Pass True if the content of the story must be protected from forwarding and screenshotting.>],
         },
       },
