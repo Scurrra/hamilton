@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.1">
+<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::ChecklistTask - hamilton 0.3.1</title>
+  <title>Hamilton::Types::ChecklistTask - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.1
+        0.4.0
       </span>
     </div>
   </div>
@@ -639,6 +639,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
       <a href="../../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+      <a href="../../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
   
@@ -1492,6 +1497,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftColors" data-name="hamilton::types::uniquegiftcolors">
+      <a href="../../Hamilton/Types/UniqueGiftColors.html">UniqueGiftColors</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
       <a href="../../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
       
@@ -1524,6 +1534,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+      <a href="../../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
   
@@ -1744,28 +1759,42 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser-instance-method" class="signature"><strong>#completed_by_user</strong> : Hamilton::Types::User</a>
+        <a href="#completed_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method" class="signature"><strong>#completed_by_chat</strong> : Hamilton::Types::Chat | Nil</a>
+        
+          <div class="summary"><p>Chat that completed the task; omitted if the task wasn't completed by a chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#completed_by_chat%3D%28completed_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method" class="signature"><strong>#completed_by_chat=</strong>(completed_by_chat : Hamilton::Types::Chat | Nil)</a>
+        
+          <div class="summary"><p>Chat that completed the task; omitted if the task wasn't completed by a chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil-instance-method" class="signature"><strong>#completed_by_user</strong> : Hamilton::Types::User | Nil</a>
         
           <div class="summary"><p>User that completed the task; omitted if the task wasn't completed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#completed_by_user%3D%28completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser%29-instance-method" class="signature"><strong>#completed_by_user=</strong>(completed_by_user : Hamilton::Types::User)</a>
+        <a href="#completed_by_user%3D%28completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil%29-instance-method" class="signature"><strong>#completed_by_user=</strong>(completed_by_user : Hamilton::Types::User | Nil)</a>
         
           <div class="summary"><p>User that completed the task; omitted if the task wasn't completed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#completion_date%3AInt32-instance-method" class="signature"><strong>#completion_date</strong> : Int32</a>
+        <a href="#completion_date%3AInt32%7CNil-instance-method" class="signature"><strong>#completion_date</strong> : Int32 | Nil</a>
         
           <div class="summary"><p>Point in time (Unix timestamp) when the task was completed; 0 if the task wasn't completed.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#completion_date%3D%28completion_date%3AInt32%29-instance-method" class="signature"><strong>#completion_date=</strong>(completion_date : Int32)</a>
+        <a href="#completion_date%3D%28completion_date%3AInt32%7CNil%29-instance-method" class="signature"><strong>#completion_date=</strong>(completion_date : Int32 | Nil)</a>
         
           <div class="summary"><p>Point in time (Unix timestamp) when the task was completed; 0 if the task wasn't completed.</p></div>
         
@@ -1814,14 +1843,14 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29-instance-method" class="signature"><strong>#text_entities</strong> : Array(Hamilton::Types::MessageEntity)</a>
+        <a href="#text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil-instance-method" class="signature"><strong>#text_entities</strong> : Array(Hamilton::Types::MessageEntity) | Nil</a>
         
           <div class="summary"><p>Special entities that appear in the task text.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#text_entities%3D%28text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%29-instance-method" class="signature"><strong>#text_entities=</strong>(text_entities : Array(Hamilton::Types::MessageEntity))</a>
+        <a href="#text_entities%3D%28text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil%29-instance-method" class="signature"><strong>#text_entities=</strong>(text_entities : Array(Hamilton::Types::MessageEntity) | Nil)</a>
         
           <div class="summary"><p>Special entities that appear in the task text.</p></div>
         
@@ -1987,12 +2016,50 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="completed_by_user:Hamilton::Types::User-instance-method">
+    <div class="entry-detail" id="completed_by_chat:Hamilton::Types::Chat|Nil-instance-method">
       <div class="signature">
         
-        def <strong>completed_by_user</strong> : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a>
+        def <strong>completed_by_chat</strong> : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil
 
-        <a class="method-permalink" href="#completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser-instance-method">#</a>
+        <a class="method-permalink" href="#completed_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Chat that completed the task; omitted if the task wasn't completed by a chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="completed_by_chat=(completed_by_chat:Hamilton::Types::Chat|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>completed_by_chat=</strong>(completed_by_chat : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil)
+
+        <a class="method-permalink" href="#completed_by_chat%3D%28completed_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Chat that completed the task; omitted if the task wasn't completed by a chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="completed_by_user:Hamilton::Types::User|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>completed_by_user</strong> : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a> | Nil
+
+        <a class="method-permalink" href="#completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2006,12 +2073,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="completed_by_user=(completed_by_user:Hamilton::Types::User)-instance-method">
+    <div class="entry-detail" id="completed_by_user=(completed_by_user:Hamilton::Types::User|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>completed_by_user=</strong>(completed_by_user : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a>)
+        def <strong>completed_by_user=</strong>(completed_by_user : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a> | Nil)
 
-        <a class="method-permalink" href="#completed_by_user%3D%28completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser%29-instance-method">#</a>
+        <a class="method-permalink" href="#completed_by_user%3D%28completed_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2025,12 +2092,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="completion_date:Int32-instance-method">
+    <div class="entry-detail" id="completion_date:Int32|Nil-instance-method">
       <div class="signature">
         
-        def <strong>completion_date</strong> : Int32
+        def <strong>completion_date</strong> : Int32 | Nil
 
-        <a class="method-permalink" href="#completion_date%3AInt32-instance-method">#</a>
+        <a class="method-permalink" href="#completion_date%3AInt32%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2044,12 +2111,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="completion_date=(completion_date:Int32)-instance-method">
+    <div class="entry-detail" id="completion_date=(completion_date:Int32|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>completion_date=</strong>(completion_date : Int32)
+        def <strong>completion_date=</strong>(completion_date : Int32 | Nil)
 
-        <a class="method-permalink" href="#completion_date%3D%28completion_date%3AInt32%29-instance-method">#</a>
+        <a class="method-permalink" href="#completion_date%3D%28completion_date%3AInt32%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2177,12 +2244,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="text_entities:Array(Hamilton::Types::MessageEntity)-instance-method">
+    <div class="entry-detail" id="text_entities:Array(Hamilton::Types::MessageEntity)|Nil-instance-method">
       <div class="signature">
         
-        def <strong>text_entities</strong> : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>)
+        def <strong>text_entities</strong> : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil
 
-        <a class="method-permalink" href="#text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29-instance-method">#</a>
+        <a class="method-permalink" href="#text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -2196,12 +2263,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="text_entities=(text_entities:Array(Hamilton::Types::MessageEntity))-instance-method">
+    <div class="entry-detail" id="text_entities=(text_entities:Array(Hamilton::Types::MessageEntity)|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>text_entities=</strong>(text_entities : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>))
+        def <strong>text_entities=</strong>(text_entities : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)
 
-        <a class="method-permalink" href="#text_entities%3D%28text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%29-instance-method">#</a>
+        <a class="method-permalink" href="#text_entities%3D%28text_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">

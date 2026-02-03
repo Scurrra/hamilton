@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.1">
+<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::ChatFullInfo - hamilton 0.3.1</title>
+  <title>Hamilton::Types::ChatFullInfo - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.1
+        0.4.0
       </span>
     </div>
   </div>
@@ -639,6 +639,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
       <a href="../../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+      <a href="../../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
   
@@ -1492,6 +1497,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftColors" data-name="hamilton::types::uniquegiftcolors">
+      <a href="../../Hamilton/Types/UniqueGiftColors.html">UniqueGiftColors</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
       <a href="../../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
       
@@ -1524,6 +1534,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+      <a href="../../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
   
@@ -2234,6 +2249,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#paid_message_star_count%3AInt32%7CNil-instance-method" class="signature"><strong>#paid_message_star_count</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>The number of Telegram Stars a general user have to pay to send a message to the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#paid_message_star_count%3D%28paid_message_star_count%3AInt32%7CNil%29-instance-method" class="signature"><strong>#paid_message_star_count=</strong>(paid_message_star_count : Int32 | Nil)</a>
+        
+          <div class="summary"><p>The number of Telegram Stars a general user have to pay to send a message to the chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#parent_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method" class="signature"><strong>#parent_chat</strong> : Hamilton::Types::Chat | Nil</a>
         
           <div class="summary"><p>Information about the corresponding channel chat; for direct messages chats only.</p></div>
@@ -2332,6 +2361,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#rating%3AHamilton%3A%3ATypes%3A%3AUserRating%7CNil-instance-method" class="signature"><strong>#rating</strong> : Hamilton::Types::UserRating | Nil</a>
+        
+          <div class="summary"><p>For private chats, the rating of the user if any.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rating%3D%28rating%3AHamilton%3A%3ATypes%3A%3AUserRating%7CNil%29-instance-method" class="signature"><strong>#rating=</strong>(rating : Hamilton::Types::UserRating | Nil)</a>
+        
+          <div class="summary"><p>For private chats, the rating of the user if any.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#slow_mode_delay%3AInt32%7CNil-instance-method" class="signature"><strong>#slow_mode_delay</strong> : Int32 | Nil</a>
         
           <div class="summary"><p>For supergroups, the minimum allowed delay between consecutive messages sent by each unprivileged user; in seconds.</p></div>
@@ -2384,6 +2427,20 @@
         <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
         
           <div class="summary"><p>Type of the chat, can be either “private”, “group”, “supergroup” or “channel”.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unique_gift_colors%3AHamilton%3A%3ATypes%3A%3AUniqueGiftColors%7CNil-instance-method" class="signature"><strong>#unique_gift_colors</strong> : Hamilton::Types::UniqueGiftColors | Nil</a>
+        
+          <div class="summary"><p>The color scheme based on a unique gift that must be used for the chat's name, message replies and link previews.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unique_gift_colors%3D%28unique_gift_colors%3AHamilton%3A%3ATypes%3A%3AUniqueGiftColors%7CNil%29-instance-method" class="signature"><strong>#unique_gift_colors=</strong>(unique_gift_colors : Hamilton::Types::UniqueGiftColors | Nil)</a>
+        
+          <div class="summary"><p>The color scheme based on a unique gift that must be used for the chat's name, message replies and link previews.</p></div>
         
       </li>
     
@@ -3905,6 +3962,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="paid_message_star_count:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>paid_message_star_count</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#paid_message_star_count%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The number of Telegram Stars a general user have to pay to send a message to the chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="paid_message_star_count=(paid_message_star_count:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>paid_message_star_count=</strong>(paid_message_star_count : Int32 | Nil)
+
+        <a class="method-permalink" href="#paid_message_star_count%3D%28paid_message_star_count%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The number of Telegram Stars a general user have to pay to send a message to the chat.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="parent_chat:Hamilton::Types::Chat|Nil-instance-method">
       <div class="signature">
         
@@ -4171,6 +4266,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="rating:Hamilton::Types::UserRating|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>rating</strong> : <a href="../../Hamilton/Types/UserRating.html">Hamilton::Types::UserRating</a> | Nil
+
+        <a class="method-permalink" href="#rating%3AHamilton%3A%3ATypes%3A%3AUserRating%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats, the rating of the user if any.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rating=(rating:Hamilton::Types::UserRating|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>rating=</strong>(rating : <a href="../../Hamilton/Types/UserRating.html">Hamilton::Types::UserRating</a> | Nil)
+
+        <a class="method-permalink" href="#rating%3D%28rating%3AHamilton%3A%3ATypes%3A%3AUserRating%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For private chats, the rating of the user if any.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="slow_mode_delay:Int32|Nil-instance-method">
       <div class="signature">
         
@@ -4315,6 +4448,44 @@
         <div class="doc">
           
           <p>Type of the chat, can be either “private”, “group”, “supergroup” or “channel”.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unique_gift_colors:Hamilton::Types::UniqueGiftColors|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>unique_gift_colors</strong> : <a href="../../Hamilton/Types/UniqueGiftColors.html">Hamilton::Types::UniqueGiftColors</a> | Nil
+
+        <a class="method-permalink" href="#unique_gift_colors%3AHamilton%3A%3ATypes%3A%3AUniqueGiftColors%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The color scheme based on a unique gift that must be used for the chat's name, message replies and link previews.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unique_gift_colors=(unique_gift_colors:Hamilton::Types::UniqueGiftColors|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>unique_gift_colors=</strong>(unique_gift_colors : <a href="../../Hamilton/Types/UniqueGiftColors.html">Hamilton::Types::UniqueGiftColors</a> | Nil)
+
+        <a class="method-permalink" href="#unique_gift_colors%3D%28unique_gift_colors%3AHamilton%3A%3ATypes%3A%3AUniqueGiftColors%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The color scheme based on a unique gift that must be used for the chat's name, message replies and link previews.</p>
         </div>
       
       <br/>

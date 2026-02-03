@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.1">
+<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Api - hamilton 0.3.1</title>
+  <title>Hamilton::Api - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.1
+        0.4.0
       </span>
     </div>
   </div>
@@ -639,6 +639,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
       <a href="../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+      <a href="../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
   
@@ -1492,6 +1497,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftColors" data-name="hamilton::types::uniquegiftcolors">
+      <a href="../Hamilton/Types/UniqueGiftColors.html">UniqueGiftColors</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
       <a href="../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
       
@@ -1524,6 +1534,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+      <a href="../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
   
@@ -2108,6 +2123,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#getChatGifts%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getChatGifts</strong>(**params)</a>
+        
+          <div class="summary"><p>Returns the gifts owned and hosted by a user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#getChatMember%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getChatMember</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to get information about a member of a chat.</p></div>
@@ -2230,6 +2252,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#getUserChatBoosts%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUserChatBoosts</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to get the list of boosts added to a chat by a user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getUserGifts%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUserGifts</strong>(**params)</a>
+        
+          <div class="summary"><p>Returns the gifts owned and hosted by a user.</p></div>
         
       </li>
     
@@ -2367,6 +2396,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#repostStory%28%2A%2Aparams%29-instance-method" class="signature"><strong>#repostStory</strong>(**params)</a>
+        
+          <div class="summary"><p>Reposts a story on behalf of a business account from another business account.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#restrictChatMember%28%2A%2Aparams%29-instance-method" class="signature"><strong>#restrictChatMember</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to restrict a user in a supergroup.</p></div>
@@ -2475,6 +2511,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#sendMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendMessage</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to send text messages.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#sendMessageDraft%28%2A%2Aparams%29-instance-method" class="signature"><strong>#sendMessageDraft</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled.</p></div>
         
       </li>
     
@@ -3402,7 +3445,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -3448,6 +3491,10 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.</p>
 </blockquote>
+<p><code>message_effect_id : Union(String | Nil)</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; only available when copying to private chats.</p>
+</blockquote>
 <p><code>suggested_post_parameters : Union(<a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil)</code></p>
 <blockquote>
 <p>A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.</p>
@@ -3486,7 +3533,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -4725,7 +4772,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -4746,6 +4793,10 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>protect_content : Union(Bool | Nil)</code></p>
 <blockquote>
 <p>Protects the contents of the forwarded message from forwarding and saving.</p>
+</blockquote>
+<p><code>message_effect_id : Union(String | Nil)</code></p>
+<blockquote>
+<p>Unique identifier of the message effect to be added to the message; only available when forwarding to private chats.</p>
 </blockquote>
 <p><code>suggested_post_parameters : Union(<a href="../Hamilton/Types/SuggestedPostParameters.html">Hamilton::Types::SuggestedPostParameters</a> | Nil)</code></p>
 <blockquote>
@@ -4781,7 +4832,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -4858,13 +4909,21 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Pass True to exclude gifts that can be purchased an unlimited number of times.</p>
 </blockquote>
-<p><code>exclude_limited : Union(Bool | Nil)</code></p>
+<p><code>exclude_limited_upgradable : Union(Bool | Nil)</code></p>
 <blockquote>
-<p>Pass True to exclude gifts that can be purchased a limited number of times.</p>
+<p>Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique.</p>
+</blockquote>
+<p><code>exclude_limited_non_upgradable : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique.</p>
 </blockquote>
 <p><code>exclude_unique : Union(Bool | Nil)</code></p>
 <blockquote>
 <p>Pass True to exclude unique gifts.</p>
+</blockquote>
+<p><code>exclude_from_blockchain : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram.</p>
 </blockquote>
 <p><code>sort_by_price : Union(Bool | Nil)</code></p>
 <blockquote>
@@ -4973,6 +5032,70 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getChatGifts(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getChatGifts</strong>(**params)
+
+        <a class="method-permalink" href="#getChatGifts%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the gifts owned and hosted by a user.</p>
+<p>Params:</p>
+<p><code>chat_id : Union(Int32 | String)</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>exclude_unsaved : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that aren't saved to the chat's profile page. Always True, unless the bot has the <code>can_post_messages</code> administrator right in the channel.</p>
+</blockquote>
+<p><code>exclude_saved : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that are saved to the chat's profile page. Always False, unless the bot has the <code>can_post_messages</code> administrator right in the channel.</p>
+</blockquote>
+<p><code>exclude_unlimited : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased an unlimited number of times.</p>
+</blockquote>
+<p><code>exclude_limited_upgradable : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique.</p>
+</blockquote>
+<p><code>exclude_limited_non_upgradable : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique.</p>
+</blockquote>
+<p><code>exclude_from_blockchain : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram.</p>
+</blockquote>
+<p><code>exclude_unique : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude unique gifts.</p>
+</blockquote>
+<p><code>sort_by_price : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.</p>
+</blockquote>
+<p><code>offset : Union(String | Nil)</code></p>
+<blockquote>
+<p>Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results.</p>
+</blockquote>
+<p><code>limit : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>The maximum number of gifts to be returned; 1-100. Defaults to 100.</p>
 </blockquote>
         </div>
       
@@ -5435,6 +5558,62 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>user_id : Int64</code></p>
 <blockquote>
 <p>Unique identifier of the target user.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getUserGifts(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getUserGifts</strong>(**params)
+
+        <a class="method-permalink" href="#getUserGifts%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Returns the gifts owned and hosted by a user.</p>
+<p>Params:</p>
+<p><code>user_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the user.</p>
+</blockquote>
+<p><code>exclude_unlimited : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased an unlimited number of times.</p>
+</blockquote>
+<p><code>exclude_limited_upgradable : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique.</p>
+</blockquote>
+<p><code>exclude_limited_non_upgradable : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique.</p>
+</blockquote>
+<p><code>exclude_from_blockchain : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram.</p>
+</blockquote>
+<p><code>exclude_unique : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to exclude unique gifts.</p>
+</blockquote>
+<p><code>sort_by_price : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.</p>
+</blockquote>
+<p><code>offset : Union(String | Nil)</code></p>
+<blockquote>
+<p>Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results.</p>
+</blockquote>
+<p><code>limit : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>The maximum number of gifts to be returned; 1-100. Defaults to 100.</p>
 </blockquote>
         </div>
       
@@ -6052,6 +6231,50 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="repostStory(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>repostStory</strong>(**params)
+
+        <a class="method-permalink" href="#repostStory%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Reposts a story on behalf of a business account from another business account. Both business accounts must be managed by the same bot, and the story on the source account must have been posted (or reposted) by the bot. Requires the <code>can_manage_stories</code> business bot right for both business accounts.</p>
+<p>Params:</p>
+<p><code>business_connection_id : String</code></p>
+<blockquote>
+<p>Unique identifier of the business connection.</p>
+</blockquote>
+<p><code>from_chat_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the chat which posted the story that should be reposted.</p>
+</blockquote>
+<p><code>from_story_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the story that should be reposted.</p>
+</blockquote>
+<p><code>active_period : Int32</code></p>
+<blockquote>
+<p>Period after which the story is moved to the archive, in seconds; must be one of <code>6 * 3600</code>, <code>12 * 3600</code>, <code>86400</code>, or <code>2 * 86400</code>.</p>
+</blockquote>
+<p><code>post_to_chat_page : Bool</code></p>
+<blockquote>
+<p>Pass True to keep the story accessible after it expires.</p>
+</blockquote>
+<p><code>protect_content : String</code></p>
+<blockquote>
+<p>Pass True if the content of the story must be protected from forwarding and screenshotting.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="restrictChatMember(**params)-instance-method">
       <div class="signature">
         
@@ -6186,7 +6409,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -6293,7 +6516,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -6391,7 +6614,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread; for supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>action : String</code></p>
 <blockquote>
@@ -6479,7 +6702,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -6559,7 +6782,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -6627,7 +6850,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -6716,7 +6939,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>game_short_name : String</code></p>
 <blockquote>
@@ -6820,7 +7043,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -6968,7 +7191,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7056,7 +7279,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7116,7 +7339,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7174,6 +7397,50 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="sendMessageDraft(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>sendMessageDraft</strong>(**params)
+
+        <a class="method-permalink" href="#sendMessageDraft%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to stream a partial message to a user while the message is being generated; supported only for bots with forum topic mode enabled.</p>
+<p>Params:</p>
+<p><code>chat_id : Int64</code></p>
+<blockquote>
+<p>Unique identifier for the target private chat.</p>
+</blockquote>
+<p><code>message_thread_id : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Unique identifier for the target message thread.</p>
+</blockquote>
+<p><code>draft_id : Int32</code></p>
+<blockquote>
+<p>Unique identifier of the message draft; must be non-zero. Changes of drafts with the same identifier are animated.</p>
+</blockquote>
+<p><code>text : String</code></p>
+<blockquote>
+<p>Text of the message to be sent, 1-4096 characters after entities parsing.</p>
+</blockquote>
+<p><code>parse_mode : Union(String | Nil)</code></p>
+<blockquote>
+<p>Mode for parsing entities in the message text.</p>
+</blockquote>
+<p><code>entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in message text, which can be specified instead of <code>parse_mode</code>.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="sendPaidMedia(**params)-instance-method">
       <div class="signature">
         
@@ -7196,7 +7463,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7284,7 +7551,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7372,7 +7639,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>question : String</code></p>
 <blockquote>
@@ -7484,7 +7751,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7556,7 +7823,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7652,7 +7919,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7770,7 +8037,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>
@@ -7852,7 +8119,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>message_thread_id : Union(Int32 | Nil)</code></p>
 <blockquote>
-<p>Unique identifier for the target message thread (topic) of the forum; for forum supergroups only.</p>
+<p>Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.</p>
 </blockquote>
 <p><code>direct_messages_topic_id : Union(Int32 | Nil)</code></p>
 <blockquote>

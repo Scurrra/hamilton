@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.1">
+<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::UniqueGiftInfo - hamilton 0.3.1</title>
+  <title>Hamilton::Types::UniqueGiftInfo - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.1
+        0.4.0
       </span>
     </div>
   </div>
@@ -639,6 +639,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
       <a href="../../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+      <a href="../../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
   
@@ -1492,6 +1497,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftColors" data-name="hamilton::types::uniquegiftcolors">
+      <a href="../../Hamilton/Types/UniqueGiftColors.html">UniqueGiftColors</a>
+      
+    </li>
+  
   <li class=" current" data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
       <a href="../../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
       
@@ -1524,6 +1534,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+      <a href="../../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
   
@@ -1758,16 +1773,30 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#last_resale_star_count%3AInt32%7CNil-instance-method" class="signature"><strong>#last_resale_star_count</strong> : Int32 | Nil</a>
+        <a href="#last_resale_amount%3AInt32%7CNil-instance-method" class="signature"><strong>#last_resale_amount</strong> : Int32 | Nil</a>
         
-          <div class="summary"><p>For gifts bought from other users, the price paid for the gift.</p></div>
+          <div class="summary"><p>For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#last_resale_star_count%3D%28last_resale_star_count%3AInt32%7CNil%29-instance-method" class="signature"><strong>#last_resale_star_count=</strong>(last_resale_star_count : Int32 | Nil)</a>
+        <a href="#last_resale_amount%3D%28last_resale_amount%3AInt32%7CNil%29-instance-method" class="signature"><strong>#last_resale_amount=</strong>(last_resale_amount : Int32 | Nil)</a>
         
-          <div class="summary"><p>For gifts bought from other users, the price paid for the gift.</p></div>
+          <div class="summary"><p>For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_resale_currency%3AString%7CNil-instance-method" class="signature"><strong>#last_resale_currency</strong> : String | Nil</a>
+        
+          <div class="summary"><p>For gifts bought from other users, the currency in which the payment for the gift was done.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#last_resale_currency%3D%28last_resale_currency%3AString%7CNil%29-instance-method" class="signature"><strong>#last_resale_currency=</strong>(last_resale_currency : String | Nil)</a>
+        
+          <div class="summary"><p>For gifts bought from other users, the currency in which the payment for the gift was done.</p></div>
         
       </li>
     
@@ -2039,17 +2068,17 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="last_resale_star_count:Int32|Nil-instance-method">
+    <div class="entry-detail" id="last_resale_amount:Int32|Nil-instance-method">
       <div class="signature">
         
-        def <strong>last_resale_star_count</strong> : Int32 | Nil
+        def <strong>last_resale_amount</strong> : Int32 | Nil
 
-        <a class="method-permalink" href="#last_resale_star_count%3AInt32%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#last_resale_amount%3AInt32%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>For gifts bought from other users, the price paid for the gift.</p>
+          <p>For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins.</p>
         </div>
       
       <br/>
@@ -2058,17 +2087,55 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="last_resale_star_count=(last_resale_star_count:Int32|Nil)-instance-method">
+    <div class="entry-detail" id="last_resale_amount=(last_resale_amount:Int32|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>last_resale_star_count=</strong>(last_resale_star_count : Int32 | Nil)
+        def <strong>last_resale_amount=</strong>(last_resale_amount : Int32 | Nil)
 
-        <a class="method-permalink" href="#last_resale_star_count%3D%28last_resale_star_count%3AInt32%7CNil%29-instance-method">#</a>
+        <a class="method-permalink" href="#last_resale_amount%3D%28last_resale_amount%3AInt32%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>For gifts bought from other users, the price paid for the gift.</p>
+          <p>For gifts bought from other users, the price paid for the gift in either Telegram Stars or nanotoncoins.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_resale_currency:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>last_resale_currency</strong> : String | Nil
+
+        <a class="method-permalink" href="#last_resale_currency%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="last_resale_currency=(last_resale_currency:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>last_resale_currency=</strong>(last_resale_currency : String | Nil)
+
+        <a class="method-permalink" href="#last_resale_currency%3D%28last_resale_currency%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For gifts bought from other users, the currency in which the payment for the gift was done. Currently, one of “XTR” for Telegram Stars or “TON” for toncoins.</p>
         </div>
       
       <br/>
@@ -2163,7 +2230,7 @@
       
         <div class="doc">
           
-          <p>Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users.</p>
+          <p>Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users, “gifted_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers.</p>
         </div>
       
       <br/>
@@ -2182,7 +2249,7 @@
       
         <div class="doc">
           
-          <p>Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users.</p>
+          <p>Origin of the gift. Currently, either “upgrade” for gifts upgraded from regular gifts, “transfer” for gifts transferred from other users or channels, or “resale” for gifts bought from other users, “gifted_upgrade” for upgrades purchased after the gift was sent, or “offer” for gifts bought or sold through gift purchase offers.</p>
         </div>
       
       <br/>

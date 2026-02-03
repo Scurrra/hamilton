@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.1">
+<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::Message - hamilton 0.3.1</title>
+  <title>Hamilton::Types::Message - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.1
+        0.4.0
       </span>
     </div>
   </div>
@@ -639,6 +639,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
       <a href="../../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+      <a href="../../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
   
@@ -1492,6 +1497,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftColors" data-name="hamilton::types::uniquegiftcolors">
+      <a href="../../Hamilton/Types/UniqueGiftColors.html">UniqueGiftColors</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
       <a href="../../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
       
@@ -1524,6 +1534,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+      <a href="../../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
   
@@ -2234,6 +2249,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#gift_upgrade_sent%3AHamilton%3A%3ATypes%3A%3AGiftInfo%7CNil-instance-method" class="signature"><strong>#gift_upgrade_sent</strong> : Hamilton::Types::GiftInfo | Nil</a>
+        
+          <div class="summary"><p>Service message: upgrade of a gift was purchased after the gift was sent.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#gift_upgrade_sent%3D%28gift_upgrade_sent%3AHamilton%3A%3ATypes%3A%3AGiftInfo%7CNil%29-instance-method" class="signature"><strong>#gift_upgrade_sent=</strong>(gift_upgrade_sent : Hamilton::Types::GiftInfo | Nil)</a>
+        
+          <div class="summary"><p>Service message: upgrade of a gift was purchased after the gift was sent.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#giveaway%3AHamilton%3A%3ATypes%3A%3AGiveaway%7CNil-instance-method" class="signature"><strong>#giveaway</strong> : Hamilton::Types::Giveaway | Nil</a>
         
           <div class="summary"><p>The message is a scheduled giveaway message.</p></div>
@@ -2488,14 +2517,14 @@
       <li class="entry-summary">
         <a href="#message_thread_id%3AInt32%7CNil-instance-method" class="signature"><strong>#message_thread_id</strong> : Int32 | Nil</a>
         
-          <div class="summary"><p>Unique identifier of a message thread to which the message belongs; for supergroups only.</p></div>
+          <div class="summary"><p>Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only.</p></div>
         
       </li>
     
       <li class="entry-summary">
         <a href="#message_thread_id%3D%28message_thread_id%3AInt32%7CNil%29-instance-method" class="signature"><strong>#message_thread_id=</strong>(message_thread_id : Int32 | Nil)</a>
         
-          <div class="summary"><p>Unique identifier of a message thread to which the message belongs; for supergroups only.</p></div>
+          <div class="summary"><p>Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only.</p></div>
         
       </li>
     
@@ -4661,6 +4690,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="gift_upgrade_sent:Hamilton::Types::GiftInfo|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>gift_upgrade_sent</strong> : <a href="../../Hamilton/Types/GiftInfo.html">Hamilton::Types::GiftInfo</a> | Nil
+
+        <a class="method-permalink" href="#gift_upgrade_sent%3AHamilton%3A%3ATypes%3A%3AGiftInfo%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Service message: upgrade of a gift was purchased after the gift was sent.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="gift_upgrade_sent=(gift_upgrade_sent:Hamilton::Types::GiftInfo|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>gift_upgrade_sent=</strong>(gift_upgrade_sent : <a href="../../Hamilton/Types/GiftInfo.html">Hamilton::Types::GiftInfo</a> | Nil)
+
+        <a class="method-permalink" href="#gift_upgrade_sent%3D%28gift_upgrade_sent%3AHamilton%3A%3ATypes%3A%3AGiftInfo%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Service message: upgrade of a gift was purchased after the gift was sent.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="giveaway:Hamilton::Types::Giveaway|Nil-instance-method">
       <div class="signature">
         
@@ -5355,7 +5422,7 @@
       
         <div class="doc">
           
-          <p>Unique identifier of a message thread to which the message belongs; for supergroups only.</p>
+          <p>Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only.</p>
         </div>
       
       <br/>
@@ -5374,7 +5441,7 @@
       
         <div class="doc">
           
-          <p>Unique identifier of a message thread to which the message belongs; for supergroups only.</p>
+          <p>Unique identifier of a message thread or forum topic to which the message belongs; for supergroups and private chats only.</p>
         </div>
       
       <br/>

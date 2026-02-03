@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::ChatBoostSource - hamilton 0.4.0</title>
+  <title>Hamilton::Types::UserRating - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -407,7 +407,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/ChatBoostSource" data-name="hamilton::types::chatboostsource">
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostSource" data-name="hamilton::types::chatboostsource">
       <a href="../../Hamilton/Types/ChatBoostSource.html">ChatBoostSource</a>
       
     </li>
@@ -1537,7 +1537,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+  <li class=" current" data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
       <a href="../../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
@@ -1637,11 +1637,13 @@
 <h1 class="type-name">
 
   <span class="kind">
-    alias
-  </span> Hamilton::<wbr>Types::<wbr>ChatBoostSource
+    class
+  </span> Hamilton::<wbr>Types::<wbr>UserRating
 
 </h1>
 
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/UserRating.html">Hamilton::Types::UserRating</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1655,23 +1657,29 @@
     Overview
   </h2>
 
-  <p>This object describes the source of a chat boost.</p>
+  <p>This object describes the rating of a user based on their Telegram Star spendings.</p>
+
+
+
+
 
 
 
   <h2>
-    <a id="alias-definition" class="anchor" href="#alias-definition">
+    <a id="included-modules" class="anchor" href="#included-modules">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Alias Definition
+    Included Modules
   </h2>
-  <code><a href="../../Hamilton/Types/ChatBoostSourceGiftCode.html">Hamilton::Types::ChatBoostSourceGiftCode</a> | <a href="../../Hamilton/Types/ChatBoostSourceGiveaway.html">Hamilton::Types::ChatBoostSourceGiveaway</a> | <a href="../../Hamilton/Types/ChatBoostSourcePremium.html">Hamilton::Types::ChatBoostSourcePremium</a></code>
-
-
-
-
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></li>
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
 
 
 
@@ -1692,7 +1700,7 @@
   </h2>
   
     
-      types/chat_boost_source.cr
+      types/user_rating.cr
     
     <br/>
   
@@ -1702,25 +1710,475 @@
 
 
   
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28params%29-class-method" class="signature"><strong>.new</strong>(params)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Aparams%29-class-method" class="signature"><strong>.new</strong>(**params)</a>
+        
+      </li>
+    
+  </ul>
+
 
   
 
   
 
   
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#current_level_rating%3AInt32-instance-method" class="signature"><strong>#current_level_rating</strong> : Int32</a>
+        
+          <div class="summary"><p>The rating value required to get the current level.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#current_level_rating%3D%28current_level_rating%3AInt32%29-instance-method" class="signature"><strong>#current_level_rating=</strong>(current_level_rating : Int32)</a>
+        
+          <div class="summary"><p>The rating value required to get the current level.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#level%3AInt32-instance-method" class="signature"><strong>#level</strong> : Int32</a>
+        
+          <div class="summary"><p>Current level of the user, indicating their reliability when purchasing digital goods and services.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#level%3D%28level%3AInt32%29-instance-method" class="signature"><strong>#level=</strong>(level : Int32)</a>
+        
+          <div class="summary"><p>Current level of the user, indicating their reliability when purchasing digital goods and services.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#next_level_rating%3AInt32%7CNil-instance-method" class="signature"><strong>#next_level_rating</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>The rating value required to get to the next level; omitted if the maximum level was reached.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#next_level_rating%3D%28next_level_rating%3AInt32%7CNil%29-instance-method" class="signature"><strong>#next_level_rating=</strong>(next_level_rating : Int32 | Nil)</a>
+        
+          <div class="summary"><p>The rating value required to get to the next level; omitted if the maximum level was reached.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_nil_fields%3AArray%28String%29-instance-method" class="signature"><strong>#non_nil_fields</strong> : Array(String)</a>
+        
+          <div class="summary"><p>List of available non-nil fields.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="signature"><strong>#non_nil_fields=</strong>(non_nil_fields : Array(String))</a>
+        
+          <div class="summary"><p>List of available non-nil fields.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rating%3AInt32-instance-method" class="signature"><strong>#rating</strong> : Int32</a>
+        
+          <div class="summary"><p>Numerical value of the user's rating; the higher the rating, the better.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#rating%3D%28rating%3AInt32%29-instance-method" class="signature"><strong>#rating=</strong>(rating : Int32)</a>
+        
+          <div class="summary"><p>Numerical value of the user's rating; the higher the rating, the better.</p></div>
+        
+      </li>
+    
+  </ul>
+
 
 
   <div class="methods-inherited">
     
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+  <h3>Instance methods inherited from class <code>Reference</code></h3>
+  
+  
+    <a href="../../Reference.html#%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
+      <span>==(other : Hamilton::Any)</span>
+    ==</a>
+    
+  
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+  <h3>Instance methods inherited from class <code>Object</code></h3>
+  
+  
+    <a href="../../Object.html#%3D%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
+      <span>===(other : Hamilton::Any)</span>
+    ===</a>
+    
+  
+
+
+      
+
+
+      
+
+
+      
+
+
+    
   </div>
 
   
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(params)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(params)
+
+        <a class="method-permalink" href="#new%28params%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,__pull_for_json_serializablepull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(**params)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(**params)
+
+        <a class="method-permalink" href="#new%28%2A%2Aparams%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
   
 
   
 
   
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="current_level_rating:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>current_level_rating</strong> : Int32
+
+        <a class="method-permalink" href="#current_level_rating%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The rating value required to get the current level.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="current_level_rating=(current_level_rating:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>current_level_rating=</strong>(current_level_rating : Int32)
+
+        <a class="method-permalink" href="#current_level_rating%3D%28current_level_rating%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The rating value required to get the current level.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="level:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>level</strong> : Int32
+
+        <a class="method-permalink" href="#level%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Current level of the user, indicating their reliability when purchasing digital goods and services. A higher level suggests a more trustworthy customer; a negative level is likely reason for concern.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="level=(level:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>level=</strong>(level : Int32)
+
+        <a class="method-permalink" href="#level%3D%28level%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Current level of the user, indicating their reliability when purchasing digital goods and services. A higher level suggests a more trustworthy customer; a negative level is likely reason for concern.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="next_level_rating:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>next_level_rating</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#next_level_rating%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The rating value required to get to the next level; omitted if the maximum level was reached.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="next_level_rating=(next_level_rating:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>next_level_rating=</strong>(next_level_rating : Int32 | Nil)
+
+        <a class="method-permalink" href="#next_level_rating%3D%28next_level_rating%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The rating value required to get to the next level; omitted if the maximum level was reached.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_nil_fields:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>non_nil_fields</strong> : Array(String)
+
+        <a class="method-permalink" href="#non_nil_fields%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List of available non-nil fields.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_nil_fields=(non_nil_fields:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>non_nil_fields=</strong>(non_nil_fields : Array(String))
+
+        <a class="method-permalink" href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List of available non-nil fields.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rating:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>rating</strong> : Int32
+
+        <a class="method-permalink" href="#rating%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Numerical value of the user's rating; the higher the rating, the better.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="rating=(rating:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>rating=</strong>(rating : Int32)
+
+        <a class="method-permalink" href="#rating%3D%28rating%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Numerical value of the user's rating; the higher the rating, the better.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
 
 </div>

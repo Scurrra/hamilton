@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.17.1">
-<meta name="crystal_docs.project_version" content="0.3.1">
+<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
 
@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::OwnedGiftRegular - hamilton 0.3.1</title>
+  <title>Hamilton::Types::OwnedGiftRegular - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -45,7 +45,7 @@
       </h1>
 
       <span class="project-version">
-        0.3.1
+        0.4.0
       </span>
     </div>
   </div>
@@ -639,6 +639,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/Gift" data-name="hamilton::types::gift">
       <a href="../../Hamilton/Types/Gift.html">Gift</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+      <a href="../../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
   
@@ -1492,6 +1497,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftColors" data-name="hamilton::types::uniquegiftcolors">
+      <a href="../../Hamilton/Types/UniqueGiftColors.html">UniqueGiftColors</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/UniqueGiftInfo" data-name="hamilton::types::uniquegiftinfo">
       <a href="../../Hamilton/Types/UniqueGiftInfo.html">UniqueGiftInfo</a>
       
@@ -1524,6 +1534,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/UserRating" data-name="hamilton::types::userrating">
+      <a href="../../Hamilton/Types/UserRating.html">UserRating</a>
       
     </li>
   
@@ -1828,6 +1843,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#is_upgrade_separate%3ABool%7CNil-instance-method" class="signature"><strong>#is_upgrade_separate</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if the gift's upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_upgrade_separate%3D%28is_upgrade_separate%3ABool%7CNil%29-instance-method" class="signature"><strong>#is_upgrade_separate=</strong>(is_upgrade_separate : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if the gift's upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#non_nil_fields%3AArray%28String%29-instance-method" class="signature"><strong>#non_nil_fields</strong> : Array(String)</a>
         
           <div class="summary"><p>List of available non-nil fields.</p></div>
@@ -1922,6 +1951,20 @@
         <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
         
           <div class="summary"><p>Type of the gift, always “regular”.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unique_gift_number%3AInt32%7CNil-instance-method" class="signature"><strong>#unique_gift_number</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Unique number reserved for this gift when upgraded.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unique_gift_number%3D%28unique_gift_number%3AInt32%7CNil%29-instance-method" class="signature"><strong>#unique_gift_number=</strong>(unique_gift_number : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Unique number reserved for this gift when upgraded.</p></div>
         
       </li>
     
@@ -2327,6 +2370,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="is_upgrade_separate:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>is_upgrade_separate</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#is_upgrade_separate%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the gift's upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_upgrade_separate=(is_upgrade_separate:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>is_upgrade_separate=</strong>(is_upgrade_separate : Bool | Nil)
+
+        <a class="method-permalink" href="#is_upgrade_separate%3D%28is_upgrade_separate%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the gift's upgrade was purchased after the gift was sent; for gifts received on behalf of business accounts only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="non_nil_fields:Array(String)-instance-method">
       <div class="signature">
         
@@ -2585,6 +2666,44 @@
         <div class="doc">
           
           <p>Type of the gift, always “regular”.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unique_gift_number:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>unique_gift_number</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#unique_gift_number%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique number reserved for this gift when upgraded. See the number field in <code><a href="../../Hamilton/Types/UniqueGift.html">Hamilton::Types::UniqueGift</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unique_gift_number=(unique_gift_number:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>unique_gift_number=</strong>(unique_gift_number : Int32 | Nil)
+
+        <a class="method-permalink" href="#unique_gift_number%3D%28unique_gift_number%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique number reserved for this gift when upgraded. See the number field in <code><a href="../../Hamilton/Types/UniqueGift.html">Hamilton::Types::UniqueGift</a></code>.</p>
         </div>
       
       <br/>

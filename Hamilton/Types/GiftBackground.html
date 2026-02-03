@@ -14,7 +14,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="hamilton">
-  <title>Hamilton::Types::ChatBoostSource - hamilton 0.4.0</title>
+  <title>Hamilton::Types::GiftBackground - hamilton 0.4.0</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -407,7 +407,7 @@
       
     </li>
   
-  <li class=" current" data-id="hamilton/Hamilton/Types/ChatBoostSource" data-name="hamilton::types::chatboostsource">
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatBoostSource" data-name="hamilton::types::chatboostsource">
       <a href="../../Hamilton/Types/ChatBoostSource.html">ChatBoostSource</a>
       
     </li>
@@ -642,7 +642,7 @@
       
     </li>
   
-  <li class=" " data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
+  <li class=" current" data-id="hamilton/Hamilton/Types/GiftBackground" data-name="hamilton::types::giftbackground">
       <a href="../../Hamilton/Types/GiftBackground.html">GiftBackground</a>
       
     </li>
@@ -1637,11 +1637,13 @@
 <h1 class="type-name">
 
   <span class="kind">
-    alias
-  </span> Hamilton::<wbr>Types::<wbr>ChatBoostSource
+    class
+  </span> Hamilton::<wbr>Types::<wbr>GiftBackground
 
 </h1>
 
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../Hamilton/Types/GiftBackground.html">Hamilton::Types::GiftBackground</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -1655,23 +1657,29 @@
     Overview
   </h2>
 
-  <p>This object describes the source of a chat boost.</p>
+  <p>This object describes the background of a gift.</p>
+
+
+
+
 
 
 
   <h2>
-    <a id="alias-definition" class="anchor" href="#alias-definition">
+    <a id="included-modules" class="anchor" href="#included-modules">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Alias Definition
+    Included Modules
   </h2>
-  <code><a href="../../Hamilton/Types/ChatBoostSourceGiftCode.html">Hamilton::Types::ChatBoostSourceGiftCode</a> | <a href="../../Hamilton/Types/ChatBoostSourceGiveaway.html">Hamilton::Types::ChatBoostSourceGiveaway</a> | <a href="../../Hamilton/Types/ChatBoostSourcePremium.html">Hamilton::Types::ChatBoostSourcePremium</a></code>
-
-
-
-
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../../Hamilton/Types/Common.html">Hamilton::Types::Common</a></li>
+    
+      <li class="other-type">JSON::Serializable</li>
+    
+  </ul>
 
 
 
@@ -1692,7 +1700,7 @@
   </h2>
   
     
-      types/chat_boost_source.cr
+      types/gift_background.cr
     
     <br/>
   
@@ -1702,25 +1710,423 @@
 
 
   
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28pull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28params%29-class-method" class="signature"><strong>.new</strong>(params)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method" class="signature"><strong>.new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new%28%2A%2Aparams%29-class-method" class="signature"><strong>.new</strong>(**params)</a>
+        
+      </li>
+    
+  </ul>
+
 
   
 
   
 
   
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#center_color%3AInt32-instance-method" class="signature"><strong>#center_color</strong> : Int32</a>
+        
+          <div class="summary"><p>Center color of the background in RGB format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#center_color%3D%28center_color%3AInt32%29-instance-method" class="signature"><strong>#center_color=</strong>(center_color : Int32)</a>
+        
+          <div class="summary"><p>Center color of the background in RGB format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#edge_color%3AInt32-instance-method" class="signature"><strong>#edge_color</strong> : Int32</a>
+        
+          <div class="summary"><p>Edge color of the background in RGB format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#edge_color%3D%28edge_color%3AInt32%29-instance-method" class="signature"><strong>#edge_color=</strong>(edge_color : Int32)</a>
+        
+          <div class="summary"><p>Edge color of the background in RGB format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_nil_fields%3AArray%28String%29-instance-method" class="signature"><strong>#non_nil_fields</strong> : Array(String)</a>
+        
+          <div class="summary"><p>List of available non-nil fields.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="signature"><strong>#non_nil_fields=</strong>(non_nil_fields : Array(String))</a>
+        
+          <div class="summary"><p>List of available non-nil fields.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text_color%3AInt32-instance-method" class="signature"><strong>#text_color</strong> : Int32</a>
+        
+          <div class="summary"><p>Text color of the background in RGB format.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text_color%3D%28text_color%3AInt32%29-instance-method" class="signature"><strong>#text_color=</strong>(text_color : Int32)</a>
+        
+          <div class="summary"><p>Text color of the background in RGB format.</p></div>
+        
+      </li>
+    
+  </ul>
+
 
 
   <div class="methods-inherited">
     
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+  <h3>Instance methods inherited from class <code>Reference</code></h3>
+  
+  
+    <a href="../../Reference.html#%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
+      <span>==(other : Hamilton::Any)</span>
+    ==</a>
+    
+  
+
+
+      
+
+
+      
+
+
+      
+
+
+    
+      
+
+  <h3>Instance methods inherited from class <code>Object</code></h3>
+  
+  
+    <a href="../../Object.html#%3D%3D%3D%28other%3AHamilton%3A%3AAny%29-instance-method" class="tooltip">
+      <span>===(other : Hamilton::Any)</span>
+    ===</a>
+    
+  
+
+
+      
+
+
+      
+
+
+      
+
+
+    
   </div>
 
   
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(pull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28pull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(params)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(params)
+
+        <a class="method-permalink" href="#new%28params%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(*,__pull_for_json_serializablepull:JSON::PullParser)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(*, __pull_for_json_serializable pull : JSON::PullParser)
+
+        <a class="method-permalink" href="#new%28%2A%2C__pull_for_json_serializablepull%3AJSON%3A%3APullParser%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(**params)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(**params)
+
+        <a class="method-permalink" href="#new%28%2A%2Aparams%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
   
 
   
 
   
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="center_color:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>center_color</strong> : Int32
+
+        <a class="method-permalink" href="#center_color%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Center color of the background in RGB format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="center_color=(center_color:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>center_color=</strong>(center_color : Int32)
+
+        <a class="method-permalink" href="#center_color%3D%28center_color%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Center color of the background in RGB format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edge_color:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>edge_color</strong> : Int32
+
+        <a class="method-permalink" href="#edge_color%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Edge color of the background in RGB format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="edge_color=(edge_color:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>edge_color=</strong>(edge_color : Int32)
+
+        <a class="method-permalink" href="#edge_color%3D%28edge_color%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Edge color of the background in RGB format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_nil_fields:Array(String)-instance-method">
+      <div class="signature">
+        
+        def <strong>non_nil_fields</strong> : Array(String)
+
+        <a class="method-permalink" href="#non_nil_fields%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List of available non-nil fields.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="non_nil_fields=(non_nil_fields:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>non_nil_fields=</strong>(non_nil_fields : Array(String))
+
+        <a class="method-permalink" href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>List of available non-nil fields.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text_color:Int32-instance-method">
+      <div class="signature">
+        
+        def <strong>text_color</strong> : Int32
+
+        <a class="method-permalink" href="#text_color%3AInt32-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Text color of the background in RGB format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text_color=(text_color:Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>text_color=</strong>(text_color : Int32)
+
+        <a class="method-permalink" href="#text_color%3D%28text_color%3AInt32%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Text color of the background in RGB format.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
 
 
 </div>
