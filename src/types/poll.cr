@@ -34,8 +34,8 @@ class Hamilton::Types::Poll
   # True, if the poll allows multiple answers.
   property allows_multiple_answers : Bool
 
-  # 0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.
-  property correct_option_id : Int32 | Nil
+  # Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot.
+  property correct_option_ids : Array(Int32) | Nil
 
   # Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters.
   property explanation : String | Nil
@@ -48,4 +48,10 @@ class Hamilton::Types::Poll
 
   # Point in time (Unix timestamp) when the poll will be automatically closed.
   property close_date : Int32
+
+  # Description of the poll; for polls inside the `Message` object only.
+  property description : String | Nil
+
+  # Special entities like usernames, URLs, bot commands, etc. that appear in the description.
+  property description_entities : Array(Hamilton::Types::MessageEntity) | Nil
 end

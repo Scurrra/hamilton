@@ -18,4 +18,7 @@ class Hamilton::Types::PollAnswer
 
   # 0-based identifiers of chosen answer options. May be empty if the vote was retracted.
   property option_ids : Array(Int32)
+
+  # Persistent identifiers of the chosen answer options. May be empty if the vote was retracted.
+  property option_persistent_ids : Array(String) | Nil
 end

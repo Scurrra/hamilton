@@ -24,6 +24,9 @@ class Hamilton::Types::KeyboardButton
   # If specified, pressing the button will open a list of suitable chats. Tapping on a chat will send its identifier to the bot in a “chat_shared” service message. Available in private chats only.
   property request_chat : Hamilton::Types::KeyboardButtonRequestChat | Nil
 
+  # If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot. Available for bots that enabled management of other bots in the `@BotFather` Mini App. Available in private chats only.
+  property request_managed_bot : Hamilton::Types::KeyboardButtonRequestManagedBot | Nil
+
   # If True, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only.
   property request_contact : Bool | Nil
 

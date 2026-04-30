@@ -1295,11 +1295,27 @@ class Hamilton::Api
         },
         :allows_multiple_answers => {
           type: Union(Bool | Nil),
-          docs: [%<True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False.>],
+          docs: [%<Pass True, if the poll allows multiple answers, defaults to False.>],
         },
-        :correct_option_id => {
-          type: Union(Int32 | Nil),
-          docs: [%<0-based identifier of the correct answer option, required for polls in quiz mode.>],
+        :allows_revoting => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True, if the poll allows to change chosen answer options, defaults to False for quizzes and to True for regular polls.>],
+        },
+        :shuffle_options => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True, if the poll options must be shown in random order.>],
+        },
+        :allow_adding_options => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes.>],
+        },
+        :hide_results_until_closes => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True, if poll results must be shown only after the poll closes.>],
+        },
+        :correct_option_ids => {
+          type: Union(Array(Int32) | Nil),
+          docs: [%<A JSON-serialized list of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode.>],
         },
         :explanation => {
           type: Union(String | Nil),
@@ -1324,6 +1340,18 @@ class Hamilton::Api
         :is_closed => {
           type: Union(Bool | Nil),
           docs: [%<Pass True if the poll needs to be immediately closed. This can be useful for poll preview.>],
+        },
+        :description => {
+          type: Union(String | Nil),
+          docs: [%<Description of the poll to be sent, 0-1024 characters after entities parsing.>],
+        },
+        :description_parse_mode => {
+          type: Union(String | Nil),
+          docs: [%<Mode for parsing entities in the poll description.>],
+        },
+        :description_entities => {
+          type: Union(Array(Hamilton::Types::MessageEntity) | Nil),
+          docs: [%<A JSON-serialized list of special entities that appear in the poll description, which can be specified instead of `description_parse_mode`.>],
         },
         :disable_notification => {
           type: Union(Bool | Nil),
@@ -2379,6 +2407,26 @@ class Hamilton::Api
         },
       },
     },
+    "getManagedBotToken" => {
+      return_type: ApiResult(String),
+      docs:        [%<Use this method to get the token of a managed bot. Returns the token as String on success.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<User identifier of the managed bot whose token will be returned.>],
+        },
+      },
+    },
+    "replaceManagedBotToken" => {
+      return_type: ApiResult(String),
+      docs:        [%<Use this method to revoke the current token of a managed bot and generate a new one. Returns the new token as String on success.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<User identifier of the managed bot whose token will be replaced.>],
+        },
+      },
+    },
     "setMyCommands" => {
       return_type: ApiResult(Bool),
       docs:        [%<Use this method to change the list of the bot's commands. Returns True on success.>],
@@ -2589,7 +2637,7 @@ class Hamilton::Api
         },
         :text_parse_mode => {
           type: Union(String | Nil),
-          docs: [%<Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.>],
+          docs: [%<Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and "date_time" are ignored.>],
         },
         :text_entities => {
           type: Union(Array(Hamilton::Types::MessageEntity) | Nil),
@@ -2619,7 +2667,7 @@ class Hamilton::Api
         },
         :text_parse_mode => {
           type: Union(String | Nil),
-          docs: [%<Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.>],
+          docs: [%<Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and "date_time" are ignored.>],
         },
         :text_entities => {
           type: Union(Array(Hamilton::Types::MessageEntity) | Nil),
@@ -3838,6 +3886,20 @@ class Hamilton::Api
         :allow_channel_chats => {
           type: Union(Bool | Nil),
           docs: [%<Pass True if the message can be sent to channel chats.>],
+        },
+      },
+    },
+    "savePreparedKeyboardButton" => {
+      return_type: ApiResult(Hamilton::Types::PreparedKeyboardButton),
+      docs:        [%<Stores a keyboard button that can be used by a user within a Mini App. Returns a `PreparedKeyboardButton` object.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<Unique identifier of the target user that can use the button.>],
+        },
+        :button => {
+          type: Hamilton::Types::KeyboardButton,
+          docs: [%<A JSON-serialized object describing the button to be saved. The button must be of the type `request_users`, `request_chat`, or `request_managed_bot`.>],
         },
       },
     },

@@ -13,7 +13,7 @@ class Hamilton::Types::InputChecklist
   # Mode for parsing entities in the title.
   property parse_mode : String
 
-  # List of special entities that appear in the title, which can be specified instead of parse_mode. Currently, only bold, italic, underline, strikethrough, spoiler, and custom_emoji entities are allowed.
+  # List of special entities that appear in the title, which can be specified instead of parse_mode. Currently, only "bold", "italic", "underline", "strikethrough", "spoiler", "custom_emoji", and "date_time" entities are allowed.
   property title_entities : Array(Hamilton::Types::MessageEntity) | Nil
 
   # List of 1-30 tasks in the checklist.

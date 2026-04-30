@@ -67,6 +67,9 @@ class Hamilton::Types::Message
   # Identifier of the specific checklist task that is being replied to.
   property reply_to_checklist_task_id : Int32 | Nil
 
+  # Persistent identifier of the specific poll option that is being replied to.
+  property reply_to_poll_option_id : String | Nil
+
   # Bot through which the message was sent.
   property via_bot : Hamilton::Types::User | Nil
 
@@ -289,8 +292,17 @@ class Hamilton::Types::Message
   # Service message: a giveaway without public winners was completed.
   property giveaway_completed : Hamilton::Types::GiveawayCompleted | Nil
 
+  # Service message: user created a bot that will be managed by the current bot.
+  property managed_bot_created : Hamilton::Types::ManagedBotCreated | Nil
+
   # Service message: the price for paid messages has changed in the chat.
   property paid_message_price_changed : Hamilton::Types::PaidMessagePriceChanged | Nil
+
+  # Service message: answer option was added to a poll.
+  property poll_option_added : Hamilton::Types::PollOptionAdded | Nil
+
+  # Service message: answer option was deleted from a poll.
+  property poll_option_deleted : Hamilton::Types::PollOptionDeleted | Nil
 
   # Service message: a suggested post was approved.
   property suggested_post_approved : Hamilton::Types::SuggestedPostApproved | Nil

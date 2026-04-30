@@ -79,4 +79,7 @@ class Hamilton::Types::Update
 
   # A boost was removed from a chat. The bot must be an administrator in the chat to receive these updates.
   property removed_chat_boost : Hamilton::Types::ChatBoostRemoved | Nil
+
+  # A new bot was created to be managed by the bot, or token or owner of a managed bot was changed.
+  property managed_bot_updated : Hamilton::Types::ManagedBotUpdated | Nil
 end

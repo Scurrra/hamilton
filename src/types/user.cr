@@ -51,4 +51,7 @@ class Hamilton::Types::User
 
   # True, if the bot allows users to create and delete topics in private chats. Returned only in `getMe`.
   property allows_users_to_create_topics : Bool | Nil
+
+  # True, if other bots can be created to be controlled by the bot. Returned only in `getMe`.
+  property can_manage_bots : Bool | Nil
 end
