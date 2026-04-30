@@ -15,4 +15,7 @@ class Hamilton::Types::UniqueGiftModel
 
   # The number of unique gifts that receive this model for every 1000 gifts upgraded.
   property rarity_per_mille : Int32
+
+  # Rarity of the model if it is a crafted model. Currently, can be “uncommon”, “rare”, “epic”, or “legendary”.
+  property rarity : String | Nil
 end

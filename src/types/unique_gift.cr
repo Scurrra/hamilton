@@ -31,6 +31,9 @@ class Hamilton::Types::UniqueGift
   # True, if the original regular gift was exclusively purchaseable by Telegram Premium subscribers.
   property is_premium : Bool | Nil
 
+  # True, if the gift was used to craft another gift and isn't available anymore.
+  property is_burned : Bool | Nil
+
   # True, if the gift is assigned from the TON blockchain and can't be resold or transferred in Telegram.
   property is_from_blockchain : Bool | Nil
 

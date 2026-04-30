@@ -1,7 +1,7 @@
 require "json"
 require "./utils.cr"
 
-# This object contains information about a user that was shared with the bot using a KeyboardButtonRequestUsers button.
+# This object contains information about a user that was shared with the bot using a `KeyboardButtonRequestUsers` button.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::SharedUser
   include JSON::Serializable

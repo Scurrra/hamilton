@@ -140,7 +140,7 @@ class Hamilton::Types::Message
   property caption_entities : Array(MessageEntity) | Nil
 
   # True, if the caption must be shown above the message media.
-  property show_caption_above_media	: Bool | Nil
+  property show_caption_above_media : Bool | Nil
 
   # True, if the message media is covered by a spoiler animation.
   property has_media_spoiler : Bool | Nil
@@ -172,6 +172,12 @@ class Hamilton::Types::Message
   # A member was removed from the group, information about them (this member may be the bot itself).
   property left_chat_member : Hamilton::Types::User | Nil
 
+  # Service message: chat owner has left.
+  property chat_owner_left : Hamilton::Types::ChatOwnerLeft | Nil
+
+  # Service message: chat owner has changed.
+  property chat_owner_changed : Hamilton::Types::ChatOwnerChanged | Nil
+
   # A chat title was changed to this value.
   property new_chat_title : String | Nil
 
@@ -188,7 +194,7 @@ class Hamilton::Types::Message
   property supergroup_chat_created : Bool | Nil
 
   # Service message: the channel has been created. This field can't be received in a message coming through updates, because bot can't be a member of a channel when it is created. It can only be found in reply_to_message if someone replies to a very first message in a channel.
-  property channel_chat_created	: Bool | Nil
+  property channel_chat_created : Bool | Nil
 
   # Service message: auto-delete timer settings changed in the chat.
   property message_auto_delete_timer_changed : Hamilton::Types::MessageAutoDeleteTimerChanged | Nil
@@ -197,7 +203,7 @@ class Hamilton::Types::Message
   property migrate_to_chat_id : Int64 | Nil
 
   # The supergroup has been migrated from a group with the specified identifier.
-  property migrate_from_chat_id	 : Int64 | Nil
+  property migrate_from_chat_id : Int64 | Nil
 
   # Specified message was pinned. Note that the Message object in this field will not contain further reply_to_message fields even if it itself is a reply.
   property pinned_message : Hamilton::Types::MaybeInaccessibleMessage | Nil
@@ -227,7 +233,7 @@ class Hamilton::Types::Message
   property gift_upgrade_sent : Hamilton::Types::GiftInfo | Nil
 
   # Service message: the user allowed the bot to write messages after adding it to the attachment or side menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method requestWriteAccess.
-  property write_access_allowed	: Hamilton::Types::WriteAccessAllowed | Nil
+  property write_access_allowed : Hamilton::Types::WriteAccessAllowed | Nil
 
   # Telegram Passport data.
   property passport_data : Hamilton::Types::PassportData | Nil
@@ -242,7 +248,7 @@ class Hamilton::Types::Message
   property chat_background_set : Hamilton::Types::ChatBackground | Nil
 
   # Service message: some tasks in a checklist were marked as done or not done.
-  property checklist_tasks_done	: Hamilton::Types::ChecklistTasksDone | Nil
+  property checklist_tasks_done : Hamilton::Types::ChecklistTasksDone | Nil
 
   # Service message: tasks were added to a checklist.
   property checklist_tasks_added : Hamilton::Types::ChecklistTasksAdded | Nil
@@ -260,19 +266,19 @@ class Hamilton::Types::Message
   property forum_topic_closed : Hamilton::Types::ForumTopicClosed | Nil
 
   # Service message: forum topic reopened.
-  property forum_topic_reopened	: Hamilton::Types::ForumTopicReopened | Nil
+  property forum_topic_reopened : Hamilton::Types::ForumTopicReopened | Nil
 
   # Service message: the 'General' forum topic hidden.
   property general_forum_topic_hidden : Hamilton::Types::GeneralForumTopicHidden | Nil
 
   # Service message: the 'General' forum topic unhidden.
-  property general_forum_topic_unhidden	: Hamilton::Types::GeneralForumTopicUnhidden | Nil
+  property general_forum_topic_unhidden : Hamilton::Types::GeneralForumTopicUnhidden | Nil
 
   # Service message: a scheduled giveaway was created.
   property giveaway_created : Hamilton::Types::GiveawayCreated | Nil
 
   # The message is a scheduled giveaway message.
-  property giveaway	: Hamilton::Types::Giveaway | Nil
+  property giveaway : Hamilton::Types::Giveaway | Nil
 
   # A giveaway with public winners was completed.
   property giveaway_winners : Hamilton::Types::GiveawayWinners | Nil

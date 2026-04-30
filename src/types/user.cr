@@ -48,4 +48,7 @@ class Hamilton::Types::User
 
   # True, if the bot has forum topic mode enabled in private chats. Returned only in `getMe`.
   property has_topics_enabled : Bool | Nil
+
+  # True, if the bot allows users to create and delete topics in private chats. Returned only in `getMe`.
+  property allows_users_to_create_topics : Bool | Nil
 end

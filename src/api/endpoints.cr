@@ -1535,6 +1535,24 @@ class Hamilton::Api
         },
       },
     },
+    "getUserProfileAudios" => {
+      return_type: ApiResult(Hamilton::Types::UserProfileAudios),
+      docs:        [%<Use this method to get a list of profile audios for a user.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<Unique identifier of the target user.>],
+        },
+        :offset => {
+          type: Union(Int32 | Nil),
+          docs: [%<Sequential number of the first audio to be returned. By default, all audios are returned.>],
+        },
+        :limit => {
+          type: Union(Int32 | Nil),
+          docs: [%<Limits the number of audios to be retrieved. Values between 1-100 are accepted. Defaults to 100.>],
+        },
+      },
+    },
     "setUserEmojiStatus" => {
       return_type: ApiResult(Bool),
       docs:        [%<Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method `requestEmojiStatusAccess`. Returns True on success.>],
@@ -2147,6 +2165,28 @@ class Hamilton::Api
         },
       },
     },
+    "createForumTopic" => {
+      return_type: ApiResult(Hamilton::Types::ForumTopic),
+      docs:        [%<Use this method to create a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the `can_manage_topics` administrator right.>],
+      params:      {
+        :chat_id => {
+          type: Union(Int64 | String),
+          docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`).>],
+        },
+        :name => {
+          type: String,
+          docs: [%<Topic name, 1-128 characters.>],
+        },
+        :icon_color => {
+          type: Union(Int32 | Nil),
+          docs: [%<Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F).>],
+        },
+        :icon_custom_emoji_id => {
+          type: Union(String | Nil),
+          docs: [%<Unique identifier of the custom emoji shown as the topic icon. Use `getForumTopicIconStickers` to get all allowed custom emoji identifiers.>],
+        },
+      },
+    },
     "closeForumTopic" => {
       return_type: ApiResult(Bool),
       docs:        [%<Use this method to close an open topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the "can_manage_topics" administrator rights, unless it is the creator of the topic. Returns True on success.>],
@@ -2434,6 +2474,20 @@ class Hamilton::Api
           docs: [%<A two-letter ISO 639-1 language code or an empty string.>],
         },
       },
+    },
+    "setMyProfilePhoto" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Changes the profile photo of the bot.>],
+      params:      {
+        :photo => {
+          type: Hamilton::Types::InputProfilePhoto,
+          docs: [%<The new profile photo to set.>],
+        },
+      },
+    },
+    "removeMyProfilePhoto" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Removes the profile photo of the bot.>],
     },
     "setChatMenuButton" => {
       return_type: ApiResult(Bool),
@@ -2803,8 +2857,8 @@ class Hamilton::Api
     },
     "getUserGifts" => {
       return_type: ApiResult(Hamilton::Types::OwnedGifts),
-      docs:       [%<Returns the gifts owned and hosted by a user.>],
-      params:     {
+      docs:        [%<Returns the gifts owned and hosted by a user.>],
+      params:      {
         :user_id => {
           type: Int32,
           docs: [%<Unique identifier of the user.>],
@@ -2845,8 +2899,8 @@ class Hamilton::Api
     },
     "getChatGifts" => {
       return_type: ApiResult(Hamilton::Types::OwnedGifts),
-      docs:       [%<Returns the gifts owned and hosted by a user.>],
-      params:     {
+      docs:        [%<Returns the gifts owned and hosted by a user.>],
+      params:      {
         :chat_id => {
           type: Union(Int32 | String),
           docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>],

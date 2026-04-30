@@ -31,6 +31,9 @@ class Hamilton::Types::Video
   # Timestamp in seconds from which the video will play in the message.
   property start_timestamp : Int32 | Nil
 
+  # List of available qualities of the video.
+  property qualities : Array(Hamilton::Types::VideoQuality) | Nil
+
   # Original filename as defined by the sender.
   property file_name : String | Nil
 
