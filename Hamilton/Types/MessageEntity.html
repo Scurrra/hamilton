@@ -1793,6 +1793,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#date_time_format%3AString%7CNil-instance-method" class="signature"><strong>#date_time_format</strong> : String | Nil</a>
+        
+          <div class="summary"><p>For “date_time” only, the string that defines the formatting of the date and time.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#date_time_format%3D%28date_time_format%3AString%7CNil%29-instance-method" class="signature"><strong>#date_time_format=</strong>(date_time_format : String | Nil)</a>
+        
+          <div class="summary"><p>For “date_time” only, the string that defines the formatting of the date and time.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#language%3AString%7CNil-instance-method" class="signature"><strong>#language</strong> : String | Nil</a>
         
           <div class="summary"><p>For “pre” only, the programming language of the entity text.</p></div>
@@ -1859,6 +1873,20 @@
         <a href="#type%3D%28type%3AString%29-instance-method" class="signature"><strong>#type=</strong>(type : String)</a>
         
           <div class="summary"><p>Type of the entity.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_time%3AInt32%7CNil-instance-method" class="signature"><strong>#unix_time</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>For “date_time” only, the Unix time associated with the entity.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#unix_time%3D%28unix_time%3AInt32%7CNil%29-instance-method" class="signature"><strong>#unix_time=</strong>(unix_time : Int32 | Nil)</a>
+        
+          <div class="summary"><p>For “date_time” only, the Unix time associated with the entity.</p></div>
         
       </li>
     
@@ -2088,6 +2116,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="date_time_format:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>date_time_format</strong> : String | Nil
+
+        <a class="method-permalink" href="#date_time_format%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For “date_time” only, the string that defines the formatting of the date and time.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="date_time_format=(date_time_format:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>date_time_format=</strong>(date_time_format : String | Nil)
+
+        <a class="method-permalink" href="#date_time_format%3D%28date_time_format%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For “date_time” only, the string that defines the formatting of the date and time.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="language:String|Nil-instance-method">
       <div class="signature">
         
@@ -2250,7 +2316,7 @@
       
         <div class="doc">
           
-          <p>Type of the entity. Currently, can be “mention” (<code>@username</code>), “hashtag” (<code>#hashtag</code> or <code>#hashtag@chatusername</code>), “cashtag” (<code>$USD</code> or <code>$USD@chatusername</code>), “bot_command” (<code>/start@jobs_bot</code>), “url” (<code>https://telegram.org</code>), “email” (<code>do-not-reply@telegram.org</code>), “phone_number” (<code>+1-212-555-0123</code>), “bold” (<strong>bold text</strong>), “italic” (<em>italic text</em>), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers)</p>
+          <p>Type of the entity. Currently, can be “mention” (<code>@username</code>), “hashtag” (<code>#hashtag</code> or <code>#hashtag@chatusername</code>), “cashtag” (<code>$USD</code> or <code>$USD@chatusername</code>), “bot_command” (<code>/start@jobs_bot</code>), “url” (<code>https://telegram.org</code>), “email” (<code>do-not-reply@telegram.org</code>), “phone_number” (<code>+1-212-555-0123</code>), “bold” (<strong>bold text</strong>), “italic” (<em>italic text</em>), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers), or &quot;date_time&quot; (for formatted date and time).</p>
         </div>
       
       <br/>
@@ -2269,7 +2335,45 @@
       
         <div class="doc">
           
-          <p>Type of the entity. Currently, can be “mention” (<code>@username</code>), “hashtag” (<code>#hashtag</code> or <code>#hashtag@chatusername</code>), “cashtag” (<code>$USD</code> or <code>$USD@chatusername</code>), “bot_command” (<code>/start@jobs_bot</code>), “url” (<code>https://telegram.org</code>), “email” (<code>do-not-reply@telegram.org</code>), “phone_number” (<code>+1-212-555-0123</code>), “bold” (<strong>bold text</strong>), “italic” (<em>italic text</em>), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers)</p>
+          <p>Type of the entity. Currently, can be “mention” (<code>@username</code>), “hashtag” (<code>#hashtag</code> or <code>#hashtag@chatusername</code>), “cashtag” (<code>$USD</code> or <code>$USD@chatusername</code>), “bot_command” (<code>/start@jobs_bot</code>), “url” (<code>https://telegram.org</code>), “email” (<code>do-not-reply@telegram.org</code>), “phone_number” (<code>+1-212-555-0123</code>), “bold” (<strong>bold text</strong>), “italic” (<em>italic text</em>), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers), or &quot;date_time&quot; (for formatted date and time).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_time:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>unix_time</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#unix_time%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For “date_time” only, the Unix time associated with the entity.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="unix_time=(unix_time:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>unix_time=</strong>(unix_time : Int32 | Nil)
+
+        <a class="method-permalink" href="#unix_time%3D%28unix_time%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For “date_time” only, the Unix time associated with the entity.</p>
         </div>
       
       <br/>

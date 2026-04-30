@@ -2661,6 +2661,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#setChatMemberTag%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setChatMemberTag</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to set a tag for a regular member in a group or a supergroup.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#setChatMenuButton%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setChatMenuButton</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to change the bot's menu button in a private chat, or the default menu button.</p></div>
@@ -6072,6 +6079,10 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Pass True if the administrator can manage direct messages within the channel and decline suggested posts; for channels only.</p>
 </blockquote>
+<p><code>can_manage_tags : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True if the administrator can edit the tags of regular members; for groups and supergroups only.</p>
+</blockquote>
         </div>
       
       <br/>
@@ -8477,6 +8488,38 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>description : String</code></p>
 <blockquote>
 <p>New chat description, 0-255 characters.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setChatMemberTag(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setChatMemberTag</strong>(**params)
+
+        <a class="method-permalink" href="#setChatMemberTag%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to set a tag for a regular member in a group or a supergroup. The bot must be an administrator in the chat for this to work and must have the <code>can_manage_tags</code> administrator right. Returns True on success.</p>
+<p>Params:</p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@supergroupusername</code>).</p>
+</blockquote>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>Unique identifier of the target user.</p>
+</blockquote>
+<p><code>tag : Union(String | Nil)</code></p>
+<blockquote>
+<p>New tag for the user; 0-16 characters, emoji are not allowed.</p>
 </blockquote>
         </div>
       
