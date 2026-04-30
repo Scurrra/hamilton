@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.18.2">
+<meta name="generator" content="Crystal Docs 1.19.1">
 <meta name="crystal_docs.project_version" content="0.4.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
@@ -489,6 +489,16 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/ChatMemberUpdated" data-name="hamilton::types::chatmemberupdated">
       <a href="../Hamilton/Types/ChatMemberUpdated.html">ChatMemberUpdated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatOwnerChanged" data-name="hamilton::types::chatownerchanged">
+      <a href="../Hamilton/Types/ChatOwnerChanged.html">ChatOwnerChanged</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ChatOwnerLeft" data-name="hamilton::types::chatownerleft">
+      <a href="../Hamilton/Types/ChatOwnerLeft.html">ChatOwnerLeft</a>
       
     </li>
   
@@ -1532,6 +1542,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/UserProfileAudios" data-name="hamilton::types::userprofileaudios">
+      <a href="../Hamilton/Types/UserProfileAudios.html">UserProfileAudios</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/UserProfilePhotos" data-name="hamilton::types::userprofilephotos">
       <a href="../Hamilton/Types/UserProfilePhotos.html">UserProfilePhotos</a>
       
@@ -1579,6 +1594,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/VideoNote" data-name="hamilton::types::videonote">
       <a href="../Hamilton/Types/VideoNote.html">VideoNote</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/VideoQuality" data-name="hamilton::types::videoquality">
+      <a href="../Hamilton/Types/VideoQuality.html">VideoQuality</a>
       
     </li>
   
@@ -1866,7 +1886,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       <li class="entry-summary">
         <a href="#createForumTopic%28%2A%2Aparams%29-instance-method" class="signature"><strong>#createForumTopic</strong>(**params)</a>
         
-          <div class="summary"><p>Use this method to create a topic in a forum supergroup chat.</p></div>
+          <div class="summary"><p>Use this method to create a topic in a forum supergroup chat or a private chat with a user.</p></div>
         
       </li>
     
@@ -2263,6 +2283,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#getUserProfileAudios%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUserProfileAudios</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to get a list of profile audios for a user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#getUserProfilePhotos%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUserProfilePhotos</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to get a list of profile pictures for a user.</p></div>
@@ -2364,6 +2391,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#removeChatVerification%28%2A%2Aparams%29-instance-method" class="signature"><strong>#removeChatVerification</strong>(**params)</a>
         
           <div class="summary"><p>Removes verification from a chat that is currently verified on behalf of the organization represented by the bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#removeMyProfilePhoto%28%2A%2Aparams%29-instance-method" class="signature"><strong>#removeMyProfilePhoto</strong>(**params)</a>
+        
+          <div class="summary"><p>Removes the profile photo of the bot.</p></div>
         
       </li>
     
@@ -2707,6 +2741,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#setMyName%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setMyName</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to change the bot's name.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setMyProfilePhoto%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setMyProfilePhoto</strong>(**params)</a>
+        
+          <div class="summary"><p>Changes the profile photo of the bot.</p></div>
         
       </li>
     
@@ -3653,11 +3694,11 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       
         <div class="doc">
           
-          <p>Use this method to create a topic in a forum supergroup chat. The bot must be an administrator in the chat for this to work and must have the &quot;can_manage_topics&quot; administrator rights. Returns information about the created topic as a <code>ForumTopic</code> object.</p>
+          <p>Use this method to create a topic in a forum supergroup chat or a private chat with a user. In the case of a supergroup chat the bot must be an administrator in the chat for this to work and must have the <code>can_manage_topics</code> administrator right.</p>
 <p>Params:</p>
 <p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
-<p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@channelusername</code>).</p>
+<p>Unique identifier for the target chat or username of the target supergroup (in the format <code>@supergroupusername</code>).</p>
 </blockquote>
 <p><code>name : String</code></p>
 <blockquote>
@@ -5623,6 +5664,38 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="getUserProfileAudios(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getUserProfileAudios</strong>(**params)
+
+        <a class="method-permalink" href="#getUserProfileAudios%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to get a list of profile audios for a user.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>Unique identifier of the target user.</p>
+</blockquote>
+<p><code>offset : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Sequential number of the first audio to be returned. By default, all audios are returned.</p>
+</blockquote>
+<p><code>limit : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Limits the number of audios to be retrieved. Values between 1-100 are accepted. Defaults to 100.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="getUserProfilePhotos(**params)-instance-method">
       <div class="signature">
         
@@ -6111,6 +6184,25 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <blockquote>
 <p>Unique identifier for the target chat or username of the target channel (in the format <code>@channelusername</code>).</p>
 </blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="removeMyProfilePhoto(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>removeMyProfilePhoto</strong>(**params)
+
+        <a class="method-permalink" href="#removeMyProfilePhoto%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Removes the profile photo of the bot.</p>
         </div>
       
       <br/>
@@ -8757,6 +8849,30 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>language_code : Union(String | Nil)</code></p>
 <blockquote>
 <p>A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setMyProfilePhoto(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setMyProfilePhoto</strong>(**params)
+
+        <a class="method-permalink" href="#setMyProfilePhoto%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Changes the profile photo of the bot.</p>
+<p>Params:</p>
+<p><code>photo : <a href="../Hamilton/Types/InputProfilePhoto.html">Hamilton::Types::InputProfilePhoto</a></code></p>
+<blockquote>
+<p>The new profile photo to set.</p>
 </blockquote>
         </div>
       
