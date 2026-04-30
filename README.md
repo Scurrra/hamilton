@@ -1,6 +1,6 @@
 # hamilton
 
-Crystal wrapper for Telegram Bot API with *optional* async execution.
+Crystal wrapper for Telegram Bot API (updated to 9.6) with *optional* async execution. [Telegram Mini Apps](https://core.telegram.org/bots/webapps) are not supported.
 
 ## Installation
 
