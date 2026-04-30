@@ -83,6 +83,9 @@ class Hamilton::Types::ChatMemberAdministrator
   # True, if the administrator can manage direct messages of the channel and decline suggested posts; for channels only.
   property can_manage_direct_messages : Bool | Nil
 
+  # True, if the administrator can edit the tags of regular members; for groups and supergroups only. If omitted defaults to the value of `can_pin_messages`.
+  property can_manage_tags : Bool | Nil
+
   # Custom title for this user.
   property custom_title : String | Nil
 end
@@ -95,6 +98,9 @@ class Hamilton::Types::ChatMemberMember
 
   # The member's status in the chat, always "member".
   property status : String
+
+  # Tag of the member
+  property tag : String | Nil
 
   # Information about the user.
   property user : Hamilton::Types::User
@@ -111,6 +117,9 @@ class Hamilton::Types::ChatMemberRestricted
 
   # The member's status in the chat, always "restricted".
   property status : String
+
+  # Tag of the member
+  property tag : String | Nil
 
   # Information about the user.
   property user : Hamilton::Types::User
@@ -147,6 +156,9 @@ class Hamilton::Types::ChatMemberRestricted
 
   # True, if the user is allowed to add web page previews to their messages.
   property can_add_web_page_previews : Bool
+
+  # True, if the user is allowed to edit their own tag
+  property can_edit_tag : Bool
 
   # True, if the user is allowed to change the chat title, photo and other settings.
   property can_change_info : Bool

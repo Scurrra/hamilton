@@ -7,7 +7,7 @@ class Hamilton::Types::MessageEntity
   include JSON::Serializable
   include Hamilton::Types::Common
 
-  # Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (*italic text*), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers)
+  # Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (*italic text*), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text_link” (for clickable text URLs), “text_mention” (for users without usernames), “custom_emoji” (for inline custom emoji stickers), or "date_time" (for formatted date and time).
   property type : String
 
   # Offset in UTF-16 code units to the start of the entity.
@@ -27,4 +27,10 @@ class Hamilton::Types::MessageEntity
 
   # For “custom_emoji” only, unique identifier of the custom emoji.
   property custom_emoji_id : String | Nil
+
+  # For “date_time” only, the Unix time associated with the entity.
+  property unix_time : Int32 | Nil
+
+  # For “date_time” only, the string that defines the formatting of the date and time.
+  property date_time_format : String | Nil
 end

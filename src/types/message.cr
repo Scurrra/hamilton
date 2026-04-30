@@ -28,6 +28,9 @@ class Hamilton::Types::Message
   # The bot that actually sent the message on behalf of the business account. Available only for outgoing messages sent on behalf of the connected business account.
   property sender_business_bot : Hamilton::Types::User | Nil
 
+  # Tag or custom title of the sender of the message; for supergroups only.
+  property sender_tag : String | Nil
+
   # Date the message was sent in Unix time. It is always a positive number, representing a valid date.
   property date : Int32
 

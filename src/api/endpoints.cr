@@ -1723,6 +1723,10 @@ class Hamilton::Api
           type: Union(Bool | Nil),
           docs: [%<Pass True if the administrator can manage direct messages within the channel and decline suggested posts; for channels only.>],
         },
+        :can_manage_tags => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True if the administrator can edit the tags of regular members; for groups and supergroups only.>],
+        },
       },
     },
     "setChatAdministratorCustomTitle" => {
@@ -1740,6 +1744,24 @@ class Hamilton::Api
         :custom_title => {
           type: String,
           docs: [%<New custom title for the administrator; 0-16 characters, emoji are not allowed.>],
+        },
+      },
+    },
+    "setChatMemberTag" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Use this method to set a tag for a regular member in a group or a supergroup. The bot must be an administrator in the chat for this to work and must have the `can_manage_tags` administrator right. Returns True on success.>],
+      params:      {
+        :chat_id => {
+          type: Union(Int64 | String),
+          docs: [%<Unique identifier for the target chat or username of the target supergroup (in the format `@supergroupusername`).>],
+        },
+        :user_id => {
+          type: Int64,
+          docs: [%<Unique identifier of the target user.>],
+        },
+        :tag => {
+          type: Union(String | Nil),
+          docs: [%<New tag for the user; 0-16 characters, emoji are not allowed.>],
         },
       },
     },
