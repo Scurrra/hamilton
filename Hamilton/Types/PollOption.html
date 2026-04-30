@@ -967,6 +967,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestManagedBot" data-name="hamilton::types::keyboardbuttonrequestmanagedbot">
+      <a href="../../Hamilton/Types/KeyboardButtonRequestManagedBot.html">KeyboardButtonRequestManagedBot</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestUsers" data-name="hamilton::types::keyboardbuttonrequestusers">
       <a href="../../Hamilton/Types/KeyboardButtonRequestUsers.html">KeyboardButtonRequestUsers</a>
       
@@ -994,6 +999,16 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/LoginUrl" data-name="hamilton::types::loginurl">
       <a href="../../Hamilton/Types/LoginUrl.html">LoginUrl</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotCreated" data-name="hamilton::types::managedbotcreated">
+      <a href="../../Hamilton/Types/ManagedBotCreated.html">ManagedBotCreated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotUpdated" data-name="hamilton::types::managedbotupdated">
+      <a href="../../Hamilton/Types/ManagedBotUpdated.html">ManagedBotUpdated</a>
       
     </li>
   
@@ -1217,6 +1232,16 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionAdded" data-name="hamilton::types::polloptionadded">
+      <a href="../../Hamilton/Types/PollOptionAdded.html">PollOptionAdded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionDeleted" data-name="hamilton::types::polloptiondeleted">
+      <a href="../../Hamilton/Types/PollOptionDeleted.html">PollOptionDeleted</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/PreCheckoutQuery" data-name="hamilton::types::precheckoutquery">
       <a href="../../Hamilton/Types/PreCheckoutQuery.html">PreCheckoutQuery</a>
       
@@ -1224,6 +1249,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/PreparedInlineMessage" data-name="hamilton::types::preparedinlinemessage">
       <a href="../../Hamilton/Types/PreparedInlineMessage.html">PreparedInlineMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PreparedKeyboardButton" data-name="hamilton::types::preparedkeyboardbutton">
+      <a href="../../Hamilton/Types/PreparedKeyboardButton.html">PreparedKeyboardButton</a>
       
     </li>
   
@@ -1779,6 +1809,48 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#added_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method" class="signature"><strong>#added_by_chat</strong> : Hamilton::Types::Chat | Nil</a>
+        
+          <div class="summary"><p>Chat that added the option; omitted if the option wasn't added by a chat after poll creation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#added_by_chat%3D%28added_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method" class="signature"><strong>#added_by_chat=</strong>(added_by_chat : Hamilton::Types::Chat | Nil)</a>
+        
+          <div class="summary"><p>Chat that added the option; omitted if the option wasn't added by a chat after poll creation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#added_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil-instance-method" class="signature"><strong>#added_by_user</strong> : Hamilton::Types::User | Nil</a>
+        
+          <div class="summary"><p>User who added the option; omitted if the option wasn't added by a user after poll creation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#added_by_user%3D%28added_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil%29-instance-method" class="signature"><strong>#added_by_user=</strong>(added_by_user : Hamilton::Types::User | Nil)</a>
+        
+          <div class="summary"><p>User who added the option; omitted if the option wasn't added by a user after poll creation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#addition_date%3AInt32%7CNil-instance-method" class="signature"><strong>#addition_date</strong> : Int32 | Nil</a>
+        
+          <div class="summary"><p>Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#addition_date%3D%28addition_date%3AInt32%7CNil%29-instance-method" class="signature"><strong>#addition_date=</strong>(addition_date : Int32 | Nil)</a>
+        
+          <div class="summary"><p>Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#non_nil_fields%3AArray%28String%29-instance-method" class="signature"><strong>#non_nil_fields</strong> : Array(String)</a>
         
           <div class="summary"><p>List of available non-nil fields.</p></div>
@@ -1789,6 +1861,20 @@
         <a href="#non_nil_fields%3D%28non_nil_fields%3AArray%28String%29%29-instance-method" class="signature"><strong>#non_nil_fields=</strong>(non_nil_fields : Array(String))</a>
         
           <div class="summary"><p>List of available non-nil fields.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#persistent_id%3AString-instance-method" class="signature"><strong>#persistent_id</strong> : String</a>
+        
+          <div class="summary"><p>Unique identifier of the option, persistent on option addition and deletion.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#persistent_id%3D%28persistent_id%3AString%29-instance-method" class="signature"><strong>#persistent_id=</strong>(persistent_id : String)</a>
+        
+          <div class="summary"><p>Unique identifier of the option, persistent on option addition and deletion.</p></div>
         
       </li>
     
@@ -1994,6 +2080,120 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="added_by_chat:Hamilton::Types::Chat|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>added_by_chat</strong> : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil
+
+        <a class="method-permalink" href="#added_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Chat that added the option; omitted if the option wasn't added by a chat after poll creation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="added_by_chat=(added_by_chat:Hamilton::Types::Chat|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>added_by_chat=</strong>(added_by_chat : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil)
+
+        <a class="method-permalink" href="#added_by_chat%3D%28added_by_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Chat that added the option; omitted if the option wasn't added by a chat after poll creation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="added_by_user:Hamilton::Types::User|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>added_by_user</strong> : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a> | Nil
+
+        <a class="method-permalink" href="#added_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>User who added the option; omitted if the option wasn't added by a user after poll creation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="added_by_user=(added_by_user:Hamilton::Types::User|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>added_by_user=</strong>(added_by_user : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a> | Nil)
+
+        <a class="method-permalink" href="#added_by_user%3D%28added_by_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>User who added the option; omitted if the option wasn't added by a user after poll creation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="addition_date:Int32|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>addition_date</strong> : Int32 | Nil
+
+        <a class="method-permalink" href="#addition_date%3AInt32%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="addition_date=(addition_date:Int32|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>addition_date=</strong>(addition_date : Int32 | Nil)
+
+        <a class="method-permalink" href="#addition_date%3D%28addition_date%3AInt32%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="non_nil_fields:Array(String)-instance-method">
       <div class="signature">
         
@@ -2024,6 +2224,44 @@
         <div class="doc">
           
           <p>List of available non-nil fields.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="persistent_id:String-instance-method">
+      <div class="signature">
+        
+        def <strong>persistent_id</strong> : String
+
+        <a class="method-permalink" href="#persistent_id%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique identifier of the option, persistent on option addition and deletion.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="persistent_id=(persistent_id:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>persistent_id=</strong>(persistent_id : String)
+
+        <a class="method-permalink" href="#persistent_id%3D%28persistent_id%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Unique identifier of the option, persistent on option addition and deletion.</p>
         </div>
       
       <br/>

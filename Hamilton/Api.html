@@ -967,6 +967,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestManagedBot" data-name="hamilton::types::keyboardbuttonrequestmanagedbot">
+      <a href="../Hamilton/Types/KeyboardButtonRequestManagedBot.html">KeyboardButtonRequestManagedBot</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestUsers" data-name="hamilton::types::keyboardbuttonrequestusers">
       <a href="../Hamilton/Types/KeyboardButtonRequestUsers.html">KeyboardButtonRequestUsers</a>
       
@@ -994,6 +999,16 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/LoginUrl" data-name="hamilton::types::loginurl">
       <a href="../Hamilton/Types/LoginUrl.html">LoginUrl</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotCreated" data-name="hamilton::types::managedbotcreated">
+      <a href="../Hamilton/Types/ManagedBotCreated.html">ManagedBotCreated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotUpdated" data-name="hamilton::types::managedbotupdated">
+      <a href="../Hamilton/Types/ManagedBotUpdated.html">ManagedBotUpdated</a>
       
     </li>
   
@@ -1217,6 +1232,16 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionAdded" data-name="hamilton::types::polloptionadded">
+      <a href="../Hamilton/Types/PollOptionAdded.html">PollOptionAdded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionDeleted" data-name="hamilton::types::polloptiondeleted">
+      <a href="../Hamilton/Types/PollOptionDeleted.html">PollOptionDeleted</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/PreCheckoutQuery" data-name="hamilton::types::precheckoutquery">
       <a href="../Hamilton/Types/PreCheckoutQuery.html">PreCheckoutQuery</a>
       
@@ -1224,6 +1249,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/PreparedInlineMessage" data-name="hamilton::types::preparedinlinemessage">
       <a href="../Hamilton/Types/PreparedInlineMessage.html">PreparedInlineMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PreparedKeyboardButton" data-name="hamilton::types::preparedkeyboardbutton">
+      <a href="../Hamilton/Types/PreparedKeyboardButton.html">PreparedKeyboardButton</a>
       
     </li>
   
@@ -2199,6 +2229,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#getManagedBotToken%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getManagedBotToken</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to get the token of a managed bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#getMe%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getMe</strong>(**params)</a>
         
           <div class="summary"><p>A simple method for testing your bot's authentication token.</p></div>
@@ -2423,6 +2460,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#replaceManagedBotToken%28%2A%2Aparams%29-instance-method" class="signature"><strong>#replaceManagedBotToken</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to revoke the current token of a managed bot and generate a new one.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#replaceStickerInSet%28%2A%2Aparams%29-instance-method" class="signature"><strong>#replaceStickerInSet</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to replace an existing sticker in a sticker set with a new one.</p></div>
@@ -2454,6 +2498,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#savePreparedInlineMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#savePreparedInlineMessage</strong>(**params)</a>
         
           <div class="summary"><p>Stores a message that can be sent by a user of a Mini App.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#savePreparedKeyboardButton%28%2A%2Aparams%29-instance-method" class="signature"><strong>#savePreparedKeyboardButton</strong>(**params)</a>
+        
+          <div class="summary"><p>Stores a keyboard button that can be used by a user within a Mini App.</p></div>
         
       </li>
     
@@ -5334,6 +5385,30 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="getManagedBotToken(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getManagedBotToken</strong>(**params)
+
+        <a class="method-permalink" href="#getManagedBotToken%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to get the token of a managed bot. Returns the token as String on success.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>User identifier of the managed bot whose token will be returned.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="getMe(**params)-instance-method">
       <div class="signature">
         
@@ -5784,7 +5859,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>text_parse_mode : Union(String | Nil)</code></p>
 <blockquote>
-<p>Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.</p>
+<p>Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and &quot;date_time&quot; are ignored.</p>
 </blockquote>
 <p><code>text_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
@@ -6298,6 +6373,30 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="replaceManagedBotToken(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>replaceManagedBotToken</strong>(**params)
+
+        <a class="method-permalink" href="#replaceManagedBotToken%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to revoke the current token of a managed bot and generate a new one. Returns the new token as String on success.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>User identifier of the managed bot whose token will be replaced.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="replaceStickerInSet(**params)-instance-method">
       <div class="signature">
         
@@ -6481,6 +6580,34 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>allow_channel_chats : Union(Bool | Nil)</code></p>
 <blockquote>
 <p>Pass True if the message can be sent to channel chats.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="savePreparedKeyboardButton(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>savePreparedKeyboardButton</strong>(**params)
+
+        <a class="method-permalink" href="#savePreparedKeyboardButton%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Stores a keyboard button that can be used by a user within a Mini App. Returns a <code>PreparedKeyboardButton</code> object.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>Unique identifier of the target user that can use the button.</p>
+</blockquote>
+<p><code>button : <a href="../Hamilton/Types/KeyboardButton.html">Hamilton::Types::KeyboardButton</a></code></p>
+<blockquote>
+<p>A JSON-serialized object describing the button to be saved. The button must be of the type <code>request_users</code>, <code>request_chat</code>, or <code>request_managed_bot</code>.</p>
 </blockquote>
         </div>
       
@@ -7114,7 +7241,7 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>text_parse_mode : Union(String | Nil)</code></p>
 <blockquote>
-<p>Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom_emoji” are ignored.</p>
+<p>Mode for parsing entities in the text. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and &quot;date_time&quot; are ignored.</p>
 </blockquote>
 <p><code>text_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
 <blockquote>
@@ -7770,11 +7897,27 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 </blockquote>
 <p><code>allows_multiple_answers : Union(Bool | Nil)</code></p>
 <blockquote>
-<p>True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False.</p>
+<p>Pass True, if the poll allows multiple answers, defaults to False.</p>
 </blockquote>
-<p><code>correct_option_id : Union(Int32 | Nil)</code></p>
+<p><code>allows_revoting : Union(Bool | Nil)</code></p>
 <blockquote>
-<p>0-based identifier of the correct answer option, required for polls in quiz mode.</p>
+<p>Pass True, if the poll allows to change chosen answer options, defaults to False for quizzes and to True for regular polls.</p>
+</blockquote>
+<p><code>shuffle_options : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True, if the poll options must be shown in random order.</p>
+</blockquote>
+<p><code>allow_adding_options : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes.</p>
+</blockquote>
+<p><code>hide_results_until_closes : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True, if poll results must be shown only after the poll closes.</p>
+</blockquote>
+<p><code>correct_option_ids : Union(Array(Int32) | Nil)</code></p>
+<blockquote>
+<p>A JSON-serialized list of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode.</p>
 </blockquote>
 <p><code>explanation : Union(String | Nil)</code></p>
 <blockquote>
@@ -7799,6 +7942,18 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>is_closed : Union(Bool | Nil)</code></p>
 <blockquote>
 <p>Pass True if the poll needs to be immediately closed. This can be useful for poll preview.</p>
+</blockquote>
+<p><code>description : Union(String | Nil)</code></p>
+<blockquote>
+<p>Description of the poll to be sent, 0-1024 characters after entities parsing.</p>
+</blockquote>
+<p><code>description_parse_mode : Union(String | Nil)</code></p>
+<blockquote>
+<p>Mode for parsing entities in the poll description.</p>
+</blockquote>
+<p><code>description_entities : Union(Array(<a href="../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)</code></p>
+<blockquote>
+<p>A JSON-serialized list of special entities that appear in the poll description, which can be specified instead of <code>description_parse_mode</code>.</p>
 </blockquote>
 <p><code>disable_notification : Union(Bool | Nil)</code></p>
 <blockquote>

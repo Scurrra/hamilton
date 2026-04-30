@@ -967,6 +967,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestManagedBot" data-name="hamilton::types::keyboardbuttonrequestmanagedbot">
+      <a href="../../Hamilton/Types/KeyboardButtonRequestManagedBot.html">KeyboardButtonRequestManagedBot</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestUsers" data-name="hamilton::types::keyboardbuttonrequestusers">
       <a href="../../Hamilton/Types/KeyboardButtonRequestUsers.html">KeyboardButtonRequestUsers</a>
       
@@ -994,6 +999,16 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/LoginUrl" data-name="hamilton::types::loginurl">
       <a href="../../Hamilton/Types/LoginUrl.html">LoginUrl</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotCreated" data-name="hamilton::types::managedbotcreated">
+      <a href="../../Hamilton/Types/ManagedBotCreated.html">ManagedBotCreated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotUpdated" data-name="hamilton::types::managedbotupdated">
+      <a href="../../Hamilton/Types/ManagedBotUpdated.html">ManagedBotUpdated</a>
       
     </li>
   
@@ -1217,6 +1232,16 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionAdded" data-name="hamilton::types::polloptionadded">
+      <a href="../../Hamilton/Types/PollOptionAdded.html">PollOptionAdded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionDeleted" data-name="hamilton::types::polloptiondeleted">
+      <a href="../../Hamilton/Types/PollOptionDeleted.html">PollOptionDeleted</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/PreCheckoutQuery" data-name="hamilton::types::precheckoutquery">
       <a href="../../Hamilton/Types/PreCheckoutQuery.html">PreCheckoutQuery</a>
       
@@ -1224,6 +1249,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/PreparedInlineMessage" data-name="hamilton::types::preparedinlinemessage">
       <a href="../../Hamilton/Types/PreparedInlineMessage.html">PreparedInlineMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PreparedKeyboardButton" data-name="hamilton::types::preparedkeyboardbutton">
+      <a href="../../Hamilton/Types/PreparedKeyboardButton.html">PreparedKeyboardButton</a>
       
     </li>
   
@@ -1850,6 +1880,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#request_managed_bot%3AHamilton%3A%3ATypes%3A%3AKeyboardButtonRequestManagedBot%7CNil-instance-method" class="signature"><strong>#request_managed_bot</strong> : Hamilton::Types::KeyboardButtonRequestManagedBot | Nil</a>
+        
+          <div class="summary"><p>If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#request_managed_bot%3D%28request_managed_bot%3AHamilton%3A%3ATypes%3A%3AKeyboardButtonRequestManagedBot%7CNil%29-instance-method" class="signature"><strong>#request_managed_bot=</strong>(request_managed_bot : Hamilton::Types::KeyboardButtonRequestManagedBot | Nil)</a>
+        
+          <div class="summary"><p>If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#request_poll%3AHamilton%3A%3ATypes%3A%3AKeyboardButtonPollType%7CNil-instance-method" class="signature"><strong>#request_poll</strong> : Hamilton::Types::KeyboardButtonPollType | Nil</a>
         
           <div class="summary"><p>If specified, the user will be asked to create a poll and send it to the bot when the button is pressed.</p></div>
@@ -2261,6 +2305,44 @@
         <div class="doc">
           
           <p>If True, the user's current location will be sent when the button is pressed. Available in private chats only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="request_managed_bot:Hamilton::Types::KeyboardButtonRequestManagedBot|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>request_managed_bot</strong> : <a href="../../Hamilton/Types/KeyboardButtonRequestManagedBot.html">Hamilton::Types::KeyboardButtonRequestManagedBot</a> | Nil
+
+        <a class="method-permalink" href="#request_managed_bot%3AHamilton%3A%3ATypes%3A%3AKeyboardButtonRequestManagedBot%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot. Available for bots that enabled management of other bots in the <code>@BotFather</code> Mini App. Available in private chats only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="request_managed_bot=(request_managed_bot:Hamilton::Types::KeyboardButtonRequestManagedBot|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>request_managed_bot=</strong>(request_managed_bot : <a href="../../Hamilton/Types/KeyboardButtonRequestManagedBot.html">Hamilton::Types::KeyboardButtonRequestManagedBot</a> | Nil)
+
+        <a class="method-permalink" href="#request_managed_bot%3D%28request_managed_bot%3AHamilton%3A%3ATypes%3A%3AKeyboardButtonRequestManagedBot%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot. Available for bots that enabled management of other bots in the <code>@BotFather</code> Mini App. Available in private chats only.</p>
         </div>
       
       <br/>

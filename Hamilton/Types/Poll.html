@@ -967,6 +967,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestManagedBot" data-name="hamilton::types::keyboardbuttonrequestmanagedbot">
+      <a href="../../Hamilton/Types/KeyboardButtonRequestManagedBot.html">KeyboardButtonRequestManagedBot</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/KeyboardButtonRequestUsers" data-name="hamilton::types::keyboardbuttonrequestusers">
       <a href="../../Hamilton/Types/KeyboardButtonRequestUsers.html">KeyboardButtonRequestUsers</a>
       
@@ -994,6 +999,16 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/LoginUrl" data-name="hamilton::types::loginurl">
       <a href="../../Hamilton/Types/LoginUrl.html">LoginUrl</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotCreated" data-name="hamilton::types::managedbotcreated">
+      <a href="../../Hamilton/Types/ManagedBotCreated.html">ManagedBotCreated</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/ManagedBotUpdated" data-name="hamilton::types::managedbotupdated">
+      <a href="../../Hamilton/Types/ManagedBotUpdated.html">ManagedBotUpdated</a>
       
     </li>
   
@@ -1217,6 +1232,16 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionAdded" data-name="hamilton::types::polloptionadded">
+      <a href="../../Hamilton/Types/PollOptionAdded.html">PollOptionAdded</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollOptionDeleted" data-name="hamilton::types::polloptiondeleted">
+      <a href="../../Hamilton/Types/PollOptionDeleted.html">PollOptionDeleted</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/PreCheckoutQuery" data-name="hamilton::types::precheckoutquery">
       <a href="../../Hamilton/Types/PreCheckoutQuery.html">PreCheckoutQuery</a>
       
@@ -1224,6 +1249,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/PreparedInlineMessage" data-name="hamilton::types::preparedinlinemessage">
       <a href="../../Hamilton/Types/PreparedInlineMessage.html">PreparedInlineMessage</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PreparedKeyboardButton" data-name="hamilton::types::preparedkeyboardbutton">
+      <a href="../../Hamilton/Types/PreparedKeyboardButton.html">PreparedKeyboardButton</a>
       
     </li>
   
@@ -1807,16 +1837,44 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#correct_option_id%3AInt32%7CNil-instance-method" class="signature"><strong>#correct_option_id</strong> : Int32 | Nil</a>
+        <a href="#correct_option_ids%3AArray%28Int32%29%7CNil-instance-method" class="signature"><strong>#correct_option_ids</strong> : Array(Int32) | Nil</a>
         
-          <div class="summary"><p>0-based identifier of the correct answer option.</p></div>
+          <div class="summary"><p>Array of 0-based identifiers of the correct answer options.</p></div>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#correct_option_id%3D%28correct_option_id%3AInt32%7CNil%29-instance-method" class="signature"><strong>#correct_option_id=</strong>(correct_option_id : Int32 | Nil)</a>
+        <a href="#correct_option_ids%3D%28correct_option_ids%3AArray%28Int32%29%7CNil%29-instance-method" class="signature"><strong>#correct_option_ids=</strong>(correct_option_ids : Array(Int32) | Nil)</a>
         
-          <div class="summary"><p>0-based identifier of the correct answer option.</p></div>
+          <div class="summary"><p>Array of 0-based identifiers of the correct answer options.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#description%3AString%7CNil-instance-method" class="signature"><strong>#description</strong> : String | Nil</a>
+        
+          <div class="summary"><p>Description of the poll; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#description%3D%28description%3AString%7CNil%29-instance-method" class="signature"><strong>#description=</strong>(description : String | Nil)</a>
+        
+          <div class="summary"><p>Description of the poll; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#description_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil-instance-method" class="signature"><strong>#description_entities</strong> : Array(Hamilton::Types::MessageEntity) | Nil</a>
+        
+          <div class="summary"><p>Special entities like usernames, URLs, bot commands, etc.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#description_entities%3D%28description_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil%29-instance-method" class="signature"><strong>#description_entities=</strong>(description_entities : Array(Hamilton::Types::MessageEntity) | Nil)</a>
+        
+          <div class="summary"><p>Special entities like usernames, URLs, bot commands, etc.</p></div>
         
       </li>
     
@@ -2224,17 +2282,17 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="correct_option_id:Int32|Nil-instance-method">
+    <div class="entry-detail" id="correct_option_ids:Array(Int32)|Nil-instance-method">
       <div class="signature">
         
-        def <strong>correct_option_id</strong> : Int32 | Nil
+        def <strong>correct_option_ids</strong> : Array(Int32) | Nil
 
-        <a class="method-permalink" href="#correct_option_id%3AInt32%7CNil-instance-method">#</a>
+        <a class="method-permalink" href="#correct_option_ids%3AArray%28Int32%29%7CNil-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.</p>
+          <p>Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot.</p>
         </div>
       
       <br/>
@@ -2243,17 +2301,93 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="correct_option_id=(correct_option_id:Int32|Nil)-instance-method">
+    <div class="entry-detail" id="correct_option_ids=(correct_option_ids:Array(Int32)|Nil)-instance-method">
       <div class="signature">
         
-        def <strong>correct_option_id=</strong>(correct_option_id : Int32 | Nil)
+        def <strong>correct_option_ids=</strong>(correct_option_ids : Array(Int32) | Nil)
 
-        <a class="method-permalink" href="#correct_option_id%3D%28correct_option_id%3AInt32%7CNil%29-instance-method">#</a>
+        <a class="method-permalink" href="#correct_option_ids%3D%28correct_option_ids%3AArray%28Int32%29%7CNil%29-instance-method">#</a>
       </div>
       
         <div class="doc">
           
-          <p>0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.</p>
+          <p>Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="description:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>description</strong> : String | Nil
+
+        <a class="method-permalink" href="#description%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Description of the poll; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="description=(description:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>description=</strong>(description : String | Nil)
+
+        <a class="method-permalink" href="#description%3D%28description%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Description of the poll; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="description_entities:Array(Hamilton::Types::MessageEntity)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>description_entities</strong> : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil
+
+        <a class="method-permalink" href="#description_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Special entities like usernames, URLs, bot commands, etc. that appear in the description.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="description_entities=(description_entities:Array(Hamilton::Types::MessageEntity)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>description_entities=</strong>(description_entities : Array(<a href="../../Hamilton/Types/MessageEntity.html">Hamilton::Types::MessageEntity</a>) | Nil)
+
+        <a class="method-permalink" href="#description_entities%3D%28description_entities%3AArray%28Hamilton%3A%3ATypes%3A%3AMessageEntity%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Special entities like usernames, URLs, bot commands, etc. that appear in the description.</p>
         </div>
       
       <br/>
