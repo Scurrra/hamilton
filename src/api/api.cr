@@ -8,10 +8,9 @@ require "../types"
 # Class that is used for communication with Bot API endpoints.
 #
 # NOTE: none of the API methods raises exceptions. Instead, exceptions are logged as `WARN - Hamilton::API`.
-# This is done for simplicity: the developer sees the exception in logs, and in the same time doesn't need to 
+# This is done for simplicity: the developer sees the exception in logs, and in the same time doesn't need to
 # handle it when calling. That is why the return type is `T | Nil`, that is much easier to catch (if var, .try, or something else).
 class Hamilton::Api
-
   # :nodoc:
   getter env : Symbol
 
@@ -302,7 +301,7 @@ class Hamilton::Api
             builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
           end
           {% else %}
-            {% if pinfo[:type].resolve.union_types.find {|t| t <= Array || t <= Hamilton::Types::Common} %}
+            {% if pinfo[:type].resolve.union_types.find { |t| t <= Array || t <= Hamilton::Types::Common } %}
               builder.field({{param.id.stringify}}, parameter.to_json, field_headers)
             {% else %}
               builder.field({{param.id.stringify}}, parameter.to_s, field_headers)
