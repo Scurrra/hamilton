@@ -157,6 +157,9 @@ class Hamilton::Types::ChatMemberRestricted
   # True, if the user is allowed to add web page previews to their messages.
   property can_add_web_page_previews : Bool
 
+  # True, if the user is allowed to react to messages.
+  property can_react_to_messages : Bool
+
   # True, if the user is allowed to edit their own tag
   property can_edit_tag : Bool
 

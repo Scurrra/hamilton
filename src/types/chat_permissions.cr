@@ -37,6 +37,9 @@ class Hamilton::Types::ChatPermissions
   # True, if the user is allowed to add web page previews to their messages.
   property can_add_web_page_previews : Bool | Nil
 
+  # True, if the user is allowed to react to messages. If omitted, defaults to the value of `can_send_messages`.
+  property can_react_to_messages : Bool | Nil
+
   # True, if the user is allowed to edit their own tag
   property can_edit_tag : Bool | Nil
 

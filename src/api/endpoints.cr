@@ -2117,6 +2117,10 @@ class Hamilton::Api
           type: Union(Int64 | String),
           docs: [%<Unique identifier for the target chat or username of the target supergroup or channel (in the format `@channelusername`).>],
         },
+        :return_bots => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to additionally receive all bots that are administrators of the chat. By default, bots other than the current bot are omitted.>],
+        },
       },
     },
     "getChatMemberCount" => {
@@ -3534,6 +3538,46 @@ class Hamilton::Api
         :message_ids => {
           type: Array(Int32),
           docs: [%<A JSON-serialized list of 1-100 identifiers of messages to delete.>],
+        },
+      },
+    },
+    "deleteMessageReaction" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Use this method to remove a reaction from a message in a group or a supergroup chat. The bot must have the `can_delete_messages` administrator right in the chat. Returns True on success.>],
+      params:      {
+        :chat_id => {
+          type: Union(Int64 | String),
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@username`).>],
+        },
+        :message_id => {
+          type: Int32,
+          docs: [%<Identifier of the target message.>],
+        },
+        :user_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Identifier of the user whose reaction will be removed, if the reaction was added by a user.>],
+        },
+        :action_chat_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Identifier of the chat whose reaction will be removed, if the reaction was added by a chat.>],
+        },
+      },
+    },
+    "deleteAllMessageReactions" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Use this method to remove a reaction from a message in a group or a supergroup chat. The bot must have the `can_delete_messages` administrator right in the chat. Returns True on success.>],
+      params:      {
+        :chat_id => {
+          type: Union(Int64 | String),
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@username`).>],
+        },
+        :user_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Identifier of the user whose reaction will be removed, if the reaction was added by a user.>],
+        },
+        :action_chat_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Identifier of the chat whose reaction will be removed, if the reaction was added by a chat.>],
         },
       },
     },
