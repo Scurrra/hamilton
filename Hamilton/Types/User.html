@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.19.1">
+<meta name="generator" content="Crystal Docs 1.21.0">
 <meta name="crystal_docs.project_version" content="0.5.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
@@ -1332,6 +1332,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/SentGuestMessage" data-name="hamilton::types::sentguestmessage">
+      <a href="../../Hamilton/Types/SentGuestMessage.html">SentGuestMessage</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/SentWebAppMessage" data-name="hamilton::types::sentwebappmessage">
       <a href="../../Hamilton/Types/SentWebAppMessage.html">SentWebAppMessage</a>
       
@@ -2019,6 +2024,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#supports_guest_queries%3ABool%7CNil-instance-method" class="signature"><strong>#supports_guest_queries</strong> : Bool | Nil</a>
+        
+          <div class="summary"><p>True, if the bot supports guest queries from chats it is not a member of.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#supports_guest_queries%3D%28supports_guest_queries%3ABool%7CNil%29-instance-method" class="signature"><strong>#supports_guest_queries=</strong>(supports_guest_queries : Bool | Nil)</a>
+        
+          <div class="summary"><p>True, if the bot supports guest queries from chats it is not a member of.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#supports_inline_queries%3ABool%7CNil-instance-method" class="signature"><strong>#supports_inline_queries</strong> : Bool | Nil</a>
         
           <div class="summary"><p>True, if the bot supports inline queries.</p></div>
@@ -2292,7 +2311,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in getMe.</p>
+          <p>True, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2311,7 +2330,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in getMe.</p>
+          <p>True, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2330,7 +2349,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot can be invited to groups. Returned only in getMe.</p>
+          <p>True, if the bot can be invited to groups. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2349,7 +2368,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot can be invited to groups. Returned only in getMe.</p>
+          <p>True, if the bot can be invited to groups. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2406,7 +2425,7 @@
       
         <div class="doc">
           
-          <p>True, if privacy mode is disabled for the bot. Returned only in getMe.</p>
+          <p>True, if privacy mode is disabled for the bot. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2425,7 +2444,7 @@
       
         <div class="doc">
           
-          <p>True, if privacy mode is disabled for the bot. Returned only in getMe.</p>
+          <p>True, if privacy mode is disabled for the bot. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2482,7 +2501,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot has a main Web App. Returned only in getMe.</p>
+          <p>True, if the bot has a main Web App. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2501,7 +2520,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot has a main Web App. Returned only in getMe.</p>
+          <p>True, if the bot has a main Web App. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2776,6 +2795,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="supports_guest_queries:Bool|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>supports_guest_queries</strong> : Bool | Nil
+
+        <a class="method-permalink" href="#supports_guest_queries%3ABool%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the bot supports guest queries from chats it is not a member of. Returned only in <code>getMe</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="supports_guest_queries=(supports_guest_queries:Bool|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>supports_guest_queries=</strong>(supports_guest_queries : Bool | Nil)
+
+        <a class="method-permalink" href="#supports_guest_queries%3D%28supports_guest_queries%3ABool%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True, if the bot supports guest queries from chats it is not a member of. Returned only in <code>getMe</code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="supports_inline_queries:Bool|Nil-instance-method">
       <div class="signature">
         
@@ -2786,7 +2843,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot supports inline queries. Returned only in getMe.</p>
+          <p>True, if the bot supports inline queries. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>
@@ -2805,7 +2862,7 @@
       
         <div class="doc">
           
-          <p>True, if the bot supports inline queries. Returned only in getMe.</p>
+          <p>True, if the bot supports inline queries. Returned only in <code>getMe</code>.</p>
         </div>
       
       <br/>

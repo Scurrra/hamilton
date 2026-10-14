@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.19.1">
+<meta name="generator" content="Crystal Docs 1.21.0">
 <meta name="crystal_docs.project_version" content="0.5.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
@@ -1332,6 +1332,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/SentGuestMessage" data-name="hamilton::types::sentguestmessage">
+      <a href="../../Hamilton/Types/SentGuestMessage.html">SentGuestMessage</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/SentWebAppMessage" data-name="hamilton::types::sentwebappmessage">
       <a href="../../Hamilton/Types/SentWebAppMessage.html">SentWebAppMessage</a>
       
@@ -2407,6 +2412,48 @@
         <a href="#group_chat_created%3D%28group_chat_created%3ABool%7CNil%29-instance-method" class="signature"><strong>#group_chat_created=</strong>(group_chat_created : Bool | Nil)</a>
         
           <div class="summary"><p>Service message: the group has been created.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_bot_caller_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method" class="signature"><strong>#guest_bot_caller_chat</strong> : Hamilton::Types::Chat | Nil</a>
+        
+          <div class="summary"><p>For a message sent by a guest bot, this is the chat whose original message triggered the bot's response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_bot_caller_chat%3D%28guest_bot_caller_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method" class="signature"><strong>#guest_bot_caller_chat=</strong>(guest_bot_caller_chat : Hamilton::Types::Chat | Nil)</a>
+        
+          <div class="summary"><p>For a message sent by a guest bot, this is the chat whose original message triggered the bot's response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_bot_caller_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil-instance-method" class="signature"><strong>#guest_bot_caller_user</strong> : Hamilton::Types::User | Nil</a>
+        
+          <div class="summary"><p>For a message sent by a guest bot, this is the user whose original message triggered the bot's response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_bot_caller_user%3D%28guest_bot_caller_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil%29-instance-method" class="signature"><strong>#guest_bot_caller_user=</strong>(guest_bot_caller_user : Hamilton::Types::User | Nil)</a>
+        
+          <div class="summary"><p>For a message sent by a guest bot, this is the user whose original message triggered the bot's response.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_query_id%3AString%7CNil-instance-method" class="signature"><strong>#guest_query_id</strong> : String | Nil</a>
+        
+          <div class="summary"><p>The unique identifier for the guest query.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_query_id%3D%28guest_query_id%3AString%7CNil%29-instance-method" class="signature"><strong>#guest_query_id=</strong>(guest_query_id : String | Nil)</a>
+        
+          <div class="summary"><p>The unique identifier for the guest query.</p></div>
         
       </li>
     
@@ -5134,6 +5181,120 @@
         <div class="doc">
           
           <p>Service message: the group has been created.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_bot_caller_chat:Hamilton::Types::Chat|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_bot_caller_chat</strong> : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil
+
+        <a class="method-permalink" href="#guest_bot_caller_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For a message sent by a guest bot, this is the chat whose original message triggered the bot's response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_bot_caller_chat=(guest_bot_caller_chat:Hamilton::Types::Chat|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_bot_caller_chat=</strong>(guest_bot_caller_chat : <a href="../../Hamilton/Types/Chat.html">Hamilton::Types::Chat</a> | Nil)
+
+        <a class="method-permalink" href="#guest_bot_caller_chat%3D%28guest_bot_caller_chat%3AHamilton%3A%3ATypes%3A%3AChat%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For a message sent by a guest bot, this is the chat whose original message triggered the bot's response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_bot_caller_user:Hamilton::Types::User|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_bot_caller_user</strong> : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a> | Nil
+
+        <a class="method-permalink" href="#guest_bot_caller_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For a message sent by a guest bot, this is the user whose original message triggered the bot's response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_bot_caller_user=(guest_bot_caller_user:Hamilton::Types::User|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_bot_caller_user=</strong>(guest_bot_caller_user : <a href="../../Hamilton/Types/User.html">Hamilton::Types::User</a> | Nil)
+
+        <a class="method-permalink" href="#guest_bot_caller_user%3D%28guest_bot_caller_user%3AHamilton%3A%3ATypes%3A%3AUser%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>For a message sent by a guest bot, this is the user whose original message triggered the bot's response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_query_id:String|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_query_id</strong> : String | Nil
+
+        <a class="method-permalink" href="#guest_query_id%3AString%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The unique identifier for the guest query. Use this identifier with the method <code>answerGuestQuery</code> to send a response message. If non-empty, the message belongs to the chat where the guest bot was summoned, which may not coincide with other existing bot chats sharing the same identifier.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_query_id=(guest_query_id:String|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_query_id=</strong>(guest_query_id : String | Nil)
+
+        <a class="method-permalink" href="#guest_query_id%3D%28guest_query_id%3AString%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>The unique identifier for the guest query. Use this identifier with the method <code>answerGuestQuery</code> to send a response message. If non-empty, the message belongs to the chat where the guest bot was summoned, which may not coincide with other existing bot chats sharing the same identifier.</p>
         </div>
       
       <br/>

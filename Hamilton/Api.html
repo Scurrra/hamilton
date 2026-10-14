@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.19.1">
+<meta name="generator" content="Crystal Docs 1.21.0">
 <meta name="crystal_docs.project_version" content="0.5.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
@@ -1332,6 +1332,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/SentGuestMessage" data-name="hamilton::types::sentguestmessage">
+      <a href="../Hamilton/Types/SentGuestMessage.html">SentGuestMessage</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/SentWebAppMessage" data-name="hamilton::types::sentwebappmessage">
       <a href="../Hamilton/Types/SentWebAppMessage.html">SentWebAppMessage</a>
       
@@ -1798,6 +1803,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#answerCallbackQuery%28%2A%2Aparams%29-instance-method" class="signature"><strong>#answerCallbackQuery</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to send answers to callback queries sent from inline keyboards.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#answerGuestQuery%28%2A%2Aparams%29-instance-method" class="signature"><strong>#answerGuestQuery</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to reply to a received guest message.</p></div>
         
       </li>
     
@@ -3152,6 +3164,34 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>cache_time : Union(Int32 | Nil)</code></p>
 <blockquote>
 <p>The maximum amount of time in seconds that the result of the callback query may be cached client-side. Telegram apps will support caching starting in version 3.14. Defaults to 0.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="answerGuestQuery(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>answerGuestQuery</strong>(**params)
+
+        <a class="method-permalink" href="#answerGuestQuery%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to reply to a received guest message.</p>
+<p>Params:</p>
+<p><code>guest_query_id : String</code></p>
+<blockquote>
+<p>Unique identifier for the query to be answered.</p>
+</blockquote>
+<p><code>result : <a href="../Hamilton/Types/InlineQueryResult.html">Hamilton::Types::InlineQueryResult</a></code></p>
+<blockquote>
+<p>A JSON-serialized object describing the message to be sent.</p>
 </blockquote>
         </div>
       

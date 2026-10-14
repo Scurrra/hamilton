@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Crystal Docs 1.19.1">
+<meta name="generator" content="Crystal Docs 1.21.0">
 <meta name="crystal_docs.project_version" content="0.5.0">
 <meta name="crystal_docs.project_name" content="hamilton">
 
@@ -1332,6 +1332,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/SentGuestMessage" data-name="hamilton::types::sentguestmessage">
+      <a href="../../Hamilton/Types/SentGuestMessage.html">SentGuestMessage</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/SentWebAppMessage" data-name="hamilton::types::sentwebappmessage">
       <a href="../../Hamilton/Types/SentWebAppMessage.html">SentWebAppMessage</a>
       
@@ -1974,6 +1979,20 @@ At most one of the optional parameters can be present in any given update.</p>
         <a href="#edited_message%3D%28edited_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil%29-instance-method" class="signature"><strong>#edited_message=</strong>(edited_message : Hamilton::Types::Message | Nil)</a>
         
           <div class="summary"><p>New version of a message that is known to the bot and was edited.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil-instance-method" class="signature"><strong>#guest_message</strong> : Hamilton::Types::Message | Nil</a>
+        
+          <div class="summary"><p>New guest message.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#guest_message%3D%28guest_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil%29-instance-method" class="signature"><strong>#guest_message=</strong>(guest_message : Hamilton::Types::Message | Nil)</a>
+        
+          <div class="summary"><p>New guest message.</p></div>
         
       </li>
     
@@ -2781,6 +2800,44 @@ At most one of the optional parameters can be present in any given update.</p>
         <div class="doc">
           
           <p>New version of a message that is known to the bot and was edited. This update may at times be triggered by changes to message fields that are either unavailable or not actively used by your bot.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_message:Hamilton::Types::Message|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_message</strong> : <a href="../../Hamilton/Types/Message.html">Hamilton::Types::Message</a> | Nil
+
+        <a class="method-permalink" href="#guest_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>New guest message. The bot can use the field <code><a href="../../Hamilton/Types/Message.html#guest_query_id%3AString%7CNil-instance-method">Message.guest_query_id</a></code> and the method <code>answerGuestQuery</code> to send a message in response.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="guest_message=(guest_message:Hamilton::Types::Message|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>guest_message=</strong>(guest_message : <a href="../../Hamilton/Types/Message.html">Hamilton::Types::Message</a> | Nil)
+
+        <a class="method-permalink" href="#guest_message%3D%28guest_message%3AHamilton%3A%3ATypes%3A%3AMessage%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>New guest message. The bot can use the field <code><a href="../../Hamilton/Types/Message.html#guest_query_id%3AString%7CNil-instance-method">Message.guest_query_id</a></code> and the method <code>answerGuestQuery</code> to send a message in response.</p>
         </div>
       
       <br/>
