@@ -1961,6 +1961,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#deleteAllMessageReactions%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteAllMessageReactions</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to remove a reaction from a message in a group or a supergroup chat.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#deleteBusinessMessages%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteBusinessMessages</strong>(**params)</a>
         
           <div class="summary"><p>Delete messages on behalf of a business account.</p></div>
@@ -1992,6 +1999,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#deleteMessage%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteMessage</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to delete a message, including service messages, with the following limitations:</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#deleteMessageReaction%28%2A%2Aparams%29-instance-method" class="signature"><strong>#deleteMessageReaction</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to remove a reaction from a message in a group or a supergroup chat.</p></div>
         
       </li>
     
@@ -4030,6 +4044,38 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="deleteAllMessageReactions(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>deleteAllMessageReactions</strong>(**params)
+
+        <a class="method-permalink" href="#deleteAllMessageReactions%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to remove a reaction from a message in a group or a supergroup chat. The bot must have the <code>can_delete_messages</code> administrator right in the chat. Returns True on success.</p>
+<p>Params:</p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@username</code>).</p>
+</blockquote>
+<p><code>user_id : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Identifier of the user whose reaction will be removed, if the reaction was added by a user.</p>
+</blockquote>
+<p><code>action_chat_id : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Identifier of the chat whose reaction will be removed, if the reaction was added by a chat.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="deleteBusinessMessages(**params)-instance-method">
       <div class="signature">
         
@@ -4183,6 +4229,42 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>message_id : Int32</code></p>
 <blockquote>
 <p>Identifier of the message to delete.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="deleteMessageReaction(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>deleteMessageReaction</strong>(**params)
+
+        <a class="method-permalink" href="#deleteMessageReaction%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to remove a reaction from a message in a group or a supergroup chat. The bot must have the <code>can_delete_messages</code> administrator right in the chat. Returns True on success.</p>
+<p>Params:</p>
+<p><code>chat_id : Union(Int64 | String)</code></p>
+<blockquote>
+<p>Unique identifier for the target chat or username of the target channel (in the format <code>@username</code>).</p>
+</blockquote>
+<p><code>message_id : Int32</code></p>
+<blockquote>
+<p>Identifier of the target message.</p>
+</blockquote>
+<p><code>user_id : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Identifier of the user whose reaction will be removed, if the reaction was added by a user.</p>
+</blockquote>
+<p><code>action_chat_id : Union(Int32 | Nil)</code></p>
+<blockquote>
+<p>Identifier of the chat whose reaction will be removed, if the reaction was added by a chat.</p>
 </blockquote>
         </div>
       
@@ -5171,6 +5253,10 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>chat_id : Union(Int64 | String)</code></p>
 <blockquote>
 <p>Unique identifier for the target chat or username of the target supergroup or channel (in the format <code>@channelusername</code>).</p>
+</blockquote>
+<p><code>return_bots : Union(Bool | Nil)</code></p>
+<blockquote>
+<p>Pass True to additionally receive all bots that are administrators of the chat. By default, bots other than the current bot are omitted.</p>
 </blockquote>
         </div>
       
