@@ -35,6 +35,9 @@ class Hamilton::Types::Update
   # Messages were deleted from a connected business account.
   property deleted_business_messages : Hamilton::Types::BusinessMessagesDeleted | Nil
 
+  # New guest message. The bot can use the field `Message.guest_query_id` and the method `answerGuestQuery` to send a message in response.
+  property guest_message : Hamilton::Types::Message | Nil
+
   # A reaction to a message was changed by a user. The bot must be an administrator in the chat and must explicitly specify "message_reaction" in the list of allowed_updates to receive these updates. The update isn't received for reactions set by bots.
   property message_reaction : Hamilton::Types::MessageReactionUpdated | Nil
 

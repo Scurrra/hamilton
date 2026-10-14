@@ -2383,6 +2383,20 @@ class Hamilton::Api
         },
       },
     },
+    "answerGuestQuery" => {
+      return_type: ApiResult(Hamilton::Types::SentGuestMessage),
+      docs:        [%<Use this method to reply to a received guest message.>],
+      params:      {
+        :guest_query_id => {
+          type: String,
+          docs: [%<Unique identifier for the query to be answered.>],
+        },
+        :result => {
+          type: Hamilton::Types::InlineQueryResult,
+          docs: [%<A JSON-serialized object describing the message to be sent.>],
+        },
+      },
+    },
     "getUserChatBoosts" => {
       return_type: ApiResult(Hamilton::Types::UserChatBoosts),
       docs:        [%<Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a `UserChatBoosts` object.>],

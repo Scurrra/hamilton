@@ -31,19 +31,22 @@ class Hamilton::Types::User
   # True, if this user added the bot to the attachment menu
   property added_to_attachment_menu : Bool | Nil
 
-  # True, if the bot can be invited to groups. Returned only in getMe.
+  # True, if the bot can be invited to groups. Returned only in `getMe`.
   property can_join_groups : Bool | Nil
 
-  # True, if privacy mode is disabled for the bot. Returned only in getMe.
+  # True, if privacy mode is disabled for the bot. Returned only in `getMe`.
   property can_read_all_group_messages : Bool | Nil
 
-  # True, if the bot supports inline queries. Returned only in getMe.
+  # True, if the bot supports guest queries from chats it is not a member of. Returned only in `getMe`.
+  property supports_guest_queries : Bool | Nil
+
+  # True, if the bot supports inline queries. Returned only in `getMe`.
   property supports_inline_queries : Bool | Nil
 
-  # True, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in getMe.
+  # True, if the bot can be connected to a Telegram Business account to receive its messages. Returned only in `getMe`.
   property can_connect_to_business : Bool | Nil
 
-  # True, if the bot has a main Web App. Returned only in getMe.
+  # True, if the bot has a main Web App. Returned only in `getMe`.
   property has_main_web_app : Bool | Nil
 
   # True, if the bot has forum topic mode enabled in private chats. Returned only in `getMe`.

@@ -34,6 +34,9 @@ class Hamilton::Types::Message
   # Date the message was sent in Unix time. It is always a positive number, representing a valid date.
   property date : Int32
 
+  # The unique identifier for the guest query. Use this identifier with the method `answerGuestQuery` to send a response message. If non-empty, the message belongs to the chat where the guest bot was summoned, which may not coincide with other existing bot chats sharing the same identifier.
+  property guest_query_id : String | Nil
+
   # Unique identifier of the business connection from which the message was received. If non-empty, the message belongs to a chat of the corresponding business account that is independent from any potential bot chat which might share the same identifier.
   property business_connection_id : String | Nil
 
@@ -72,6 +75,12 @@ class Hamilton::Types::Message
 
   # Bot through which the message was sent.
   property via_bot : Hamilton::Types::User | Nil
+
+  # For a message sent by a guest bot, this is the user whose original message triggered the bot's response.
+  property guest_bot_caller_user : Hamilton::Types::User | Nil
+
+  # For a message sent by a guest bot, this is the chat whose original message triggered the bot's response.
+  property guest_bot_caller_chat : Hamilton::Types::Chat | Nil
 
   # Date the message was last edited in Unix time.
   property edit_date : Int32 | Nil
