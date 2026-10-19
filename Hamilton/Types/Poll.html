@@ -867,8 +867,23 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaLocation" data-name="hamilton::types::inputmedialocation">
+      <a href="../../Hamilton/Types/InputMediaLocation.html">InputMediaLocation</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/InputMediaPhoto" data-name="hamilton::types::inputmediaphoto">
       <a href="../../Hamilton/Types/InputMediaPhoto.html">InputMediaPhoto</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaSticker" data-name="hamilton::types::inputmediasticker">
+      <a href="../../Hamilton/Types/InputMediaSticker.html">InputMediaSticker</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaVenue" data-name="hamilton::types::inputmediavenue">
+      <a href="../../Hamilton/Types/InputMediaVenue.html">InputMediaVenue</a>
       
     </li>
   
@@ -897,8 +912,18 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPollMedia" data-name="hamilton::types::inputpollmedia">
+      <a href="../../Hamilton/Types/InputPollMedia.html">InputPollMedia</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/InputPollOption" data-name="hamilton::types::inputpolloption">
       <a href="../../Hamilton/Types/InputPollOption.html">InputPollOption</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPollOptionMedia" data-name="hamilton::types::inputpolloptionmedia">
+      <a href="../../Hamilton/Types/InputPollOptionMedia.html">InputPollOptionMedia</a>
       
     </li>
   
@@ -1224,6 +1249,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/PollAnswer" data-name="hamilton::types::pollanswer">
       <a href="../../Hamilton/Types/PollAnswer.html">PollAnswer</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PollMedia" data-name="hamilton::types::pollmedia">
+      <a href="../../Hamilton/Types/PollMedia.html">PollMedia</a>
       
     </li>
   
@@ -1856,6 +1886,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#country_codes%3AArray%28String%29%7CNil-instance-method" class="signature"><strong>#country_codes</strong> : Array(String) | Nil</a>
+        
+          <div class="summary"><p>A list of two-letter ISO 3166-1 alpha-2 country codes indicating the countries from which users can vote in the poll.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#country_codes%3D%28country_codes%3AArray%28String%29%7CNil%29-instance-method" class="signature"><strong>#country_codes=</strong>(country_codes : Array(String) | Nil)</a>
+        
+          <div class="summary"><p>A list of two-letter ISO 3166-1 alpha-2 country codes indicating the countries from which users can vote in the poll.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#description%3AString%7CNil-instance-method" class="signature"><strong>#description</strong> : String | Nil</a>
         
           <div class="summary"><p>Description of the poll; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p></div>
@@ -1912,6 +1956,20 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#explanation_media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil-instance-method" class="signature"><strong>#explanation_media</strong> : Hamilton::Types::PollMedia | Nil</a>
+        
+          <div class="summary"><p>Media added to the quiz explanation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#explanation_media%3D%28explanation_media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil%29-instance-method" class="signature"><strong>#explanation_media=</strong>(explanation_media : Hamilton::Types::PollMedia | Nil)</a>
+        
+          <div class="summary"><p>Media added to the quiz explanation.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#id%3AString-instance-method" class="signature"><strong>#id</strong> : String</a>
         
           <div class="summary"><p>Unique poll identifier.</p></div>
@@ -1950,6 +2008,34 @@
         <a href="#is_closed%3D%28is_closed%3ABool%29-instance-method" class="signature"><strong>#is_closed=</strong>(is_closed : Bool)</a>
         
           <div class="summary"><p>True, if the poll is closed.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil-instance-method" class="signature"><strong>#media</strong> : Hamilton::Types::PollMedia | Nil</a>
+        
+          <div class="summary"><p>Media added to the poll description; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#media%3D%28media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil%29-instance-method" class="signature"><strong>#media=</strong>(media : Hamilton::Types::PollMedia | Nil)</a>
+        
+          <div class="summary"><p>Media added to the poll description; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#members_only%3ABool-instance-method" class="signature"><strong>#members_only</strong> : Bool</a>
+        
+          <div class="summary"><p>True if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#members_only%3D%28members_only%3ABool%29-instance-method" class="signature"><strong>#members_only=</strong>(members_only : Bool)</a>
+        
+          <div class="summary"><p>True if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours.</p></div>
         
       </li>
     
@@ -2325,6 +2411,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="country_codes:Array(String)|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>country_codes</strong> : Array(String) | Nil
+
+        <a class="method-permalink" href="#country_codes%3AArray%28String%29%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A list of two-letter ISO 3166-1 alpha-2 country codes indicating the countries from which users can vote in the poll. The country code “FT” is used for users with anonymous numbers. If omitted, then users from any country can participate in the poll.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="country_codes=(country_codes:Array(String)|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>country_codes=</strong>(country_codes : Array(String) | Nil)
+
+        <a class="method-permalink" href="#country_codes%3D%28country_codes%3AArray%28String%29%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>A list of two-letter ISO 3166-1 alpha-2 country codes indicating the countries from which users can vote in the poll. The country code “FT” is used for users with anonymous numbers. If omitted, then users from any country can participate in the poll.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="description:String|Nil-instance-method">
       <div class="signature">
         
@@ -2477,6 +2601,44 @@
       </div>
     </div>
   
+    <div class="entry-detail" id="explanation_media:Hamilton::Types::PollMedia|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>explanation_media</strong> : <a href="../../Hamilton/Types/PollMedia.html">Hamilton::Types::PollMedia</a> | Nil
+
+        <a class="method-permalink" href="#explanation_media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Media added to the quiz explanation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="explanation_media=(explanation_media:Hamilton::Types::PollMedia|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>explanation_media=</strong>(explanation_media : <a href="../../Hamilton/Types/PollMedia.html">Hamilton::Types::PollMedia</a> | Nil)
+
+        <a class="method-permalink" href="#explanation_media%3D%28explanation_media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Media added to the quiz explanation.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="id:String-instance-method">
       <div class="signature">
         
@@ -2583,6 +2745,82 @@
         <div class="doc">
           
           <p>True, if the poll is closed.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="media:Hamilton::Types::PollMedia|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>media</strong> : <a href="../../Hamilton/Types/PollMedia.html">Hamilton::Types::PollMedia</a> | Nil
+
+        <a class="method-permalink" href="#media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Media added to the poll description; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="media=(media:Hamilton::Types::PollMedia|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>media=</strong>(media : <a href="../../Hamilton/Types/PollMedia.html">Hamilton::Types::PollMedia</a> | Nil)
+
+        <a class="method-permalink" href="#media%3D%28media%3AHamilton%3A%3ATypes%3A%3APollMedia%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Media added to the poll description; for polls inside the <code><a href="../../Hamilton/Types/Message.html">Message</a></code> object only.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="members_only:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>members_only</strong> : Bool
+
+        <a class="method-permalink" href="#members_only%3ABool-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="members_only=(members_only:Bool)-instance-method">
+      <div class="signature">
+        
+        def <strong>members_only=</strong>(members_only : Bool)
+
+        <a class="method-permalink" href="#members_only%3D%28members_only%3ABool%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>True if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours.</p>
         </div>
       
       <br/>
