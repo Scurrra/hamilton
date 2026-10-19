@@ -34,6 +34,12 @@ class Hamilton::Types::Poll
   # True, if the poll allows multiple answers.
   property allows_multiple_answers : Bool
 
+  # True if voting is limited to users who have been members of the chat where the poll was originally sent for more than 24 hours.
+  property members_only : Bool
+
+  # A list of two-letter ISO 3166-1 alpha-2 country codes indicating the countries from which users can vote in the poll. The country code “FT” is used for users with anonymous numbers. If omitted, then users from any country can participate in the poll.
+  property country_codes : Array(String) | Nil
+
   # Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot.
   property correct_option_ids : Array(Int32) | Nil
 
@@ -42,6 +48,9 @@ class Hamilton::Types::Poll
 
   # Special entities like usernames, URLs, bot commands, etc. that appear in the explanation.
   property explanation_entities : Array(Hamilton::Types::MessageEntity) | Nil
+
+  # Media added to the quiz explanation.
+  property explanation_media : Hamilton::Types::PollMedia | Nil
 
   # Amount of time in seconds the poll will be active after creation.
   property open_period : Int32
@@ -54,4 +63,7 @@ class Hamilton::Types::Poll
 
   # Special entities like usernames, URLs, bot commands, etc. that appear in the description.
   property description_entities : Array(Hamilton::Types::MessageEntity) | Nil
+
+  # Media added to the poll description; for polls inside the `Message` object only.
+  property media : Hamilton::Types::PollMedia | Nil
 end

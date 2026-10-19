@@ -15,4 +15,7 @@ class Hamilton::Types::InputPollOption
 
   # A JSON-serialized list of special entities that appear in the poll option text. It can be specified instead of text_parse_mode.
   property text_entities : Array(Hamilton::Types::MessageEntity)
+
+  # Media added to the poll option
+  property media : Hamilton::Types::InputPollOptionMedia | Nil
 end

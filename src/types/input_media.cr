@@ -180,5 +180,80 @@ class Hamilton::Types::InputMediaDocument
   property disable_content_type_detection : Bool | Nil
 end
 
+# Represents a sticker file to be sent.
+@[JSON::Serializable::Options(emit_nulls: true)]
+class Hamilton::Types::InputMediaSticker
+  include JSON::Serializable
+  include Hamilton::Types::Common
+
+  # Type of the media, must be "sticker".
+  property type : String
+
+  # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a .WEBP sticker from the Internet, or pass “attach://<file_attach_name>” to upload a new .WEBP, .TGS, or .WEBM sticker using `multipart/form-data` under `<file_attach_name>` name.
+  property media : Hamilton::Types::InputFile | String
+
+  # Emoji associated with the sticker; only for just uploaded stickers.
+  property emoji : String | Nil
+end
+
+# Represents a location to be sent.
+@[JSON::Serializable::Options(emit_nulls: true)]
+class Hamilton::Types::InputMediaLocation
+  include JSON::Serializable
+  include Hamilton::Types::Common
+
+  # Type of the media, must be "location".
+  property type : String
+
+  # Latitude of the location
+  property latitude : Float64
+
+  # Longitude of the location
+  property longitude : Float64
+
+  # The radius of uncertainty for the location, measured in meters; 0-1500.
+  property horizontal_accuracy : Float64 | Nil
+end
+
+# Represents a venue to be sent.
+@[JSON::Serializable::Options(emit_nulls: true)]
+class Hamilton::Types::InputMediaVenue
+  include JSON::Serializable
+  include Hamilton::Types::Common
+
+  # Type of the media, must be "venue".
+  property type : String
+
+  # Latitude of the location
+  property latitude : Float64
+
+  # Longitude of the location
+  property longitude : Float64
+
+  # Name of the venue.
+  property title : String
+
+  # Address of the venue.
+  property address : String
+
+  # Foursquare identifier of the venue.
+  property foursquare_id : String | Nil
+
+  # Foursquare type of the venue, if known. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
+  property foursquare_type : String | Nil
+
+  # Google Places identifier of the venue.
+  property google_place_id : String | Nil
+
+  # Google Places type of the venue.
+  property google_place_type : String | Nil
+end
+
 # This object represents the content of a media message to be sent.
 alias Hamilton::Types::InputMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation | Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument
+
+# This object represents the content of a poll description or a quiz explanation to be sent.
+alias Hamilton::Types::InputPollMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation | Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaLocation | Hamilton::Types::InputMediaVenue
+
+# This object represents the content of a poll option to be sent.
+alias Hamilton::Types::InputPollOptionMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation  | Hamilton::Types::InputMediaLocation | Hamilton::Types::InputMediaVenue

@@ -1313,6 +1313,14 @@ class Hamilton::Api
           type: Union(Bool | Nil),
           docs: [%<Pass True, if poll results must be shown only after the poll closes.>],
         },
+        :members_only => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True if voting is limited to users who have been members of the chat where the poll is being sent for more than 24 hours; for channel chats only.>],
+        },
+        :country_codes => {
+          type: Union(Array(String) | Nil),
+          docs: [%<A JSON-serialized list of 0-12 two-letter ISO 3166-1 alpha-2 country codes indicating the countries from which users can vote in the poll; for channel chats only. Use “FT” as a country code to allow users with anonymous numbers to vote. If omitted or empty, then users from any country can participate in the poll.>],
+        },
         :correct_option_ids => {
           type: Union(Array(Int32) | Nil),
           docs: [%<A JSON-serialized list of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode.>],
@@ -1328,6 +1336,10 @@ class Hamilton::Api
         :explanation_entities => {
           type: Union(Array(Hamilton::Types::MessageEntity) | Nil),
           docs: [%<A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of `explanation_parse_mode`.>],
+        },
+        :explanation_media => {
+          type: Union(Hamilton::Types::InputPollMedia | Nil),
+          docs: [%<Media added to the quiz explanation.>]
         },
         :open_period => {
           type: Union(Int32 | Nil),

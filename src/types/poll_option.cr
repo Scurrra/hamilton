@@ -16,6 +16,9 @@ class Hamilton::Types::PollOption
   # Special entities that appear in the option text. Currently, only custom emoji entities are allowed in poll option texts
   property text_entities : Array(Hamilton::Types::MessageEntity) | Nil
 
+  # Media added to the poll option.
+  property media : Hamilton::Types::PollMedia | Nil
+
   # Number of users that voted for this option.
   property voter_count : Int32
 
