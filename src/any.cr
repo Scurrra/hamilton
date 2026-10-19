@@ -30,7 +30,7 @@ struct Hamilton::Any
   end
 
   # :ditto:
-  def self.new(raw : Float) : self
+  def self.new(raw : Float64) : self
     new(raw.to_f64)
   end
 

@@ -274,7 +274,7 @@ class Hamilton::Types::InlineQueryResultAudio
 
   # List of special entities that appear in the caption, which can be specified instead of `parse_mode`.
   property caption_entities : Array(Hamilton::Types::MessageEntity) | Nil
-  
+
   # Performer.
   property performer : String | Nil
 
@@ -588,7 +588,7 @@ class Hamilton::Types::InlineQueryResultCachedGif
 
   # A valid file identifier for the GIF file.
   property gif_file_id : String
-  
+
   # Title for the result.
   property title : String | Nil
 

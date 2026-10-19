@@ -206,13 +206,13 @@ class Hamilton::Types::InputMediaLocation
   property type : String
 
   # Latitude of the location
-  property latitude : Float64
+  property latitude : Float32
 
   # Longitude of the location
-  property longitude : Float64
+  property longitude : Float32
 
   # The radius of uncertainty for the location, measured in meters; 0-1500.
-  property horizontal_accuracy : Float64 | Nil
+  property horizontal_accuracy : Float32 | Nil
 end
 
 # Represents a venue to be sent.
@@ -225,10 +225,10 @@ class Hamilton::Types::InputMediaVenue
   property type : String
 
   # Latitude of the location
-  property latitude : Float64
+  property latitude : Float32
 
   # Longitude of the location
-  property longitude : Float64
+  property longitude : Float32
 
   # Name of the venue.
   property title : String
