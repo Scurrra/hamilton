@@ -867,6 +867,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/InputMediaLivePhoto" data-name="hamilton::types::inputmedialivephoto">
+      <a href="../../Hamilton/Types/InputMediaLivePhoto.html">InputMediaLivePhoto</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/InputMediaLocation" data-name="hamilton::types::inputmedialocation">
       <a href="../../Hamilton/Types/InputMediaLocation.html">InputMediaLocation</a>
       
@@ -899,6 +904,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/InputPaidMedia" data-name="hamilton::types::inputpaidmedia">
       <a href="../../Hamilton/Types/InputPaidMedia.html">InputPaidMedia</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/InputPaidMediaLivePhoto" data-name="hamilton::types::inputpaidmedialivephoto">
+      <a href="../../Hamilton/Types/InputPaidMediaLivePhoto.html">InputPaidMediaLivePhoto</a>
       
     </li>
   
@@ -1009,6 +1019,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/LinkPreviewOptions" data-name="hamilton::types::linkpreviewoptions">
       <a href="../../Hamilton/Types/LinkPreviewOptions.html">LinkPreviewOptions</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/LivePhoto" data-name="hamilton::types::livephoto">
+      <a href="../../Hamilton/Types/LivePhoto.html">LivePhoto</a>
       
     </li>
   
@@ -1149,6 +1164,11 @@
   
   <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaInfo" data-name="hamilton::types::paidmediainfo">
       <a href="../../Hamilton/Types/PaidMediaInfo.html">PaidMediaInfo</a>
+      
+    </li>
+  
+  <li class=" " data-id="hamilton/Hamilton/Types/PaidMediaLivePhoto" data-name="hamilton::types::paidmedialivephoto">
+      <a href="../../Hamilton/Types/PaidMediaLivePhoto.html">PaidMediaLivePhoto</a>
       
     </li>
   
@@ -2610,6 +2630,20 @@
         <a href="#link_preview_options%3D%28link_preview_options%3AHamilton%3A%3ATypes%3A%3ALinkPreviewOptions%7CNil%29-instance-method" class="signature"><strong>#link_preview_options=</strong>(link_preview_options : Hamilton::Types::LinkPreviewOptions | Nil)</a>
         
           <div class="summary"><p>Options used for link preview generation for the message, if it is a text message and link preview options were changed.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#live_photo%3AHamilton%3A%3ATypes%3A%3ALivePhoto%7CNil-instance-method" class="signature"><strong>#live_photo</strong> : Hamilton::Types::LivePhoto | Nil</a>
+        
+          <div class="summary"><p>Message is a live photo, information about the live photo.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#live_photo%3D%28live_photo%3AHamilton%3A%3ATypes%3A%3ALivePhoto%7CNil%29-instance-method" class="signature"><strong>#live_photo=</strong>(live_photo : Hamilton::Types::LivePhoto | Nil)</a>
+        
+          <div class="summary"><p>Message is a live photo, information about the live photo.</p></div>
         
       </li>
     
@@ -5667,6 +5701,44 @@
         <div class="doc">
           
           <p>Options used for link preview generation for the message, if it is a text message and link preview options were changed.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="live_photo:Hamilton::Types::LivePhoto|Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>live_photo</strong> : <a href="../../Hamilton/Types/LivePhoto.html">Hamilton::Types::LivePhoto</a> | Nil
+
+        <a class="method-permalink" href="#live_photo%3AHamilton%3A%3ATypes%3A%3ALivePhoto%7CNil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Message is a live photo, information about the live photo. For backward compatibility, when this field is set, the <code><a href="../../Hamilton/Types/Message.html#photo%3AArray%28Hamilton%3A%3ATypes%3A%3APhotoSize%29%7CNil-instance-method">#photo</a></code> field will also be set.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="live_photo=(live_photo:Hamilton::Types::LivePhoto|Nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>live_photo=</strong>(live_photo : <a href="../../Hamilton/Types/LivePhoto.html">Hamilton::Types::LivePhoto</a> | Nil)
+
+        <a class="method-permalink" href="#live_photo%3D%28live_photo%3AHamilton%3A%3ATypes%3A%3ALivePhoto%7CNil%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Message is a live photo, information about the live photo. For backward compatibility, when this field is set, the <code><a href="../../Hamilton/Types/Message.html#photo%3AArray%28Hamilton%3A%3ATypes%3A%3APhotoSize%29%7CNil-instance-method">#photo</a></code> field will also be set.</p>
         </div>
       
       <br/>
