@@ -427,6 +427,84 @@ class Hamilton::Api
         },
       },
     },
+    "sendLivePhoto" => {
+      return_type: ApiResult(Hamilton::Types::Message),
+      docs:        [%<Use this method to send live photos. On success, the sent Message is returned.>],
+      params:      {
+        :business_connection_id => {
+          type: Union(String | Nil),
+          docs: [%<Unique identifier of the business connection on behalf of which the message will be sent.>],
+        },
+        :chat_id => {
+          type: Union(Int64 | String),
+          docs: [%<Unique identifier for the target chat or username of the target channel (in the format `@channelusername`).>],
+        },
+        :message_thread_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only.>],
+        },
+        :direct_messages_topic_id => {
+          type: Union(Int32 | Nil),
+          docs: [%<Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat.>],
+        },
+        :live_photo => {
+          type: Union(Hamilton::Types::InputFile | String),
+          docs: [%<Live photo video to send. The video must be no longer than 10 seconds and must not exceed 10 MB in size. Pass a `file_id` as String to send a video that exists on the Telegram servers (recommended) or upload a new video using `multipart/form-data`.>]
+        },
+        :photo => {
+          type: Union(Hamilton::Types::InputFile | String),
+          docs: [%<The static photo to send. Pass a `file_id` as String to send a photo that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a photo from the Internet, or upload a new photo using multipart/form-data. The photo must be at most 10 MB in size. The photo's width and height must not exceed 10000 in total. Width and height ratio must be at most 20.>],
+        },
+        :caption => {
+          type: Union(String | Nil),
+          docs: [%<Video caption (may also be used when resending videos by `file_id`), 0-1024 characters after entities parsing.>],
+        },
+        :parse_mode => {
+          type: Union(String | Nil),
+          docs: [%<Mode for parsing entities in the photo caption.>],
+        },
+        :caption_entities => {
+          type: Union(Array(Hamilton::Types::MessageEntity) | Nil),
+          docs: [%<A JSON-serialized list of special entities that appear in the caption, which can be specified instead of `parse_mode`.>],
+        },
+        :show_caption_above_media => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True, if the caption must be shown above the message media.>],
+        },
+        :has_spoiler => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True if the photo needs to be covered with a spoiler animation.>],
+        },
+        :disable_notification => {
+          type: Union(Bool | Nil),
+          docs: [%<Sends the message silently. Users will receive a notification with no sound.>],
+        },
+        :protect_content => {
+          type: Union(Bool | Nil),
+          docs: [%<Protects the contents of the sent message from forwarding and saving.>],
+        },
+        :allow_paid_broadcast => {
+          type: Union(Bool | Nil),
+          docs: [%<Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance.>],
+        },
+        :message_effect_id => {
+          type: Union(String | Nil),
+          docs: [%<Unique identifier of the message effect to be added to the message; for private chats only.>],
+        },
+        :suggested_post_parameters => {
+          type: Union(Hamilton::Types::SuggestedPostParameters | Nil),
+          docs: [%<A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.>],
+        },
+        :reply_parameters => {
+          type: Union(Hamilton::Types::ReplyParameters | Nil),
+          docs: [%<Description of the message to reply to.>],
+        },
+        :reply_markup => {
+          type: Union(Hamilton::Types::InlineKeyboardMarkup | Hamilton::Types::ReplyKeyboardMarkup | Hamilton::Types::ReplyKeyboardRemove | Hamilton::Types::ForceReply | Nil),
+          docs: [%<Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user.>],
+        },
+      },
+    },
     "sendAudio" => {
       return_type: ApiResult(Hamilton::Types::Message),
       docs:        [%<Use this method to send audio files, if you want Telegram clients to display them in the music player. Your audio must be in the .MP3 or .M4A format. On success, the sent `Message` is returned. Bots can currently send audio files of up to 50 MB in size, this limit may be changed in the future.>, %<For sending voice messages, use the sendVoice method instead.>],
@@ -1006,7 +1084,7 @@ class Hamilton::Api
           docs: [%<Identifier of the direct messages topic to which the messages will be sent; required if the messages are sent to a direct messages chat.>],
         },
         :media => {
-          type: Array(Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo),
+          type: Array(Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaLivePhoto | Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo),
           docs: [%<A JSON-serialized array describing messages to be sent, must include 2-10 items.>],
         },
         :disable_notification => {

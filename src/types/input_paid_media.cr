@@ -3,6 +3,22 @@ require "./utils.cr"
 
 # The paid media to send is a photo.
 @[JSON::Serializable::Options(emit_nulls: true)]
+class Hamilton::Types::InputPaidMediaLivePhoto
+  include JSON::Serializable
+  include Hamilton::Types::Common
+
+  # Type of the media, must be "live_photo".
+  property type : String = "live_photo"
+
+  # Video of the live photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file_attach_name>” to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
+  property media : Hamilton::Types::InputFile | String
+
+  # The static photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file_attach_name>” to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
+  property photo : Hamilton::Types::InputFile | String
+end
+
+# The paid media to send is a photo.
+@[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputPaidMediaPhoto
   include JSON::Serializable
   include Hamilton::Types::Common
@@ -49,4 +65,4 @@ class Hamilton::Types::InputPaidMediaVideo
 end
 
 # This object describes the paid media to be sent.
-alias Hamilton::Types::InputPaidMedia = Hamilton::Types::InputPaidMediaPhoto | Hamilton::Types::InputPaidMediaVideo
+alias Hamilton::Types::InputPaidMedia = Hamilton::Types::InputPaidMediaLivePhoto | Hamilton::Types::InputPaidMediaPhoto | Hamilton::Types::InputPaidMediaVideo

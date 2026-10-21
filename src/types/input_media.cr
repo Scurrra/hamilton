@@ -180,6 +180,37 @@ class Hamilton::Types::InputMediaDocument
   property disable_content_type_detection : Bool | Nil
 end
 
+# Represents a live photo to be sent.
+@[JSON::Serializable::Options(emit_nulls: true)]
+class Hamilton::Types::InputMediaLivePhoto
+  include JSON::Serializable
+  include Hamilton::Types::Common
+
+  # Type of the media, must be "live_photo".
+  property type : String
+
+  # Video of the live photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file_attach_name>” to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
+  property media : Hamilton::Types::InputFile | String
+
+  # The static photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file_attach_name>” to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
+  property photo : Hamilton::Types::InputFile | String
+
+  # Caption of the live photo to be sent, 0-1024 characters after entities parsing.
+  property caption : String | Nil
+
+  # Mode for parsing entities in the live photo caption.
+  property parse_mode : String | Nil
+
+  # List of special entities that appear in the caption, which can be specified instead of `parse_mode`.
+  property caption_entities : Array(Hamilton::Types::MessageEntity) | Nil
+
+  # Pass True if the caption must be shown above the message media.
+  property show_caption_above_media : Bool | Nil
+
+  # Pass True if the live photo needs to be covered with a spoiler animation.
+  property has_spoiler : Bool | Nil
+end
+
 # Represents a sticker file to be sent.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::InputMediaSticker
@@ -250,10 +281,10 @@ class Hamilton::Types::InputMediaVenue
 end
 
 # This object represents the content of a media message to be sent.
-alias Hamilton::Types::InputMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation | Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument
+alias Hamilton::Types::InputMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation | Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaLivePhoto
 
 # This object represents the content of a poll description or a quiz explanation to be sent.
-alias Hamilton::Types::InputPollMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation | Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaLocation | Hamilton::Types::InputMediaVenue
+alias Hamilton::Types::InputPollMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation | Hamilton::Types::InputMediaAudio | Hamilton::Types::InputMediaDocument | Hamilton::Types::InputMediaLocation | Hamilton::Types::InputMediaVenue | Hamilton::Types::InputMediaLivePhoto
 
 # This object represents the content of a poll option to be sent.
-alias Hamilton::Types::InputPollOptionMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation  | Hamilton::Types::InputMediaLocation | Hamilton::Types::InputMediaVenue
+alias Hamilton::Types::InputPollOptionMedia = Hamilton::Types::InputMediaPhoto | Hamilton::Types::InputMediaVideo | Hamilton::Types::InputMediaAnimation  | Hamilton::Types::InputMediaLocation | Hamilton::Types::InputMediaVenue | Hamilton::Types::InputMediaLivePhoto

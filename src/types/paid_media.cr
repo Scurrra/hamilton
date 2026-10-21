@@ -20,6 +20,19 @@ class Hamilton::Types::PaidMediaPreview
   property duration : Int32 | Nil
 end
 
+# The paid media is a live photo.
+@[JSON::Serializable::Options(emit_nulls: true)]
+class Hamilton::Types::PaidMediaLivePhoto
+  include JSON::Serializable
+  include Hamilton::Types::Common
+
+  # Type of the paid media, always "photo".
+  property type : String
+
+  # The photo.
+  property live_photo : Hamilton::Types::LivePhoto
+end
+
 # The paid media is a photo.
 @[JSON::Serializable::Options(emit_nulls: true)]
 class Hamilton::Types::PaidMediaPhoto

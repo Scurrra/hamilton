@@ -28,6 +28,9 @@ class Hamilton::Types::ExternalReplyInfo
   # Message is a general file, information about the file.
   property document : Hamilton::Types::Document | Nil
 
+  # Message is a live photo, information about the live photo.
+  property live_photo : Hamilton::Types::LivePhoto | Nil
+
   # Message contains paid media; information about the paid media.
   property paid_media : Hamilton::Types::PaidMediaInfo | Nil
 
