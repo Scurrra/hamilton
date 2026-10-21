@@ -2237,6 +2237,20 @@ class Hamilton::Api
         },
       },
     },
+    "getUserPersonalChatMessages" => {
+      return_type: ApiResult(Array(Hamilton::Types::Message)),
+      docs:        [%<Use this method to get the last messages from the personal chat (i.e., the chat currently added to their profile) of a given user. On success, an Array of `Message` objects is returned.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<Unique identifier of the target user.>],
+        },
+        :limit => {
+          type: Int32,
+          docs: [%<The maximum number of messages to return; 1-20.>],
+        },
+      },
+    },
     "setChatStickerSet" => {
       return_type: ApiResult(Bool),
       docs:        [%<Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field "can_set_sticker_set" optionally returned in `getChat` requests to check if the bot can use this method. Returns True on success.>],
@@ -2532,6 +2546,34 @@ class Hamilton::Api
         :user_id => {
           type: Int64,
           docs: [%<User identifier of the managed bot whose token will be replaced.>],
+        },
+      },
+    },
+    "getManagedBotAccessSettings" => {
+      return_type: ApiResult(Hamilton::Types::BotAccessSettings),
+      docs:        [%<Use this method to get the access settings of a managed bot. Returns a `BotAccessSettings` object on success.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<User identifier of the managed bot whose access settings will be replaced.>],
+        },
+      },
+    },
+    "setManagedBotAccessSettings" => {
+      return_type: ApiResult(Bool),
+      docs:        [%<Use this method to change the access settings of a managed bot. Returns True on success.>],
+      params:      {
+        :user_id => {
+          type: Int64,
+          docs: [%<User identifier of the managed bot whose access settings will be changed.>],
+        },
+        :is_access_restricted => {
+          type: Bool,
+          docs: [%<Pass True if only selected users can access the bot. The bot's owner can always access it.>],
+        },
+        :added_user_ids => {
+          type: Union(Array(Int64) | Nil),
+          docs: [%<A JSON-serialized list of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if `is_access_restricted` is False.>],
         },
       },
     },
