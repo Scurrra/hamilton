@@ -187,7 +187,7 @@ class Hamilton::Types::InputMediaLivePhoto
   include Hamilton::Types::Common
 
   # Type of the media, must be "live_photo".
-  property type : String
+  property type : String = "live_photo"
 
   # Video of the live photo to send. Pass a file_id to send a file that exists on the Telegram servers (recommended) or pass “attach://<file_attach_name>” to upload a new one using `multipart/form-data` under `<file_attach_name>` name.
   property media : Hamilton::Types::InputFile | String
@@ -218,7 +218,7 @@ class Hamilton::Types::InputMediaSticker
   include Hamilton::Types::Common
 
   # Type of the media, must be "sticker".
-  property type : String
+  property type : String = "sticker"
 
   # File to send. Pass a file_id to send a file that exists on the Telegram servers (recommended), pass an HTTP URL for Telegram to get a .WEBP sticker from the Internet, or pass “attach://<file_attach_name>” to upload a new .WEBP, .TGS, or .WEBM sticker using `multipart/form-data` under `<file_attach_name>` name.
   property media : Hamilton::Types::InputFile | String
@@ -234,7 +234,7 @@ class Hamilton::Types::InputMediaLocation
   include Hamilton::Types::Common
 
   # Type of the media, must be "location".
-  property type : String
+  property type : String = "location"
 
   # Latitude of the location
   property latitude : Float32
@@ -253,7 +253,7 @@ class Hamilton::Types::InputMediaVenue
   include Hamilton::Types::Common
 
   # Type of the media, must be "venue".
-  property type : String
+  property type : String = "venue"
 
   # Latitude of the location
   property latitude : Float32
