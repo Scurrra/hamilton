@@ -272,6 +272,11 @@
       
     </li>
   
+  <li class=" " data-id="hamilton/Hamilton/Types/BotAccessSettings" data-name="hamilton::types::botaccesssettings">
+      <a href="../Hamilton/Types/BotAccessSettings.html">BotAccessSettings</a>
+      
+    </li>
+  
   <li class=" " data-id="hamilton/Hamilton/Types/BotCommand" data-name="hamilton::types::botcommand">
       <a href="../Hamilton/Types/BotCommand.html">BotCommand</a>
       
@@ -2305,6 +2310,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </li>
     
       <li class="entry-summary">
+        <a href="#getManagedBotAccessSettings%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getManagedBotAccessSettings</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to get the access settings of a managed bot.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#getManagedBotToken%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getManagedBotToken</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to get the token of a managed bot.</p></div>
@@ -2392,6 +2404,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#getUserGifts%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUserGifts</strong>(**params)</a>
         
           <div class="summary"><p>Returns the gifts owned and hosted by a user.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#getUserPersonalChatMessages%28%2A%2Aparams%29-instance-method" class="signature"><strong>#getUserPersonalChatMessages</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to get the last messages from the personal chat (i.e., the chat currently added to their profile) of a given user.</p></div>
         
       </li>
     
@@ -2847,6 +2866,13 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
         <a href="#setGameScore%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setGameScore</strong>(**params)</a>
         
           <div class="summary"><p>Use this method to set the score of the specified user in a game message.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#setManagedBotAccessSettings%28%2A%2Aparams%29-instance-method" class="signature"><strong>#setManagedBotAccessSettings</strong>(**params)</a>
+        
+          <div class="summary"><p>Use this method to change the access settings of a managed bot.</p></div>
         
       </li>
     
@@ -5568,6 +5594,30 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
       </div>
     </div>
   
+    <div class="entry-detail" id="getManagedBotAccessSettings(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getManagedBotAccessSettings</strong>(**params)
+
+        <a class="method-permalink" href="#getManagedBotAccessSettings%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to get the access settings of a managed bot. Returns a <code>BotAccessSettings</code> object on success.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>User identifier of the managed bot whose access settings will be replaced.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="getManagedBotToken(**params)-instance-method">
       <div class="signature">
         
@@ -5920,6 +5970,34 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>limit : Union(Int32 | Nil)</code></p>
 <blockquote>
 <p>The maximum number of gifts to be returned; 1-100. Defaults to 100.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="getUserPersonalChatMessages(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>getUserPersonalChatMessages</strong>(**params)
+
+        <a class="method-permalink" href="#getUserPersonalChatMessages%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to get the last messages from the personal chat (i.e., the chat currently added to their profile) of a given user. On success, an Array of <code>Message</code> objects is returned.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>Unique identifier of the target user.</p>
+</blockquote>
+<p><code>limit : Int32</code></p>
+<blockquote>
+<p>The maximum number of messages to return; 1-20.</p>
 </blockquote>
         </div>
       
@@ -9182,6 +9260,38 @@ handle it when calling. That is why the return type is <code>T | Nil</code>, tha
 <p><code>inline_message_id : Union(String | Nil)</code></p>
 <blockquote>
 <p>Required if <code>chat_id</code> and <code>message_id</code> are not specified. Identifier of the inline message.</p>
+</blockquote>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="setManagedBotAccessSettings(**params)-instance-method">
+      <div class="signature">
+        
+        def <strong>setManagedBotAccessSettings</strong>(**params)
+
+        <a class="method-permalink" href="#setManagedBotAccessSettings%28%2A%2Aparams%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use this method to change the access settings of a managed bot. Returns True on success.</p>
+<p>Params:</p>
+<p><code>user_id : Int64</code></p>
+<blockquote>
+<p>User identifier of the managed bot whose access settings will be changed.</p>
+</blockquote>
+<p><code>is_access_restricted : Bool</code></p>
+<blockquote>
+<p>Pass True if only selected users can access the bot. The bot's owner can always access it.</p>
+</blockquote>
+<p><code>added_user_ids : Union(Array(Int64) | Nil)</code></p>
+<blockquote>
+<p>A JSON-serialized list of up to 10 identifiers of users who will have access to the bot in addition to its owner. Ignored if <code>is_access_restricted</code> is False.</p>
 </blockquote>
         </div>
       
